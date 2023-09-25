@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>YAML DSL :: Red Hat Integration</title>
+    <meta name="description" content="Camel DSL with YAML">
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Red Hat Integration</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="components" data-version="3.18.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Camel Components</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../amqp-component.html">AMQP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../aws-summary.html">AWS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-ddb-component.html">AWS DynamoDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-kinesis-component.html">AWS Kinesis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-lambda-component.html">AWS Lambda</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-s3-component.html">AWS S3 Storage Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-sns-component.html">AWS Simple Notification System (SNS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-sqs-component.html">AWS Simple Queue Service (SQS)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../azure-summary.html">Azure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../azure-storage-blob-component.html">Azure Storage Blob Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../azure-storage-queue-component.html">Azure Storage Queue Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../bean-component.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../bean-validator-component.html">Bean Validator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../browse-component.html">Browse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cql-component.html">Cassandra CQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../controlbus-component.html">Control Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cron-component.html">Cron</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cxf-component.html">CXF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataset-component.html">Dataset</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../direct-component.html">Direct</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fhir-component.html">FHIR</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../file-component.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ftp-component.html">FTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../google-summary.html">Google</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../google-bigquery-component.html">Google BigQuery</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../google-bigquery-sql-component.html">Google BigQuery Standard SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../google-pubsub-component.html">Google Pubsub</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../http-component.html">HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../infinispan-component.html">Infinispan</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jdbc-component.html">JDBC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jira-component.html">Jira</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jms-component.html">JMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jpa-component.html">JPA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jslt-component.html">JSLT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jta.html">JTA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kafka-component.html">Kafka</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kamelet-component.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../log-component.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mail-component.html">Mail</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../master-component.html">Master</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../microprofile-fault-tolerance.html">Microprofile Fault Tolerance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../microprofile-health.html">Microprofile Health</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../microprofile-metrics-component.html">MicroProfile Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mllp-component.html">MLLP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mock-component.html">Mock</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mongodb-component.html">MongoDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../netty-component.html">Netty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../openapi-java.html">Openapi Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paho-component.html">Paho</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paho-mqtt5-component.html">Paho MQTT 5</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform-http-component.html">Platform HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../properties-component.html">Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quartz-component.html">Quartz</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ref-component.html">Ref</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rest-component.html">REST</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rest-openapi-component.html">REST OpenApi</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../salesforce-component.html">Salesforce</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../scheduler-component.html">Scheduler</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../seda-component.html">SEDA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../slack-component.html">Slack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../snmp-component.html">SNMP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../sql-component.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../telegram-component.html">Telegram</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../timer-component.html">Timer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../validator-component.html">Validator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../velocity-component.html">Velocity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vertx-http-component.html">Vert.x HTTP Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../xquery-component.html">XQuery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../xslt-component.html">XSLT</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dataformats/index.html">Data Formats</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/avro-dataformat.html">Avro</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/bindy-dataformat.html">Bindy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/fhirJson-dataformat.html">FHIR JSon</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/fhirXml-dataformat.html">FHIR XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/jacksonXml-dataformat.html">Jackson XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/jaxb-dataformat.html">JAXB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/protobufJackson-dataformat.html">Protobuf Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/soap-dataformat.html">SOAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/zipFile-dataformat.html">Zip File</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../languages/index.html">Languages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/bean-language.html">Bean Method</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/constant-language.html">Constant</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/exchangeProperty-language.html">ExchangeProperty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/file-language.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/header-language.html">Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/hl7terser-language.html">HL7 Terser</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/jsonpath-language.html">JSONPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/ref-language.html">Ref</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/simple-language.html">Simple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/tokenize-language.html">Tokenize</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/xtokenize-language.html">XML Tokenize</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/xpath-language.html">XPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/xquery-language.html">XQuery</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Miscellaneous Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="attachments.html">Attachments</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dsl.html">DSL</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-xml-io-dsl.html">XML Io Dsl</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="yaml-dsl.html">YAML DSL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jta.html">JTA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="main.html">Main</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="microprofile-health.html">Microprofile Health</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="openapi-java.html">Openapi Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="opentelemetry.html">OpenTelemetry</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../eips/enterprise-integration-patterns.html">Enterprise Integration Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/aggregate-eip.html">Aggregate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/bean-eip.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/change-data-capture.html">Change Data Capture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/channel-adapter.html">Channel Adapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/choice-eip.html">Content Based Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/circuitBreaker-eip.html">Circuit Breaker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/claimCheck-eip.html">Claim Check</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/competing-consumers.html">Competing Consumers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/composed-message-processor.html">Composed Message Processor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/content-enricher.html">Content Enricher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/content-filter-eip.html">Content Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/convertBodyTo-eip.html">Convert Body To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/correlation-identifier.html">Correlation Identifier</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/dead-letter-channel.html">Dead Letter Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/delay-eip.html">Delay</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/durable-subscriber.html">Durable Subscriber</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/dynamicRouter-eip.html">Dynamic Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/enrich-eip.html">Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/eventDrivenConsumer-eip.html">Event Driven Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/event-message.html">Event Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/filter-eip.html">Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/from-eip.html">From</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/guaranteed-delivery.html">Guaranteed Delivery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/idempotentConsumer-eip.html">Idempotent Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/inOnly-eip.html">In Only</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/inOut-eip.html">In Out</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/intercept.html">Intercept</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/kamelet-eip.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/loadBalance-eip.html">Load Balance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/log-eip.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/loop-eip.html">Loop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/marshal-eip.html">Marshal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message.html">Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-broker.html">Message Broker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-bus.html">Message Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-channel.html">Message Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-dispatcher.html">Message Dispatcher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-endpoint.html">Message Endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-expiration.html">Message Expiration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-history.html">Message History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-router.html">Message Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-translator.html">Message Translator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/messaging-bridge.html">Messaging Bridge</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/messaging-gateway.html">Messaging Gateway</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/messaging-mapper.html">Messaging Mapper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/multicast-eip.html">Multicast</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/normalizer.html">Normalizer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/pipeline-eip.html">Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/point-to-point-channel.html">Point to Point Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/pollEnrich-eip.html">Poll Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/polling-consumer.html">Polling Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/process-eip.html">Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/process-manager.html">Process Manager</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/publish-subscribe-channel.html">Publish Subscribe Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/recipientList-eip.html">Recipient List</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeHeader-eip.html">Remove Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeHeaders-eip.html">Remove Headers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeProperties-eip.html">Remove Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeProperty-eip.html">Remove Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/requestReply-eip.html">Request Reply</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/resequence-eip.html">Resequence</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/resilience4j-eip.html">Resilience4j Circuit Breaker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/return-address.html">Return Address</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/rollback-eip.html">Rollback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/routingSlip-eip.html">Routing Slip</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/saga-eip.html">Saga</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/sample-eip.html">Sample</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/scatter-gather.html">Scatter Gather</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/script-eip.html">Script</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/selective-consumer.html">Selective Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/service-activator.html">Service Activator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/serviceCall-eip.html">Service Call</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setBody-eip.html">Set Body</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setHeader-eip.html">Set Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setProperty-eip.html">Set Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/sort-eip.html">Sort</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/split-eip.html">Split</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/step-eip.html">Step</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/stop-eip.html">Stop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/threads-eip.html">Threads</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/throttle-eip.html">Throttle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/to-eip.html">To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/toD-eip.html">To Dynamic</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/transactional-client.html">Transactional Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/transform-eip.html">Transform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/unmarshal-eip.html">Unmarshal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/validate-eip.html">Validate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/wireTap-eip.html">Wire Tap</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Camel Components</span>
+    <span class="version">3.18.x (LTS)</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Camel Components</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">3.18.x (LTS)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../manual/index.html">User manual</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../manual/index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../manual/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Camel Components</a></li>
+    <li><a href="index.html">Miscellaneous Components</a></li>
+    <li><a href="dsl.html">DSL</a></li>
+    <li><a href="yaml-dsl.html">YAML DSL</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/components/modules/others/pages/yaml-dsl.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">YAML DSL</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Since Camel 3.9</strong></p>
+</div>
+<div class="paragraph">
+<p>The YAML DSL provides the capability to define your Camel routes, route templates &amp; REST DSL configuration in YAML.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_defining_a_route"><a class="anchor" href="#_defining_a_route"></a>Defining a route</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A route is collection of elements defined as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- from: <i class="conum" data-value="1"></i><b>(1)</b>
+    uri: "direct:start"
+    steps: <i class="conum" data-value="2"></i><b>(2)</b>
+      - filter:
+          expression:
+            simple: "${in.header.continue} == true"
+          steps: <i class="conum" data-value="2"></i><b>(2)</b>
+            - to:
+                uri: "log:filtered"
+      - to:
+          uri: "log:original"</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>route entry point, by default <code>from</code> and <code>rest</code> are supported</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>processing steps</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Each step is represented by a YAML map that has a single entry where the field name is the EIP name</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As a general rule, each step provides all the parameters the related definition declares, but there are some minor differences/enhancements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Output Aware Steps</strong></p>
+<div class="paragraph">
+<p>Some steps such as <code>filter</code> and <code>split</code> have their own pipeline. When an exchange matches the filter expression or for the items generated by the split expression, such a pipeline can be defined by the <code>steps</code> field:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">filter:
+  expression:
+    simple: "${in.header.continue} == true"
+      steps:
+        - to:
+            uri: "log:filtered"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Expression Aware Steps</strong></p>
+<div class="paragraph">
+<p>Some EIPs such as <code>filter</code> and <code>split</code> support the definition of an expression through the <code>expression</code> field:</p>
+</div>
+<div class="listingblock">
+<div class="title">Explicit Expression field</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">filter:
+    expression:
+      simple: "${in.header.continue} == true"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To make the DSL less verbose, the <code>expression</code> field can be omitted:</p>
+</div>
+<div class="listingblock">
+<div class="title">Implicit Expression field</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">filter:
+    simple: "${in.header.continue} == true"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In general, <code>expression</code> can be defined inline like in the examples above. But in case you need to provide more information, you can 'unroll' the expression definition and configure any single parameter the expression defines.</p>
+</div>
+<div class="listingblock">
+<div class="title">Full Expression definition</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">filter:
+    tokenize:
+      token: "&lt;"
+      end-token: "&gt;"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Data Format Aware Steps</strong></p>
+<div class="paragraph">
+<p>The EIP <code>marshal</code> and <code>unmarshal</code> supports the definition of data formats:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">marshal:
+    json:
+      library: Gson</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In case you want to use the data-format&#8217;s default settings, you need to place an empty block as data format parameters, like <code>json: {}</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_defining_endpoints"><a class="anchor" href="#_defining_endpoints"></a>Defining endpoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To define an endpoint with the YAML dsl you have two options:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Using a classic Camel URI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- from:
+    uri: "timer:tick?period=1s"
+    steps:
+      - to:
+          uri: "telegram:bots?authorizationToken=XXX"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Using URI and parameters:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- from:
+    uri: "timer://tick"
+    parameters:
+      period: "1s"
+    steps:
+      - to:
+          uri: "telegram:bots"
+          parameters:
+            authorizationToken: "XXX"</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_defining_beans"><a class="anchor" href="#_defining_beans"></a>Defining beans</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In addition to the general support for creating beans provided by <a href="main.html#_specifying_custom_beans" class="xref page">Camel Main</a>, the YAML DSL provides a convenient syntax to define and configure them:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- beans:
+  - name: beanFromMap  <i class="conum" data-value="1"></i><b>(1)</b>
+    type: com.acme.MyBean <i class="conum" data-value="2"></i><b>(2)</b>
+    properties: <i class="conum" data-value="3"></i><b>(3)</b>
+      foo: bar</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the name of the bean which will be used to bound the instance to the Camel Registry</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>the full qualified class name of the bean</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>the properties of the bean to be set</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The properties of the bean can be defined using either a map or properties style, as shown in the example below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- beans:
+  # map style
+  - name: beanFromMap
+    type: com.acme.MyBean
+    properties:
+      field1: 'f1'
+      field2: 'f2'
+      nested:
+        field1: 'nf1'
+        field2: 'nf2'
+  # properties style
+  - name: beanFromProps
+    type: com.acme.MyBean
+    properties:
+      field1: 'f1_p'
+      field2: 'f2_p'
+      nested.field1: 'nf1_p'
+      nested.field2: 'nf2_p'</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>beans</code> elements can only be used as the root element</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_options_on_languages"><a class="anchor" href="#_configuring_options_on_languages"></a>Configuring options on languages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some <a href="../languages/index.html" class="xref page">Languages</a> have additional configurations
+you may need to use.</p>
+</div>
+<div class="paragraph">
+<p>For example, the <a href="../languages/jsonpath-language.html" class="xref page">JSONPath</a>
+can be configured to ignore JSon parsing errors. This is intended when you use a
+<a href="../eips/choice-eip.html" class="xref page">Content Based Router</a> and want to route the message
+to different endpoints. But the JSon payload of the message can be in different forms;
+meaning that the JSonPath expressions in some cases would fail with an exception,
+and other times not. In this situation, you need to set <code>suppress-exception</code> to true,
+as shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- from:
+    uri: "direct:start"
+    steps:
+      - choice:
+          when:
+          - jsonpath:
+              expression: "person.middlename"
+              suppress-exceptions: true
+            steps:
+            - to: "mock:middle"
+          - jsonpath:
+              expression: "person.lastname"
+              suppress-exceptions: true
+            steps:
+            - to: "mock:last"
+          otherwise:
+            steps:
+              - to: "mock:other"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the route above, the following message</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "person": {
+    "firstname": "John",
+    "lastname": "Doe"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Would have failed the JSonPath expression <code>person.middlename</code> because the JSon payload
+does not have a <code>middlename</code> field. To remedy this we have suppressed the exception.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_external_examples"><a class="anchor" href="#_external_examples"></a>External examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can find a set of examples using <code>main-yaml</code> in <a href="https://github.com/apache/camel-examples">Camel Examples</a>
+which demonstrate creating Camel Routes with YAML.</p>
+</div>
+<div class="paragraph">
+<p>Another way to find examples of YAML DSL is to look in <a href="https://github.com/apache/camel-kamelets">Camel Kamelets</a>
+where each Kamelet is defined using YAML.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_supported_eips"><a class="anchor" href="#_supported_eips"></a>Supported EIPs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following set of high level EIPs are supported in the yaml DSL language. For full details on their expected configuration, please refer to the <a href="https://github.com/apache/camel/blob/main/dsl/camel-yaml-dsl/camel-yaml-dsl/src/generated/resources/schema/camel-yaml-dsl.json">Camel YAML DSL specification</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Aggregate</p>
+</li>
+<li>
+<p>Bean</p>
+</li>
+<li>
+<p>Do Catch</p>
+</li>
+<li>
+<p>Do Try</p>
+</li>
+<li>
+<p>Do Finally</p>
+</li>
+<li>
+<p>Choice</p>
+</li>
+<li>
+<p>Circuit Breaker</p>
+</li>
+<li>
+<p>Claim Check</p>
+</li>
+<li>
+<p>Convert Body To</p>
+</li>
+<li>
+<p>Delay</p>
+</li>
+<li>
+<p>Dynamic Router</p>
+</li>
+<li>
+<p>Enrich</p>
+</li>
+<li>
+<p>Error Handler</p>
+</li>
+<li>
+<p>Filter</p>
+</li>
+<li>
+<p>From</p>
+</li>
+<li>
+<p>Idempotent Consumer</p>
+</li>
+<li>
+<p>Intercept</p>
+</li>
+<li>
+<p>Intercept From</p>
+</li>
+<li>
+<p>Intercept Send To Endpoint</p>
+</li>
+<li>
+<p>Load Balance</p>
+</li>
+<li>
+<p>Log</p>
+</li>
+<li>
+<p>Loop</p>
+</li>
+<li>
+<p>Marshal</p>
+</li>
+<li>
+<p>Multicast</p>
+</li>
+<li>
+<p>On Completion</p>
+</li>
+<li>
+<p>On Exception</p>
+</li>
+<li>
+<p>On Fallback</p>
+</li>
+<li>
+<p>Otherwise</p>
+</li>
+<li>
+<p>Pausable</p>
+</li>
+<li>
+<p>Pipeline</p>
+</li>
+<li>
+<p>Policy</p>
+</li>
+<li>
+<p>Poll Enrich</p>
+</li>
+<li>
+<p>Process</p>
+</li>
+<li>
+<p>Recipient List</p>
+</li>
+<li>
+<p>Remove Header</p>
+</li>
+<li>
+<p>Remove Headers</p>
+</li>
+<li>
+<p>Remove Property</p>
+</li>
+<li>
+<p>Remove Properties</p>
+</li>
+<li>
+<p>Resequence</p>
+</li>
+<li>
+<p>Resumable</p>
+</li>
+<li>
+<p>REST DSL</p>
+</li>
+<li>
+<p>Rollback</p>
+</li>
+<li>
+<p>Routing Slip</p>
+</li>
+<li>
+<p>Saga</p>
+</li>
+<li>
+<p>Sample</p>
+</li>
+<li>
+<p>Script</p>
+</li>
+<li>
+<p>Service Call</p>
+</li>
+<li>
+<p>Set Body</p>
+</li>
+<li>
+<p>Set Exchange Pattern</p>
+</li>
+<li>
+<p>Set Header</p>
+</li>
+<li>
+<p>Set Property</p>
+</li>
+<li>
+<p>Sort</p>
+</li>
+<li>
+<p>Split</p>
+</li>
+<li>
+<p>Step</p>
+</li>
+<li>
+<p>Stop</p>
+</li>
+<li>
+<p>Threads</p>
+</li>
+<li>
+<p>Throttle</p>
+</li>
+<li>
+<p>Throw Exception</p>
+</li>
+<li>
+<p>To</p>
+</li>
+<li>
+<p>To Dynamic</p>
+</li>
+<li>
+<p>Transacted</p>
+</li>
+<li>
+<p>Transform</p>
+</li>
+<li>
+<p>Unmarshal</p>
+</li>
+<li>
+<p>Validate</p>
+</li>
+<li>
+<p>When</p>
+</li>
+<li>
+<p>When Skip Send To Endpoint</p>
+</li>
+<li>
+<p>Wire Tap</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The Try / Catch / Finally EIP currently only supports specifying one <code>do-catch</code> clause.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

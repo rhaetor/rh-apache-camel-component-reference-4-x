@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>XQuery :: Red Hat Integration</title>
+    <meta name="description" content="Query and/or transform XML payloads using XQuery and Saxon.">
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Red Hat Integration</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="components" data-version="3.18.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Camel Components</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="amqp-component.html">AMQP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="aws-summary.html">AWS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-ddb-component.html">AWS DynamoDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-kinesis-component.html">AWS Kinesis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-lambda-component.html">AWS Lambda</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-s3-component.html">AWS S3 Storage Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-sns-component.html">AWS Simple Notification System (SNS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-sqs-component.html">AWS Simple Queue Service (SQS)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="azure-summary.html">Azure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-storage-blob-component.html">Azure Storage Blob Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-storage-queue-component.html">Azure Storage Queue Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bean-component.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bean-validator-component.html">Bean Validator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="browse-component.html">Browse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cql-component.html">Cassandra CQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="controlbus-component.html">Control Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cron-component.html">Cron</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cxf-component.html">CXF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataset-component.html">Dataset</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="direct-component.html">Direct</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="fhir-component.html">FHIR</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="file-component.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ftp-component.html">FTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="google-summary.html">Google</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-bigquery-component.html">Google BigQuery</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-bigquery-sql-component.html">Google BigQuery Standard SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-pubsub-component.html">Google Pubsub</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="http-component.html">HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="infinispan-component.html">Infinispan</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jdbc-component.html">JDBC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jira-component.html">Jira</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jms-component.html">JMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jpa-component.html">JPA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jslt-component.html">JSLT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jta.html">JTA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kafka-component.html">Kafka</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kamelet-component.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="log-component.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mail-component.html">Mail</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="master-component.html">Master</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="microprofile-fault-tolerance.html">Microprofile Fault Tolerance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="microprofile-health.html">Microprofile Health</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="microprofile-metrics-component.html">MicroProfile Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mllp-component.html">MLLP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mock-component.html">Mock</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mongodb-component.html">MongoDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="netty-component.html">Netty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="openapi-java.html">Openapi Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="paho-component.html">Paho</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="paho-mqtt5-component.html">Paho MQTT 5</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="platform-http-component.html">Platform HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="properties-component.html">Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="quartz-component.html">Quartz</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ref-component.html">Ref</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rest-component.html">REST</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rest-openapi-component.html">REST OpenApi</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="salesforce-component.html">Salesforce</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scheduler-component.html">Scheduler</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="seda-component.html">SEDA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="slack-component.html">Slack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="snmp-component.html">SNMP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sql-component.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="telegram-component.html">Telegram</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="timer-component.html">Timer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="validator-component.html">Validator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="velocity-component.html">Velocity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vertx-http-component.html">Vert.x HTTP Client</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="xquery-component.html">XQuery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xslt-component.html">XSLT</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dataformats/index.html">Data Formats</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/avro-dataformat.html">Avro</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/bindy-dataformat.html">Bindy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/fhirJson-dataformat.html">FHIR JSon</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/fhirXml-dataformat.html">FHIR XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/jacksonXml-dataformat.html">Jackson XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/jaxb-dataformat.html">JAXB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/protobufJackson-dataformat.html">Protobuf Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/soap-dataformat.html">SOAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/zipFile-dataformat.html">Zip File</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="languages/index.html">Languages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/bean-language.html">Bean Method</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/constant-language.html">Constant</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/exchangeProperty-language.html">ExchangeProperty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/file-language.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/header-language.html">Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/hl7terser-language.html">HL7 Terser</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/jsonpath-language.html">JSONPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/ref-language.html">Ref</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/simple-language.html">Simple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/tokenize-language.html">Tokenize</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/xtokenize-language.html">XML Tokenize</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/xpath-language.html">XPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/xquery-language.html">XQuery</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="others/index.html">Miscellaneous Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/attachments.html">Attachments</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="others/dsl.html">DSL</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/java-xml-io-dsl.html">XML Io Dsl</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/yaml-dsl.html">YAML DSL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/jta.html">JTA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/main.html">Main</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/microprofile-health.html">Microprofile Health</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/openapi-java.html">Openapi Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/opentelemetry.html">OpenTelemetry</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="eips/enterprise-integration-patterns.html">Enterprise Integration Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/aggregate-eip.html">Aggregate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/bean-eip.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/change-data-capture.html">Change Data Capture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/channel-adapter.html">Channel Adapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/choice-eip.html">Content Based Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/circuitBreaker-eip.html">Circuit Breaker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/claimCheck-eip.html">Claim Check</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/competing-consumers.html">Competing Consumers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/composed-message-processor.html">Composed Message Processor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/content-enricher.html">Content Enricher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/content-filter-eip.html">Content Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/convertBodyTo-eip.html">Convert Body To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/correlation-identifier.html">Correlation Identifier</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/dead-letter-channel.html">Dead Letter Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/delay-eip.html">Delay</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/durable-subscriber.html">Durable Subscriber</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/dynamicRouter-eip.html">Dynamic Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/enrich-eip.html">Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/eventDrivenConsumer-eip.html">Event Driven Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/event-message.html">Event Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/filter-eip.html">Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/from-eip.html">From</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/guaranteed-delivery.html">Guaranteed Delivery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/idempotentConsumer-eip.html">Idempotent Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/inOnly-eip.html">In Only</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/inOut-eip.html">In Out</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/intercept.html">Intercept</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/kamelet-eip.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/loadBalance-eip.html">Load Balance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/log-eip.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/loop-eip.html">Loop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/marshal-eip.html">Marshal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message.html">Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-broker.html">Message Broker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-bus.html">Message Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-channel.html">Message Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-dispatcher.html">Message Dispatcher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-endpoint.html">Message Endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-expiration.html">Message Expiration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-history.html">Message History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-router.html">Message Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-translator.html">Message Translator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/messaging-bridge.html">Messaging Bridge</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/messaging-gateway.html">Messaging Gateway</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/messaging-mapper.html">Messaging Mapper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/multicast-eip.html">Multicast</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/normalizer.html">Normalizer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/pipeline-eip.html">Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/point-to-point-channel.html">Point to Point Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/pollEnrich-eip.html">Poll Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/polling-consumer.html">Polling Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/process-eip.html">Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/process-manager.html">Process Manager</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/publish-subscribe-channel.html">Publish Subscribe Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/recipientList-eip.html">Recipient List</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/removeHeader-eip.html">Remove Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/removeHeaders-eip.html">Remove Headers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/removeProperties-eip.html">Remove Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/removeProperty-eip.html">Remove Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/requestReply-eip.html">Request Reply</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/resequence-eip.html">Resequence</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/resilience4j-eip.html">Resilience4j Circuit Breaker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/return-address.html">Return Address</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/rollback-eip.html">Rollback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/routingSlip-eip.html">Routing Slip</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/saga-eip.html">Saga</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/sample-eip.html">Sample</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/scatter-gather.html">Scatter Gather</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/script-eip.html">Script</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/selective-consumer.html">Selective Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/service-activator.html">Service Activator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/serviceCall-eip.html">Service Call</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/setBody-eip.html">Set Body</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/setHeader-eip.html">Set Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/setProperty-eip.html">Set Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/sort-eip.html">Sort</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/split-eip.html">Split</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/step-eip.html">Step</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/stop-eip.html">Stop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/threads-eip.html">Threads</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/throttle-eip.html">Throttle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/to-eip.html">To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/toD-eip.html">To Dynamic</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/transactional-client.html">Transactional Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/transform-eip.html">Transform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/unmarshal-eip.html">Unmarshal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/validate-eip.html">Validate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/wireTap-eip.html">Wire Tap</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Camel Components</span>
+    <span class="version">3.18.x (LTS)</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Camel Components</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">3.18.x (LTS)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../manual/index.html">User manual</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../manual/index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../manual/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Camel Components</a></li>
+    <li><a href="index.html">Components</a></li>
+    <li><a href="xquery-component.html">XQuery</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/components/modules/ROOT/pages/xquery-component.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">XQuery</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Since Camel 1.0</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Both producer and consumer are supported</strong></p>
+</div>
+<div class="paragraph">
+<p>Camel supports <a href="http://www.w3.org/TR/xquery/">XQuery</a> component for message transformation</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_options"><a class="anchor" href="#_configuring_options"></a>Configuring Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Camel components are configured on two separate levels:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>component level</p>
+</li>
+<li>
+<p>endpoint level</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_configuring_component_options"><a class="anchor" href="#_configuring_component_options"></a>Configuring Component Options</h3>
+<div class="paragraph">
+<p>The component level is the highest level which holds general and common configurations that are inherited by the endpoints.
+For example a component may have security settings, credentials for authentication, urls for network connection and so forth.</p>
+</div>
+<div class="paragraph">
+<p>Some components only have a few options, and others may have many. Because components typically have pre configured defaults
+that are commonly used, then you may often only need to configure a few options on a component; or none at all.</p>
+</div>
+<div class="paragraph">
+<p>Configuring components can be done with the <a href="../../manual/component-dsl.html" class="xref page">Component DSL</a>,
+in a configuration file (application.properties|yaml), or directly with Java code.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_endpoint_options"><a class="anchor" href="#_configuring_endpoint_options"></a>Configuring Endpoint Options</h3>
+<div class="paragraph">
+<p>Where you find yourself configuring the most is on endpoints, as endpoints often have many options, which allows you to
+configure what you need the endpoint to do. The options are also categorized into whether the endpoint is used as consumer (from)
+or as a producer (to), or used for both.</p>
+</div>
+<div class="paragraph">
+<p>Configuring endpoints is most often done directly in the endpoint URI as path and query parameters. You can also use
+the <a href="../../manual/Endpoint-dsl.html" class="xref page">Endpoint DSL</a> as a <em>type safe</em> way of configuring endpoints.</p>
+</div>
+<div class="paragraph">
+<p>A good practice when configuring options is to use <a href="../../manual/using-propertyplaceholder.html" class="xref page">Property Placeholders</a>,
+which allows to not hardcode urls, port numbers, sensitive information, and other settings.
+In other words placeholders allows to externalize the configuration from your code, and gives more flexibility and reuse.</p>
+</div>
+<div class="paragraph">
+<p>The following two sections lists all the options, firstly for the component followed by the endpoint.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_component_options"><a class="anchor" href="#_component_options"></a>Component Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The XQuery component supports 6 options, which are listed below.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-center valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_bridgeErrorHandler"></a>
+<a href="#_component_option_bridgeErrorHandler" class="anchor"></a><strong>bridgeErrorHandler</strong> (consumer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Allows for bridging the consumer to the Camel routing Error Handler, which mean any exceptions occurred while the consumer is trying to pickup incoming messages, or the likes, will now be processed as a message and handled by the routing Error Handler. By default the consumer will use the org.apache.camel.spi.ExceptionHandler to deal with exceptions, that will be logged at WARN or ERROR level and ignored.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_lazyStartProducer"></a>
+<a href="#_component_option_lazyStartProducer" class="anchor"></a><strong>lazyStartProducer</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether the producer should be started lazy (on the first message). By starting lazy you can use this to allow CamelContext and routes to startup in situations where a producer may otherwise fail during starting and cause the route to fail being started. By deferring this startup to be lazy then the startup failure can be handled during routing messages via Camel&#8217;s routing error handlers. Beware that when the first message is processed then creating and starting the producer may take a little time and prolong the total processing time of the processing.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_autowiredEnabled"></a>
+<a href="#_component_option_autowiredEnabled" class="anchor"></a><strong>autowiredEnabled</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether autowiring is enabled. This is used for automatic autowiring options (the option must be marked as autowired) by looking up in the registry to find if there is a single instance of matching type, which then gets configured on the component. This can be used for automatic configuring JDBC data sources, JMS connection factories, AWS Clients, etc.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_configuration"></a>
+<a href="#_component_option_configuration" class="anchor"></a><strong>configuration</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To use a custom Saxon configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_configurationProperties"></a>
+<a href="#_component_option_configurationProperties" class="anchor"></a><strong>configurationProperties</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To set custom Saxon configuration properties.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_moduleURIResolver"></a>
+<a href="#_component_option_moduleURIResolver" class="anchor"></a><strong>moduleURIResolver</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To use the custom ModuleURIResolver.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModuleURIResolver</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_endpoint_options"><a class="anchor" href="#_endpoint_options"></a>Endpoint Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The XQuery endpoint is configured using URI syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>xquery:resourceUri</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>with the following path and query parameters:</p>
+</div>
+<div class="sect2">
+<h3 id="_path_parameters_1_parameters"><a class="anchor" href="#_path_parameters_1_parameters"></a>Path Parameters (1 parameters)</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-center valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_path_option_resourceUri"></a>
+<a href="#_endpoint_path_option_resourceUri" class="anchor"></a><strong>resourceUri</strong> (common)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Required</strong> The name of the template to load from classpath or file system.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_query_parameters"><a class="anchor" href="#_query_parameters"></a>Query Parameters (32 parameters)</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-center valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_allowStAX"></a>
+<a href="#_endpoint_query_option_allowStAX" class="anchor"></a><strong>allowStAX</strong> (common)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether to allow using StAX mode.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_headerName"></a>
+<a href="#_endpoint_query_option_headerName" class="anchor"></a><strong>headerName</strong> (common)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To use a Camel Message header as the input source instead of Message body.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_namespacePrefixes"></a>
+<a href="#_endpoint_query_option_namespacePrefixes" class="anchor"></a><strong>namespacePrefixes</strong> (common)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Allows to control which namespace prefixes to use for a set of namespace mappings.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_resultsFormat"></a>
+<a href="#_endpoint_query_option_resultsFormat" class="anchor"></a><strong>resultsFormat</strong> (common)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>What output result to use.</p>
+</div>
+<div class="paragraph">
+<p>Enum values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Bytes</p>
+</li>
+<li>
+<p>BytesSource</p>
+</li>
+<li>
+<p>DOM</p>
+</li>
+<li>
+<p>DOMSource</p>
+</li>
+<li>
+<p>List</p>
+</li>
+<li>
+<p>String</p>
+</li>
+<li>
+<p>StringSource</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">DOM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ResultFormat</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_resultType"></a>
+<a href="#_endpoint_query_option_resultType" class="anchor"></a><strong>resultType</strong> (common)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>What output result to use defined as a class.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_stripsAllWhiteSpace"></a>
+<a href="#_endpoint_query_option_stripsAllWhiteSpace" class="anchor"></a><strong>stripsAllWhiteSpace</strong> (common)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether to strip all whitespaces.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_sendEmptyMessageWhenIdle"></a>
+<a href="#_endpoint_query_option_sendEmptyMessageWhenIdle" class="anchor"></a><strong>sendEmptyMessageWhenIdle</strong> (consumer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If the polling consumer did not poll any files, you can enable this option to send an empty message (no body) instead.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_bridgeErrorHandler"></a>
+<a href="#_endpoint_query_option_bridgeErrorHandler" class="anchor"></a><strong>bridgeErrorHandler</strong> (consumer (advanced))</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Allows for bridging the consumer to the Camel routing Error Handler, which mean any exceptions occurred while the consumer is trying to pickup incoming messages, or the likes, will now be processed as a message and handled by the routing Error Handler. By default the consumer will use the org.apache.camel.spi.ExceptionHandler to deal with exceptions, that will be logged at WARN or ERROR level and ignored.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_exceptionHandler"></a>
+<a href="#_endpoint_query_option_exceptionHandler" class="anchor"></a><strong>exceptionHandler</strong> (consumer (advanced))</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To let the consumer use a custom ExceptionHandler. Notice if the option bridgeErrorHandler is enabled then this option is not in use. By default the consumer will deal with exceptions, that will be logged at WARN or ERROR level and ignored.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ExceptionHandler</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_exchangePattern"></a>
+<a href="#_endpoint_query_option_exchangePattern" class="anchor"></a><strong>exchangePattern</strong> (consumer (advanced))</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Sets the exchange pattern when the consumer creates an exchange.</p>
+</div>
+<div class="paragraph">
+<p>Enum values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>InOnly</p>
+</li>
+<li>
+<p>InOut</p>
+</li>
+<li>
+<p>InOptionalOut</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ExchangePattern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_pollStrategy"></a>
+<a href="#_endpoint_query_option_pollStrategy" class="anchor"></a><strong>pollStrategy</strong> (consumer (advanced))</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A pluggable org.apache.camel.PollingConsumerPollingStrategy allowing you to provide your custom implementation to control error handling usually occurred during the poll operation before an Exchange have been created and being routed in Camel.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PollingConsumerPollStrategy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_lazyStartProducer"></a>
+<a href="#_endpoint_query_option_lazyStartProducer" class="anchor"></a><strong>lazyStartProducer</strong> (producer (advanced))</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether the producer should be started lazy (on the first message). By starting lazy you can use this to allow CamelContext and routes to startup in situations where a producer may otherwise fail during starting and cause the route to fail being started. By deferring this startup to be lazy then the startup failure can be handled during routing messages via Camel&#8217;s routing error handlers. Beware that when the first message is processed then creating and starting the producer may take a little time and prolong the total processing time of the processing.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_configuration"></a>
+<a href="#_endpoint_query_option_configuration" class="anchor"></a><strong>configuration</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To use a custom Saxon configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_configurationProperties"></a>
+<a href="#_endpoint_query_option_configurationProperties" class="anchor"></a><strong>configurationProperties</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To set custom Saxon configuration properties.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_moduleURIResolver"></a>
+<a href="#_endpoint_query_option_moduleURIResolver" class="anchor"></a><strong>moduleURIResolver</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To use the custom ModuleURIResolver.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModuleURIResolver</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_parameters"></a>
+<a href="#_endpoint_query_option_parameters" class="anchor"></a><strong>parameters</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Additional parameters.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_properties"></a>
+<a href="#_endpoint_query_option_properties" class="anchor"></a><strong>properties</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Properties to configure the serialization parameters.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_staticQueryContext"></a>
+<a href="#_endpoint_query_option_staticQueryContext" class="anchor"></a><strong>staticQueryContext</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To use a custom Saxon StaticQueryContext.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StaticQueryContext</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_backoffErrorThreshold"></a>
+<a href="#_endpoint_query_option_backoffErrorThreshold" class="anchor"></a><strong>backoffErrorThreshold</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The number of subsequent error polls (failed due some error) that should happen before the backoffMultipler should kick-in.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_backoffIdleThreshold"></a>
+<a href="#_endpoint_query_option_backoffIdleThreshold" class="anchor"></a><strong>backoffIdleThreshold</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The number of subsequent idle polls that should happen before the backoffMultipler should kick-in.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_backoffMultiplier"></a>
+<a href="#_endpoint_query_option_backoffMultiplier" class="anchor"></a><strong>backoffMultiplier</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To let the scheduled polling consumer backoff if there has been a number of subsequent idles/errors in a row. The multiplier is then the number of polls that will be skipped before the next actual attempt is happening again. When this option is in use then backoffIdleThreshold and/or backoffErrorThreshold must also be configured.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_delay"></a>
+<a href="#_endpoint_query_option_delay" class="anchor"></a><strong>delay</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Milliseconds before the next poll.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_greedy"></a>
+<a href="#_endpoint_query_option_greedy" class="anchor"></a><strong>greedy</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If greedy is enabled, then the ScheduledPollConsumer will run immediately again, if the previous run polled 1 or more messages.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_initialDelay"></a>
+<a href="#_endpoint_query_option_initialDelay" class="anchor"></a><strong>initialDelay</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Milliseconds before the first poll starts.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_repeatCount"></a>
+<a href="#_endpoint_query_option_repeatCount" class="anchor"></a><strong>repeatCount</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specifies a maximum limit of number of fires. So if you set it to 1, the scheduler will only fire once. If you set it to 5, it will only fire five times. A value of zero or negative means fire forever.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_runLoggingLevel"></a>
+<a href="#_endpoint_query_option_runLoggingLevel" class="anchor"></a><strong>runLoggingLevel</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The consumer logs a start/complete log line when it polls. This option allows you to configure the logging level for that.</p>
+</div>
+<div class="paragraph">
+<p>Enum values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>TRACE</p>
+</li>
+<li>
+<p>DEBUG</p>
+</li>
+<li>
+<p>INFO</p>
+</li>
+<li>
+<p>WARN</p>
+</li>
+<li>
+<p>ERROR</p>
+</li>
+<li>
+<p>OFF</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">TRACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LoggingLevel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_scheduledExecutorService"></a>
+<a href="#_endpoint_query_option_scheduledExecutorService" class="anchor"></a><strong>scheduledExecutorService</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Allows for configuring a custom/shared thread pool to use for the consumer. By default each consumer has its own single threaded thread pool.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ScheduledExecutorService</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_scheduler"></a>
+<a href="#_endpoint_query_option_scheduler" class="anchor"></a><strong>scheduler</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To use a cron scheduler from either camel-spring or camel-quartz component. Use value spring or quartz for built in scheduler.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_schedulerProperties"></a>
+<a href="#_endpoint_query_option_schedulerProperties" class="anchor"></a><strong>schedulerProperties</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To configure additional properties when using a custom scheduler or any of the Quartz, Spring based scheduler.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_startScheduler"></a>
+<a href="#_endpoint_query_option_startScheduler" class="anchor"></a><strong>startScheduler</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether the scheduler should be auto started.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_timeUnit"></a>
+<a href="#_endpoint_query_option_timeUnit" class="anchor"></a><strong>timeUnit</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Time unit for initialDelay and delay options.</p>
+</div>
+<div class="paragraph">
+<p>Enum values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NANOSECONDS</p>
+</li>
+<li>
+<p>MICROSECONDS</p>
+</li>
+<li>
+<p>MILLISECONDS</p>
+</li>
+<li>
+<p>SECONDS</p>
+</li>
+<li>
+<p>MINUTES</p>
+</li>
+<li>
+<p>HOURS</p>
+</li>
+<li>
+<p>DAYS</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">MILLISECONDS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TimeUnit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_useFixedDelay"></a>
+<a href="#_endpoint_query_option_useFixedDelay" class="anchor"></a><strong>useFixedDelay</strong> (scheduler)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Controls if fixed delay or fixed rate is used. See ScheduledExecutorService in JDK for details.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("queue:foo")
+  .filter().xquery("//foo")
+    .to("queue:bar")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also use functions inside your query, in which case you need an
+explicit type conversion (or you will get a org.w3c.dom.DOMException:
+HIERARCHY_REQUEST_ERR) by passing the Class as a second argument to the
+<strong>xquery()</strong> method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:start")
+  .recipientList().xquery("concat('mock:foo.', /person/@city)", String.class);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_variables"><a class="anchor" href="#_variables"></a>Variables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The IN message body will be set as the <code>contextItem</code>. Besides this these
+Variables is also added as parameters:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variable</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exchange</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The current Exchange</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in.body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The In message&#8217;s body</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">out.body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The OUT message&#8217;s body (if any)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in.headers.*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can access the value of exchange.in.headers with key <strong>foo</strong> by using
+the variable which name is in.headers.foo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">out.headers.*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can access the value of exchange.out.headers with key <strong>foo</strong> by using
+the variable which name is out.headers.foo variable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>key name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any exchange.properties and exchange.in.headers and any additional
+parameters set using <code>setParameters(Map)</code>. These parameters is added
+with they own key name, for instance if there is an IN header with the
+key name <strong>foo</strong> then its added as <strong>foo</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_xml_configuration"><a class="anchor" href="#_using_xml_configuration"></a>Using XML configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you prefer to configure your routes in your Spring
+XML file then you can use XPath expressions as follows</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:foo="http://example.com/person"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd"&gt;
+
+  &lt;camelContext id="camel" xmlns="http://activemq.apache.org/camel/schema/spring"&gt;
+    &lt;route&gt;
+      &lt;from uri="activemq:MyQueue"/&gt;
+      &lt;filter&gt;
+        &lt;xquery&gt;/foo:person[@name='James']&lt;/xquery&gt;
+        &lt;to uri="mqseries:SomeOtherQueue"/&gt;
+      &lt;/filter&gt;
+    &lt;/route&gt;
+  &lt;/camelContext&gt;
+&lt;/beans&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice how we can reuse the namespace prefixes, <strong>foo</strong> in this case, in
+the XPath expression for easier namespace based XQuery expressions!</p>
+</div>
+<div class="paragraph">
+<p>When you use functions in your XQuery expression you need an explicit
+type conversion which is done in the xml configuration via the <strong>@type</strong>
+attribute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;xquery type="java.lang.String"&gt;concat('mock:foo.', /person/@city)&lt;/xquery&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_xquery_as_an_endpoint"><a class="anchor" href="#_using_xquery_as_an_endpoint"></a>Using XQuery as an endpoint</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sometimes an XQuery expression can be quite large; it can essentally be
+used for Templating. So you may want to use an
+XQuery Endpoint so you can route using XQuery
+templates.</p>
+</div>
+<div class="paragraph">
+<p>The following example shows how to take a message of an ActiveMQ queue
+(MyQueue) and transform it using XQuery and send it to MQSeries.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">  &lt;camelContext id="camel" xmlns="http://camel.apache.org/schema/spring"&gt;
+    &lt;route&gt;
+      &lt;from uri="activemq:MyQueue"/&gt;
+      &lt;to uri="xquery:com/acme/someTransform.xquery"/&gt;
+      &lt;to uri="mqseries:SomeOtherQueue"/&gt;
+    &lt;/route&gt;
+  &lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_loading_script_from_external_resource"><a class="anchor" href="#_loading_script_from_external_resource"></a>Loading script from external resource</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can externalize the script and have Camel load it from a resource
+such as <code>"classpath:"</code>, <code>"file:"</code>, or <code>"http:"</code>.
+This is done using the following syntax: <code>"resource:scheme:location"</code>,
+e.g. to refer to a file on the classpath you can do:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">.setHeader("myHeader").xquery("resource:classpath:myxquery.txt", String.class)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_learning_xquery"><a class="anchor" href="#_learning_xquery"></a>Learning XQuery</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>XQuery is a very powerful language for querying, searching, sorting and
+returning XML. For help learning XQuery try these tutorials</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mike Kay&#8217;s <a href="http://www.stylusstudio.com/xquery_primer.html">XQuery Primer</a></p>
+</li>
+<li>
+<p>The W3Schools <a href="https://www.w3schools.com/xml/xquery_intro.asp">XQuery Tutorial</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dependencies"><a class="anchor" href="#_dependencies"></a>Dependencies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To use XQuery in your camel routes you need to add the dependency on
+<strong>camel-saxon</strong> which implements the XQuery language.</p>
+</div>
+<div class="paragraph">
+<p>If you use maven you could just add the following to your pom.xml,
+substituting the version number for the latest &amp; greatest release.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.camel&lt;/groupId&gt;
+  &lt;artifactId&gt;camel-saxon&lt;/artifactId&gt;
+  &lt;version&gt;x.x.x&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
