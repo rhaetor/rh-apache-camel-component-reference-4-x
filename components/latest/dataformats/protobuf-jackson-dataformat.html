@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Protobuf Jackson :: Red Hat Integration</title>
+    <meta name="description" content="Marshal POJOs to Protobuf and back using Jackson.">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Red Hat Integration</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="components" data-version="latest">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Camel Components</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../aws-summary.html">AWS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-ddb-component.html">AWS DynamoDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-kinesis-component.html">AWS Kinesis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-lambda-component.html">AWS Lambda</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-s3-component.html">AWS S3 Storage Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-sns-component.html">AWS Simple Notification System (SNS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-sqs-component.html">AWS Simple Queue Service (SQS)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../bean-component.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../direct-component.html">Direct</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../elasticsearch-rest-component.html">Elasticsearch Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../file-component.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ftp-component.html">FTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../http-component.html">HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jira-component.html">Jira</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jms-component.html">JMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kafka-component.html">Kafka</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kamelet-component.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../log-component.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../microprofile-health.html">Microprofile Health</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../microprofile-metrics-component.html">MicroProfile Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mllp-component.html">MLLP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mock-component.html">Mock</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mongodb-component.html">MongoDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../netty-component.html">Netty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform-http-component.html">Platform HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../properties-component.html">Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rest-component.html">REST</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../salesforce-component.html">Salesforce</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../seda-component.html">SEDA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../sql-component.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../timer-component.html">Timer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../xquery-component.html">XQuery</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Data Formats</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="avro-dataformat.html">Avro</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="avro-jackson-dataformat.html">Avro Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bindy-dataformat.html">Bindy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="hl7-dataformat.html">HL7</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jacksonxml-dataformat.html">JacksonXML</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="protobuf-jackson-dataformat.html">Protobuf Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="soapjaxb-dataformat.html">SOAP</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../languages/index.html">Languages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/constant-language.html">Constant</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/csimple-language.html">CSimple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/exchangeProperty-language.html">ExchangeProperty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/file-language.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/header-language.html">Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/jsonpath-language.html">JsonPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/ref-language.html">Ref</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/simple-language.html">Simple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/tokenize-language.html">Tokenize</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/xtokenize-language.html">XML Tokenize</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#others:index.adoc">Miscellaneous Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../others/microprofile-health.html">Microprofile Health</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../eips/enterprise-integration-patterns.html">Enterprise Integration Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/aggregate-eip.html">Aggregate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/batch-config-eip.html">Batch-config</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/bean-eip.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/change-data-capture.html">Change Data Capture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/channel-adapter.html">Channel Adapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/choice-eip.html">Choice</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/circuitBreaker-eip.html">Circuit Breaker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/claimCheck-eip.html">Claim Check</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/competing-consumers.html">Competing Consumers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/composed-message-processor.html">Composed Message Processor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/content-based-router-eip.html">Content Based Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/content-enricher.html">Content Enricher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/content-filter-eip.html">Content Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/convertBodyTo-eip.html">Convert Body To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/correlation-identifier.html">Correlation Identifier</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/customLoadBalancer-eip.html">Custom Load Balancer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/dead-letter-channel.html">Dead Letter Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/delay-eip.html">Delay</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/durable-subscriber.html">Durable Subscriber</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/dynamicRouter-eip.html">Dynamic Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/enrich-eip.html">Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/eventDrivenConsumer-eip.html">Event Driven Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/event-message.html">Event Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/failover-eip.html">Failover</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/faultToleranceConfiguration-eip.html">Fault Tolerance Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/fault-tolerance-eip.html">Fault Tolerance EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/filter-eip.html">Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/from-eip.html">From</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/guaranteed-delivery.html">Guaranteed Delivery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/hystrixConfiguration-eip.html">Hystrix Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/hystrix-eip.html">Hystrix EIP (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/idempotentConsumer-eip.html">Idempotent Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/inOnly-eip.html">In Only</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/inOut-eip.html">In Out</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/intercept.html">Intercept</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/kamelet-eip.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/loadBalance-eip.html">Load Balance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/log-eip.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/loop-eip.html">Loop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/marshal-eip.html">Marshal EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message.html">Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-broker.html">Message Broker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-bus.html">Message Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-channel.html">Message Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-dispatcher.html">Message Dispatcher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-endpoint.html">Message Endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-expiration.html">Message Expiration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-history.html">Message History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-router.html">Message Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-translator.html">Message Translator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/messaging-bridge.html">Messaging Bridge</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/messaging-gateway.html">Messaging Gateway</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/messaging-mapper.html">Messaging Mapper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/multicast-eip.html">Multicast</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/normalizer.html">Normalizer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/onFallback-eip.html">On Fallback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/otherwise-eip.html">Otherwise</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/pipeline-eip.html">Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/point-to-point-channel.html">Point to Point Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/pollEnrich-eip.html">Poll Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/polling-consumer.html">Polling Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/process-eip.html">Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/process-manager.html">Process Manager</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/publish-subscribe-channel.html">Publish Subscribe Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/random-eip.html">Random</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/recipientList-eip.html">Recipient List</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeHeader-eip.html">Remove Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeHeaders-eip.html">Remove Headers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeProperties-eip.html">Remove Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeProperty-eip.html">Remove Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/requestReply-eip.html">Request Reply</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/resequence-eip.html">Resequence</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/resilience4jConfiguration-eip.html">Resilience4j Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/resilience4j-eip.html">Resilience4j EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/return-address.html">Return Address</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/rollback-eip.html">Rollback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/roundRobin-eip.html">Round Robin</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/routingSlip-eip.html">Routing Slip</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/saga-eip.html">Saga</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/sample-eip.html">Sample</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/scatter-gather.html">Scatter Gather</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/script-eip.html">Script</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/selective-consumer.html">Selective Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/service-activator.html">Service Activator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/serviceCall-eip.html">Service Call</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setBody-eip.html">Set Body</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setHeader-eip.html">Set Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setOutHeader-eip.html">Set Out Header EIP (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setProperty-eip.html">Set Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/sort-eip.html">Sort</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/split-eip.html">Split</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/step-eip.html">Step</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/sticky-eip.html">Sticky</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/stop-eip.html">Stop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/stream-config-eip.html">Stream-config</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/threads-eip.html">Threads</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/throttle-eip.html">Throttle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/to-eip.html">To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/toD-eip.html">To D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/topic-eip.html">Topic</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/transactional-client.html">Transactional Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/transform-eip.html">Transform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/unmarshal-eip.html">Unmarshal EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/validate-eip.html">Validate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/weighted-eip.html">Weighted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/when-eip.html">When</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/wireTap-eip.html">Wire Tap</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Camel Components</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Camel Components</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../manual/latest/index.html">User manual</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../manual/latest/index.html">latest</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../manual/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Camel Components</a></li>
+    <li><a href="index.html">Data Formats</a></li>
+    <li><a href="protobuf-jackson-dataformat.html">Protobuf Jackson</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/gforde/mygit/camel/docs/components/modules/dataformats/pages/protobuf-jackson-dataformat.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Protobuf Jackson</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Since Camel 3.10</strong></p>
+</div>
+<div class="paragraph">
+<p>Jackson Protobuf is a Data Format which uses the
+<a href="http://wiki.fasterxml.com/JacksonHome/">Jackson library</a> with the <a href="https://github.com/FasterXML/jackson-dataformats-binary">Protobuf extension</a>
+to unmarshal a Protobuf payload into Java objects or to marshal Java objects
+into a Protobuf payload.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are familiar with Jackson, this Protobuf data format behaves in the
+same way as its JSON counterpart, and thus can be used with classes
+annotated for JSON serialization/deserialization.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("kafka:topic").
+  unmarshal().protobuf(ProtobufLibrary.Jackson, JsonNode.class).
+  to("log:info");</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_the_schemaresolver"><a class="anchor" href="#_configuring_the_schemaresolver"></a>Configuring the SchemaResolver</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since Protobuf serialization is schema-based, this data format requires that you provide a SchemaResolver object
+that is able to lookup the schema for each exchange that is going to be marshalled/unmarshalled.</p>
+</div>
+<div class="paragraph">
+<p>You can add a single SchemaResolver to the registry and it will be looked up automatically.
+Or you can explicitly specify the reference to a custom SchemaResolver.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_protobuf_jackson_options"><a class="anchor" href="#_protobuf_jackson_options"></a>Protobuf Jackson Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Protobuf Jackson dataformat supports 18 options, which are listed below.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Java Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>contentTypeHeader</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>objectMapper</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lookup and use the existing ObjectMapper with the given id when using Jackson.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>useDefaultObjectMapper</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to lookup and use default Jackson ObjectMapper from the registry.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unmarshalTypeName</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class name of the java type to use when unmarshalling</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>jsonViewTypeName</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you can use JSON views to accomplish this. This option is to refer to the class which has JsonView annotations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>include</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to marshal a pojo to JSON, and the pojo has some fields with null values. And you want to skip these null values, you can set this option to NON_NULL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>allowJmsType</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used for JMS users to allow the JMSType header from the JMS spec to specify a FQN classname to use to unmarshal to.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>collectionTypeName</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refers to a custom collection type to lookup in the registry to use. This option should rarely be used, but allows to use different collection types than java.util.Collection based as default.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>useList</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To unmarshal to a List of Map or a List of Pojo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>moduleClassNames</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To use custom Jackson modules com.fasterxml.jackson.databind.Module specified as a String with FQN class names. Multiple classes can be separated by comma.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>moduleRefs</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To use custom Jackson modules referred from the Camel registry. Multiple modules can be separated by comma.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>enableFeatures</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set of features to enable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>disableFeatures</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set of features to disable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>allowUnmarshallType</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the unmarshalling. This should only be enabled when desired to be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timezone</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If set then Jackson will use the Timezone when marshalling/unmarshalling.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>autoDiscoverObjectMapper</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If set to true then Jackson will lookup for an objectMapper into the registry</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>schemaResolver</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional schema resolver used to lookup schemas for the data in transit.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>autoDiscoverSchemaResolver</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When not disabled, the SchemaResolver will be looked up into the registry</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_custom_protobufmapper"><a class="anchor" href="#_using_custom_protobufmapper"></a>Using custom ProtobufMapper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can configure <code>JacksonProtobufDataFormat</code> to use a custom <code>ProtobufMapper</code> in case you need more control of the mapping configuration.</p>
+</div>
+<div class="paragraph">
+<p>If you setup a single <code>ProtobufMapper</code> in the registry, then Camel will automatic lookup and use this <code>ProtobufMapper</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dependencies"><a class="anchor" href="#_dependencies"></a>Dependencies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To use Protobuf Jackson in your camel routes you need to add the dependency
+on <strong>camel-jackson-protobuf</strong> which implements this data format.</p>
+</div>
+<div class="paragraph">
+<p>If you use maven you could just add the following to your pom.xml,
+substituting the version number for the latest &amp; greatest release (see
+the download page for the latest versions).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.camel&lt;/groupId&gt;
+  &lt;artifactId&gt;camel-jackson-protobuf&lt;/artifactId&gt;
+  &lt;version&gt;x.x.x&lt;/version&gt;
+  &lt;!-- use the same version as your Camel core version --&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

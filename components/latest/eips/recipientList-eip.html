@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Recipient List :: Red Hat Integration</title>
+    <meta name="description" content="Routes messages to a number of dynamically specified recipients (dynamic to)">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Red Hat Integration</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="components" data-version="latest">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Camel Components</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../aws-summary.html">AWS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-ddb-component.html">AWS DynamoDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-kinesis-component.html">AWS Kinesis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-lambda-component.html">AWS Lambda</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-s3-component.html">AWS S3 Storage Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-sns-component.html">AWS Simple Notification System (SNS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-sqs-component.html">AWS Simple Queue Service (SQS)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../bean-component.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../direct-component.html">Direct</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../elasticsearch-rest-component.html">Elasticsearch Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../file-component.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ftp-component.html">FTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../http-component.html">HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jira-component.html">Jira</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jms-component.html">JMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kafka-component.html">Kafka</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kamelet-component.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../log-component.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../microprofile-health.html">Microprofile Health</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../microprofile-metrics-component.html">MicroProfile Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mllp-component.html">MLLP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mock-component.html">Mock</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mongodb-component.html">MongoDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../netty-component.html">Netty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform-http-component.html">Platform HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../properties-component.html">Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rest-component.html">REST</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../salesforce-component.html">Salesforce</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../seda-component.html">SEDA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../sql-component.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../timer-component.html">Timer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../xquery-component.html">XQuery</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dataformats/index.html">Data Formats</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/avro-dataformat.html">Avro</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/avro-jackson-dataformat.html">Avro Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/bindy-dataformat.html">Bindy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/hl7-dataformat.html">HL7</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/jacksonxml-dataformat.html">JacksonXML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/protobuf-jackson-dataformat.html">Protobuf Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/soapjaxb-dataformat.html">SOAP</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../languages/index.html">Languages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/constant-language.html">Constant</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/csimple-language.html">CSimple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/exchangeProperty-language.html">ExchangeProperty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/file-language.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/header-language.html">Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/jsonpath-language.html">JsonPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/ref-language.html">Ref</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/simple-language.html">Simple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/tokenize-language.html">Tokenize</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../languages/xtokenize-language.html">XML Tokenize</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#others:index.adoc">Miscellaneous Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../others/microprofile-health.html">Microprofile Health</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="enterprise-integration-patterns.html">Enterprise Integration Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="aggregate-eip.html">Aggregate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="batch-config-eip.html">Batch-config</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bean-eip.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="change-data-capture.html">Change Data Capture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="channel-adapter.html">Channel Adapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="choice-eip.html">Choice</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="circuitBreaker-eip.html">Circuit Breaker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="claimCheck-eip.html">Claim Check</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="competing-consumers.html">Competing Consumers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="composed-message-processor.html">Composed Message Processor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="content-based-router-eip.html">Content Based Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="content-enricher.html">Content Enricher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="content-filter-eip.html">Content Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="convertBodyTo-eip.html">Convert Body To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="correlation-identifier.html">Correlation Identifier</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="customLoadBalancer-eip.html">Custom Load Balancer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dead-letter-channel.html">Dead Letter Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="delay-eip.html">Delay</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="durable-subscriber.html">Durable Subscriber</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dynamicRouter-eip.html">Dynamic Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="enrich-eip.html">Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventDrivenConsumer-eip.html">Event Driven Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="event-message.html">Event Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="failover-eip.html">Failover</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faultToleranceConfiguration-eip.html">Fault Tolerance Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="fault-tolerance-eip.html">Fault Tolerance EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="filter-eip.html">Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="from-eip.html">From</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="guaranteed-delivery.html">Guaranteed Delivery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="hystrixConfiguration-eip.html">Hystrix Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="hystrix-eip.html">Hystrix EIP (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="idempotentConsumer-eip.html">Idempotent Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="inOnly-eip.html">In Only</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="inOut-eip.html">In Out</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intercept.html">Intercept</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kamelet-eip.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="loadBalance-eip.html">Load Balance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="log-eip.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="loop-eip.html">Loop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="marshal-eip.html">Marshal EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message.html">Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message-broker.html">Message Broker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message-bus.html">Message Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message-channel.html">Message Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message-dispatcher.html">Message Dispatcher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message-endpoint.html">Message Endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message-expiration.html">Message Expiration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message-history.html">Message History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message-router.html">Message Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="message-translator.html">Message Translator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="messaging-bridge.html">Messaging Bridge</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="messaging-gateway.html">Messaging Gateway</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="messaging-mapper.html">Messaging Mapper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="multicast-eip.html">Multicast</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="normalizer.html">Normalizer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="onFallback-eip.html">On Fallback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="otherwise-eip.html">Otherwise</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pipeline-eip.html">Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="point-to-point-channel.html">Point to Point Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pollEnrich-eip.html">Poll Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="polling-consumer.html">Polling Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="process-eip.html">Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="process-manager.html">Process Manager</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="publish-subscribe-channel.html">Publish Subscribe Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="random-eip.html">Random</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="recipientList-eip.html">Recipient List</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="removeHeader-eip.html">Remove Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="removeHeaders-eip.html">Remove Headers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="removeProperties-eip.html">Remove Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="removeProperty-eip.html">Remove Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="requestReply-eip.html">Request Reply</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="resequence-eip.html">Resequence</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="resilience4jConfiguration-eip.html">Resilience4j Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="resilience4j-eip.html">Resilience4j EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="return-address.html">Return Address</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rollback-eip.html">Rollback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="roundRobin-eip.html">Round Robin</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="routingSlip-eip.html">Routing Slip</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="saga-eip.html">Saga</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sample-eip.html">Sample</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scatter-gather.html">Scatter Gather</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="script-eip.html">Script</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selective-consumer.html">Selective Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="service-activator.html">Service Activator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="serviceCall-eip.html">Service Call</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="setBody-eip.html">Set Body</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="setHeader-eip.html">Set Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="setOutHeader-eip.html">Set Out Header EIP (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="setProperty-eip.html">Set Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sort-eip.html">Sort</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="split-eip.html">Split</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="step-eip.html">Step</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sticky-eip.html">Sticky</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="stop-eip.html">Stop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="stream-config-eip.html">Stream-config</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="threads-eip.html">Threads</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="throttle-eip.html">Throttle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="to-eip.html">To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="toD-eip.html">To D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic-eip.html">Topic</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="transactional-client.html">Transactional Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="transform-eip.html">Transform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="unmarshal-eip.html">Unmarshal EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="validate-eip.html">Validate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="weighted-eip.html">Weighted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="when-eip.html">When</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="wireTap-eip.html">Wire Tap</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Camel Components</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Camel Components</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../manual/latest/index.html">User manual</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../manual/latest/index.html">latest</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../manual/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Camel Components</a></li>
+    <li><a href="enterprise-integration-patterns.html">Enterprise Integration Patterns</a></li>
+    <li><a href="recipientList-eip.html">Recipient List</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/gforde/mygit/camel/core/camel-core-engine/src/main/docs/modules/eips/pages/recipientList-eip.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Recipient List</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/eip/RecipientList.gif" alt="image">
+</div>
+</div>
+<div class="paragraph">
+<p>The recipients will receive a copy of the <strong>same</strong> Exchange, and Camel will execute them sequentially.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See the <code>cacheSize</code> option for more details on <em>how much cache</em> to use depending on how many or few unique endpoints are used.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options"><a class="anchor" href="#_options"></a>Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Recipient List EIP supports 15 options which are listed below:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-center valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delimiter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delimiter used if the Expression returned multiple endpoints. Can be turned off using the value false. The default value is ,</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>parallelProcessing</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If enabled then sending messages to the recipients occurs concurrently. Note the caller thread will still wait until all messages has been fully processed, before it continues. Its only the sending and processing the replies from the recipients which happens concurrently.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>strategyRef</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets a reference to the AggregationStrategy to be used to assemble the replies from the recipients, into a single outgoing message from the RecipientList. By default Camel will use the last reply as the outgoing message. You can also use a POJO as the AggregationStrategy</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>strategyMethodName</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This option can be used to explicit declare the method name to use, when using POJOs as the AggregationStrategy.</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>strategyMethodAllowNull</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If this option is false then the aggregate method is not used if there was no data to enrich. If this option is true then null values is used as the oldExchange (when no data to enrich), when using POJOs as the AggregationStrategy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>executorServiceRef</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refers to a custom Thread Pool to be used for parallel processing. Notice if you set this option, then parallel processing is automatic implied, and you do not have to enable that option as well.</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>stopOnException</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Will now stop further processing if an exception or failure occurred during processing of an org.apache.camel.Exchange and the caused exception will be thrown. Will also stop if processing the exchange failed (has a fault message) or an exception was thrown and handled by the error handler (such as using onException). In all situations the recipient list will stop further processing. This is the same behavior as in pipeline, which is used by the routing engine. The default behavior is to not stop but continue processing till the end</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ignoreInvalidEndpoints</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ignore the invalidate endpoint exception when try to create a producer with that endpoint</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>streaming</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If enabled then Camel will process replies out-of-order, eg in the order they come back. If disabled, Camel will process replies in the same order as defined by the recipient list.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timeout</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets a total timeout specified in millis, when using parallel processing. If the Recipient List hasn&#8217;t been able to send and process all replies within the given timeframe, then the timeout triggers and the Recipient List breaks out and continues. Notice if you provide a TimeoutAwareAggregationStrategy then the timeout method is invoked before breaking out. If the timeout is reached with running tasks still remaining, certain tasks for which it is difficult for Camel to shut down in a graceful manner may continue to run. So use this option with a bit of care.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>onPrepareRef</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uses the Processor when preparing the org.apache.camel.Exchange to be send. This can be used to deep-clone messages that should be send, or any custom logic needed before the exchange is send.</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>shareUnitOfWork</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shares the org.apache.camel.spi.UnitOfWork with the parent and each of the sub messages. Recipient List will by default not share unit of work between the parent exchange and each recipient exchange. This means each sub exchange has its own individual unit of work.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>cacheSize</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the maximum size used by the org.apache.camel.spi.ProducerCache which is used to cache and reuse producers when using this recipient list, when uris are reused. Beware that when using dynamic endpoints then it affects how well the cache can be utilized. If each dynamic endpoint is unique then its best to turn of caching by setting this to -1, which allows Camel to not cache both the producers and endpoints; they are regarded as prototype scoped and will be stopped and discarded after use. This reduces memory usage as otherwise producers/endpoints are stored in memory in the caches. However if there are a high degree of dynamic endpoints that have been used before, then it can benefit to use the cache to reuse both producers and endpoints and therefore the cache size can be set accordingly or rely on the default size (1000). If there is a mix of unique and used before dynamic endpoints, then setting a reasonable cache size can help reduce memory usage to avoid storing too many non frequent used producers.</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>parallelAggregate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If enabled then the aggregate method on AggregationStrategy can be called concurrently. Notice that this would require the implementation of AggregationStrategy to be implemented as thread-safe. By default this is false meaning that Camel synchronizes the call to the aggregate method. Though in some use-cases this can be used to archive higher performance when the AggregationStrategy is implemented as thread-safe.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>stopOnAggregateException</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If enabled, unwind exceptions occurring at aggregation time to the error handler when parallelProcessing is used. Currently, aggregation time exceptions do not stop the route processing when parallelProcessing is used. Enabling this option allows to work around this behavior. The default value is false for the sake of backward compatibility.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can use the RecipientList Annotation on a POJO to create a Dynamic Recipient List. For more details see the Bean Integration.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_static_recipient_list"><a class="anchor" href="#_static_recipient_list"></a>Static Recipient List</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following example shows how to route a request from an input <strong>queue:a</strong> endpoint to a static list of destinations</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("jms:queue:a")
+    .recipientList(constant("direct:b,direct:c,direct:d"));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext xmlns="http://camel.apache.org/schema/spring"&gt;
+    &lt;route&gt;
+        &lt;from uri="jms:queue:a"/&gt;
+        &lt;recipientList&gt;
+            &lt;constant&gt;direct:b,direct:c,direct:d&lt;/constant&gt;
+        &lt;/recipientList&gt;
+    &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dynamic_recipient_list"><a class="anchor" href="#_dynamic_recipient_list"></a>Dynamic Recipient List</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Usually one of the main reasons for using the Recipient List pattern is that the list of recipients is dynamic and
+calculated at runtime. The following example demonstrates how to create a dynamic recipient list using an Expression
+(which in this case extracts a named header value dynamically) to calculate the list of endpoints which are either
+of type Endpoint or are converted to a String and then resolved using the endpoint URIs (separated by comma).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("jms:queue:a")
+    .recipientList(header("foo"));</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_iteratable_value"><a class="anchor" href="#_iteratable_value"></a>Iteratable value</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The dynamic list of recipients that are defined in the header must be iterable such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>java.util.Collection</code></p>
+</li>
+<li>
+<p><code>java.util.Iterator</code></p>
+</li>
+<li>
+<p>arrays</p>
+</li>
+<li>
+<p><code>org.w3c.dom.NodeList</code></p>
+</li>
+<li>
+<p>a single String with values separated by comma (the delimiter configured)</p>
+</li>
+<li>
+<p>any other type will be regarded as a single value</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_delimiter_in_spring_xml"><a class="anchor" href="#_using_delimiter_in_spring_xml"></a>Using delimiter in Spring XML</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In Spring DSL you can set the delimiter attribute for setting a delimiter to be used if the header value is a single String with multiple separated endpoints.
+By default Camel uses comma as delimiter, but this option lets you specify a custom delimiter to use instead.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
+  &lt;from uri="direct:a"/&gt;
+  &lt;!-- use semi-colon as a delimiter for String based values --&gt;
+  &lt;recipientList delimiter=";"&gt;
+    &lt;header&gt;myHeader&lt;/header&gt;
+  &lt;/recipientList&gt;
+&lt;/route&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So if <strong>myHeader</strong> contains a <code>String</code> with the value <code>"activemq:queue:foo;activemq:topic:hello ; log:bar"</code> then Camel will split the <code>String</code> using the delimiter given in the XML that was comma, resulting into 3 endpoints to send to.
+You can use spaces between the endpoints as Camel will trim the value when it lookup the endpoint to send to.</p>
+</div>
+<div class="paragraph">
+<p>And in Java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:a")
+    .recipientList(header("myHeader"), ";");</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sending_to_multiple_recipients_in_parallel"><a class="anchor" href="#_sending_to_multiple_recipients_in_parallel"></a>Sending to multiple recipients in parallel</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Recipient List now supports <code>parallelProcessing</code> that for example Splitter also supports.
+You can use it to use a thread pool to have concurrent tasks sending the Exchange to multiple recipients concurrently.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:a")
+    .recipientList(header("myHeader")).parallelProcessing();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML it is an attribute on the recipient list tag.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
+    &lt;from uri="direct:a"/&gt;
+    &lt;recipientList parallelProcessing="true"&gt;
+        &lt;header&gt;myHeader&lt;/header&gt;
+    &lt;/recipientList&gt;
+&lt;/route&gt;</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_custom_thread_pool"><a class="anchor" href="#_using_custom_thread_pool"></a>Using custom thread pool</h3>
+<div class="paragraph">
+<p>A thread pool is only used for <code>parallelProcessing</code>. You supply your own custom thread pool via the <code>ExecutorServiceStrategy</code> (see Camel&#8217;s Threading Model),
+the same way you would do it for the <code>aggregationStrategy</code>. By default Camel uses a thread pool with 10 threads (subject to change in future versions).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stop_continuing_in_case_one_recipient_failed"><a class="anchor" href="#_stop_continuing_in_case_one_recipient_failed"></a>Stop continuing in case one recipient failed</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Recipient List now supports <code>stopOnException</code> that for example Splitter also supports.
+You can use it to stop sending to any further recipients in case any recipient failed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:a")
+    .recipientList(header("myHeader")).stopOnException();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML its an attribute on the recipient list tag.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
+    &lt;from uri="direct:a"/&gt;
+    &lt;recipientList stopOnException="true"&gt;
+        &lt;header&gt;myHeader&lt;/header&gt;
+    &lt;/recipientList&gt;
+&lt;/route&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can combine parallelProcessing and stopOnException and have them both true.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ignore_invalid_endpoints"><a class="anchor" href="#_ignore_invalid_endpoints"></a>Ignore invalid endpoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Recipient List now supports <code>ignoreInvalidEndpoints</code> (like the Routing Slip).
+You can use it to skip endpoints which are invalid.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:a")
+    .recipientList(header("myHeader")).ignoreInvalidEndpoints();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML it is an attribute on the recipient list tag.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
+    &lt;from uri="direct:a"/&gt;
+    &lt;recipientList ignoreInvalidEndpoints="true"&gt;
+        &lt;header&gt;myHeader&lt;/header&gt;
+    &lt;/recipientList&gt;
+&lt;/route&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then let us say the <code>myHeader</code> contains the following two endpoints <code>direct:foo,xxx:bar</code>.
+The first endpoint is valid and works. However the second one is invalid and will just be ignored.
+Camel logs at DEBUG level about it, so you can see why the endpoint was invalid.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_custom_aggregationstrategy"><a class="anchor" href="#_using_custom_aggregationstrategy"></a>Using custom AggregationStrategy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can now use your own <code>AggregationStrategy</code> with the Recipient List. However this is rarely needed.
+What it is good for is that in case you are using Request Reply messaging then the replies from the recipients can be aggregated.
+By default Camel uses <code>UseLatestAggregationStrategy</code> which just keeps that last received reply. If you must remember all the bodies that all the recipients sent back,
+then you can use your own custom aggregator that keeps those. It is the same principle as with the Aggregator EIP so check it out for details.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:a")
+    .recipientList(header("myHeader")).aggregationStrategy(new MyOwnAggregationStrategy())
+    .to("direct:b");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML it is again an attribute on the recipient list tag.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
+    &lt;from uri="direct:a"/&gt;
+    &lt;recipientList strategyRef="myStrategy"&gt;
+        &lt;header&gt;myHeader&lt;/header&gt;
+    &lt;/recipientList&gt;
+    &lt;to uri="direct:b"/&gt;
+&lt;/route&gt;
+
+&lt;!-- bean with the custom aggregation strategy --&gt;
+&lt;bean id="myStrategy" class="com.mycompany.MyOwnAggregationStrategy"/&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The Multicast, Recipient List, and Splitter EIPs have special support for using <code>AggregationStrategy</code> with
+access to the original input exchange. You may want to use this when you aggregate messages and
+there has been a failure in one of the messages, which you then want to enrich on the original
+input message and return as response; its the aggregate method with 3 exchange parameters.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_knowing_which_endpoint_when_using_custom_aggregationstrategy"><a class="anchor" href="#_knowing_which_endpoint_when_using_custom_aggregationstrategy"></a>Knowing which endpoint when using custom AggregationStrategy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When using a custom <code>AggregationStrategy</code> then the <code>aggregate</code> method is always invoked in sequential order
+(also if parallel processing is enabled) of the endpoints the Recipient List is using.
+However, Exchange has a property stored (key is <code>Exchange.RECIPIENT_LIST_ENDPOINT</code> with the uri of the Endpoint.
+So you know which endpoint you are aggregating from. The code block shows how to access this property in your Aggregator.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
+public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+    String uri = newExchange.getProperty(Exchange.RECIPIENT_LIST_ENDPOINT, String.class);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_method_call_as_recipient_list"><a class="anchor" href="#_using_method_call_as_recipient_list"></a>Using method call as recipient list</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use a Bean to provide the recipients, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("activemq:queue:test")
+    .recipientList().method(MessageRouter.class, "routeTo");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then <code>MessageRouter</code> bean:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MessageRouter {
+
+    public String routeTo() {
+        String queueName = "activemq:queue:test2";
+        return queueName;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+When you use a Bean then do <strong>not</strong> use the <code>@RecipientList</code> annotation as this will in fact add yet another recipient list, so you end up having two. Do <strong>not</strong> do the following:
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MessageRouter {
+
+    // do not use recipientList in the Camel route calling a bean with the @RecipientList annotation!
+    @RecipientList
+    public String routeTo() {
+        String queueName = "activemq:queue:test2";
+        return queueName;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should only use the snippet above (using <code>@RecipientList</code>) if you just route to a Bean which you then want to act as a recipient list.
+So the original route can be changed to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("activemq:queue:test").bean(MessageRouter.class, "routeTo");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Which then would invoke the routeTo method and detect that it is annotated with <code>@RecipientList</code> and then act accordingly as if it was a recipient list EIP.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_timeout"><a class="anchor" href="#_using_timeout"></a>Using timeout</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you use <code>parallelProcessing</code> then you can configure a total <code>timeout</code> value in millis. Camel will then process the messages in parallel until the timeout is hit. This allows you to continue processing if one message consumer is slow. For example you can set a timeout value of 20 sec.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Tasks may keep running</div>
+If the timeout is reached with running tasks still remaining, certain tasks for which it is difficult for Camel to shut down in a graceful manner may continue to run. So use this option with a bit of care. We may be able to improve this functionality in future Camel releases.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example in the unit test below you can see that we multicast the message to 3 destinations. We have a timeout of 2 seconds, which means only the last two messages can be completed within the timeframe. This means we will only aggregate the last two which yields a result aggregation which outputs "BC".</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:start")
+    .multicast(new AggregationStrategy() {
+            public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+                if (oldExchange == null) {
+                    return newExchange;
+                }
+
+                String body = oldExchange.getIn().getBody(String.class);
+                oldExchange.getIn().setBody(body + newExchange.getIn().getBody(String.class));
+                return oldExchange;
+            }
+        })
+        .parallelProcessing().timeout(250).to("direct:a", "direct:b", "direct:c")
+    // use end to indicate end of multicast route
+    .end()
+    .to("mock:result");
+
+from("direct:a").delay(1000).to("mock:A").setBody(constant("A"));
+
+from("direct:b").to("mock:B").setBody(constant("B"));
+
+from("direct:c").to("mock:C").setBody(constant("C"));</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Timeout in other EIPs</div>
+<div class="paragraph">
+<p>This timeout feature is also supported by Splitter and both multicast and recipientList.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>By default if a timeout occurs the <code>AggregationStrategy</code> is not invoked. However you can implement the <code>timeout</code> method:
+This allows you to deal with the timeout in the <code>AggregationStrategy</code> if you really need to.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Timeout is total</div>
+<div class="paragraph">
+<p>The timeout is total, which means that after X time, Camel will aggregate the messages which have completed within the timeframe.
+The remainders will be cancelled. Camel will also only invoke the <code>timeout</code> method in the <code>TimeoutAwareAggregationStrategy</code> once, for the first index which caused the timeout.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_onprepare_to_execute_custom_logic_when_preparing_messages"><a class="anchor" href="#_using_onprepare_to_execute_custom_logic_when_preparing_messages"></a>Using onPrepare to execute custom logic when preparing messages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See details at the Multicast EIP</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_exchangepattern_in_recipients"><a class="anchor" href="#_using_exchangepattern_in_recipients"></a>Using ExchangePattern in recipients</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The recipient list will by default use the current Exchange Pattern. Though one can imagine use-cases where one wants to send
+a message to a recipient using a different exchange pattern. For example you may have a route that initiates as an <code>InOnly</code> route,
+but want to use <code>InOut</code> exchange pattern with a recipient list. You can configure the exchange pattern directly in the
+recipient endpoints.</p>
+</div>
+<div class="paragraph">
+<p>For example in the route below we pick up new files (which will be started as <code>InOnly</code>) and then route to a recipient list.
+As we want to use <code>InOut</code> with the ActiveMQ (JMS) endpoint we can now specify this using the <code>exchangePattern=InOut</code> option.
+Then the response from the JMS request/reply will then be continued routed, and thus the response is what will be stored
+in as a file in the outbox directory.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("file:inbox")
+    // the exchange pattern is InOnly initially when using a file route
+    .recipientList().constant("activemq:queue:inbox?exchangePattern=InOut")
+    .to("file:outbox");</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The recipient list will not alter the original exchange pattern. So in the example above the exchange pattern will still
+be <code>InOnly</code> when the message is routed to the <code>file:outbox endpoint</code>.
+If you want to alter the exchange pattern permanently then use the <code>.setExchangePattern</code> option.</p>
+</div>
+<div class="paragraph">
+<p>See more details at Request Reply and Event Message EIPs.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

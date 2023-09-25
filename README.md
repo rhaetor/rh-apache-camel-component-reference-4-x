@@ -1,1 +1,1 @@
-# rh-apache-camel-component-reference-4-x
+# apache-camel-component-reference-4-x

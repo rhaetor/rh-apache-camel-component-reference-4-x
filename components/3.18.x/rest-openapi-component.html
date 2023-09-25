@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>REST OpenApi :: Red Hat Integration</title>
+    <meta name="description" content="Configure REST producers based on an OpenAPI specification document delegating to a component implementing the RestProducerFactory interface.">
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Red Hat Integration</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="components" data-version="3.18.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Camel Components</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="amqp-component.html">AMQP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="aws-summary.html">AWS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-ddb-component.html">AWS DynamoDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-kinesis-component.html">AWS Kinesis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-lambda-component.html">AWS Lambda</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-s3-component.html">AWS S3 Storage Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-sns-component.html">AWS Simple Notification System (SNS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-sqs-component.html">AWS Simple Queue Service (SQS)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="azure-summary.html">Azure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-storage-blob-component.html">Azure Storage Blob Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-storage-queue-component.html">Azure Storage Queue Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bean-component.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bean-validator-component.html">Bean Validator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="browse-component.html">Browse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cql-component.html">Cassandra CQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="controlbus-component.html">Control Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cron-component.html">Cron</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cxf-component.html">CXF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataset-component.html">Dataset</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="direct-component.html">Direct</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="fhir-component.html">FHIR</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="file-component.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ftp-component.html">FTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="google-summary.html">Google</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-bigquery-component.html">Google BigQuery</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-bigquery-sql-component.html">Google BigQuery Standard SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-pubsub-component.html">Google Pubsub</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="http-component.html">HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="infinispan-component.html">Infinispan</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jdbc-component.html">JDBC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jira-component.html">Jira</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jms-component.html">JMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jpa-component.html">JPA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jslt-component.html">JSLT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jta.html">JTA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kafka-component.html">Kafka</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kamelet-component.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="log-component.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mail-component.html">Mail</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="master-component.html">Master</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="microprofile-fault-tolerance.html">Microprofile Fault Tolerance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="microprofile-health.html">Microprofile Health</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="microprofile-metrics-component.html">MicroProfile Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mllp-component.html">MLLP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mock-component.html">Mock</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mongodb-component.html">MongoDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="netty-component.html">Netty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="openapi-java.html">Openapi Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="paho-component.html">Paho</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="paho-mqtt5-component.html">Paho MQTT 5</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="platform-http-component.html">Platform HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="properties-component.html">Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="quartz-component.html">Quartz</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ref-component.html">Ref</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rest-component.html">REST</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="rest-openapi-component.html">REST OpenApi</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="salesforce-component.html">Salesforce</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scheduler-component.html">Scheduler</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="seda-component.html">SEDA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="slack-component.html">Slack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="snmp-component.html">SNMP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sql-component.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="telegram-component.html">Telegram</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="timer-component.html">Timer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="validator-component.html">Validator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="velocity-component.html">Velocity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vertx-http-component.html">Vert.x HTTP Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xquery-component.html">XQuery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xslt-component.html">XSLT</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dataformats/index.html">Data Formats</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/avro-dataformat.html">Avro</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/bindy-dataformat.html">Bindy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/fhirJson-dataformat.html">FHIR JSon</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/fhirXml-dataformat.html">FHIR XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/jacksonXml-dataformat.html">Jackson XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/jaxb-dataformat.html">JAXB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/protobufJackson-dataformat.html">Protobuf Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/soap-dataformat.html">SOAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/zipFile-dataformat.html">Zip File</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="languages/index.html">Languages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/bean-language.html">Bean Method</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/constant-language.html">Constant</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/exchangeProperty-language.html">ExchangeProperty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/file-language.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/header-language.html">Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/hl7terser-language.html">HL7 Terser</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/jsonpath-language.html">JSONPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/ref-language.html">Ref</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/simple-language.html">Simple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/tokenize-language.html">Tokenize</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/xtokenize-language.html">XML Tokenize</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/xpath-language.html">XPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/xquery-language.html">XQuery</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="others/index.html">Miscellaneous Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/attachments.html">Attachments</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="others/dsl.html">DSL</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/java-xml-io-dsl.html">XML Io Dsl</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/yaml-dsl.html">YAML DSL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/jta.html">JTA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/main.html">Main</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/microprofile-health.html">Microprofile Health</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/openapi-java.html">Openapi Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/opentelemetry.html">OpenTelemetry</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="eips/enterprise-integration-patterns.html">Enterprise Integration Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/aggregate-eip.html">Aggregate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/bean-eip.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/change-data-capture.html">Change Data Capture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/channel-adapter.html">Channel Adapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/choice-eip.html">Content Based Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/circuitBreaker-eip.html">Circuit Breaker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/claimCheck-eip.html">Claim Check</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/competing-consumers.html">Competing Consumers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/composed-message-processor.html">Composed Message Processor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/content-enricher.html">Content Enricher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/content-filter-eip.html">Content Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/convertBodyTo-eip.html">Convert Body To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/correlation-identifier.html">Correlation Identifier</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/dead-letter-channel.html">Dead Letter Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/delay-eip.html">Delay</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/durable-subscriber.html">Durable Subscriber</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/dynamicRouter-eip.html">Dynamic Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/enrich-eip.html">Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/eventDrivenConsumer-eip.html">Event Driven Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/event-message.html">Event Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/filter-eip.html">Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/from-eip.html">From</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/guaranteed-delivery.html">Guaranteed Delivery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/idempotentConsumer-eip.html">Idempotent Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/inOnly-eip.html">In Only</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/inOut-eip.html">In Out</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/intercept.html">Intercept</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/kamelet-eip.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/loadBalance-eip.html">Load Balance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/log-eip.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/loop-eip.html">Loop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/marshal-eip.html">Marshal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message.html">Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-broker.html">Message Broker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-bus.html">Message Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-channel.html">Message Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-dispatcher.html">Message Dispatcher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-endpoint.html">Message Endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-expiration.html">Message Expiration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-history.html">Message History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-router.html">Message Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/message-translator.html">Message Translator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/messaging-bridge.html">Messaging Bridge</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/messaging-gateway.html">Messaging Gateway</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/messaging-mapper.html">Messaging Mapper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/multicast-eip.html">Multicast</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/normalizer.html">Normalizer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/pipeline-eip.html">Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/point-to-point-channel.html">Point to Point Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/pollEnrich-eip.html">Poll Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/polling-consumer.html">Polling Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/process-eip.html">Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/process-manager.html">Process Manager</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/publish-subscribe-channel.html">Publish Subscribe Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/recipientList-eip.html">Recipient List</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/removeHeader-eip.html">Remove Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/removeHeaders-eip.html">Remove Headers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/removeProperties-eip.html">Remove Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/removeProperty-eip.html">Remove Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/requestReply-eip.html">Request Reply</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/resequence-eip.html">Resequence</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/resilience4j-eip.html">Resilience4j Circuit Breaker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/return-address.html">Return Address</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/rollback-eip.html">Rollback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/routingSlip-eip.html">Routing Slip</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/saga-eip.html">Saga</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/sample-eip.html">Sample</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/scatter-gather.html">Scatter Gather</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/script-eip.html">Script</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/selective-consumer.html">Selective Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/service-activator.html">Service Activator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/serviceCall-eip.html">Service Call</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/setBody-eip.html">Set Body</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/setHeader-eip.html">Set Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/setProperty-eip.html">Set Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/sort-eip.html">Sort</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/split-eip.html">Split</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/step-eip.html">Step</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/stop-eip.html">Stop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/threads-eip.html">Threads</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/throttle-eip.html">Throttle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/to-eip.html">To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/toD-eip.html">To Dynamic</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/transactional-client.html">Transactional Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/transform-eip.html">Transform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/unmarshal-eip.html">Unmarshal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/validate-eip.html">Validate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eips/wireTap-eip.html">Wire Tap</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Camel Components</span>
+    <span class="version">3.18.x (LTS)</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Camel Components</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">3.18.x (LTS)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../manual/index.html">User manual</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../manual/index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../manual/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Camel Components</a></li>
+    <li><a href="index.html">Components</a></li>
+    <li><a href="rest-openapi-component.html">REST OpenApi</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/components/modules/ROOT/pages/rest-openapi-component.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">REST OpenApi</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Since Camel 3.1</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Only producer is supported</strong></p>
+</div>
+<div class="paragraph">
+<p>The REST OpenApi* configures rest producers from
+<a href="https://www.openapis.org/">OpenApi</a> (Open API) specification document and
+delegates to a component implementing the <em>RestProducerFactory</em>
+interface. Currently known working components are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http-component.html" class="xref page">http</a></p>
+</li>
+<li>
+<p><a href="#netty-http-component.adoc" class="xref unresolved">netty-http</a></p>
+</li>
+<li>
+<p><a href="#undertow-component.adoc" class="xref unresolved">undertow</a></p>
+</li>
+<li>
+<p><a href="vertx-http-component.html" class="xref page">vertx-http</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Maven users will need to add the following dependency to their
+<code>pom.xml</code> for this component:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.camel&lt;/groupId&gt;
+    &lt;artifactId&gt;camel-rest-openapi&lt;/artifactId&gt;
+    &lt;version&gt;x.x.x&lt;/version&gt;
+    &lt;!-- use the same version as your Camel core version --&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_uri_format"><a class="anchor" href="#_uri_format"></a>URI format</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>rest-openapi:[specificationPath#]operationId</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>operationId</code> is the ID of the operation in the OpenApi
+specification, and <code>specificationPath</code> is the path to the
+specification.
+If the <code>specificationPath</code> is not specified it defaults to
+<code>openapi.json</code>. The lookup mechanism uses Camels <code>ResourceHelper</code> to
+load the resource, which means that you can use CLASSPATH resources
+(<code>classpath:my-specification.json</code>), files
+(<code>file:/some/path.json</code>), the web
+(<code>http://api.example.com/openapi.json</code>) or reference a bean
+(<code>ref:nameOfBean</code>) or use a method of a bean
+(<code>bean:nameOfBean.methodName</code>) to get the specification resource,
+failing that OpenApi&#8217;s own resource loading support.</p>
+</div>
+<div class="paragraph">
+<p>This component does not act as a HTTP client, it delegates that to
+another component mentioned above. The lookup mechanism searches for a
+single component that implements the <em>RestProducerFactory</em> interface and
+uses that. If the CLASSPATH contains more than one, then the property
+<code>componentName</code> should be set to indicate which component to delegate
+to.</p>
+</div>
+<div class="paragraph">
+<p>Most of the configuration is taken from the OpenApi specification but
+the option exists to override those by specifying them on the component
+or on the endpoint. Typically you would just need to override the
+<code>host</code> or <code>basePath</code> if those differ from the specification.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>host</code> parameter should contain the absolute URI containing
+scheme, hostname and port number, for instance:
+<code>https://api.example.com</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>With <code>componentName</code> you specify what component is used to perform the
+requests, this named component needs to be present in the Camel context
+and implement the required <em>RestProducerFactory</em> interface&#8201;&#8212;&#8201;as do the
+components listed at the top.</p>
+</div>
+<div class="paragraph">
+<p>If you do not specify the <em>componentName</em> at either component or
+endpoint level, CLASSPATH is searched for a suitable delegate. There
+should be only one component present on the CLASSPATH that implements
+the <em>RestProducerFactory</em> interface for this to work.</p>
+</div>
+<div class="paragraph">
+<p>This component&#8217;s endpoint URI is lenient which means that in addition
+to message headers you can specify REST operation&#8217;s parameters as
+endpoint parameters, these will be constant for all subsequent
+invocations so it makes sense to use this feature only for parameters
+that are indeed constant for all invocations&#8201;&#8212;&#8201;for example API version
+in path such as <code>/api/{version}/users/{id}</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_options"><a class="anchor" href="#_configuring_options"></a>Configuring Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Camel components are configured on two separate levels:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>component level</p>
+</li>
+<li>
+<p>endpoint level</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_configuring_component_options"><a class="anchor" href="#_configuring_component_options"></a>Configuring Component Options</h3>
+<div class="paragraph">
+<p>The component level is the highest level which holds general and common configurations that are inherited by the endpoints.
+For example a component may have security settings, credentials for authentication, urls for network connection and so forth.</p>
+</div>
+<div class="paragraph">
+<p>Some components only have a few options, and others may have many. Because components typically have pre configured defaults
+that are commonly used, then you may often only need to configure a few options on a component; or none at all.</p>
+</div>
+<div class="paragraph">
+<p>Configuring components can be done with the <a href="../../manual/component-dsl.html" class="xref page">Component DSL</a>,
+in a configuration file (application.properties|yaml), or directly with Java code.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_endpoint_options"><a class="anchor" href="#_configuring_endpoint_options"></a>Configuring Endpoint Options</h3>
+<div class="paragraph">
+<p>Where you find yourself configuring the most is on endpoints, as endpoints often have many options, which allows you to
+configure what you need the endpoint to do. The options are also categorized into whether the endpoint is used as consumer (from)
+or as a producer (to), or used for both.</p>
+</div>
+<div class="paragraph">
+<p>Configuring endpoints is most often done directly in the endpoint URI as path and query parameters. You can also use
+the <a href="../../manual/Endpoint-dsl.html" class="xref page">Endpoint DSL</a> as a <em>type safe</em> way of configuring endpoints.</p>
+</div>
+<div class="paragraph">
+<p>A good practice when configuring options is to use <a href="../../manual/using-propertyplaceholder.html" class="xref page">Property Placeholders</a>,
+which allows to not hardcode urls, port numbers, sensitive information, and other settings.
+In other words placeholders allows to externalize the configuration from your code, and gives more flexibility and reuse.</p>
+</div>
+<div class="paragraph">
+<p>The following two sections lists all the options, firstly for the component followed by the endpoint.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_component_options"><a class="anchor" href="#_component_options"></a>Component Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The REST OpenApi component supports 10 options, which are listed below.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-center valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_basePath"></a>
+<a href="#_component_option_basePath" class="anchor"></a><strong>basePath</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>API basePath, for example /v2. Default is unset, if set overrides the value present in OpenApi specification.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_componentName"></a>
+<a href="#_component_option_componentName" class="anchor"></a><strong>componentName</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Name of the Camel component that will perform the requests. The component must be present in Camel registry and it must implement RestProducerFactory service provider interface. If not set CLASSPATH is searched for single component that implements RestProducerFactory SPI. Can be overridden in endpoint configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_consumes"></a>
+<a href="#_component_option_consumes" class="anchor"></a><strong>consumes</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>What payload type this component capable of consuming. Could be one type, like application/json or multiple types as application/json, application/xml; q=0.5 according to the RFC7231. This equates to the value of Accept HTTP header. If set overrides any value found in the OpenApi specification. Can be overridden in endpoint configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_host"></a>
+<a href="#_component_option_host" class="anchor"></a><strong>host</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Scheme hostname and port to direct the HTTP requests to in the form of <a href="https://hostname:port" class="bare">https://hostname:port</a>. Can be configured at the endpoint, component or in the corresponding REST configuration in the Camel Context. If you give this component a name (e.g. petstore) that REST configuration is consulted first, rest-openapi next, and global configuration last. If set overrides any value found in the OpenApi specification, RestConfiguration. Can be overridden in endpoint configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_lazyStartProducer"></a>
+<a href="#_component_option_lazyStartProducer" class="anchor"></a><strong>lazyStartProducer</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether the producer should be started lazy (on the first message). By starting lazy you can use this to allow CamelContext and routes to startup in situations where a producer may otherwise fail during starting and cause the route to fail being started. By deferring this startup to be lazy then the startup failure can be handled during routing messages via Camel&#8217;s routing error handlers. Beware that when the first message is processed then creating and starting the producer may take a little time and prolong the total processing time of the processing.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_produces"></a>
+<a href="#_component_option_produces" class="anchor"></a><strong>produces</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>What payload type this component is producing. For example application/json according to the RFC7231. This equates to the value of Content-Type HTTP header. If set overrides any value present in the OpenApi specification. Can be overridden in endpoint configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_specificationUri"></a>
+<a href="#_component_option_specificationUri" class="anchor"></a><strong>specificationUri</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Path to the OpenApi specification file. The scheme, host base path are taken from this specification, but these can be overridden with properties on the component or endpoint level. If not given the component tries to load openapi.json resource. Note that the host defined on the component and endpoint of this Component should contain the scheme, hostname and optionally the port in the URI syntax (i.e. <a href="https://api.example.com:8080" class="bare">https://api.example.com:8080</a>). Can be overridden in endpoint configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">openapi.json</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_autowiredEnabled"></a>
+<a href="#_component_option_autowiredEnabled" class="anchor"></a><strong>autowiredEnabled</strong> (advanced)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether autowiring is enabled. This is used for automatic autowiring options (the option must be marked as autowired) by looking up in the registry to find if there is a single instance of matching type, which then gets configured on the component. This can be used for automatic configuring JDBC data sources, JMS connection factories, AWS Clients, etc.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_sslContextParameters"></a>
+<a href="#_component_option_sslContextParameters" class="anchor"></a><strong>sslContextParameters</strong> (security)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Customize TLS parameters used by the component. If not set defaults to the TLS parameters set in the Camel context.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSLContextParameters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_component_option_useGlobalSslContextParameters"></a>
+<a href="#_component_option_useGlobalSslContextParameters" class="anchor"></a><strong>useGlobalSslContextParameters</strong> (security)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enable usage of global SSL context parameters.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_endpoint_options"><a class="anchor" href="#_endpoint_options"></a>Endpoint Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The REST OpenApi endpoint is configured using URI syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>rest-openapi:specificationUri#operationId</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>with the following path and query parameters:</p>
+</div>
+<div class="sect2">
+<h3 id="_path_parameters_2_parameters"><a class="anchor" href="#_path_parameters_2_parameters"></a>Path Parameters (2 parameters)</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-center valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_path_option_specificationUri"></a>
+<a href="#_endpoint_path_option_specificationUri" class="anchor"></a><strong>specificationUri</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Path to the OpenApi specification file. The scheme, host base path are taken from this specification, but these can be overridden with properties on the component or endpoint level. If not given the component tries to load openapi.json resource from the classpath. Note that the host defined on the component and endpoint of this Component should contain the scheme, hostname and optionally the port in the URI syntax (i.e. <a href="http://api.example.com:8080" class="bare">http://api.example.com:8080</a>). Overrides component configuration. The OpenApi specification can be loaded from different sources by prefixing with file: classpath: http: https:. Support for https is limited to using the JDK installed UrlHandler, and as such it can be cumbersome to setup TLS/SSL certificates for https (such as setting a number of javax.net.ssl JVM system properties). How to do that consult the JDK documentation for UrlHandler. Default value notice: By default loads openapi.json file.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">openapi.json</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_path_option_operationId"></a>
+<a href="#_endpoint_path_option_operationId" class="anchor"></a><strong>operationId</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Required</strong> ID of the operation from the OpenApi specification.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_query_parameters"><a class="anchor" href="#_query_parameters"></a>Query Parameters (6 parameters)</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-center valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_basePath"></a>
+<a href="#_endpoint_query_option_basePath" class="anchor"></a><strong>basePath</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>API basePath, for example /v2. Default is unset, if set overrides the value present in OpenApi specification and in the component configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_componentName"></a>
+<a href="#_endpoint_query_option_componentName" class="anchor"></a><strong>componentName</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Name of the Camel component that will perform the requests. The component must be present in Camel registry and it must implement RestProducerFactory service provider interface. If not set CLASSPATH is searched for single component that implements RestProducerFactory SPI. Overrides component configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_consumes"></a>
+<a href="#_endpoint_query_option_consumes" class="anchor"></a><strong>consumes</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>What payload type this component capable of consuming. Could be one type, like application/json or multiple types as application/json, application/xml; q=0.5 according to the RFC7231. This equates to the value of Accept HTTP header. If set overrides any value found in the OpenApi specification and. in the component configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_host"></a>
+<a href="#_endpoint_query_option_host" class="anchor"></a><strong>host</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Scheme hostname and port to direct the HTTP requests to in the form of <a href="https://hostname:port" class="bare">https://hostname:port</a>. Can be configured at the endpoint, component or in the corresponding REST configuration in the Camel Context. If you give this component a name (e.g. petstore) that REST configuration is consulted first, rest-openapi next, and global configuration last. If set overrides any value found in the OpenApi specification, RestConfiguration. Overrides all other configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_produces"></a>
+<a href="#_endpoint_query_option_produces" class="anchor"></a><strong>produces</strong> (producer)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>What payload type this component is producing. For example application/json according to the RFC7231. This equates to the value of Content-Type HTTP header. If set overrides any value present in the OpenApi specification. Overrides all other configuration.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="_endpoint_query_option_lazyStartProducer"></a>
+<a href="#_endpoint_query_option_lazyStartProducer" class="anchor"></a><strong>lazyStartProducer</strong> (producer (advanced))</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether the producer should be started lazy (on the first message). By starting lazy you can use this to allow CamelContext and routes to startup in situations where a producer may otherwise fail during starting and cause the route to fail being started. By deferring this startup to be lazy then the startup failure can be handled during routing messages via Camel&#8217;s routing error handlers. Beware that when the first message is processed then creating and starting the producer may take a little time and prolong the total processing time of the processing.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_petstore"><a class="anchor" href="#_example_petstore"></a>Example: PetStore</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Checkout the <code>rest-openapi-simple</code> example project in
+the <a href="https://github.com/apache/camel-spring-boot-examples" class="bare">https://github.com/apache/camel-spring-boot-examples</a> repository.</p>
+</div>
+<div class="paragraph">
+<p>For example if you wanted to use the
+<a href="https://petstore3.swagger.io/api/v3/"><em>PetStore</em></a> provided REST API simply
+reference the specification URI and desired operation id from the
+OpenApi specification or download the specification and store it as
+<code>openapi.json</code> (in the root) of CLASSPATH that way it will be
+automaticaly used. Let&#8217;s use the <a href="http-component.html" class="xref page">HTTP</a>
+component to perform all the requests and Camel&#8217;s excellent support for
+Spring Boot.</p>
+</div>
+<div class="paragraph">
+<p>Here are our dependencies defined in Maven POM file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.camel.springboot&lt;/groupId&gt;
+  &lt;artifactId&gt;camel-http-starter&lt;/artifactId&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.camel.springboot&lt;/groupId&gt;
+  &lt;artifactId&gt;camel-rest-openapi-starter&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Start by defining a <em>RestOpenApiComponent</em> bean:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Bean
+public Component petstore(CamelContext camelContext) {
+    RestOpenApiComponent petstore = new RestOpenApiComponent(camelContext);
+    petstore.setSpecificationUri(new URI("https://petstore3.swagger.io/api/v3/openapi.json"));
+    petstore.setHost("https://petstore3.swagger.io");
+    return petstore;
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Support in Camel for Spring Boot will auto create the
+<code>HttpComponent</code> Spring bean, and you can configure it using
+<code>application.properties</code> (or <code>application.yml</code>) using prefix
+<code>camel.component.http.</code>. We are defining the <code>petstore</code>
+component here in order to have a named component in the Camel context
+that we can use to interact with the PetStore REST API, if this is the
+only <code>rest-openapi</code> component used we might configure it in the same
+manner (using <code>application.properties</code>).</p>
+</div>
+<div class="paragraph">
+<p>In this example, there is no need to explicitly associate the <code>petstore</code>
+component with the <code>HttpComponent</code> as Camel will use the first class on
+the CLASSPATH that implements <code>RestProducerFactory</code>. However, if a different
+component is required, then calling <code>petstore.setComponentName("http")</code>
+would use the named component from the Camel registry.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now in our application we can simply use the <code>ProducerTemplate</code> to
+invoke PetStore REST methods:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Autowired
+ProducerTemplate template;
+
+String getPetJsonById(int petId) {
+    return template.requestBodyAndHeader("petstore:getPetById", null, "petId", petId);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

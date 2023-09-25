@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JsonPath :: Red Hat Integration</title>
+    <meta name="description" content="Evaluate a JsonPath expression against a JSON message body.">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Red Hat Integration</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="components" data-version="latest">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Camel Components</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../aws-summary.html">AWS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-ddb-component.html">AWS DynamoDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-kinesis-component.html">AWS Kinesis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-lambda-component.html">AWS Lambda</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-s3-component.html">AWS S3 Storage Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-sns-component.html">AWS Simple Notification System (SNS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../aws2-sqs-component.html">AWS Simple Queue Service (SQS)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../bean-component.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../direct-component.html">Direct</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../elasticsearch-rest-component.html">Elasticsearch Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../file-component.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ftp-component.html">FTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../http-component.html">HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jira-component.html">Jira</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jms-component.html">JMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kafka-component.html">Kafka</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kamelet-component.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../log-component.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../microprofile-health.html">Microprofile Health</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../microprofile-metrics-component.html">MicroProfile Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mllp-component.html">MLLP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mock-component.html">Mock</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../mongodb-component.html">MongoDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../netty-component.html">Netty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform-http-component.html">Platform HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../properties-component.html">Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rest-component.html">REST</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../salesforce-component.html">Salesforce</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../seda-component.html">SEDA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../sql-component.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../timer-component.html">Timer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../xquery-component.html">XQuery</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dataformats/index.html">Data Formats</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/avro-dataformat.html">Avro</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/avro-jackson-dataformat.html">Avro Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/bindy-dataformat.html">Bindy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/hl7-dataformat.html">HL7</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/jacksonxml-dataformat.html">JacksonXML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/protobuf-jackson-dataformat.html">Protobuf Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dataformats/soapjaxb-dataformat.html">SOAP</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Languages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="constant-language.html">Constant</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="csimple-language.html">CSimple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="exchangeProperty-language.html">ExchangeProperty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="file-language.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="header-language.html">Header</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="jsonpath-language.html">JsonPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ref-language.html">Ref</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="simple-language.html">Simple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tokenize-language.html">Tokenize</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xtokenize-language.html">XML Tokenize</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#others:index.adoc">Miscellaneous Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../others/microprofile-health.html">Microprofile Health</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../eips/enterprise-integration-patterns.html">Enterprise Integration Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/aggregate-eip.html">Aggregate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/batch-config-eip.html">Batch-config</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/bean-eip.html">Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/change-data-capture.html">Change Data Capture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/channel-adapter.html">Channel Adapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/choice-eip.html">Choice</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/circuitBreaker-eip.html">Circuit Breaker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/claimCheck-eip.html">Claim Check</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/competing-consumers.html">Competing Consumers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/composed-message-processor.html">Composed Message Processor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/content-based-router-eip.html">Content Based Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/content-enricher.html">Content Enricher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/content-filter-eip.html">Content Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/convertBodyTo-eip.html">Convert Body To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/correlation-identifier.html">Correlation Identifier</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/customLoadBalancer-eip.html">Custom Load Balancer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/dead-letter-channel.html">Dead Letter Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/delay-eip.html">Delay</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/durable-subscriber.html">Durable Subscriber</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/dynamicRouter-eip.html">Dynamic Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/enrich-eip.html">Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/eventDrivenConsumer-eip.html">Event Driven Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/event-message.html">Event Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/failover-eip.html">Failover</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/faultToleranceConfiguration-eip.html">Fault Tolerance Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/fault-tolerance-eip.html">Fault Tolerance EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/filter-eip.html">Filter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/from-eip.html">From</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/guaranteed-delivery.html">Guaranteed Delivery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/hystrixConfiguration-eip.html">Hystrix Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/hystrix-eip.html">Hystrix EIP (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/idempotentConsumer-eip.html">Idempotent Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/inOnly-eip.html">In Only</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/inOut-eip.html">In Out</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/intercept.html">Intercept</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/kamelet-eip.html">Kamelet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/loadBalance-eip.html">Load Balance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/log-eip.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/loop-eip.html">Loop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/marshal-eip.html">Marshal EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message.html">Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-broker.html">Message Broker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-bus.html">Message Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-channel.html">Message Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-dispatcher.html">Message Dispatcher</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-endpoint.html">Message Endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-expiration.html">Message Expiration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-history.html">Message History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-router.html">Message Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/message-translator.html">Message Translator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/messaging-bridge.html">Messaging Bridge</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/messaging-gateway.html">Messaging Gateway</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/messaging-mapper.html">Messaging Mapper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/multicast-eip.html">Multicast</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/normalizer.html">Normalizer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/onFallback-eip.html">On Fallback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/otherwise-eip.html">Otherwise</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/pipeline-eip.html">Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/point-to-point-channel.html">Point to Point Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/pollEnrich-eip.html">Poll Enrich</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/polling-consumer.html">Polling Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/process-eip.html">Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/process-manager.html">Process Manager</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/publish-subscribe-channel.html">Publish Subscribe Channel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/random-eip.html">Random</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/recipientList-eip.html">Recipient List</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeHeader-eip.html">Remove Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeHeaders-eip.html">Remove Headers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeProperties-eip.html">Remove Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/removeProperty-eip.html">Remove Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/requestReply-eip.html">Request Reply</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/resequence-eip.html">Resequence</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/resilience4jConfiguration-eip.html">Resilience4j Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/resilience4j-eip.html">Resilience4j EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/return-address.html">Return Address</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/rollback-eip.html">Rollback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/roundRobin-eip.html">Round Robin</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/routingSlip-eip.html">Routing Slip</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/saga-eip.html">Saga</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/sample-eip.html">Sample</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/scatter-gather.html">Scatter Gather</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/script-eip.html">Script</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/selective-consumer.html">Selective Consumer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/service-activator.html">Service Activator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/serviceCall-eip.html">Service Call</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setBody-eip.html">Set Body</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setHeader-eip.html">Set Header</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setOutHeader-eip.html">Set Out Header EIP (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/setProperty-eip.html">Set Property</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/sort-eip.html">Sort</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/split-eip.html">Split</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/step-eip.html">Step</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/sticky-eip.html">Sticky</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/stop-eip.html">Stop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/stream-config-eip.html">Stream-config</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/threads-eip.html">Threads</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/throttle-eip.html">Throttle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/to-eip.html">To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/toD-eip.html">To D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/topic-eip.html">Topic</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/transactional-client.html">Transactional Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/transform-eip.html">Transform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/unmarshal-eip.html">Unmarshal EIP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/validate-eip.html">Validate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/weighted-eip.html">Weighted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/when-eip.html">When</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eips/wireTap-eip.html">Wire Tap</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Camel Components</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Camel Components</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../manual/latest/index.html">User manual</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../manual/latest/index.html">latest</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../manual/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Camel Components</a></li>
+    <li><a href="index.html">Languages</a></li>
+    <li><a href="jsonpath-language.html">JsonPath</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/gforde/mygit/camel/docs/components/modules/languages/pages/jsonpath-language.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">JsonPath</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Since Camel 2.13</strong></p>
+</div>
+<div class="paragraph">
+<p>Camel supports <a href="https://code.google.com/p/json-path/">JSonPath</a> to allow
+using Expression or Predicate
+on json messages.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("queue:books.new")
+  .choice()
+    .when().jsonpath("$.store.book[?(@.price &lt; 10)]")
+      .to("jms:queue:book.cheap")
+    .when().jsonpath("$.store.book[?(@.price &lt; 30)]")
+      .to("jms:queue:book.average")
+    .otherwise()
+      .to("jms:queue:book.expensive");</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jsonpath_options"><a class="anchor" href="#_jsonpath_options"></a>JSonPath Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The JsonPath language supports 8 options, which are listed below.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Java Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">resultType</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the class name of the result type (type from output)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">suppressExceptions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to suppress exceptions such as PathNotFoundException.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allowSimple</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to allow in inlined simple exceptions in the JsonPath expression</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allowEasyPredicate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to allow using the easy predicate parser to pre-parse predicates.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">writeAsString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to write the output of each row/element as a JSON String value instead of a Map/POJO value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">headerName</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of header to use as input, instead of the message body</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">option</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To configure additional options on json path. Multiple values can be separated by comma.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trim</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to trim the value to remove leading and trailing whitespaces and line breaks</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_xml_configuration"><a class="anchor" href="#_using_xml_configuration"></a>Using XML configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you prefer to configure your routes in your Spring
+XML file then you can use <a href="#">JSonPath</a> expressions as
+follows</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext id="camel" xmlns="http://camel.apache.org/schema/spring"&gt;
+  &lt;route&gt;
+    &lt;from uri="direct:start"/&gt;
+    &lt;choice&gt;
+      &lt;when&gt;
+        &lt;jsonpath&gt;$.store.book[?(@.price &amp;lt; 10)]&lt;/jsonpath&gt;
+        &lt;to uri="mock:cheap"/&gt;
+      &lt;/when&gt;
+      &lt;when&gt;
+        &lt;jsonpath&gt;$.store.book[?(@.price &amp;lt; 30)]&lt;/jsonpath&gt;
+        &lt;to uri="mock:average"/&gt;
+      &lt;/when&gt;
+      &lt;otherwise&gt;
+        &lt;to uri="mock:expensive"/&gt;
+      &lt;/otherwise&gt;
+    &lt;/choice&gt;
+  &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See the <a href="https://github.com/json-path/JsonPath">JSonPath</a> project page for
+further examples.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_easy_syntax"><a class="anchor" href="#_easy_syntax"></a>Easy Syntax</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Since Camel 2.19</strong></p>
+</div>
+<div class="paragraph">
+<p>When you just want to define a basic predicate using jsonpath syntax it can be a bit hard to remember the syntax.
+ So for example to find out all the cheap books you have to do</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$.store.book[?(@.price &lt; 20)]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However what if you could just write it as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>store.book.price &lt; 20</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And you can omit the path if you just want to look at nodes with a price key</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>price &lt; 20</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To support this there is a <code>EasyPredicateParser</code> which kicks-in if you have define the predicate
+  using a basic style. That means the predicate must not start with the <code>$</code> sign, and only include one operator.</p>
+</div>
+<div class="paragraph">
+<p>The easy syntax is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>left OP right</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use Camel simple language in the right operator, eg</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>store.book.price &lt; ${header.limit}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_supported_message_body_types"><a class="anchor" href="#_supported_message_body_types"></a>Supported message body types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Camel JSonPath supports message body using the following types:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>File</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reading from files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plain strings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Map</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Message bodies as <code>java.util.Map</code> types</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Message bodies as <code>java.util.List</code> types</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>POJO</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Optional</strong> If Jackson is on the classpath, then camel-jsonpath
+  is able to use Jackson to read the message body as POJO and convert to <code>java.util.Map</code>
+  which is supported by JSonPath. For example, you can add <code>camel-jackson</code> as dependency to include Jackson.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>InputStream</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If none of the above types matches, then Camel will attempt to read the message body as a <code>java.io.InputStream</code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If a message body is of unsupported type then an exception is thrown by default, however you
+can configure JSonPath to suppress exceptions (see below)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_suppress_exceptions"><a class="anchor" href="#_suppress_exceptions"></a>Suppress exceptions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Since Camel 2.16</strong></p>
+</div>
+<div class="paragraph">
+<p>By default jsonpath will throw an exception if the json payload does not
+have a valid path accordingly to the configured jsonpath expression. In
+some use-cases you may want to ignore this in case the json payload
+contains optional data. Therefore you can set the option
+suppressExceptions to true to ignore this as shown:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:start")
+    .choice()
+        // use true to suppress exceptions
+        .when().jsonpath("person.middlename", true)
+            .to("mock:middle")
+        .otherwise()
+            .to("mock:other");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML DSL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
+  &lt;from uri="direct:start"/&gt;
+  &lt;choice&gt;
+    &lt;when&gt;
+      &lt;jsonpath suppressExceptions="true"&gt;person.middlename&lt;/jsonpath&gt;
+      &lt;to uri="mock:middle"/&gt;
+    &lt;/when&gt;
+    &lt;otherwise&gt;
+      &lt;to uri="mock:other"/&gt;
+    &lt;/otherwise&gt;
+  &lt;/choice&gt;
+&lt;/route&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This option is also available on the <code>@JsonPath</code> annotation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_inline_simple_expressions"><a class="anchor" href="#_inline_simple_expressions"></a>Inline Simple expressions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Since Camel 2.18</strong></p>
+</div>
+<div class="paragraph">
+<p>Its now possible to inlined Simple language expressions in the JSonPath expression using the simple syntax ${xxx}.
+An example is shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:start")
+  .choice()
+    .when().jsonpath("$.store.book[?(@.price &lt; ${header.cheap})]")
+      .to("mock:cheap")
+    .when().jsonpath("$.store.book[?(@.price &lt; ${header.average})]")
+      .to("mock:average")
+    .otherwise()
+      .to("mock:expensive");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML DSL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
+  &lt;from uri="direct:start"/&gt;
+  &lt;choice&gt;
+    &lt;when&gt;
+      &lt;jsonpath&gt;$.store.book[?(@.price &lt; ${header.cheap})]&lt;/jsonpath&gt;
+      &lt;to uri="mock:cheap"/&gt;
+    &lt;/when&gt;
+    &lt;when&gt;
+      &lt;jsonpath&gt;$.store.book[?(@.price &lt; ${header.average})]&lt;/jsonpath&gt;
+      &lt;to uri="mock:average"/&gt;
+    &lt;/when&gt;
+    &lt;otherwise&gt;
+      &lt;to uri="mock:expensive"/&gt;
+    &lt;/otherwise&gt;
+  &lt;/choice&gt;
+&lt;/route&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can turn off support for inlined simple expression by setting the option allowSimple to false as shown:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">.when().jsonpath("$.store.book[?(@.price &lt; 10)]", false, false)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML DSL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;jsonpath allowSimple="false"&gt;$.store.book[?(@.price &lt; 10)]&lt;/jsonpath&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jsonpath_injection"><a class="anchor" href="#_jsonpath_injection"></a>JSonPath injection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use Bean Integration to invoke a
+method on a bean and use various languages such as JSonPath to extract a
+value from the message and bind it to a method parameter.</p>
+</div>
+<div class="paragraph">
+<p>For example</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class Foo {
+
+    @Consume("activemq:queue:books.new")
+    public void doSomething(@JsonPath("$.store.book[*].author") String author, @Body String json) {
+      // process the inbound message here
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_encoding_detection"><a class="anchor" href="#_encoding_detection"></a>Encoding Detection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The encoding of the JSON document is
+detected automatically, if the document is encoded in unicode  (UTF-8,
+UTF-16LE, UTF-16BE, UTF-32LE, UTF-32BE ) as specified in  RFC-4627. If
+the encoding is a non-unicode encoding, you can either make sure that
+you enter the document in String format to the JSONPath component or you
+can specify the encoding in the header "<strong>CamelJsonPathJsonEncoding</strong>"
+(JsonpathConstants.HEADER_JSON_ENCODING).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_split_json_data_into_sub_rows_as_json"><a class="anchor" href="#_split_json_data_into_sub_rows_as_json"></a>Split JSon data into sub rows as JSon</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use jsonpath to split a JSon document, such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:start")
+    .split().jsonpath("$.store.book[*]")
+    .to("log:book");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then each book is logged, however the message body is a <code>Map</code> instance. Sometimes
+you may want to output this as plain String JSon value instead, which can be done
+with the <code>writeAsString</code> option as shown:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:start")
+    .split().jsonpathWriteAsString("$.store.book[*]")
+    .to("log:book");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then each book is logged as a String JSon value. For earlier versions of Camel you
+would need to use camel-jackson dataformat and marshal the message body to make it
+convert the message body from <code>Map</code> to a <code>String</code> type.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_header_as_input"><a class="anchor" href="#_using_header_as_input"></a>Using header as input</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Since Camel 2.20</strong></p>
+</div>
+<div class="paragraph">
+<p>By default jsonpath uses the message body as the input source. However you can also use a header as input
+by specifying the <code>headerName</code> option.</p>
+</div>
+<div class="paragraph">
+<p>For example to count the number of books from a json document that
+was stored in a header named <code>books</code> you can do:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:start")
+    .setHeader("numberOfBooks")
+        .jsonpath("$..store.book.length()", false, int.class, "books")
+    .to("mock:result");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the <code>jsonpath</code> expression above we specify the name of the header as <code>books</code>
+and we also told that we wanted the result to be converted as an integer by <code>int.class</code>.</p>
+</div>
+<div class="paragraph">
+<p>The same example in XML DSL would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
+  &lt;from uri="direct:start"/&gt;
+  &lt;setHeader name="numberOfBooks"&gt;
+    &lt;jsonpath headerName="books" resultType="int"&gt;$..store.book.length()&lt;/jsonpath&gt;
+  &lt;/transform&gt;
+  &lt;to uri="mock:result"/&gt;
+&lt;/route&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
