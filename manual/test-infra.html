@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Test Infrastructure :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -623,7 +634,7 @@
     <li><a href="test-infra.html">Test Infra</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/test-infra.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/test-infra.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -631,6 +642,92 @@
 </aside>
 <article class="doc">
 <h1 class="page">Test Infrastructure</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The components in the Camel Test Infra provide utilities to simplify testing with Camel and other systems may interact with it. They work as JUnit 5 extensions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_working_with_the_camel_context_in_tests"><a class="anchor" href="#_working_with_the_camel_context_in_tests"></a>Working with the Camel Context in Tests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When testing Camel or a Camel-based integration, you almost certainly need to use the <code>CamelContext</code> to configure the registry, add routes and execute other operations. The test infra comes with a module that provides a JUnit 5 extension that allows you to inject a Camel context into your tests.</p>
+</div>
+<div class="paragraph">
+<p>Adding it to your test code is as simple as adding the following lines of code to your test class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@RegisterExtension
+protected static CamelContextExtension contextExtension = new DefaultCamelContextExtension();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, via the extension, you can access the context (ie.: <code>``contextExtension.getContext()</code>) to manipulate it as need in the tests.</p>
+</div>
+<div class="paragraph">
+<p>The extension comes with a few utilities to simplify configuring the context, and adding routes at the appropriate time.</p>
+</div>
+<div class="sect2">
+<h3 id="_configuring_the_camel_context"><a class="anchor" href="#_configuring_the_camel_context"></a>Configuring the Camel Context</h3>
+<div class="paragraph">
+<p>To create a method that configures the context, you can declare a method receiving an instance of <code>CamelContext</code> and annotate it with <code>@ContextFixture</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@ContextFixture
+public void configureContext(CamelContext context) {
+   // context configuration code here
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Additionally, you can simplify the class hierarchy, and ensure consistency you may also implement the <code>ConfigurableContext</code> interface.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_the_routes"><a class="anchor" href="#_configuring_the_routes"></a>Configuring the Routes</h3>
+<div class="paragraph">
+<p>You can configure the routes using a similar process as the one described for configuring the Camel context. You can create a method that receives an instance of <code>CamelContext</code> and annotate it with <code>@RouteFixture</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@RouteFixture
+public void createRouteBuilder(CamelContext context) throws Exception {
+    context.addRoutes(new RouteBuilder() {
+        @Override
+        public void configure() {
+           from(fromUri).to(destUri);
+        }
+    });
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_use_the_camel_context_extension"><a class="anchor" href="#_use_the_camel_context_extension"></a>Use the Camel Context Extension</h3>
+<div class="paragraph">
+<p>To start using the Camel Context extension on your code, add the following dependency:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.camel&lt;/groupId&gt;
+    &lt;artifactId&gt;camel-test-infra-core&lt;/artifactId&gt;
+    &lt;version&gt;${camel.version}&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+    &lt;type&gt;test-jar&lt;/type&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For simplicity and consistency, you may also declare the route as implementing the <code>ConfigurableRoute</code>.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_simulating_the_test_infrastructure"><a class="anchor" href="#_simulating_the_test_infrastructure"></a>Simulating the Test Infrastructure</h2>
 <div class="sectionbody">
@@ -644,11 +741,22 @@ and uses container images to simulate the environments. Additionally, it may als
 environments as well as, when available, embeddable components. This varies by each component, and it is recommended to
 check the code for additional details.</p>
 </div>
+<div class="sect2">
+<h3 id="_writing_a_new_test_infrastructure_module"><a class="anchor" href="#_writing_a_new_test_infrastructure_module"></a>Writing A New Test Infrastructure Module</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This section is aimed at Camel maintainers that need to write new test infra components. End users can skip this section.</p>
 </div>
+</td>
+</tr>
+</table>
 </div>
-<div class="sect1">
-<h2 id="_writing_a_new_test_infrastructure_module"><a class="anchor" href="#_writing_a_new_test_infrastructure_module"></a>Writing A New Test Infrastructure Module</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>The test code abstracts the provisioning of test environments behind service classes (i.e.: JMSService, JDBCService,
 etc). The purpose of the service class is to abstract the both the type service (i.e.: Kafka, Strimzi, etc) and
@@ -672,8 +780,8 @@ whenever possible.</p>
 <p>It is also possible to use embeddable components when required, although this usually lead to more code and higher
 maintenance.</p>
 </div>
-<div class="sect2">
-<h3 id="_recommended_structure_for_test_infrastructure_modules"><a class="anchor" href="#_recommended_structure_for_test_infrastructure_modules"></a>Recommended Structure for Test Infrastructure Modules</h3>
+<div class="sect3">
+<h4 id="_recommended_structure_for_test_infrastructure_modules"><a class="anchor" href="#_recommended_structure_for_test_infrastructure_modules"></a>Recommended Structure for Test Infrastructure Modules</h4>
 <div class="paragraph">
 <p>The service should provide an interface, named after the infrastructure being implemented, and this interface should
 extend the <a href="https://github.com/apache/camel/blob/main/test-infra/camel-test-infra-common/src/test/java/org/apache/camel/test/infra/common/services/TestService.java">TestService</a>
@@ -683,10 +791,21 @@ and <a href="https://junit.org/junit5/docs/5.1.1/api/org/junit/jupiter/api/exten
 should be the preferred extensions whenever possible because they allow the instance of the infrastructure to be static
 throughout the test execution.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p><strong>Note</strong>: bear in mind that, according to the <a href="https://junit.org/junit5/docs/5.1.1/api/org/junit/jupiter/api/extension/RegisterExtension.html">JUnit 5 extension</a>
+<p>Bear in mind that, according to the <a href="https://junit.org/junit5/docs/5.1.1/api/org/junit/jupiter/api/extension/RegisterExtension.html">JUnit 5 extension</a>
 model, the time of initialization of the service may differ depending on whether the service instance is declared as
 static or not in the test class. As such, the code should make no assumptions as to its time of initialization.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Ideally, there should be two concrete implementations of the services: one of the remote service (if applicable) and
@@ -711,8 +830,8 @@ as <code>&lt;name&gt;.&lt;parameter&gt;</code>. More complex services may use th
 the service accordingly.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_registering_properties"><a class="anchor" href="#_registering_properties"></a>Registering Properties</h3>
+<div class="sect3">
+<h4 id="_registering_properties"><a class="anchor" href="#_registering_properties"></a>Registering Properties</h4>
 <div class="paragraph">
 <p>All services should register the properties, via <code>System.setProperty</code> that allow access to the services. This is required
 in order to resolve those properties when running tests using the Spring framework. This registration allows the properties
@@ -722,14 +841,14 @@ to be resolved in Spring&#8217;s XML files.</p>
 <p>This registration is done in the <code>registerProperties</code> methods during the service initialization.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_registering_properties_example"><a class="anchor" href="#_registering_properties_example"></a>Registering Properties Example:</h3>
+<div class="sect3">
+<h4 id="_registering_properties_example"><a class="anchor" href="#_registering_properties_example"></a>Registering Properties Example:</h4>
 <div class="paragraph">
 <p>Registering the properties in the concrete service implementation:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">    public void registerProperties() {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    public void registerProperties() {
         // MyServiceProperties.MY_SERVICE_HOST is a string with value "my.service.host"
         System.setProperty(MyServiceProperties.MY_SERVICE_HOST, container.getHost());
 
@@ -754,20 +873,18 @@ to be resolved in Spring&#8217;s XML files.</p>
 <code>{{my.service.port}}</code> and <code>{{my.service.address}}</code>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_packaging_recommendations"><a class="anchor" href="#_packaging_recommendations"></a>Packaging Recommendations</h3>
+<div class="sect3">
+<h4 id="_packaging_recommendations"><a class="anchor" href="#_packaging_recommendations"></a>Packaging Recommendations</h4>
 <div class="paragraph">
 <p>This is test infrastructure code, therefore it should be package as test type artifacts. The
 <a href="https://github.com/apache/camel/blob/main/test-infra/camel-test-infra-parent">parent pom</a> should provide all the necessary bits for packaging the test infrastructure.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_using_the_new_test_infrastructure"><a class="anchor" href="#_using_the_new_test_infrastructure"></a>Using The New Test Infrastructure</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_using_the_new_test_infrastructure"><a class="anchor" href="#_using_the_new_test_infrastructure"></a>Using The New Test Infrastructure</h3>
 <div class="paragraph">
-<p>Using the test infra in a new component test is rather straightforward similar to using any other reusable component.
+<p>Using the test infra in a new component test is rather straightforward, similar to using any other reusable component.
 You start by declaring the test infra dependencies in your pom file.</p>
 </div>
 <div class="paragraph">
@@ -785,9 +902,20 @@ You start by declaring the test infra dependencies in your pom file.</p>
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p><strong>Note</strong>: on the dependencies above, the dependency version is set to <code>${project.version}</code>. This should be adjusted to the
+<p>On the dependencies above, the dependency version is set to <code>${project.version}</code>. This should be adjusted to the
 Camel version when used outside the Camel Core project.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>On the test class, add a member variable for the service and annotate it with the <a href="https://junit.org/junit5/docs/5.1.1/api/org/junit/jupiter/api/extension/RegisterExtension.html">@RegisterExtension</a>,
@@ -795,7 +923,7 @@ in order to let JUnit 5 manage its lifecycle.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">@RegisterExtension
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@RegisterExtension
 static MyService service = MyServiceServiceFactory.createService();</code></pre>
 </div>
 </div>
@@ -804,7 +932,7 @@ static MyService service = MyServiceServiceFactory.createService();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">@RegisterExtension
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@RegisterExtension
 static MyService service = MyServiceServiceFactory
     .builder()
         .addRemoveMapping(MyTestClass::myCustomRemoteService) // this is rarely needed
@@ -819,7 +947,7 @@ When using these properties in Spring XML files, you may use those properties.</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">&lt;someSpringXmlElement httpHost="{{my.service.host}}" port="{{my.service.port}}" /&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;someSpringXmlElement httpHost="{{my.service.host}}" port="{{my.service.port}}" /&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -828,7 +956,7 @@ Camel component:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">    protected RouteBuilder createRouteBuilder() throws Exception {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    protected RouteBuilder createRouteBuilder() throws Exception {
         return new RouteBuilder() {
             public void configure() {
                 from("direct:put")
@@ -838,11 +966,46 @@ Camel component:</p>
     }</code></pre>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_execution_ordering"><a class="anchor" href="#_execution_ordering"></a>Execution Ordering</h4>
+<div class="paragraph">
+<p>When combining the different modules of the test infra, you may need to ensure that they execute in the proper order. You can do so by using JUnit&#8217;s <code>@Order</code> annotation.</p>
+</div>
+<div class="paragraph">
+<p>For instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    @Order(1)
+    @RegisterExtension
+    protected static KafkaService service = KafkaServiceFactory.createSingletonService();
+
+    @Order(2)
+    @RegisterExtension
+    protected static CamelContextExtension contextExtension = new DefaultCamelContextExtension();</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_converting_camel_testcontainers_code_to_the_new_test_infrastructure"><a class="anchor" href="#_converting_camel_testcontainers_code_to_the_new_test_infrastructure"></a>Converting Camel TestContainers Code To The New Test Infrastructure</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This section is aimed at Camel maintainers that need to write new test infra components. End users can skip this section.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Using the camel-nats as an example, we can compare how the base test class for nats changed between <a href="https://github.com/apache/camel/blob/camel-3.6.0/components/camel-nats/src/test/java/org/apache/camel/component/nats/NatsTestSupport.java">3.6.x</a>
 and <a href="https://github.com/apache/camel/blob/camel-3.7.0/components/camel-nats/src/test/java/org/apache/camel/component/nats/NatsTestSupport.java">3.7.x</a>.</p>

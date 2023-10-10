@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Property placeholders :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="using-propertyplaceholder.html">How to use Camel property placeholders</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/using-propertyplaceholder.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/using-propertyplaceholder.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -650,11 +661,11 @@ login tokens, and configuration in general.</p>
 <h2 id="_properties_component"><a class="anchor" href="#_properties_component"></a>Properties component</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Camel provides the <a href="../components/3.18.x/properties-component.html" class="xref page">Properties</a> out of the box
+<p>Camel provides the <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> out of the box
 from the core, which is responsible for handling and resolving the property placeholders.</p>
 </div>
 <div class="paragraph">
-<p>See the <a href="../components/3.18.x/properties-component.html" class="xref page">Properties</a> documentation for how
+<p>See the <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> documentation for how
 to configure Camel to known from which location(a) to load properties.</p>
 </div>
 </div>
@@ -830,7 +841,7 @@ as the size of the write buffer in the file endpoint:</p>
 and the <code>where</code> placeholder has the value <code>cheese</code> so the resolved uri becomes <code>mock:cheese</code>.</p>
 </div>
 <div class="sect2">
-<h3 id="_property_placeholders_referring_to_other_properties"><a class="anchor" href="#_property_placeholders_referring_to_other_properties"></a>Property placeholders referring to other properties</h3>
+<h3 id="_property_placeholders_referring_to_other_properties_nested_placeholders"><a class="anchor" href="#_property_placeholders_referring_to_other_properties_nested_placeholders"></a>Property placeholders referring to other properties (nested placeholders)</h3>
 <div class="paragraph">
 <p>You can also have properties with refer to each other such as:</p>
 </div>
@@ -854,11 +865,58 @@ cool.concat=mock:{{cool.foo}}</code></pre>
 &lt;/route&gt;</code></pre>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_turning_off_nested_placeholders"><a class="anchor" href="#_turning_off_nested_placeholders"></a>Turning off nested placeholders</h4>
+<div class="paragraph">
+<p>If the placeholder value contains data that interfere with the property placeholder syntax <code>{{</code> and <code>}}</code> (such as JSon data),
+you can be then explicit turn off nested placeholder by <code>?nested=false</code> in the key name, such as shown:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
+  &lt;from uri="direct:start"/&gt;
+  &lt;to uri="elasticsearch:foo?query={{myQuery?nested=false}}"/&gt;
+&lt;/route&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the example above the placeholder <em>myQuery</em> placeholder value is as follows</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{"query":{"match_all":{}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice how the json query ends with <code>}}</code> which interfere with the Camel property placeholder syntax.</p>
+</div>
+<div class="paragraph">
+<p>Nested placeholders can also be turned off globally on the <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> component, such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CamelContext context = ...
+context.getPropertiesComponent().setNestedPlaceholder(false);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escape_a_property_placeholder"><a class="anchor" href="#_escape_a_property_placeholder"></a>Escape a property placeholder</h3>
+<div class="paragraph">
+<p>The property placeholder can be problematic if the double curly brackets are used by a third party library like for example a query in ElasticSearch of type <code>{"query":{"match_all":{}}}</code>.</p>
+</div>
+<div class="paragraph">
+<p>To work around that it is possible to escape the double curly brackets with a backslash character like for example <code>\{{ property-name \}}</code>. This way, it won&#8217;t be interpreted as a property placeholder to resolve and will be resolved as <code>{{ property-name }}</code>.</p>
+</div>
+<div class="paragraph">
+<p>If for some reason, the backslash character before the double curly brackets must not be interpreted as an escape character, it is possible to add another backslash in front of it to escape it, it will then be seen as a backslash.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_using_property_placeholders_multiple_times"><a class="anchor" href="#_using_property_placeholders_multiple_times"></a>Using property placeholders multiple times</h3>
 <div class="paragraph">
-<p>You can of couse also use placeholders several times:</p>
+<p>You can of course also use placeholders several times:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -979,7 +1037,7 @@ to configure any kind of XML attributes in Spring XML files.</p>
 </div>
 <div class="paragraph">
 <p>In the example below we want to use a placeholder for the <code>stopOnException</code> option in
-the <a href="../components/3.18.x/eips/multicast-eip.html" class="xref page">Multicast</a> EIP. The <code>stopOnException</code> is a <code>xs:boolean</code> type,
+the <a href="../components/next/eips/multicast-eip.html" class="xref page">Multicast</a> EIP. The <code>stopOnException</code> is a <code>xs:boolean</code> type,
 so we cannot configure this as:</p>
 </div>
 <div class="listingblock">
@@ -1119,7 +1177,7 @@ placeholder notation with <code>{{key}}</code>.</p>
 <h2 id="_using_property_placeholder_functions"><a class="anchor" href="#_using_property_placeholder_functions"></a>Using property placeholder functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="../components/3.18.x/properties-component.html" class="xref page">Properties</a> component includes the following functions out of the box:</p>
+<p>The <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> component includes the following functions out of the box:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1228,7 +1286,7 @@ export $FOO_SERVICE_PORT=8888</code></pre>
 <p><code>configmap</code> - A function to lookup the property from Kubernetes ConfigMaps.</p>
 </li>
 <li>
-<p><code>secert</code> - A function to lookup the property from Kubernetes Secrets.</p>
+<p><code>secret</code> - A function to lookup the property from Kubernetes Secrets.</p>
 </li>
 </ul>
 </div>
@@ -1276,7 +1334,7 @@ and fail if there is no such configmap.</p>
 <div class="sect3">
 <h4 id="_configuring_mount_paths_for_configmaps_and_secrets"><a class="anchor" href="#_configuring_mount_paths_for_configmaps_and_secrets"></a>Configuring mount paths for ConfigMaps and Secrets</h4>
 <div class="paragraph">
-<p>The configuration of the <em>month path</em> are used by the given order:</p>
+<p>The configuration of the <em>mount path</em> are used by the given order:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1509,7 +1567,7 @@ from the actual use of the configmap/secret and into the <code>application.prope
 <div class="sect2">
 <h3 id="_using_custom_property_placeholder_functions"><a class="anchor" href="#_using_custom_property_placeholder_functions"></a>Using custom property placeholder functions</h3>
 <div class="paragraph">
-<p>The <a href="../components/3.18.x/properties-component.html" class="xref page">Properties</a> component allow to plugin 3rd party functions which can be used during parsing of the property placeholders.
+<p>The <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> component allow to plugin 3rd party functions which can be used during parsing of the property placeholders.
 These functions are then able to do custom logic to resolve the placeholders, such as looking up in databases, do custom computations, or whatnot.
 The name of the function becomes the prefix used in the placeholder.</p>
 </div>

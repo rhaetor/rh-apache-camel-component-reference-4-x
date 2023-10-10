@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Route Template :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="route-template.html">RouteTemplate</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/route-template.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/route-template.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -914,6 +925,141 @@ assign route ids such as <code>route1</code>, <code>route2</code> to these route
         value: "hello"
       - name: "myPeriod"
         value: "5s"</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_template_parameters_with_java_dsl_simple_builder"><a class="anchor" href="#_using_template_parameters_with_java_dsl_simple_builder"></a>Using template parameters with Java DSL simple builder</h3>
+<div class="paragraph">
+<p>When using Java DSL and simple language then beware that you should
+not use the <em>simple fluent builder</em> when defining the simple expressions/predicates.</p>
+</div>
+<div class="paragraph">
+<p>For example given the following route template in Java DSL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyRouteTemplates extends RouteBuilder {
+
+    @Override
+    public void configure() throws Exception {
+        routeTemplate("myTemplate")
+            .templateParameter("name")
+            .templateParameter("color")
+            .from("direct:{{name}}")
+                .choice()
+                    .when(simple("{{color}}").isEqualTo("red"))
+                        .to("direct:red")
+                    .otherwise()
+                        .to("color:other")
+                .end();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then notice how the simple predicate is using <em>simple fluent builder</em> <code>simple("{{color}}").isEqualTo("red")</code>.
+This is <strong>not supported</strong> with route templates and would not work when creating multiple routes from the template.</p>
+</div>
+<div class="paragraph">
+<p>Instead, the simple expression should be a literal String value <em>only</em> as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    .when(simple("'{{color}}' == 'red'")</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_hardcoded_node_ids_in_route_templates"><a class="anchor" href="#_using_hardcoded_node_ids_in_route_templates"></a>Using hardcoded node IDs in route templates</h3>
+<div class="paragraph">
+<p>If route templates contains hardcoded node IDs then routes created from templates will use the same IDs
+and therefore if 2 or more routes are created from the same template, you will have <em>duplicate id detected</em> error.</p>
+</div>
+<div class="paragraph">
+<p>Given the route template below, then it has hardcoded ID (<em>new-order</em>) in node calling the http services.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyRouteTemplates extends RouteBuilder {
+
+    @Override
+    public void configure() throws Exception {
+        routeTemplate("orderTemplate")
+            .templateParameter("queue")
+            .from("jms:{{queue}}")
+                .to("http:orderserver.acme.com/neworder").id("new-order")
+                .log("Processing order");
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When creating routes from templates, you can then provide a <em>prefix</em> which are used for all node IDs.
+This allows to create 2 or more routes without <em>duplicate id</em> errors.</p>
+</div>
+<div class="paragraph">
+<p>For example in the following we create a new route <em>myCoolRoute</em> from the <em>myTemplate</em> template, and
+use a prefix of <em>web</em>.</p>
+</div>
+<div class="paragraph">
+<p>And in Java DSL</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">templatedRoute("orderTemplate")
+        .routeId("webOrder")
+        .prefixId("web")
+        .parameter("queue", "order.web");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we can create a 2nd route:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">templatedRoute("orderTemplate")
+        .routeId("ftpOrder")
+        .prefixId("ftp")
+        .parameter("queue", "order.ftp");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in Spring XML DSL</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext&gt;
+  &lt;templatedRoute routeTemplateRef="orderTemplate" routeId="webOrder" prefixId="web"&gt;
+    &lt;parameter name="queue" value="web"/&gt;
+  &lt;/templatedRoute&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML DSL</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;templatedRoutes xmlns="http://camel.apache.org/schema/spring"&gt;
+  &lt;templatedRoute routeTemplateRef="orderTemplate" routeId="webOrder" prefixId="web"&gt;
+    &lt;parameter name="queue" value="web"/&gt;
+  &lt;/templatedRoute&gt;
+&lt;/templatedRoutes&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in YAML DSL</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- templated-route:
+    route-template-ref: "orderTemplate"
+    route-id: "webOrder"
+    prefix-id: "web"
+    parameters:
+      - name: "queue"
+        value: "web"</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1287,10 +1433,10 @@ This allows to define route templates with the scripting language built-in (such
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">import software.amazon.awssdk.services.s3.S3Client
-S3Client.builder()
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"><span class="fold-block is-hidden-folded">import software.amazon.awssdk.services.s3.S3Client
+</span><span class="fold-block">S3Client.builder()
     .region(rtc.getProperty("region", Region.class))
-    .build()</code></pre>
+    .build()</span></code></pre>
 </div>
 </div>
 <div class="paragraph">

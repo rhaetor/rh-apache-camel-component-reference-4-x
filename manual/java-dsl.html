@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Java DSL :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="java-dsl.html">Java DSL</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/java-dsl.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/java-dsl.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -636,8 +647,7 @@
 <p>Apache Camel offers a Java based DSL.</p>
 </div>
 <div class="paragraph">
-<p>The Java DSL is available by extending the <code>RouteBuilder</code> class,
-and implement the <code>configure</code> method.</p>
+<p>In the Java DSL you create a route by extending the <a href="route-builder.html" class="xref page"><code>RouteBuilder</code> class</a>, and implementing the <code>configure</code> method.</p>
 </div>
 </div>
 </div>
@@ -654,9 +664,9 @@ class called <code>MyRouteBuilder</code> that extends the
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.apache.camel.builder.RouteBuilder;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.apache.camel.builder.RouteBuilder;
 
-/**
+</span><span class="fold-block">/**
  * A Camel Java DSL Router
  */
 public class MyRouteBuilder extends RouteBuilder {
@@ -677,7 +687,7 @@ public class MyRouteBuilder extends RouteBuilder {
                     .to("file:target/messages/others");
     }
 
-}</code></pre>
+}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -692,7 +702,7 @@ public class MyRouteBuilder extends RouteBuilder {
 </div>
 </div>
 <div class="paragraph">
-<p>Then we use the <a href="../components/3.18.x/eips/choice-eip.html" class="xref page">Content Based Router</a> EIP
+<p>Then we use the <a href="../components/next/eips/choice-eip.html" class="xref page">Content Based Router</a> EIP
 (the <code>choice</code>) to route the message whether the person is from London or not.</p>
 </div>
 <div class="listingblock">
@@ -704,6 +714,25 @@ public class MyRouteBuilder extends RouteBuilder {
         .to("file:target/messages/others");</code></pre>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_routes_using_java_lambda_style"><a class="anchor" href="#_routes_using_java_lambda_style"></a>Routes using Java lambda style</h3>
+<div class="paragraph">
+<p>Camel now supports to define Camel routes in Java DSL using Lambda style. This can be beneficial for microservices or serverless where
+you may want to quickly define a few routes.</p>
+</div>
+<div class="paragraph">
+<p>For example using lambda style you can define a Camel route that takes messages from Kafka and send to JMS in a single line of code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">rb -&gt; rb.from("kafka:cheese").to("jms:queue:foo");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is a bit more to this as the lambda route must be coded in a Java method that returns an instance of <code>LambdaRouteBuilder</code>.
+See more at the <a href="lambda-route-builder.html" class="xref page">LambdaRouteBuilder</a> documentation.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -711,6 +740,49 @@ public class MyRouteBuilder extends RouteBuilder {
 <div class="sectionbody">
 <div class="paragraph">
 <p>For more details see <a href="dsl.html" class="xref page">DSL</a>, <a href="routes.html" class="xref page">Routes</a>, and <a href="processor.html" class="xref page">Processor</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_the_java_dsl_under_the_hood"><a class="anchor" href="#_the_java_dsl_under_the_hood"></a>The Java DSL under the hood</h3>
+<div class="paragraph">
+<p>As mentioned in the Getting Started guide, you can use Camel&#8217;s Java DSL in a way that almost looks like a DSL. For instance:</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: comments afterwards explain some of the constructs used in the example.</p>
+</div>
+<div class="listingblock">
+<div class="title"><strong>Example of Camel&#8217;s "Java DSL"</strong></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">RouteBuilder builder = new RouteBuilder() {
+    public void configure() {
+        from("queue:a").filter(header("foo").isEqualTo("bar")).to("queue:b");
+
+        from("queue:c").choice()
+                .when(header("foo").isEqualTo("bar")).to("queue:d")
+                .when(header("foo").isEqualTo("cheese")).to("queue:e")
+                .otherwise().to("queue:f");
+    }
+};
+CamelContext myCamelContext = new DefaultCamelContext();
+myCamelContext.addRoutes(builder);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first line in the above example creates an object which is an instance of an anonymous subclass of <code>RouteBuilder</code> with the specified <code>configure()</code> method.</p>
+</div>
+<div class="paragraph">
+<p>The <code>CamelContext.addRoutes(RouterBuilder builder)</code> method invokes <code>builder.setContext(this)</code> – so the <code>RouteBuilder</code> object knows which <code>CamelContext</code> object it is associated with – and then invokes <code>builder.configure()</code>. The body of <code>configure()</code> invokes methods such as <code>from()</code>, <code>filter()</code>, <code>choice()</code>, <code>when()</code>, <code>isEqualTo()</code>, <code>otherwise()</code> and <code>to()</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>RouteBuilder.from(String uri)</code> method invokes <code>getEndpoint(uri)</code> on the <code>CamelContext</code> associated with the <code>RouteBuilder</code> object to get the specified <code>Endpoint</code> and then puts a <code>FromBuilder</code> <em>wrapper</em> around this <code>Endpoint</code>. The <code>FromBuilder.filter(Predicate predicate)</code> method creates a <code>FilterProcessor</code> object for the <code>Predicate</code> (that is, condition) object built from the <code>header("foo").isEqualTo("bar")</code> expression. In this way, these operations incrementally build up a <code>Route</code> object (with a <code>RouteBuilder</code> wrapper around it) and add it to the <code>CamelContext</code> instance associated with the <code>RouteBuilder</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_more_information"><a class="anchor" href="#_more_information"></a>More Information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="lambda-route-builder.html" class="xref page">Lambda Route Builder</a> for creating a routing rule using the DSL, using Java lambda style.</p>
 </div>
 </div>
 </div>

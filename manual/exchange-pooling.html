@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Exchange Pooling :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="exchange-pooling.html">Exchange Pooling</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/exchange-pooling.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/exchange-pooling.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -633,17 +644,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apache Camel requires a tiny resource overhead when routing message.</p>
+<p>The routing engine keeps the state of each message, tracking the message flow, and where the messages are going next. The routing engine also handles complex tasks such as error handling, capturing metrics, and many other things. A small number of Java objects are allocated on the heap for each processing step during routing.</p>
 </div>
 <div class="paragraph">
-<p>For example the routing engine keeps state of each individual message, keeping track of the message flow,
-and where messaging are going next. The routing engine also handles complex tasks such as error handling,
-capturing metrics, and many other things. All together small numbers of Java objects is allocated
-on the heap for each processing step during routing.</p>
+<p>Because of this routing bookkeeping and processing, Apache Camel requires a tiny resource overhead when routing messages.</p>
 </div>
 <div class="paragraph">
-<p>With the advance of cloud computing, where work loads are precisely measured, then Camel has undergone
-a series of core optimizations to reduce its overhead.</p>
+<p>With the advance of cloud computing, where workloads are precisely measured, then Camel has undergone a series of core optimizations to reduce its overhead.</p>
 </div>
 </div>
 </div>
@@ -651,31 +658,20 @@ a series of core optimizations to reduce its overhead.</p>
 <h2 id="_pooling_objects_to_reduce_object_allocations"><a class="anchor" href="#_pooling_objects_to_reduce_object_allocations"></a>Pooling objects to reduce object allocations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <em>Exchange Pooling</em> functionality is <em>object pooling</em> by recycling commonly used objects by the routing enginge.</p>
+<p>The most significant object being reused is the <code>org.apache.camel.Exchange</code> object. This object is the root object
+that holds the message with its payload, headers, metadata, and other content.</p>
 </div>
 <div class="paragraph">
-<p>The most significant object being reused is the <code>org.apache.camel.Exchange</code> object that is the root object
-that holds the message with its payload, headers, meta-data and other content.</p>
+<p>Besides pooling exchanges, then internal objects used by the routing engine are also pooled and recycled. This can dramatically reduce the object allocations from Camel core itself.</p>
 </div>
 <div class="paragraph">
-<p>Besides pooling exchanges then internal objects used by the routing engine is also pooled and recycled.
-All together this dramatically reduces the object allocations, from camel core itself.</p>
+<p>There will always be object allocations from the actual message content (payload and headers), and also from the Camel components in use and its 3rd party libraries. The footprint of Camel core and its routing engine is close to zero when pooling is enabled.</p>
 </div>
 <div class="paragraph">
-<p>There will always be objects allocations from the actual message content (payload and headers), and also
-from the Camel components in use and its 3rd party libraries. The footprint of Camel core and its routing engine is close to zero, when pooling is enabled.</p>
+<p>This all sounds marvelous so what are the negative aspects? The price to pay for object pooling is the complexity of managing the pool (acquiring and returning objects to the pool). However, all of this is taken care of by Camel itself. The object pools are using JDK <code>ConcurrentMap</code> instances and take up very little memory. Managing the pool causes a small CPU overhead associated with adding and removing objects from the pools, and resetting the objects before reuse.</p>
 </div>
 <div class="paragraph">
-<p>This all sounds marvelous so what is the negatives? Yes the price to pay for object pooling,
-is the complexity of managing the pool (acquire and returning objects to the pool); however
-all of this is taken care of by Camel itself. The object pools are using JDK <code>ConcurrentMap</code>
-instances and take up very little memory. The negative is very tiny CPU cost on adding and removing
-objects from the pools, and resetting the objects before reuse.</p>
-</div>
-<div class="paragraph">
-<p>It is possible better to sacrifice the very tiny CPU cost for reduced object allocations, which helps
-to avoid the JVM garbage collection running more frequently, and causing your application to halt or delay
-processing messages at any given time.</p>
+<p>In most cases, it may be possible to sacrifice the very tiny CPU cost in exchange for reduced object allocations. This can improve responsiveness and reduce latency by preventing the JVM garbage collection from running more frequently (under some circumstances, the garbage collection overhead can cause your application to halt or delay processing messages due to stop-the-world pauses and other processing overhead associated with it).</p>
 </div>
 </div>
 </div>
@@ -683,24 +679,65 @@ processing messages at any given time.</p>
 <h2 id="_enabling_exchange_pooling"><a class="anchor" href="#_enabling_exchange_pooling"></a>Enabling Exchange Pooling</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <em>object pooling</em> is currently not enabled by default, and requires to be turned on.</p>
-</div>
-<div class="paragraph">
-<p>This can be done as shown in Java:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CamelContext context = ...
-context.adapt(ExtendedCamelContext.class).setExchangeFactory(new PooledExchangeFactory());</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If using <em>Camel Main</em>, Camel Spring Boot, or Camel Quarkus
-you can enable this in the <code>application.properties</code>:</p>
+<p>The <em>object pooling</em> is currently disabled by default. If you are using Camel Main (from Camel Core), Camel Spring Boot, or Camel Quarkus, then you can enable this in the <code>application.properties</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.main.exchange-factory = pooled</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enabling_exchange_pooling_on_camel_3_x"><a class="anchor" href="#_enabling_exchange_pooling_on_camel_3_x"></a>Enabling Exchange Pooling on Camel 3.x</h3>
+<div class="paragraph">
+<p>If you are using a different runtime or want to do that programmatically, you can do so in Camel version 3 (Camel 3.x) using the <code>setExchangeFactory</code> method from the <code>ExtendedCamelContext</code>. Here&#8217;s an example of how to do that using Java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// suppose a Camel context object declared in the scope
+CamelContext context = ...
+
+context.adapt(ExtendedCamelContext.class).setExchangeFactory(new PooledExchangeFactory());</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>ExtendedCamelContext</code> is an internal API of Camel and, as such, may not offer the same level of backward compatibility as the public APIs. Whenever possible, configure the exchange pooling via application properties.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enabling_exchange_pooling_on_camel_4_x"><a class="anchor" href="#_enabling_exchange_pooling_on_camel_4_x"></a>Enabling Exchange Pooling on Camel 4.x</h3>
+<div class="paragraph">
+<p>If you are using a different runtime or if you want to do that programmatically, you can do so in Camel 4 and newer versions using the <code>setExchangeFactory</code> method from the <code>ExtendedCamelContext</code>. Here&#8217;s an example of how to do that using Java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CamelContext context = ...
+context.getExchangeExtension().setExchangeFactory(new PooledExchangeFactory());</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>ExtendedCamelContext</code> is an internal API of Camel and, as such, may not offer the same level of backward compatibility as the public APIs. Whenever possible, configure the exchange pooling via application properties.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -709,7 +746,7 @@ you can enable this in the <code>application.properties</code>:</p>
 <h2 id="_configuration_options"><a class="anchor" href="#_configuration_options"></a>Configuration Options</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The exchange pool can be configured with the following options:</p>
+<p>You can configure exchange poolomg with the following options:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -748,8 +785,7 @@ you can enable this in the <code>application.properties</code>:</p>
 <h2 id="_management"><a class="anchor" href="#_management"></a>Management</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If object pooling is enabled, then Camel provides a JMX MBean which allows to introspect the pools and their usage
-via JMX. This requires to add <code>camel-management</code> JAR to the classpath.</p>
+<p>If object pooling is enabled, then Camel provides a JMX MBean which allows us to introspect the pools and their usage via JMX. This requires adding <code>camel-management</code> JAR to the classpath.</p>
 </div>
 </div>
 </div>
@@ -758,7 +794,7 @@ via JMX. This requires to add <code>camel-management</code> JAR to the classpath
 <div class="sectionbody">
 <div class="paragraph">
 <p>We have provided a few examples which we are using for performance profiling.
-For example the basic <a href="https://github.com/apache/camel-performance-tests/tree/main/profiling/timer-log">timer-log</a> example.</p>
+You can check the basic <a href="https://github.com/apache/camel-performance-tests/tree/main/profiling/timer-log">timer-log</a> if you need an example.</p>
 </div>
 </div>
 </div>

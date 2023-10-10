@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Transformer :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="transformer.html">Transformer</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/transformer.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/transformer.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -635,12 +646,12 @@
 <div class="paragraph">
 <p>Transformer (<code>org.apache.camel.spi.Transformer</code>) performs declarative transformation of the message according
 to the declared <em>Input Type</em> and/or <em>Output Type</em> on a route definition which declares
-the expected message type. The default camel Message implements <code>DataTypeAware</code>, which allows to hold the message type
+the expected message type. The default Camel Message implements <code>DataTypeAware</code>, which allows to hold the message type
 represented by <code>DataType</code>.</p>
 </div>
 <div class="paragraph">
 <p>If the input type and/or output type is declared by <em>Input Type</em> and/or <em>Output Type</em> in the route
-definition, and it is different from actual message type at runtime, camel internal processor
+definition, and in case it is different from actual message type at runtime, Camel internal processor
 looks for a <code>Transformer</code> which transforms from the current message type to the expected message
 type and apply. Once transform succeed or message is already in expected type, then the message
 data type is updated.</p>
@@ -656,9 +667,10 @@ data type is updated.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>where <strong>scheme</strong> is the type of data model like <code>java</code>, <code>xml</code> or <code>json</code>, and <strong>name</strong> is the individual
-data type name. If you only specify <strong>scheme</strong> then it hits all the data types which has that scheme like
-a wildcard.</p>
+<p>where <strong>scheme</strong> is the type of data model like <code>java</code>, <code>xml</code> or <code>json</code>, and <strong>name</strong> is the individual data type name.
+The scheme could also represent a Camel component scheme such as <code>http</code> or <code>aws2-s3</code> in order to reference component specific data types.
+When using the <code>java</code> scheme the data type name may be the qualified class name (e.g. <code>java:org.apache.camel.Foo</code>)
+If you only specify <strong>scheme</strong> then it hits all the data types which has that scheme like a wildcard.</p>
 </div>
 </div>
 </div>
@@ -689,12 +701,16 @@ a wildcard.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Custom Transformer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transform with using custom transformer class. Transformer must be a subclass of <code>org.apache.camel.spi.Transformer</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loading Transformer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loads multiple transformer implementations (e.g. via annotation classpath scan). Also preloads known default Camel transformer implementations.</p></td>
+</tr>
 </tbody>
 </table>
 <div class="sect2">
 <h3 id="_common_options"><a class="anchor" href="#_common_options"></a>Common Options</h3>
 <div class="paragraph">
-<p>All transformers have following common options to specify which data type is supported by the transformer. <code>scheme</code> or both of <code>fromType</code> and <code>toType</code> must be specified.</p>
+<p>All transformers have following common options to specify which data type is supported by the transformer. <code>name</code> or both of <code>fromType</code> and <code>toType</code> must be specified.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -710,7 +726,11 @@ a wildcard.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">scheme</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type of data model like <code>xml</code> or <code>json</code>. For example if <code>xml</code> is specified, the transformer is applied for all java -&gt; xml and xml -&gt; java transformation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The supported data type scheme. It is possible to just reference a scheme like <code>xml</code> or <code>json</code>. For example if <code>xml</code> is specified, the transformer is applied for all java -&gt; xml and xml -&gt; java transformation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the transformer. If name is specified users may use a combination of a scheme and name (e.g. <code>xml:Order</code>) to reference the transformer in a route.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fromType</p></td>
@@ -722,6 +742,65 @@ a wildcard.</p>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Transformer implementations may use <code>scheme:name</code> or the combination of <code>fromType/toType</code> as an identifier.</p>
+</div>
+<div class="paragraph">
+<p>When using the <code>scheme:name</code> identifier users may reference the transformer by its full name in a route.</p>
+</div>
+<div id="_tabs_1" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_1_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_1_xml" class="tab">
+<p>XML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_1_java--panel" class="tabpanel" aria-labelledby="_tabs_1_java">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:abc")
+    .inputType("myScheme:myTransformer")
+    .to("...");</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_1_xml--panel" class="tabpanel" aria-labelledby="_tabs_1_xml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext id="camel" xmlns="http://camel.apache.org/schema/spring"&gt;
+    &lt;route&gt;
+        &lt;from uri="direct:abc"/&gt;
+        &lt;inputType urn="myScheme:myTransformer"/&gt;
+        &lt;to uri="..."/&gt;
+    &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>As mentioned earlier the transformer may also skip the name and just use a <code>scheme</code> (e.g. <code>xml</code>) in order to apply to
+all data type transformations of a given scheme (e.g. <code>xml:Order</code>, <code>xml:OrderResponse</code>, <code>xml:anything</code>)</p>
+</div>
+<div class="paragraph">
+<p>When using the combination of <code>fromType/toType</code> as an identifier the transformer gets matched automatically by the given
+data types used on the Camel route (e.g. inputType) and the given Exchange data type (specified by the Exchange message using <code>DataTypeAware</code> interface).</p>
+</div>
+<div class="paragraph">
+<p>In general, the transformer resolving mechanism tries to find the best match when searching for a proper transformation
+from a given data type to a given data type. The mechanism tries to find exact matches for <code>fromType</code> and <code>toType</code> first,
+then wildcard matches (using transformers for the given data type scheme only), then named transformers using <code>scheme:name</code> identifiers,
+then named transformers matching <code>scheme</code> only.</p>
+</div>
+<div class="paragraph">
+<p>If not already preloaded by the configuration the Transformer resolving mechanism also performs lazy loading of transformer implementations using the factory finder resource path lookup.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_dataformat_transformer_options"><a class="anchor" href="#_dataformat_transformer_options"></a>DataFormat Transformer Options</h3>
@@ -748,11 +827,21 @@ a wildcard.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Here is an example to specify <a href="../components/3.18.x/dataformats/bindy-dataformat.html" class="xref page">Bindy</a> DataFormat type:</p>
+<p>Here is an example to specify <a href="#components:dataformats:bindy-dataformat.adoc" class="xref unresolved">Bindy</a> DataFormat type:</p>
 </div>
-<div class="paragraph">
-<p>Java DSL:</p>
+<div id="_tabs_2" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_2_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_2_xml" class="tab">
+<p>XML</p>
+</li>
+</ul>
 </div>
+<div id="_tabs_2_java--panel" class="tabpanel" aria-labelledby="_tabs_2_java">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">BindyDataFormat bindy = new BindyDataFormat();
@@ -764,14 +853,16 @@ transformer()
     .withDataFormat(bindy);</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>XML DSL:</p>
 </div>
+<div id="_tabs_2_xml--panel" class="tabpanel" aria-labelledby="_tabs_2_xml">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dataFormatTransformer fromType="java:com.example.Order" toType="csv:CSVOrder"&gt;
     &lt;bindy id="csvdf" type="Csv" classType="com.example.Order"/&gt;
 &lt;/dataFormatTransformer&gt;</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -810,7 +901,7 @@ transformer()
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">transformer()
     .fromType("xml")
     .toType("json")
-    .withUri("dozer:myDozer?mappingFile=myMapping.xml...");</code></pre>
+    .withUri("component:componentPathOptions?mappingFile=myMapping.xml...");</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -818,7 +909,7 @@ transformer()
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;endpointTransformer ref="myDozerEndpoint" fromType="xml" toType="json"/&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;endpointTransformer ref="myEndpoint" fromType="xml" toType="json"/&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -854,9 +945,19 @@ transformer()
 <div class="paragraph">
 <p>Here is an example to specify custom Transformer class:</p>
 </div>
-<div class="paragraph">
-<p>Java DSL:</p>
+<div id="_tabs_3" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_3_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_3_xml" class="tab">
+<p>XML</p>
+</li>
+</ul>
 </div>
+<div id="_tabs_3_java--panel" class="tabpanel" aria-labelledby="_tabs_3_java">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">transformer()
@@ -865,12 +966,124 @@ transformer()
     .withJava(com.example.MyCustomTransformer.class);</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>XML DSL:</p>
 </div>
+<div id="_tabs_3_xml--panel" class="tabpanel" aria-labelledby="_tabs_3_xml">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;customTransformer className="com.example.MyCustomTransformer" fromType="xml" toType="json"/&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_load_transformer_options"><a class="anchor" href="#_load_transformer_options"></a>Load Transformer Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Users are able to preload known default transformers. Also users may load transformers via classpath scan.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaults</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loads known default transformer implementations (e.g. plain-text, application-octet-stream)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classpath location to scan for transformer implementations. Transformer implementations must use the <code>org.apache.camel.spi.DataTypeTransformer</code> annotation to get recognized by the scanner.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Here is an example to load default Transformer classes:</p>
+</div>
+<div id="_tabs_4" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_4_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_4_xml" class="tab">
+<p>XML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_4_java--panel" class="tabpanel" aria-labelledby="_tabs_4_java">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">transformer()
+    .withDefaults()</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_4_xml--panel" class="tabpanel" aria-labelledby="_tabs_4_xml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;loadTransformer defaults="true"/&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Here is an example to load Transformer classes via classpath scan:</p>
+</div>
+<div id="_tabs_5" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_5_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_5_xml" class="tab">
+<p>XML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_5_java--panel" class="tabpanel" aria-labelledby="_tabs_5_java">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">transformer()
+    .scan("org.apache.camel.transformer.standard")</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_5_xml--panel" class="tabpanel" aria-labelledby="_tabs_5_xml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;loadTransformer packageScan="org.apache.camel.transformer.standard"/&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The classpath scan looks for classes that use the <code>org.apache.camel.spi.DataTypeTransformer</code> annotation.
+The annotation defines the transformer name and/or the supported from/to data types.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@DataTypeTransformer(name = "uppercase")
+public class UppercaseDataTypeTransformer extends Transformer {
+
+    @Override
+    public void transform(Message message, DataType fromType, DataType toType) {
+        message.setBody(message.getBody(String.class).toUpperCase());
+    }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -882,9 +1095,19 @@ transformer()
 <p>For example to declare the Endpoint Transformer which uses
 xslt component to transform from <code>xml:ABCOrder</code> to <code>xml:XYZOrder</code>, we can do as follows:</p>
 </div>
-<div class="paragraph">
-<p>Java DSL:</p>
+<div id="_tabs_6" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_6_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_6_xml" class="tab">
+<p>XML</p>
+</li>
+</ul>
 </div>
+<div id="_tabs_6_java--panel" class="tabpanel" aria-labelledby="_tabs_6_java">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">transformer()
@@ -893,9 +1116,8 @@ xslt component to transform from <code>xml:ABCOrder</code> to <code>xml:XYZOrder
     .withUri("xslt:transform.xsl");</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>XML DSL:</p>
 </div>
+<div id="_tabs_6_xml--panel" class="tabpanel" aria-labelledby="_tabs_6_xml">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext id="camel" xmlns="http://camel.apache.org/schema/spring"&gt;
@@ -906,12 +1128,25 @@ xslt component to transform from <code>xml:ABCOrder</code> to <code>xml:XYZOrder
 &lt;/camelContext&gt;</code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>If you have following route definition, above transformer will be applied when <code>direct:abc</code> endpoint sends the message to <code>direct:xyz</code>:</p>
 </div>
-<div class="paragraph">
-<p>Java DSL:</p>
+<div id="_tabs_7" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_7_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_7_xml" class="tab">
+<p>XML</p>
+</li>
+</ul>
 </div>
+<div id="_tabs_7_java--panel" class="tabpanel" aria-labelledby="_tabs_7_java">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:abc")
@@ -923,9 +1158,8 @@ from("direct:xyz")
     .to("somewhere:else");</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>XML DSL:</p>
 </div>
+<div id="_tabs_7_xml--panel" class="tabpanel" aria-labelledby="_tabs_7_xml">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext id="camel" xmlns="http://camel.apache.org/schema/spring"&gt;
@@ -940,6 +1174,9 @@ from("direct:xyz")
         &lt;to uri="somewhere:else"/&gt;
     &lt;/route&gt;
 &lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

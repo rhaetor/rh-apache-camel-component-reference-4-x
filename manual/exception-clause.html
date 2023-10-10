@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Exception Clause :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="exception-clause.html">Exception Clause</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/exception-clause.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/exception-clause.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -658,7 +669,7 @@ from("seda:inputB")
 <div class="paragraph">
 <p>Here if the processing of <strong><code>seda:inputA</code></strong> or <strong><code>seda:inputB</code></strong> cause
 a <strong><code>ValidationException</code></strong> to be thrown (such as due to the XSD
-validation of the <a href="../components/3.18.x/validator-component.html" class="xref page">Validation</a> component),
+validation of the <a href="#components::validator-component.adoc" class="xref unresolved">Validation</a> component),
 then the message will be sent to the
 <strong><code>activemq:validationFailed</code></strong> queue.</p>
 </div>
@@ -834,11 +845,11 @@ select the <strong><code>onException(IOException.class)</code></strong> clause.<
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://www.javadoc.io/doc/org.apache.camel/camel-base/current/org/apache/camel/processor/errorhandler/RedeliveryPolicy.html">RedeliveryPolicy</a>
-requires to use the <a href="../components/3.18.x/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a>
+requires to use the <a href="../components/next/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a>
 as the <a href="error-handler.html" class="xref page">Error Handler</a>. Dead Letter Channel
 supports attempting to redeliver the message exchange a number of times
 before sending it to a dead letter endpoint. See
-<a href="../components/3.18.x/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> for further
+<a href="../components/next/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> for further
 information about redeliver and which redeliver options exists.</p>
 </div>
 <div class="sect2">
@@ -853,7 +864,7 @@ type basis. By default in the top examples, if an
 <strong><code>org.apache.camel.ValidationException</code></strong> occurs then the message will
 not be redelivered; however if some other exception occurs, e.g.,
 <strong><code>IOException</code></strong> or whatever, the route will be retried according to the
-settings from the <a href="../components/3.18.x/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a>.</p>
+settings from the <a href="../components/next/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a>.</p>
 </div>
 <div class="paragraph">
 <p>However if you want to customize any methods on the
@@ -1014,7 +1025,7 @@ is being routed to our processor <strong><code>MyFunctionFailureHandler</code></
 can say that the exchange is diverted when a <strong><code>MyFunctionalException</code></strong>
 is thrown during processing. It&#8217;s important to distinct this as perfectly
 valid. The default redelivery policy from the
-<a href="../components/3.18.x/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> will not kick in, so
+<a href="../components/next/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> will not kick in, so
 our processor receives the Exchange directly, without any redeliver
 attempted. In our processor we need to determine what to do. Camel
 regards the Exchange as <strong>failure handled</strong>. So our processor is the end
@@ -1252,7 +1263,7 @@ caller receives an Exchange with the payload <strong><code>Order ERROR</code></s
 endpoint. What if you need to alter the response and send a fixed
 response back to the original caller (the client). No secret here just
 do as you do in normal Camel routing, use
-<a href="../components/3.18.x/eips/message-translator.html" class="xref page">transform</a> to set the response, as shown in
+<a href="../components/next/eips/message-translator.html" class="xref page">transform</a> to set the response, as shown in
 the sample below:</p>
 </div>
 <div class="listingblock">
@@ -1282,7 +1293,7 @@ onException(MyFunctionalException.class)
 </div>
 </div>
 <div class="paragraph">
-<p>And we can use the <a href="../components/3.18.x/languages/simple-language.html" class="xref page">Simple</a> language to set a readable error
+<p>And we can use the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> language to set a readable error
 message with the caused exception message:</p>
 </div>
 <div class="listingblock">
@@ -1717,15 +1728,15 @@ default error handler will kick in.</p>
 <h2 id="_using_onredelivery_processor"><a class="anchor" href="#_using_onredelivery_processor"></a>Using onRedelivery Processor</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="../components/3.18.x/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> has support
+<p><a href="../components/next/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> has support
 for <strong><code>onRedelivery</code></strong> to allow custom processing of a Message before its
 being redelivered. It can be used to add some customer header or
 whatnot. In Camel 2.0 we have added this feature to
 <a href="#">Exception Clause</a> as well, so you can use per
 exception scoped on redelivery. Camel will fallback to use the one
-defined on <a href="../components/3.18.x/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> if any, if
+defined on <a href="../components/next/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> if any, if
 none exists on the <a href="#">Exception Clause</a>. See
-<a href="../components/3.18.x/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> for more details on
+<a href="../components/next/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> for more details on
 <strong><code>onRedelivery</code></strong>.</p>
 </div>
 <div class="paragraph">
@@ -1802,7 +1813,7 @@ class as this code is based on unit testing):</p>
 <h2 id="_using_onexceptionoccurred_processor"><a class="anchor" href="#_using_onexceptionoccurred_processor"></a>Using onExceptionOccurred Processor</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="../components/3.18.x/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> has support
+<p><a href="../components/next/eips/dead-letter-channel.html" class="xref page">Dead Letter Channel</a> has support
 for <strong><code>onExceptionOccurred</code></strong> to allow custom processing of a Message just
 after the exception was thrown. It can be used to do some custom logging
 or whatnot. The difference between <strong><code>onRedelivery</code></strong> processor

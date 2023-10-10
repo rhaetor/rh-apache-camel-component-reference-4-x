@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>CamelContext :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="camelcontext.html">CamelContext</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/camelcontext.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/camelcontext.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -633,9 +644,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="https://www.javadoc.io/doc/org.apache.camel/camel-api/latest/org/apache/camel/CamelContext.html">CamelContext</a>
-is the container that is the runtime Camel. The <code>CamelContext</code> is the runtime system, which
-holds everything together as depicted in the figure below.</p>
+<p>The <a href="https://www.javadoc.io/doc/org.apache.camel/camel-api/latest/org/apache/camel/CamelContext.html">CamelContext</a> is the runtime system, which holds together all the fundamental concepts of Apache Camel (routes, endpoints, components, etc).</p>
+</div>
+<div class="paragraph">
+<p>This context object represents the Camel runtime system. Typically, you have one <em>CamelContext</em> instance in an application.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -643,11 +655,10 @@ holds everything together as depicted in the figure below.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>CamelContext</code> provides access to many useful services, the most notable
-being components, type converters, a registry, endpoints, routes, data formats, and languages.</p>
+<p>The <code>CamelContext</code> provides access to many features and services, the most notable being components, type converters, a registry, endpoints, routes, data formats, and languages.</p>
 </div>
 <div class="paragraph">
-<p>The following table lists the most common services provided by <code>CamelContext</code>:</p>
+<p>The following table lists the most common services provided by the <code>CamelContext</code>:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -697,23 +708,19 @@ being components, type converters, a registry, endpoints, routes, data formats, 
 <h2 id="_camelcontext_101"><a class="anchor" href="#_camelcontext_101"></a>CamelContext 101</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To better understand Apache Camel then lets talk a bit more about what is inside the <code>CamelContext</code>.</p>
+<p>To give you a better understanding of Apache Camel, we&#8217;ll discuss what is inside the <code>CamelContext</code>.</p>
 </div>
 <div class="sect2">
 <h3 id="_routing_engine"><a class="anchor" href="#_routing_engine"></a>Routing Engine</h3>
 <div class="paragraph">
-<p>Camel’s routing engine is what moves messages under the hood. This engine isn’t
-exposed to the developer, but you should be aware that it’s there and that it does all the
-heavy lifting, ensuring that messages are routed properly.</p>
+<p>Camel&#8217;s routing engine moves messages under the hood and does all the heavy lifting to ensure that messages are routed properly. It is not exposed to the developer, but you should be aware that it&#8217;s there.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_routes"><a class="anchor" href="#_routes"></a>Routes</h3>
 <div class="paragraph">
-<p><a href="routes.html" class="xref page">Routes</a> are a core abstraction for Camel. The simplest way to define a route is
-as a chain of <a href="processor.html" class="xref page">Processors</a>. There are many reasons for using routers in messaging applications.
-By decoupling clients from servers, and producers from consumers, routes can
-for example do the following:</p>
+<p><a href="routes.html" class="xref page">Routes</a> are a core abstraction for Camel. The simplest way to define a route is as a chain of <a href="processor.html" class="xref page">Processors</a>. There are many reasons for using routers in messaging applications.
+By decoupling clients from servers, and producers from consumers, routes can, for example, do the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -724,24 +731,21 @@ for example do the following:</p>
 <p>Provide a flexible way to add extra processing</p>
 </li>
 <li>
-<p>Allow for clients and servers to be developed independently</p>
+<p>Allow independent development for clients and servers</p>
 </li>
 <li>
-<p>Foster better design practices by connecting disparate systems that do one
-thing well</p>
+<p>Foster better design practices by connecting disparate systems that do one thing well</p>
 </li>
 <li>
-<p>Allow for clients of servers to be stubbed out (using <a href="../components/3.18.x/mock-component.html" class="xref page">mocks</a>) for testing purposes</p>
+<p>Allow for clients of servers to be stubbed out (using <a href="#components::mock-component.adoc" class="xref unresolved">mocks</a>) for testing purposes</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Each route in Camel has a unique identifier that’s used for logging, debugging, monitoring,
-and starting and stopping routes.</p>
+<p>Each route in Camel has a unique identifier. You can use the identifier to log, debug, monitor, and start and stop routes.</p>
 </div>
 <div class="paragraph">
-<p>Routes also have exactly one input source for messages,
-so they’re effectively tied to an input <a href="endpoint.html" class="xref page">endpoint</a>.</p>
+<p>Routes have one and only one input source for messages. They are effectively tied to an input endpoint.</p>
 </div>
 </div>
 <div class="sect2">
@@ -763,14 +767,11 @@ so they’re effectively tied to an input <a href="endpoint.html" class="xref pa
 </div>
 </div>
 <div class="paragraph">
-<p>Here, in a single Java statement, you define a route that consumes files from a <a href="../components/3.18.x/file-component.html" class="xref page">file</a> endpoint.
-Messages are then routed to the <a href="../components/3.18.x/eips/filter-eip.html" class="xref page">Filter</a> EIP, which will use an XPath predicate to
-test whether the message is not a test order. If a message passes the test, it’s forwarded
-to the <a href="../components/3.18.x/jms-component.html" class="xref page">JMS</a> endpoint. Messages failing the filter test are skipped.</p>
+<p>Here, in a single Java statement, you define a route that consumes files from a <a href="#components::file-component.adoc" class="xref unresolved">file</a> endpoint.
+Camel uses the <a href="../components/next/eips/filter-eip.html" class="xref page">Filter EIP</a> to route the messages using an XPath predicate to test whether the message is not a test order. If a message passes the test, Camel forwards it to the <a href="#components::jms-component.adoc" class="xref unresolved">JMS</a> endpoint. Messages failing the filter test are skipped.</p>
 </div>
 <div class="paragraph">
-<p>Camel provides multiple DSL languages, so you could define the same route by using
-the XML DSL, like this:</p>
+<p>Camel provides multiple DSL languages. You could define the same route using the XML DSL:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -798,8 +799,7 @@ the XML DSL, like this:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The DSLs provide a nice abstraction for Camel users to build applications with. Under
-the hood, though, a route is composed of a graph of processors.</p>
+<p>The DSLs provide a nice abstraction for Camel users to build applications. Under the hood, though, a route is composed of a graph of processors.</p>
 </div>
 </div>
 <div class="sect2">
@@ -820,19 +820,16 @@ your own custom code. The figure below shows the flow between processors.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>A route first starts with a consumer (i.e. <code>from</code> in the DSL) that populates the initial
-<a href="exchange.html" class="xref page">exchange</a>. At each processor step, the out message from the previous step is the in
-message of the next. In many cases, processors don’t set an out message, so in this case
-the in message is reused. At the end of a route, the <a href="exchange-pattern.html" class="xref page">MEP</a> of the exchange determines
-whether a reply needs to be sent back to the caller of the route. If the <a href="exchange-pattern.html" class="xref page">MEP</a> is InOnly,
-no reply will be sent back. If it’s InOut, Camel will take the out message from the last
-step and return it.</p>
+<p>A route starts with a consumer (i.e., <code>from</code> in the DSL) that populates the initial <a href="exchange.html" class="xref page">exchange</a>. At each processor step, the output (out) message
+from the previous step is the input (in) message of the next. In many cases, processors don’t set an out message, so in this case the in message
+is reused. The <a href="exchange-pattern.html" class="xref page">exchange pattern</a> of the exchange determines, at the end of a route, whether a reply needs to be sent back to the caller of the route.
+If the exchange pattern (MEP) is InOnly, no reply will be sent back. If it’s InOut, Camel will take the out message from the last step and return it.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_component"><a class="anchor" href="#_component"></a>Component</h3>
 <div class="paragraph">
-<p><a href="../components/3.18.x/index.html" class="xref page">Components</a> are the main extension point in Camel.</p>
+<p><a href="../components/next/index.html" class="xref page">Components</a> are the main extension point in Camel.</p>
 </div>
 <div class="paragraph">
 <p>From a programming point of view, components are fairly simple: they’re associated
@@ -950,7 +947,7 @@ File, FTP, and email components all use scheduled polling consumers.</p>
 <td class="content">
 In the Camel components its only either the event driven or scheduled polling consumers that
 are in use. The polling consumer (non-scheduled) is only used to poll on-demand, such as
-when using the <a href="../components/3.18.x/eips/pollEnrich-eip.html" class="xref page">Poll Enrich</a> EIP, or from Java by
+when using the <a href="../components/next/eips/pollEnrich-eip.html" class="xref page">Poll Enrich</a> EIP, or from Java by
 creating a <code>PollingConsumer</code> instance via the <code>createPollingConsumer()</code> method from <code>Endpoint</code>.
 </td>
 </tr>

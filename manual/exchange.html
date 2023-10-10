@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Message Exchange :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="exchange.html">Message Exchange</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/exchange.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/exchange.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -630,15 +641,51 @@
 </aside>
 <article class="doc">
 <h1 class="page">Message Exchange</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>To support various message exchange patterns
-like one way <a href="../components/3.18.x/eips/event-message.html" class="xref page">Event Message</a> and
-<a href="../components/3.18.x/eips/requestReply-eip.html" class="xref page">Request Reply</a> messages Camel
-uses an <code>Exchange</code> interface which has an <a href="exchange-pattern.html" class="xref page">Exchange Pattern</a>
-property which can be set to <strong>InOnly</strong> for an
-<a href="../components/3.18.x/eips/event-message.html" class="xref page">Event Message</a> which has a single inbound Message,
-or <strong>InOut</strong> for a <a href="../components/3.18.x/eips/requestReply-eip.html" class="xref page">Request Reply</a>
-where there is an inbound and outbound Message.</p>
+<p>A request message and its corresponding reply or exception message is represented in Camel using the <code>Exchange</code> interface.
+This interface provides an abstraction for this pattern of communication between systems.
+The presence of a reply message is optional and depends on the <a href="exchange-pattern.html" class="xref page">exchange pattern</a> used in the integration.
+Thanks to this, Apache Camel can support different integration patterns such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../components/next/eips/event-message.html" class="xref page">Event Messages</a>: messages that have only an inbound message</p>
+</li>
+<li>
+<p><a href="../components/next/eips/requestReply-eip.html" class="xref page">Request and Reply</a>: messages that have an inbound and an outbound message.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_learn_more_about_exchanges"><a class="anchor" href="#_learn_more_about_exchanges"></a>Learn More About Exchanges</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="exchange-pooling.html" class="xref page">Exchange Pooling</a></p>
+</li>
+<li>
+<p><a href="using-exchange-pattern-annotations.html" class="xref page">Using Exchange Pattern Annotations</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementation_details"><a class="anchor" href="#_implementation_details"></a>Implementation Details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are concrete classes that implement the <code>Exchange</code> interface for each Camel-supported communications technology. For example, the <code>JmsExchange</code> class provides a JMS-specific implementation of the <code>Exchange</code> interface. The public API of the <code>Exchange</code> interface is limited intentionally: we expect that each class that implements this interface will provide its own technology-specific operations.</p>
+</div>
+<div class="paragraph">
+<p>Application-level programmers rarely access the <code>Exchange</code> interface (or classes that implement it) directly. However, many classes in Camel are generic types that are instantiated on (a class that implements) <code>Exchange</code>. Because of this, the <code>Exchange</code> interface appears a lot in the generic signatures of classes and methods.</p>
+</div>
+</div>
 </div>
 </article>
   </div>

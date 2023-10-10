@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Using Exchange Pattern Annotations :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="using-exchange-pattern-annotations.html">Using Exchange pattern annotations</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/using-exchange-pattern-annotations.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/using-exchange-pattern-annotations.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -633,22 +644,42 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>When working with <a href="pojo-producing.html" class="xref page">POJO Producing</a> you invoke methods which
-typically by default are InOut for <a href="../components/3.18.x/eips/requestReply-eip.html" class="xref page">Request
-Reply</a>. That is there is an In message and an Out for the result.
-Typically invoking this operation will be synchronous, the caller will
-block until the server returns a result.</p>
+<p>Invoking InOut methods for ref:components:eips:requestReply-eip.adoc[request/reply] when working with <a href="pojo-producing.html" class="xref page">POJO Producing</a> is typically synchronous. As such, the caller will block until the server returns a result.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>InOut means that there is an In message for  the input and an Out for the output/result.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Other books, posts and reference guides may use the terms In/Out and In/Only for the patterns. In this guide we use InOut and InOnly respectively, as these are the names used within Camel.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Camel has flexible <a href="exchange-pattern.html" class="xref page">Exchange Pattern</a> support
-- so you can also support the <a href="../components/3.18.x/eips/event-message.html" class="xref page">Event Message</a>
-pattern to use InOnly for asynchronous or one way operations. These are
-often called 'fire and forget' like sending a JMS message but not
-waiting for any response.</p>
+<p>You can also implement support for <a href="../components/next/eips/event-message.html" class="xref page">Event Messages</a> with Apache Camel, using the InOnly <a href="exchange-pattern.html" class="xref page">pattern</a>. These are often called "fire and forget" (i.e., like sending a JMS message but not waiting for any response).</p>
 </div>
 <div class="paragraph">
-<p>From 1.5 onwards Camel supports annotations for specifying the message
-exchange pattern on regular Java methods, classes or interfaces.</p>
+<p>Since version 1.5 Camel supports annotations for specifying the message
+exchange pattern on Java methods, classes or interfaces.</p>
 </div>
 </div>
 </div>
@@ -656,8 +687,8 @@ exchange pattern on regular Java methods, classes or interfaces.</p>
 <h2 id="UsingExchangePatternAnnotations-SpecifyingInOnlymethods"><a class="anchor" href="#UsingExchangePatternAnnotations-SpecifyingInOnlymethods"></a>Specifying InOnly methods</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Typically the default InOut is what most folks want but you can
-customize to use InOnly using an annotation.</p>
+<p>Typically the InOut pattern is what most users want, but you can
+customize to use InOnly using an annotation. For instance:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -671,9 +702,9 @@ customize to use InOnly using an annotation.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The above code shows three methods on an interface; the first two use
-the default InOut mechanism but the <strong>someInOnlyMethod</strong> uses the InOnly
-annotation to specify it as being a oneway method call.</p>
+<p>The above code shows three methods on an interface:
+* the first two use the default InOut mechanism
+* the third one, <code>someInOnlyMethod</code> uses the InOnly annotation to specify it as being a one-way method call.</p>
 </div>
 </div>
 </div>
@@ -682,7 +713,7 @@ annotation to specify it as being a oneway method call.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can also use class level annotations to default all methods in an
-interface to some pattern such as</p>
+interface to a pattern:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -694,8 +725,7 @@ public interface Foo {
 </div>
 </div>
 <div class="paragraph">
-<p>Annotations will also be detected on base classes or interfaces. So for
-example if you created a client side proxy for</p>
+<p>Apache Camel will detect annotations on base classes or interfaces. For instance, suppose you created a client side proxy for the following code:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -705,7 +735,7 @@ example if you created a client side proxy for</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Then the methods inherited from Foo would be InOnly.</p>
+<p>In this case, the methods inherited from Foo would be InOnly.</p>
 </div>
 </div>
 </div>
@@ -713,9 +743,7 @@ example if you created a client side proxy for</p>
 <h2 id="UsingExchangePatternAnnotations-Overloadingaclasslevelannotation"><a class="anchor" href="#UsingExchangePatternAnnotations-Overloadingaclasslevelannotation"></a>Overloading a class level annotation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can overload a class level annotation on specific methods. A common
-use case for this is if you have a class or interface with many InOnly
-methods but you want to just annote one or two methods as InOut</p>
+<p>You can overload a class level annotation on specific methods. Suppose you have a class or interface with many InOnly methods, but you want to annote just one or two methods as InOut. You can do it like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -730,7 +758,7 @@ public interface Foo {
 </div>
 </div>
 <div class="paragraph">
-<p>In the above Foo interface the <strong>someInOutMethod</strong> will be InOut</p>
+<p>In the above <code>Foo</code> interface the only the <code>someInOutMethod</code> will be InOut.</p>
 </div>
 </div>
 </div>
@@ -743,12 +771,11 @@ different bits of metadata; such as combining synchrony, concurrency and
 transaction behaviour.</p>
 </div>
 <div class="paragraph">
-<p>So you could annotate your annotation with the @Pattern annotation to
-default the exchange pattern you wish to use.</p>
+<p>In this case you can annotate your annotation with the <code>@Pattern</code> annotation to the default exchange pattern you wish to use.</p>
 </div>
 <div class="paragraph">
-<p>For example lets say we want to create our own annotation called
-@MyAsyncService</p>
+<p>For example, lets say we want to create our own annotation called
+<code>@MyAsyncService</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -765,8 +792,8 @@ public @interface MyAsyncService {
 </div>
 </div>
 <div class="paragraph">
-<p>Now we can use this annotation and Camel will figure out the correct
-exchange pattern&#8230;&#8203;</p>
+<p>Now we can use this annotation, and Camel will figure out the correct
+exchange pattern.</p>
 </div>
 <div class="listingblock">
 <div class="content">

@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Getting Started :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -621,7 +632,7 @@
     <li><a href="getting-started.html">Getting started</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/getting-started.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/getting-started.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -632,55 +643,186 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>First you need to Download the Camel distribution;
-or you could grab the Source and try
-Building it yourself.</p>
-</div>
-<div class="paragraph">
-<p>Then come back here, and you might want to read the following
-documentation before continuing:</p>
+<p>You can get started with Apache Camel in a variety of ways, such as:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Longer <a href="book-getting-started.html" class="xref page">Getting Started Guide</a></p>
+<p>Using online Project generators</p>
 </li>
 <li>
-<p>Find out about <a href="../components/3.18.x/eips/enterprise-integration-patterns.html" class="xref page">Enterprise Integration Patterns</a>
-and how to implement them with Camel</p>
+<p>Using the Camel CLI (command line)</p>
 </li>
 <li>
-<p>Review the <a href="architecture.html" class="xref page">Architecture guide</a> to see how to build Routes using the <a href="dsl.html" class="xref page">DSL</a>.</p>
+<p>Using Camel Karavan (visual UI Camel designer)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And some more alternative methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adding Camel to an existing project</p>
+</li>
+<li>
+<p>Using IDE tooling wizards</p>
+</li>
+<li>
+<p>Using Maven Archetypes</p>
+</li>
+<li>
+<p>Cloning an existing example to modify</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_working_with_camelcontexts_and_routebuilders"><a class="anchor" href="#_working_with_camelcontexts_and_routebuilders"></a>Working with CamelContexts and RouteBuilders</h2>
+<h2 id="_using_online_project_generators"><a class="anchor" href="#_using_online_project_generators"></a>Using online Project generators</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To get started with Camel:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Create a <a href="camelcontext.html" class="xref page">CamelContext</a>.</p>
-</li>
-<li>
-<p>Add whatever routing rules you wish using the DSL and <code>RouteBuilder</code> or using XML DSL.</p>
-</li>
-<li>
-<p>Start the Camel context.</p>
-</li>
-</ol>
+<p>You can use <a href="https://kameleon.dev/#/standalone">Camel Kameleon</a> which is Camel&#8217;s own
+online project generator. This generator is Camel focused only, which is recommended
+for most Camel users.</p>
 </div>
 <div class="paragraph">
-<p>When your application is closing you may wish to stop the context</p>
+<p>You can also use <a href="https://start.spring.io/">Spring Boot Initializer</a> which is the Spring Boot
+generator that also has Camel support. However, this generator does not allow users to have fine-grained control over which components, data formats, kamelets etc. they can use.</p>
 </div>
 <div class="paragraph">
-<p>When you are ready, why not <a href="walk-through-an-example.html" class="xref page">walk through an example</a>?
-And then <a href="walk-through-another-example.html" class="xref page">walk through another example</a>.</p>
+<p>And there is <a href="https://code.quarkus.io/">Code with Quarkus</a>, the Quarkus
+generator, which has great support with Camel.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_started_from_command_line_cli"><a class="anchor" href="#_getting_started_from_command_line_cli"></a>Getting Started from command line (CLI)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Camel uses <a href="https://www.jbang.dev/">JBang</a> for the Camel CLI.
+You can easily get up and running in a few steps.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong></p>
+</div>
+<div class="paragraph">
+<p>Open your favorite terminal and use JBang to install the Camel CLI.
+You do not need to have Java installed first.</p>
+</div>
+<div class="paragraph">
+<p>For Linux, macOS, and Windows (using WSL or bash compatible shell like Cygwin or MinGW)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -Ls https://sh.jbang.dev | bash -s - trust add https://github.com/apache/
+curl -Ls https://sh.jbang.dev | bash -s - app install --fresh --force camel@apache/camel</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For Windows using Powershell</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">iex "&amp; { $(iwr https://ps.jbang.dev) } trust add https://github.com/apache/"
+iex "&amp; { $(iwr https://ps.jbang.dev) } app install --fresh --force camel@apache/camel"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If it&#8217;s your first time to install, you&#8217;ll need to restart your shell.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong></p>
+</div>
+<div class="paragraph">
+<p>Create your first Camel integration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">camel init hello.java</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong></p>
+</div>
+<div class="paragraph">
+<p>Run the Camel integration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">camel run hello.java</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bang the Camel integration is now running.
+You can use <code>ctrl</code> + <code>c</code> to stop the integration.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong></p>
+</div>
+<div class="paragraph">
+<p>Camel makes it easy to change your code on the fly.
+You can run in live coding mode, as shown:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">camel run hello.java --dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>While in live coding mode, whenever you save changes to <code>hello.java</code>, Camel will automatically load the updated version.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong></p>
+</div>
+<div class="paragraph">
+<p>Make sure to check out the <a href="camel-jbang.html" class="xref page">Camel JBang</a> documentation, for more details on the powers
+of the Camel CLI. You will also find information how you can <em>export</em> what you have built
+with the Camel CLI into a vanilla Camel Spring Boot or Camel Quarkus project.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_started_with_camel_using_karavan"><a class="anchor" href="#_getting_started_with_camel_using_karavan"></a>Getting started with Camel using Karavan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="https://github.com/apache/camel-karavan">Camel Karavan</a> is a toolkit for visually
+designing Camel integrations, it is fully integrated with <a href="camel-jbang.html" class="xref page">Camel JBang</a>
+which allows users to easily try Camel while using the designer.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alternative_ways_of_getting_started_with_camel"><a class="anchor" href="#_alternative_ways_of_getting_started_with_camel"></a>Alternative ways of getting started with Camel</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_adding_camel_to_an_existing_project"><a class="anchor" href="#_adding_camel_to_an_existing_project"></a>Adding Camel to an existing project</h3>
+<div class="paragraph">
+<p>You can add Camel to any Java project, such as adding the necessary Camel dependencies
+to the project build files (Maven or Gradle).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_ide_tooling_wizards"><a class="anchor" href="#_using_ide_tooling_wizards"></a>Using IDE tooling wizards</h3>
+<div class="paragraph">
+<p>Some IDEs have wizards for creating new projects, of which, some have support for
+Apache Camel via Spring Boot Initializer or Code with Quarkus.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_maven_archetypes"><a class="anchor" href="#_using_maven_archetypes"></a>Using Maven Archetypes</h3>
+<div class="paragraph">
+<p>Apache Camel comes with a set of <a href="camel-maven-archetypes.html" class="xref page">Camel Maven Archetypes</a>,
+you can use to create a new Camel project.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cloning_an_existing_example_to_modify"><a class="anchor" href="#_cloning_an_existing_example_to_modify"></a>Cloning an existing example to modify</h3>
+<div class="paragraph">
+<p>There are tons of Camel examples hosted on Github that you can clone and modify,
+such as <a href="https://github.com/apache/camel-spring-boot-examples">Camel Spring Boot examples</a>.</p>
+</div>
 </div>
 </div>
 </div>

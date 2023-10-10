@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>URIs :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="uris.html">URIs</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/uris.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/uris.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -630,11 +641,13 @@
 </aside>
 <article class="doc">
 <h1 class="page">URIs</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Camel makes extensive use of URIs to allow you to refer to <a href="endpoint.html" class="xref page">Endpoint</a>s.</p>
+<p>Camel makes extensive use of URIs to allow you to refer to <a href="endpoint.html" class="xref page">Endpoints</a>.</p>
 </div>
 <div class="paragraph">
-<p>For example the following URI:</p>
+<p>For example, consider the following URI:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -642,31 +655,32 @@
 </div>
 </div>
 <div class="paragraph">
-<p>This endpoint is created by the <a href="../components/3.18.x/kafka-component.html" class="xref page">Kafka</a> component.
+<p>This endpoint is created by the <a href="#components::kafka-component.adoc" class="xref unresolved">Kafka</a> component.
 The URI contains endpoint configurations as context-path and query parameters.
-In this example the context-path is <code>cheese</code> which is the kafka topic to use.</p>
+In this example, the context-path is <code>cheese</code> which is the kafka topic to use.</p>
 </div>
 <div class="paragraph">
 <p>The query parameters have two parameters:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>brokers=mykafka:1234</code> which is the remote Kafka broker to connect to.</p>
+<p><code>brokers=mykafka:1234</code>: the remote Kafka broker to connect to.</p>
 </li>
 <li>
-<p><code>clientId=foo</code> is the client id</p>
+<p><code>clientId=foo</code>: the client id, which is a configuration of the Kafka component</p>
 </li>
-</ul>
+</ol>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_more_information"><a class="anchor" href="#_more_information"></a>More Information</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Make sure to read
-<a href="faq/how-do-i-configure-endpoints.html" class="xref page">How do I configure endpoints</a>
-to learn more about configuring endpoints. For
-example how to refer to beans in the <a href="registry.html" class="xref page">registry</a> or how
-to use raw values for password options, and using
-<a href="using-propertyplaceholder.html" class="xref page">property placeholders</a>, or how to use
-the type safe <a href="Endpoint-dsl.html" class="xref page">Endpoint DSL</a>.</p>
+<p>You can read the guide <a href="faq/how-do-i-configure-endpoints.html" class="xref page">How do I configure endpoints</a> to learn more about configuring <em>endpoints</em>. Among other things, this guide explains how to refer to beans in the <a href="registry.html" class="xref page">registry</a>, how to use raw values for password options, how to use <a href="using-propertyplaceholder.html" class="xref page">property placeholders</a>, or how to use the type safe <a href="Endpoint-dsl.html" class="xref page">Endpoint DSL</a> and <a href="dataformat-dsl.html" class="xref page">DataFormat DSL</a>.</p>
+</div>
+</div>
 </div>
 </article>
   </div>

@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Routes :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="routes.html">Routes</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/routes.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/routes.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -633,14 +644,16 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A Camel <em>route</em> is where the integration flow is defined.
-For example to integrate two systems then a Camel route can be <em>coded</em> to specify how these systems are integrated.</p>
+<p>In Apache Camel, a <em>route</em> is a set of processing steps that are applied to a message as it travels from a source to a destination. A route typically consists of a series of processing steps that are connected in a linear sequence.</p>
 </div>
 <div class="paragraph">
-<p>An example could be to take files from a FTP server and send to a ActiveMQ messaging system.</p>
+<p>A Camel <em>route</em> is where the integration flow is defined. For example, you can write a Camel route to specify how two systems can be integrated. You can also specify how the data can be manipulated, routed, or mediated between the systems.</p>
 </div>
 <div class="paragraph">
-<p>This can be coded in a route using Java with the <a href="java-dsl.html" class="xref page">Java DSL</a></p>
+<p>The routes are typically defined using a simple, declarative syntax that is easy to read and understand.</p>
+</div>
+<div class="paragraph">
+<p>For instance, you could write a <em>route</em> to consume files from an FTP server and send them to an <a href="http://activemq.apache.org">ActiveMQ</a> messaging system. A <em>route</em> to do so, using <a href="java-dsl.html" class="xref page">Java DSL</a>, would look like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -649,7 +662,7 @@ For example to integrate two systems then a Camel route can be <em>coded</em> to
 </div>
 </div>
 <div class="paragraph">
-<p>Camel support coding in other languages such as XML:</p>
+<p>Camel <em>routes</em> can be defined using a variety of <a href="dsl.html" class="xref page">domain-specific languages (DSLs)</a>, such as Java, Spring XML, or YAML. For example, you could write the <em>route</em> described above using XML:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -662,11 +675,13 @@ For example to integrate two systems then a Camel route can be <em>coded</em> to
 </div>
 </div>
 <div class="sect1">
-<h2 id="_routebuilder_with_java_dsl"><a class="anchor" href="#_routebuilder_with_java_dsl"></a>RouteBuilder with Java DSL</h2>
+<h2 id="_writing_routes_in_java_using_the_java_dsl"><a class="anchor" href="#_writing_routes_in_java_using_the_java_dsl"></a>Writing Routes in Java using the Java DSL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When coding routes with the <a href="java-dsl.html" class="xref page">Java DSL</a> then you would use a <a href="route-builder.html" class="xref page"><code>RouteBuilder</code></a> classes where
-you code the route in the <code>configure</code> method as shown:</p>
+<p>You can create a route using the Java language by extending the <a href="route-builder.html" class="xref page"><code>RouteBuilder</code> class</a>, and implementing the <code>configure</code> method.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -678,26 +693,10 @@ you code the route in the <code>configure</code> method as shown:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>As you can see from the above Camel uses URIs to wire endpoints together.</p>
-</div>
-<div class="sect2">
-<h3 id="_routes_using_java_lambda_style"><a class="anchor" href="#_routes_using_java_lambda_style"></a>Routes using Java lambda style</h3>
-<div class="paragraph">
-<p>Camel now supports to define Camel routes in Java DSL using Lambda style. This can be beneficial for microservices or serverless where
-you may want to quickly define a few routes.</p>
+<p>As you can see from the code snippet above, Camel uses <a href="uris.html" class="xref page">URIs</a> to wire endpoints together.</p>
 </div>
 <div class="paragraph">
-<p>For example using lambda style you can define a Camel route that takes messages from Kafka and send to JMS in a single line of code:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">rb -&gt; rb.from("kafka:cheese").to("jms:queue:foo");</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>There is a bit more to this as the lambda route must be coded in a Java method that returns an instance of <code>LambdaRouteBuilder</code>.
-See more at the <a href="lambda-route-builder.html" class="xref page">LambdaRouteBuilder</a> documentation.</p>
-</div>
+<p>We refer to this way of writing route as using the <a href="java-dsl.html" class="xref page">Java DSL</a>.</p>
 </div>
 </div>
 </div>
@@ -705,10 +704,10 @@ See more at the <a href="lambda-route-builder.html" class="xref page">LambdaRout
 <h2 id="_route_precondition"><a class="anchor" href="#_route_precondition"></a>Route Precondition</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The routes can be included or not according to the result of a test expressed in simple language that is evaluated only once during the initialization phase.</p>
+<p>The routes can be included or not according to the result of a test. You can express the condition for the tests using the simple language. Camel evaluates this condition only once during the initialization phase.</p>
 </div>
 <div class="paragraph">
-<p>In the next example, the route is only included if the parameter <code>format</code> has been set to <code>xml</code>.</p>
+<p>Here&#8217;s an example that includes the route only if the parameter <code>format</code> has been set to <code>xml</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -718,7 +717,7 @@ See more at the <a href="lambda-route-builder.html" class="xref page">LambdaRout
 </div>
 </div>
 <div class="paragraph">
-<p>And the same example using XML DSL:</p>
+<p>You can write the same route described above using the <a href="#components:others:java-xml-io-dsl.adoc" class="xref unresolved">XML DSL</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -730,7 +729,7 @@ See more at the <a href="lambda-route-builder.html" class="xref page">LambdaRout
 </div>
 </div>
 <div class="paragraph">
-<p>And in YAML DSL:</p>
+<p>You can also write the same route described above using the <a href="#components:others:yaml-dsl.adoc" class="xref unresolved">YAML DSL</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -750,7 +749,7 @@ See more at the <a href="lambda-route-builder.html" class="xref page">LambdaRout
 <h2 id="_more_information"><a class="anchor" href="#_more_information"></a>More Information</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>See <a href="route-builder.html" class="xref page">RouteBuilder</a> and <a href="dsl.html" class="xref page">DSL</a> for a list of supported languages you can use for coding Camel routes.</p>
+<p>Check the <a href="dsl.html" class="xref page">list of supported languages</a> that you can use for writing Camel routes.</p>
 </div>
 </div>
 </div>

@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Components :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="component.html">Component</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/component.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/component.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -633,7 +644,41 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A Component is essentially a factory of <a href="endpoint.html" class="xref page">Endpoint</a> instances.</p>
+<p>Components are a fundamental building block of Apache Camel and are used to connect routes to a wide variety of external systems and services. Camel comes with a large number of built-in components that provide connectivity to a wide range of technologies and protocols, such as HTTP, JMS, file, and many others. You can also create a custom components if the built-in components do not meet your needs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_components_the_basics"><a class="anchor" href="#_components_the_basics"></a>Components: the basics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Component is essentially a factory of Endpoint instances. Typically, applications shouldn&#8217;t need to interact directly with a component. However, there are some circumstances where manipulating the component may be beneficial for the performance, operation, or scalability of the application. In such cases, these applications may use the context to get access to an instance of the endpoint they need to manipulate. The applications can do so by using the method <code>CamelContext.getEndpoint()</code>. This method returns an implementation of the <code>Component</code> interface that is appropriate for the component requested. For instance, consider the following code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">myCamelContext.getEndpoint("pop3://john.smith@mailserv.example.com?password=myPassword");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For the URI given in the above example, the <code>CamelContext</code> object would map the <code>pop3</code> prefix to an instance of the <code>MailComponent</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The parameter to <code>getEndpoint()</code> is a URI. The URI <em>scheme</em> (that is,
+the part before <code>:</code>) specifies the name of a component. Internally, the <code>CamelContext</code> object maintains a mapping from the names of components to <code>Component</code> objects.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Our documentation contains an in-depth overview of the <a href="component.html" class="xref page">Component</a> if you want to learn more about it, including important details necessary to write your own.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -655,15 +700,14 @@
 </div>
 <div class="paragraph">
 <p>The component level is the highest level which holds general and common configurations that are inherited by the endpoints.
-For example a component may have security settings, credentials for authentication, urls for network connection and so forth.</p>
+For example, a component may have security settings, credentials for authentication, urls for network connection and so forth.</p>
 </div>
 <div class="paragraph">
-<p>Some components only have a few options, and others may have many. Because components typically have pre configured defaults
+<p>Some components only have a few options, and others may have many. Because components typically have pre-configured defaults
 that are commonly used, then you may often only need to configure a few options on a component; or none at all.</p>
 </div>
 <div class="paragraph">
-<p>Configuring components can be done with the <a href="component-dsl.html" class="xref page">Component DSL</a>,
-in a configuration file (application.properties|yaml), or directly with Java code.</p>
+<p>Configuring components can be done with the <a href="component-dsl.html" class="xref page">Component DSL</a>, in a configuration file (application.properties|yaml), or directly with Java code.</p>
 </div>
 </div>
 </div>
@@ -671,9 +715,20 @@ in a configuration file (application.properties|yaml), or directly with Java cod
 <h2 id="_configuring_endpoint_options"><a class="anchor" href="#_configuring_endpoint_options"></a>Configuring Endpoint Options</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Where you find yourself configuring the most is on endpoints, as endpoints often have many options, which allows you to
-configure what you need the endpoint to do. The options are also categorized into whether the endpoint is used as consumer (from)
-or as a producer (to), or used for both.</p>
+<p>Typically, you want to configure endpoints, as endpoints often have many options, which allows you to configure what you need the endpoint to do. These endpoint options are also categorized according to the type of endpoint:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>consumer (<em>from</em>)</p>
+</li>
+<li>
+<p>producer (<em>to</em>)</p>
+</li>
+<li>
+<p>or both.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Configuring endpoints is most often done directly in the endpoint URI as path and query parameters. You can also use
@@ -681,8 +736,118 @@ the <a href="Endpoint-dsl.html" class="xref page">Endpoint DSL</a> as a <em>type
 </div>
 <div class="paragraph">
 <p>A good practice when configuring options is to use <a href="using-propertyplaceholder.html" class="xref page">Property Placeholders</a>,
-which allows to not hardcode urls, port numbers, sensitive information, and other settings.
-In other words placeholders allows to externalize the configuration from your code, and gives more flexibility and reuse.</p>
+which allow us to avoid using hardcoded urls, port numbers, sensitive information, and other settings.
+In other words, with placeholders you can externalize the configuration from your code, thus obtaining more flexibility and reuse.</p>
+</div>
+<div class="sect2">
+<h3 id="_how_camel_maps_names_to_components"><a class="anchor" href="#_how_camel_maps_names_to_components"></a>How Camel maps names to components</h3>
+<div class="paragraph">
+<p>In the getting started guide, we explained that Camel maintains a map of names to components. This raises the question of how Camel populates this map with named <code>Component</code> objects.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Normally, application developers don&#8217;t need to worry about this. However, this information is fundamental if you are writing a custom component.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>There are two ways of populating the map.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Programmatically, using the context</p>
+</li>
+<li>
+<p>Via lazy-initialization</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_programmatically"><a class="anchor" href="#_programmatically"></a>Programmatically</h3>
+<div class="paragraph">
+<p>The programmatic way is for application-level code to invoke <code>CamelContext.addComponent(String componentName, Component component)</code>.</p>
+</div>
+<div class="paragraph">
+<p>The example below shows a single <code>MailComponent</code> object being registered in the map under 3 different names.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Component mailComponent = new org.apache.camel.component.mail.MailComponent();
+myCamelContext.addComponent("pop3", mailComponent);
+myCamelContext.addComponent("imap", mailComponent);
+myCamelContext.addComponent("smtp", mailComponent);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lazy_initialization"><a class="anchor" href="#_lazy_initialization"></a>Lazy-initialization</h3>
+<div class="paragraph">
+<p>The second (and preferred) way to populate the map of named <code>Component</code> objects in the <code>CamelContext</code> object is to let the <code>CamelContext</code> object perform lazy initialization.</p>
+</div>
+<div class="paragraph">
+<p>This approach relies on developers following a convention when they write a class that implements the <code>Component</code> interface. For instance, let&#8217;s assume you write a class called <code>com.example.myproject.FooComponent</code> and you want Camel to automatically recognize this by the name <code>foo</code>. To do this, you write a properties file called <code>META-INF/services/org/apache/camel/component/foo</code> (without a <code>.properties</code> file extension) that has a single entry in it called <code>class</code>, the value of which is the fully-scoped name of your class. For instance:</p>
+</div>
+<div class="listingblock">
+<div class="title">META-INF/services/org/apache/camel/component/foo</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">class=com.example.myproject.FooComponent</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want Camel to also recognize the class by the name <code>bar</code> then you write another properties file in the same directory called <code>bar</code> that has the same contents. Once you have written the properties file(s), you create a JAR file that contains the <code>com.example.myproject.FooComponent</code> class and the properties file(s), and you add this jar file to your CLASSPATH. Then, when application-level code invokes <code>createEndpoint("foo:&#8230;&#8203;")</code> on a <code>CamelContext</code> object, Camel will find the "foo"" properties file on the CLASSPATH, get the value of the <code>class</code> property from that properties file, and use reflection APIs to create an instance of the specified class.</p>
+</div>
+<div class="paragraph">
+<p>Camel provides out-of-the-box support for various communication technologies. This support consists of classes that implement the <code>Component</code> interface plus properties files that enable a <code>CamelContext</code> object to populate its map of named <code>Component</code>
+objects.</p>
+</div>
+<div class="paragraph">
+<p>Earlier in this guide, we provided the following example of calling <code>CamelContext.getEndpoint()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">myCamelContext.getEndpoint("pop3://john.smith@mailserv.example.com?password=myPassword");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We originally referred to the parameter as a URI because the online Camel documentation and the Camel source code both claim the parameter is a URI. In reality, the parameter is restricted to being a URL. This is because when Camel extracts the component name from the parameter, it looks for the first ":", which is a simplistic algorithm.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Remember that in the <a href="#camel-core:getting-started:index.adoc" class="xref unresolved">Getting Started With Camel</a> we explained that a URI could be a URL or a URN.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now consider the following calls to <code>getEndpoint</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">myCamelContext.getEndpoint("pop3:...");
+myCamelContext.getEndpoint("jms:...");
+myCamelContext.getEndpoint("urn:foo:...");
+myCamelContext.getEndpoint("urn:bar:...");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Camel identifies the components in the above example as <code>pop3</code>, <code>jms</code>, <code>urn</code>, and <code>urn</code>. It would be more useful if the latter components were identified as <code>urn:foo</code> and <code>urn:bar</code> or as <code>foo</code> and <code>bar</code> (that is, by skipping over the <code>urn:</code> prefix). So, in practice, you must identify an endpoint with a URL (a string of the form <code>&lt;scheme&gt;:&#8230;&#8203;</code>) rather than with a URN (a string of the form <code>urn:&lt;scheme&gt;:&#8230;&#8203;</code>). This lack of proper support for URNs means that you should consider the parameter to the method <code>getEndpoint()</code> as being a URL rather than (as claimed) a URI.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -693,14 +858,36 @@ In other words placeholders allows to externalize the configuration from your co
 <td class="content">
 <div class="paragraph">
 <p>Make sure to read <a href="faq/how-do-i-configure-endpoints.html" class="xref page">How do I configure endpoints?</a>
-to learn more about configuring endpoints. For
-example how to refer to beans in the <a href="registry.html" class="xref page">Registry</a> or how
-to use raw values for password options, and using
-<a href="using-propertyplaceholder.html" class="xref page">property placeholders</a> etc.</p>
+to learn more about configuring endpoints. For example, how to refer to beans in the <a href="registry.html" class="xref page">Registry</a> or how
+to use raw values for password options, and using <a href="using-propertyplaceholder.html" class="xref page">property placeholders</a> etc.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_component_dsl"><a class="anchor" href="#_component_dsl"></a>Component DSL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Component-DSL is a builder API that allows using type-safe construction of Camel Components and injecting them directly to the <a href="camelcontext.html" class="xref page">Camel Context</a> instead of initializing through a constructor.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="component-dsl.html" class="xref page">Component DSL</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_writing_components"><a class="anchor" href="#_writing_components"></a>Writing Components</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is an advanced topic and described in more detail in the <a href="writing-components.html" class="xref page">Writing Components Guide</a>.</p>
 </div>
 </div>
 </div>
@@ -710,7 +897,7 @@ to use raw values for password options, and using
 <div class="ulist">
 <ul>
 <li>
-<p>List of all Camel <a href="../components/3.18.x/index.html" class="xref page">Components</a></p>
+<p>List of all Camel <a href="../components/next/index.html" class="xref page">Components</a></p>
 </li>
 </ul>
 </div>

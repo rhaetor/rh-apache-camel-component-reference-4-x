@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Bean Integration :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="bean-integration.html">Bean Integration</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/bean-integration.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/bean-integration.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -669,11 +680,11 @@ producing, consuming or routing messages.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BeanInject</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To inject a bean obtained from the Registry. See <a href="bean-injection.html" class="xref page">Bean Injection</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To inject a bean obtained from the <a href="registry.html" class="xref page">Registry</a>. See <a href="bean-injection.html" class="xref page">Bean Injection</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BeanConfigInject</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To inject a configuration bean obtained from the Registry. The bean is a POJO that represents
+<td class="tableblock halign-left valign-top"><p class="tableblock">To inject a configuration bean obtained from the <a href="registry.html" class="xref page">Registry</a>. The bean is a POJO that represents
 a set of configuration options, which is automatic configured with values loaded via Camel <a href="using-propertyplaceholder.html" class="xref page">Property Placeholders</a>.</p></td>
 </tr>
 <tr>
@@ -712,13 +723,13 @@ a set of configuration options, which is automatic configured with values loaded
 <p><a href="pojo-producing.html" class="xref page">POJO Producing</a> to make it easy to produce camel messages from your POJOs</p>
 </li>
 <li>
-<p><code>@DynamicRouter</code> Annotation for creating a <a href="../components/3.18.x/eips/dynamicRouter-eip.html" class="xref page">Dynamic Router</a> from a POJO method</p>
+<p><code>@DynamicRouter</code> Annotation for creating a <a href="../components/next/eips/dynamicRouter-eip.html" class="xref page">Dynamic Router</a> from a POJO method</p>
 </li>
 <li>
-<p><code>@RecipientList</code> Annotation for creating a <a href="../components/3.18.x/eips/recipientList-eip.html" class="xref page">Recipient List</a> from a POJO method</p>
+<p><code>@RecipientList</code> Annotation for creating a <a href="../components/next/eips/recipientList-eip.html" class="xref page">Recipient List</a> from a POJO method</p>
 </li>
 <li>
-<p><code>@RoutingSlip</code> Annotation for creating a <a href="../components/3.18.x/eips/routingSlip-eip.html" class="xref page">Routing Slip</a> for a POJO method</p>
+<p><code>@RoutingSlip</code> Annotation for creating a <a href="../components/next/eips/routingSlip-eip.html" class="xref page">Routing Slip</a> for a POJO method</p>
 </li>
 <li>
 <p><a href="bean-injection.html" class="xref page">Bean Injection</a> to inject Camel related resources into your POJOs</p>
@@ -790,6 +801,21 @@ private String greeting;</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@PropertyInject(value = "myTimeout", defaultValue = "5000")
 private int timeout;</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_see_also"><a class="anchor" href="#_see_also"></a>See Also</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="bean-injection.html" class="xref page">Bean Injection</a></p>
+</li>
+<li>
+<p><a href="bean-binding.html" class="xref page">Bean Binding</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

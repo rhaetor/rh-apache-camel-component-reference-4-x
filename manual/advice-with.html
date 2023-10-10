@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>AdviceWith :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -623,7 +634,7 @@
     <li><a href="advice-with.html">AdviceWith</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/advice-with.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/advice-with.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -728,7 +739,7 @@ the most commonly used methods:</p>
 <div class="sect2">
 <h3 id="_pattern_matching"><a class="anchor" href="#_pattern_matching"></a>Pattern matching</h3>
 <div class="paragraph">
-<p>The pattern option is used for matching. It uses the same rules as <a href="../components/3.18.x/eips/intercept.html" class="xref page">Intercept</a>, which is applied in the following order:</p>
+<p>The pattern option is used for matching. It uses the same rules as <a href="../components/next/eips/intercept.html" class="xref page">Intercept</a>, which is applied in the following order:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -925,8 +936,8 @@ message brokers, cloud systems, or other external systems.</p>
 </div>
 <div class="paragraph">
 <p>To make unit testing these kinds of routes easier, you can replace the
-route input endpoints with internal endpoints such as <a href="../components/3.18.x/direct-component.html" class="xref page">direct</a>,
-<a href="../components/3.18.x/seda-component.html" class="xref page">seda</a>, <a href="#components::stub-component.adoc" class="xref unresolved">stub</a>.</p>
+route input endpoints with internal endpoints such as <a href="#components::direct-component.adoc" class="xref unresolved">direct</a>,
+<a href="#components::seda-component.adoc" class="xref unresolved">seda</a>, <a href="#components::stub-component.adoc" class="xref unresolved">stub</a>.</p>
 </div>
 <div class="paragraph">
 <p>The following illustrates how to do this:</p>
@@ -987,7 +998,7 @@ INFO  ceptSendToMockEndpointStrategy - Adviced endpoint [seda://other] with mock
 
     // send messages
 
-    assertMockEndpointsSatisfied();
+    MockEndpoint.assertIsSatisfied(context);
 }</code></pre>
 </div>
 </div>
@@ -1134,7 +1145,7 @@ That means instead of sending the message to a mock:bar endpoint, we do a Multic
 as criteria to select one or more nodes in the route graph.</p>
 </div>
 <div class="paragraph">
-<p>Suppose you use the <a href="../components/3.18.x/eips/split-eip.html" class="xref page">Split</a> EIP in a route; then you can use <code>weaveByType</code> to select this EIP.
+<p>Suppose you use the <a href="../components/next/eips/split-eip.html" class="xref page">Split</a> EIP in a route; then you can use <code>weaveByType</code> to select this EIP.
 Given the following route:</p>
 </div>
 <div class="listingblock">
@@ -1148,7 +1159,7 @@ Given the following route:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Due to that route has only one <a href="../components/3.18.x/eips/split-eip.html" class="xref page">Split</a> EIP, you can use <code>weaveByType</code> to find this single
+<p>Due to that route has only one <a href="../components/next/eips/split-eip.html" class="xref page">Split</a> EIP, you can use <code>weaveByType</code> to find this single
 splitter in the route. Using <code>weaveByType</code> requires you to pass in the model type of
 the EIP. The name of the model type is using the pattern _name_Definition.</p>
 </div>
@@ -1160,7 +1171,7 @@ the EIP. The name of the model type is using the pattern _name_Definition.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Here we weave and select the <a href="../components/3.18.x/eips/split-eip.html" class="xref page">Split</a> EIP and weave in a message transformation, that
+<p>Here we weave and select the <a href="../components/next/eips/split-eip.html" class="xref page">Split</a> EIP and weave in a message transformation, that
 is processed before calling the splitter. This means the message body is appended with <em>Camel is awesome</em>.</p>
 </div>
 </div>
@@ -1171,7 +1182,7 @@ is processed before calling the splitter. This means the message body is appende
 send messages to a given endpoint URI or pattern.</p>
 </div>
 <div class="paragraph">
-<p>Given the following route having two branches in the <a href="../components/3.18.x/eips/choice-eip.html" class="xref page">Content Based Router</a> EIP:</p>
+<p>Given the following route having two branches in the <a href="../components/next/eips/choice-eip.html" class="xref page">Content Based Router</a> EIP:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1246,7 +1257,7 @@ the selection to a specific node. This can be done by using the select methods:<
 </ul>
 </div>
 <div class="paragraph">
-<p>Given the following route which has multiple <a href="../components/3.18.x/eips/filter-eip.html" class="xref page">Filter</a> EIP,
+<p>Given the following route which has multiple <a href="../components/next/eips/filter-eip.html" class="xref page">Filter</a> EIP,
 then we want to only advice the 2nd filter.</p>
 </div>
 <div class="listingblock">

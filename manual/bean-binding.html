@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Bean Binding :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="bean-binding.html">Bean Binding</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/bean-binding.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/bean-binding.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -634,7 +645,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Bean Binding in Camel defines both which methods are invoked and also
-how the <a href="../components/3.18.x/eips/message.html" class="xref page">Message</a> is converted into the parameters of
+how the <a href="../components/next/eips/message.html" class="xref page">Message</a> is converted into the parameters of
 the method invoked.</p>
 </div>
 <div class="admonitionblock note">
@@ -655,13 +666,13 @@ This requires to include <code>camel-bean</code> as dependency on the classpath.
 <h2 id="_choosing_the_method_to_invoke"><a class="anchor" href="#_choosing_the_method_to_invoke"></a>Choosing the method to invoke</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The binding of a Camel <a href="../components/3.18.x/eips/message.html" class="xref page">Message</a> to a bean method call
+<p>The binding of a Camel <a href="../components/next/eips/message.html" class="xref page">Message</a> to a bean method call
 can occur in different ways, in the following order of importance:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>if the message contains the header <strong>CamelBeanMethodName</strong> then that
+<p>if the message contains the header <code>Exchange.BEAN_METHOD_NAME</code> / <code>CamelBeanMethodName</code> then that
 method is invoked, converting the message to the type of the method&#8217;s
 parameter.</p>
 <div class="ulist">
@@ -690,8 +701,8 @@ that method is selected.</p>
 <li>
 <p>if the bean can be converted to a <a href="processor.html" class="xref page">Processor</a> using
 the <a href="type-converter.html" class="xref page">Type Converter</a> mechanism, then this is
-used to process the message. The <a href="#components::activemq-component.adoc" class="xref unresolved">ActiveMQ</a> component
-uses this mechanism to allow any JMS MessageListener to be invoked
+used to process the message. The ActiveMQ (not yet compatible with Camel 4) component
+used this mechanism (in Camel 3) to allow any JMS MessageListener to be invoked
 directly by Camel without having to write any integration glue code. You
 can use the same mechanism to integrate Camel into any other
 messaging/remoting frameworks.</p>
@@ -701,7 +712,7 @@ messaging/remoting frameworks.</p>
 error is thrown if a single method cannot be chosen unambiguously.</p>
 </li>
 <li>
-<p>you can also use Exchange as the parameter itself, but then the return
+<p>you can also use <code>Exchange</code> as the parameter itself, but then the return
 type must be void.</p>
 </li>
 <li>
@@ -734,11 +745,10 @@ It&#8217;s extremely useful to
 monitor <code>org.apache.camel.spi.InflightRepository</code> for any hanging messages.</p>
 </div>
 <div class="paragraph">
-<p>Note that completing with <code>"null"</code> won&#8217;t set outbody message body to null,
+<p>Note that completing with <code>"null"</code> won&#8217;t set out body message body to <code>null</code>,
 but would keep message intact. This is useful to support methods that
 don&#8217;t modify exchange and return <code>CompletableFuture&lt;Void&gt;</code>. To set body to
-null, just add Exchange method parameter and directly modify exchange
-messages.</p>
+null, just add <code>Exchange</code> method parameter and directly modify exchange messages.</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -797,15 +807,15 @@ parameters of the method.</p>
 </div>
 <div class="paragraph">
 <p>So, if you declare any of these types, they will be provided by Camel.
-<strong>Note that <code>Exception</code> will bind to the caught exception of the
+<strong>Note that <code>Exception</code> will bind to the caught exception in the
 <a href="exchange.html" class="xref page">Exchange</a></strong> - so it&#8217;s often usable if you employ a
-<a href="../components/3.18.x/bean-component.html" class="xref page">Pojo</a> to handle, e.g., an <code>onException</code> route.</p>
+<a href="#components::bean-component.adoc" class="xref unresolved">Bean</a> to handle, e.g., an <code>onException</code> route.</p>
 </div>
 <div class="paragraph">
 <p>What is most interesting is that Camel will also try to bind the body of
 the <a href="exchange.html" class="xref page">Exchange</a> to the first parameter of the method
-signature (albeit not of any of the types above). So if, for instance,
-we declare a parameter as <code>String body</code>, then Camel will bind the IN
+signature (albeit not any of the types above). So if, for instance,
+we declare a parameter as <code>String body</code>, then Camel will bind the message
 body to this type. Camel will also automatically convert to the type
 declared in the method signature.</p>
 </div>
@@ -847,7 +857,7 @@ well - for instance, a <code>Registry</code> that we can use to lookup beans.</p
 </div>
 </div>
 <div class="paragraph">
-<p>And imagine you use a <a href="../components/3.18.x/bean-component.html" class="xref page">Pojo</a> to handle a given custom
+<p>And imagine you use a <a href="#components::bean-component.adoc" class="xref unresolved">Pojo</a> to handle a given custom
 exception <code>InvalidOrderException</code> - we can then bind that as well:</p>
 </div>
 <div class="listingblock">
@@ -876,12 +886,12 @@ method name option.</p>
 <div class="paragraph">
 <p>You can use the <a href="parameter-binding-annotations.html" class="xref page">Parameter
 Binding Annotations</a> to customize how parameter values are created from
-the <a href="../components/3.18.x/eips/message.html" class="xref page">Message</a></p>
+the <a href="../components/next/eips/message.html" class="xref page">Message</a></p>
 </div>
 <div class="sect2">
 <h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
 <div class="paragraph">
-<p>For example, a <a href="../components/3.18.x/eips/bean-eip.html" class="xref page">Bean</a> such as:</p>
+<p>For example, a <a href="../components/next/eips/bean-eip.html" class="xref page">Bean</a> such as:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -957,19 +967,19 @@ the method option</p>
 <p>The value is null which denotes a <code>null</code> value</p>
 </li>
 <li>
-<p>It can be evaluated using the <a href="../components/3.18.x/languages/simple-language.html" class="xref page">Simple</a> language, which
+<p>It can be evaluated using the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> language, which
 means you can use, e.g., <code>${body}</code>, <code>${header.foo}</code> and others
-<a href="../components/3.18.x/languages/simple-language.html" class="xref page">Simple</a> tokens. Notice the tokens must be enclosed with
+<a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> tokens. Notice the tokens must be enclosed with
 <code>${ }</code>.</p>
+</li>
+<li>
+<p>The value ends with <code>.class</code> then it&#8217;s a type declaration instead - see the
+next section about specifying types for overloaded methods.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Any other value is considered to be a type declaration instead - see the
-next section about specifying types for overloaded methods.</p>
-</div>
-<div class="paragraph">
-<p>When invoking a <a href="../components/3.18.x/eips/bean-eip.html" class="xref page">Bean</a> you can instruct Camel to invoke a
+<p>When invoking a <a href="../components/next/eips/bean-eip.html" class="xref page">Bean</a> you can instruct Camel to invoke a
 specific method by providing the method name:</p>
 </div>
 <div class="listingblock">
@@ -1010,7 +1020,7 @@ body as shown:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The syntax of the parameters is using the <a href="../components/3.18.x/languages/simple-language.html" class="xref page">Simple</a>
+<p>The syntax of the parameters is using the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a>
 language so we have to use <code>${ }</code> placeholders in the body to
 refer to the message body.</p>
 </div>
@@ -1051,7 +1061,7 @@ first has the content 'World' (without quotes), and the 2nd has the
 value of 5. Camel will automatically convert these values to the parameters' types.</p>
 </div>
 <div class="paragraph">
-<p>Having the power of the <a href="../components/3.18.x/languages/simple-language.html" class="xref page">Simple</a> language allows us to
+<p>Having the power of the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> language allows us to
 bind to message headers and other values such as:</p>
 </div>
 <div class="listingblock">
@@ -1060,7 +1070,7 @@ bind to message headers and other values such as:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>You can also use the OGNL support of the <a href="../components/3.18.x/languages/simple-language.html" class="xref page">Simple</a>
+<p>You can also use the OGNL support of the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a>
 expression language. Now suppose the message body is an object which has
 a method named <code>asXml</code>. To invoke the <code>asXml</code> method we can do as
 follows:</p>
@@ -1082,8 +1092,8 @@ use <code>.to</code> instead as shown:</p>
 <div class="sect2">
 <h3 id="_using_type_qualifiers_to_select_among_overloaded_methods"><a class="anchor" href="#_using_type_qualifiers_to_select_among_overloaded_methods"></a>Using type qualifiers to select among overloaded methods</h3>
 <div class="paragraph">
-<p>If you have a <a href="../components/3.18.x/eips/bean-eip.html" class="xref page">Bean</a> with overloaded methods, you can now
-specify parameter types in the method name so Camel can match the method
+<p>If you have a <a href="../components/next/eips/bean-eip.html" class="xref page">Bean</a> with overloaded methods, you can now
+specify parameter types (must use <code>.class</code> style, eg <code>com.foo.MyClass.class</code>) in the method name so Camel can match the method
 you intend to use.</p>
 </div>
 <div class="paragraph">
@@ -1092,7 +1102,7 @@ you intend to use.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"> from("direct:start")
-    .bean(MyBean.class, "hello(String)")
+    .bean(MyBean.class, "hello(String.class)")
     .to("mock:result");</code></pre>
 </div>
 </div>
@@ -1104,13 +1114,13 @@ do as follows in the Camel route:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("direct:start")
-    .bean(MyBean.class, "hello(String,String)")
+    .bean(MyBean.class, "hello(String.class, String.class)")
     .to("mock:result");</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>We can also use a <code>*</code> as wildcard so we can just say we want to execute
-the method with 2 parameters we do</p>
+<p>We can also use a <code>*</code> as wildcard, so we can just say we want to execute
+the method with 2 parameters we do:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1128,18 +1138,36 @@ the FQN, and <strong>not</strong> the simple name "MyOrder", then follow this ex
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">.bean(OrderService.class, "doSomething(com.foo.MyOrder)")</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">.bean(OrderService.class, "doSomething(com.foo.MyOrder.class)")</code></pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_declaring_parameter_type_and_value"><a class="anchor" href="#_declaring_parameter_type_and_value"></a>Declaring parameter type and value</h3>
+<div class="paragraph">
+<p><strong>Available as of Camel 4.0</strong></p>
 </div>
 <div class="paragraph">
-<p>Camel currently only supports either specifying parameter binding or
+<p>Camel 3.x only supports either specifying parameter binding or
 type per parameter in the method name option. You <strong>cannot</strong> specify both
-at the same time, such as</p>
+at the same time, such as:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">doSomething(com.foo.MyOrder ${body}, boolean ${header.high})</code></pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">doSomething(com.foo.MyOrder.class ${body}, boolean ${header.high}, int 123)</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>However, we have implemented support for this in Camel 4,
+where you can declare both using <em>name.class value</em> syntax as shown:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">doSomething(com.foo.MyOrder.class ${body}, boolean.class ${header.high}, int.class 123)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that you <strong>MUST</strong> use <code>name.class</code> when declaring the type, also for String, int, boolean etc.</p>
 </div>
 </div>
 </div>

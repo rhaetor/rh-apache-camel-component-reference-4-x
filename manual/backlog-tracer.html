@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>BacklogTracer :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="backlog-tracer.html">Backlog Tracer</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/backlog-tracer.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/backlog-tracer.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -682,6 +693,11 @@ messages in either a POJO or XML format.</p>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">standby</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the tracer is standby. If a tracer is in standby then the tracer is activated during startup and are ready to be enabled manually via JMX or calling the enabled method.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enabled</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Flag to enable or disable this tracer</p></td>
@@ -705,10 +721,22 @@ do "to*" to match any to. Or use "route-foo*" to match any foo routes.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Allow to configure a filter as a <a href="predicate.html" class="xref page">Predicate</a> using
 any of the Camel <a href="languages.html" class="xref page">languages</a>. But default the
-<a href="../components/3.18.x/languages/simple-language.html" class="xref page">Simple</a> language is used. For example to filter on
+<a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> language is used. For example to filter on
 messages with a given header, use <code>${header.foo} != null</code>. To use
 <a href="#components:languages:groovy-language.adoc" class="xref unresolved">Groovy</a> then prefix the value with "groovy:". And
 similar for the other languages.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">traceRests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether tracing should trace inner details from Rest DSL.
+Turning this on increases the verbosity of tracing by including events from internal routes by Rest DSL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">traceTemplates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether tracing should trace inner details from route templates (or kamelets).
+Turning this on increases the verbosity of tracing by including events from internal routes in the templates or kamelets.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">removeOnDump</p></td>
@@ -734,6 +762,16 @@ then beware the stream may not be re-readable later. See more about
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Whether to include the message body of file based messages. The overhead
 is that the file content has to be read from the file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">includeExchangeProperties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trace messages to include exchange properties.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">includeException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trace messages to include exception if the message failed.</p></td>
 </tr>
 </tbody>
 </table>
@@ -762,6 +800,11 @@ is that the file content has to be read from the file.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gets the total number of traced messages.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">getQueueSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of traced messages in the backlog.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">resetTraceCounter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To reset the trace counter.</p></td>
@@ -774,8 +817,12 @@ is that the file content has to be read from the file.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dumpTracedMessagesAsXml(nodeOrRouteId)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To dump the traced messages from the give node or route id in XML
-format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To dump the traced messages from the give node or route id in XML format.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dumpTracedMessagesAsJSon(nodeOrRouteId)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To dump the traced messages from the give node or route id in JSon format.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dumpAllTracedMessages</p></td>
@@ -786,6 +833,11 @@ format.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dumpAllTracedMessagesAsXml</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To dump all the traced messages in XML format.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dumpAllTracedMessagesAsJSon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To dump all the traced messages in JSon format.</p></td>
 </tr>
 </tbody>
 </table>
@@ -813,11 +865,36 @@ format.</p></td>
 </div>
 </div>
 <div class="paragraph">
+<p>And in Camel Main you can enable this  in the <code>application.properties</code> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.main.backlog-tracing = true</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p>And in Spring Boot you can enable this in the <code>application.properties</code> file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.springboot.backlog-tracing = true</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tracing_payloads_of_inputstream_types"><a class="anchor" href="#_tracing_payloads_of_inputstream_types"></a>Tracing payloads of InputStream types</h3>
+<div class="paragraph">
+<p>Beware that when enabling backlog tracing, and the message payloads is streaming types (such as <code>java.io.InputStream</code>),
+then the backlog tracer will read the payload and make a copy as a <em>trace</em> that are stored in the backlog tracer.
+Then monitoring tooling is able to view these <em>traced</em> events.</p>
+</div>
+<div class="paragraph">
+<p>When working with <code>InputStream</code> types then Camel has <a href="stream-caching.html" class="xref page">Stream caching</a> that is able to automatic
+make such types <em>safe</em> to use as they are cached and able to be <em>re-read</em>. See more details at <a href="stream-caching.html" class="xref page">Stream caching</a>.</p>
+</div>
+<div class="paragraph">
+<p>However, Camel&#8217;s stream caching is <strong>ONLY</strong> for message body. Having message headers of type <code>InputStream</code> is discouraged
+and not common use. If you add custom message headers, then its recommended to <strong>NOT</strong> use streaming types, but
+convert these headers into <code>String</code> or <code>byte[]</code> or other standard Java types that are in-memory and <em>safe</em> to re-read.</p>
 </div>
 </div>
 </div>

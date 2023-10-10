@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>JMX :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="jmx.html">JMX</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/jmx.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/jmx.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -633,7 +644,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Camel has optional support for JMX management which are
+<p>Camel has optional support for JMX management, which is
 part of the <code>camel-management</code> and <code>camel-management-api</code> JARs.</p>
 </div>
 </div>
@@ -642,12 +653,11 @@ part of the <code>camel-management</code> and <code>camel-management-api</code> 
 <h2 id="_using_jmx_to_manage_apache_camel"><a class="anchor" href="#_using_jmx_to_manage_apache_camel"></a>Using JMX to manage Apache Camel</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By default (requires <code>camel-management</code> JAR to be included in the classpath),
-JMX instrumentation agent is enabled in Camel, which means
-that Camel runtime creates and registers MBean management objects with a
-<code>MBeanServer</code> instance in the VM. This allows Camel users to instantly
-obtain insights into how Camel routes perform down to the individual
-processor level.</p>
+<p>The JMX instrumentation agent is enabled in Camel when the <code>camel-management</code>
+JAR is included in the classpath. Once enabled, the Camel runtime creates and
+registers MBean management objects with a <code>MBeanServer</code> instance in the VM.
+This allows Camel users to instantly obtain insights into how Camel routes
+perform down to the individual processor level.</p>
 </div>
 <div class="paragraph">
 <p>The high level supported types of management objects are:</p>
@@ -661,7 +671,7 @@ processor level.</p>
 <p><a href="https://www.javadoc.io/doc/org.apache.camel/camel-management/current/org/apache/camel/management/mbean/ManagedComponent.html">Component</a></p>
 </li>
 <li>
-<p><a href="https://www.javadoc.io/doc/org.apache.camel/camel-management/current/org/apache/camel/management/mbean/ManagedConsumer.html">Donsumer</a></p>
+<p><a href="https://www.javadoc.io/doc/org.apache.camel/camel-management/current/org/apache/camel/management/mbean/ManagedConsumer.html">Consumer</a></p>
 </li>
 <li>
 <p><a href="https://www.javadoc.io/doc/org.apache.camel/camel-management/current/org/apache/camel/management/mbean/ManagedDataFormat.html">DataFormat</a></p>
@@ -690,14 +700,15 @@ addition to performance counter attributes.</p>
 <h2 id="_disabling_or_enabling_camel_jmx"><a class="anchor" href="#_disabling_or_enabling_camel_jmx"></a>Disabling or enabling Camel JMX</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Camel is only using JMX if <code>camel-management</code> is on the classpath.
-So a quick way to enable or disable JMX is to either include or exclude this JAR on the classpath.</p>
+<p>JMX is only enabled in Camel when the <code>camel-management</code> JAR is included on the
+classpath. To quickly enable or disable JMX, simply add or remove this JAR
+from the classpath.</p>
 </div>
 <div class="paragraph">
-<p>Its also possible to enable or disable JMX via configuration as documented in the following.</p>
+<p>It is also possible to enable or disable JMX via configuration as documented below.</p>
 </div>
 <div class="paragraph">
-<p>You can disable JMX instrumentation agent by setting the Java VM system
+<p>You can disable the JMX instrumentation agent by setting the Java VM system
 property as follows:</p>
 </div>
 <div class="listingblock">
@@ -709,7 +720,7 @@ property as follows:</p>
 <p>The property value is treated as <code>boolean</code>.</p>
 </div>
 <div class="paragraph">
-<p>Or, by adding a <code>jmxAgent</code> element inside the <code>camelContext</code> element in
+<p>Alternatively, add a <code>jmxAgent</code> element inside the <code>camelContext</code> element in
 Spring XML configuration:</p>
 </div>
 <div class="listingblock">
@@ -735,7 +746,7 @@ camel.disableJMX();</code></pre>
 <h2 id="_camel_jmx_configuration_options"><a class="anchor" href="#_camel_jmx_configuration_options"></a>Camel JMX configuration options</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Camel JMX can be configured with the following options.</p>
+<p>Camel JMX can be configured with the following options.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -838,7 +849,9 @@ from MBean names and attributes.</p></td>
 <div class="sect2">
 <h3 id="_registering_mbeans_for_specific_resources_only"><a class="anchor" href="#_registering_mbeans_for_specific_resources_only"></a>Registering MBeans for specific resources only</h3>
 <div class="paragraph">
-<p>By default Camel registers MBeans for the context, all the routes and the processors when its starting. You can set a level whether MBeans are registered or not when Camel starts up. The levels are:</p>
+<p>Camel automatically registers MBeans for the context, routes, and processors
+when it starts up. However, you can specify a level to control whether or not
+MBeans are registered at startup. The levels are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -846,7 +859,7 @@ from MBean names and attributes.</p></td>
 <p><code>Default</code> - Camel will register MBeans for the context, all the routes and the processors.</p>
 </li>
 <li>
-<p><code>RoutesOnly</code> - Camel will register MBeans for the context and for all the routes. (not for any processor).</p>
+<p><code>RoutesOnly</code> - Camel will register MBeans for the context and for all the routes (not for any processor).</p>
 </li>
 <li>
 <p><code>ContextOnly</code> -  Camel will register MBeans for the context (neither for any route nor for any processor).</p>
@@ -876,7 +889,7 @@ from MBean names and attributes.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>registerAlways</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If enabled then MBeans is always registered.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If enabled then MBeans are always registered.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>registerNewRoutes</code></p></td>
@@ -888,11 +901,11 @@ MBeans from that given route.</p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>By default Camel registers MBeans for all the routes configured when its
-starting. The <code>registerNewRoutes</code> option control if MBeans should also
-be registered if you add new routes thereafter. You can disable this, if
-you for example add and remove temporary routes where management is not
-needed.</p>
+<p>By default, Camel automatically registers MBeans for all routes configured at
+startup. The <code>registerNewRoutes</code> option controls whether MBeans should also be
+registered for new routes added later on. This feature can be disabled, for
+example, if you are adding and removing temporary routes that do not require
+management.</p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -901,12 +914,12 @@ needed.</p>
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Be a bit careful to use the <code>registerAlways</code> option when using dynamic
-EIP patterns such as the <a href="../components/3.18.x/eips/recipientList-eip.html" class="xref page">Recipient List</a> having unique endpoints. If so
-then each unique endpoint and its associated services/producers would
-also be registered. This could potentially lead to system degradation due
-the rising number of mbeans in the registry. A MBean is not a
-light-weight object and consumes memory.
+However, be cautious when using the <code>registerAlways</code> option in
+conjunction with dynamic EIP patterns, such as the <a href="../components/next/eips/recipientList-eip.html" class="xref page">Recipient List</a>,
+which have unique endpoints. This can potentially lead to system degradation
+due to the increasing number of MBeans in the registry from its associated
+services/producers. Keep in mind that an MBean is not a lightweight object
+and consumes memory.
 </td>
 </tr>
 </table>
@@ -919,7 +932,7 @@ light-weight object and consumes memory.
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can configure a naming pattern for the MBeans names that Camel creates.
-The pattern is used as part of the <code>ObjectName</code> as they key after the domain name.</p>
+The pattern is used as part of the <code>ObjectName</code> as the key after the domain name.</p>
 </div>
 <div class="paragraph">
 <p>By default Camel will use MBean names for the <code>ManagedCamelContextMBean</code>
@@ -948,11 +961,11 @@ the <code>ObjectName</code> as well. For example if we have:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Now if there is a naming clash in the JVM, such as there already exists
-a MBean with that given name above, then Camel will by default try to
-auto-correct this by finding a new free name in the <code>JMXMBeanServer</code> by
-using a counter. As shown below the counter is now appended, so we have
-<code>myCamel-1</code> as part of the <code>ObjectName</code>:</p>
+<p>In the event of a naming clash within the JVM, such as when there is already an
+MBean with the same name, Camel will automatically try to resolve the issue by
+finding a new, available name in the <code>JMXMBeanServer</code> using a counter. For
+example, the counter will be appended to the name, resulting in an <code>ObjectName</code>
+such as <code>myCamel-1</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -968,22 +981,22 @@ supports the following tokens:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><mark>camelId</mark></code> = the CamelContext id (eg the name)</p>
+<p><code>#camelId#</code> = the CamelContext id (eg the name)</p>
 </li>
 <li>
-<p><code><mark>name</mark></code> - same as <code><mark>camelId</mark></code></p>
+<p><code>#name#</code> - same as <code>#camelId#</code></p>
 </li>
 <li>
-<p><code><mark>counter</mark></code> - an incrementing counter</p>
+<p><code>#counter#</code> - an incrementing counter</p>
 </li>
 <li>
-<p><code><mark>bundleId</mark></code> - the OSGi bundle id (only for OSGi environments)</p>
+<p><code>#bundleId#</code> - the OSGi bundle id (only for OSGi environments)</p>
 </li>
 <li>
-<p><code><mark>symbolicName</mark></code> - the OSGi symbolic name (only for OSGi environments)</p>
+<p><code>#symbolicName#</code> - the OSGi symbolic name (only for OSGi environments)</p>
 </li>
 <li>
-<p><code><mark>version</mark></code> - the OSGi bundle version (only for OSGi environments)</p>
+<p><code>#version#</code> - the OSGi bundle version (only for OSGi environments)</p>
 </li>
 </ul>
 </div>
@@ -994,39 +1007,39 @@ as follows:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>non OSGI: <code><mark>name</mark></code></p>
+<p>non OSGI: <code>#name#</code></p>
 </li>
 <li>
-<p>OSGi: <code><mark>symbolicName</mark></code></p>
+<p>OSGi: <code>#symbolicName#</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>If there is a naming clash in the <code>JMXMBeanServer</code> then Camel
-will automatic fallback and use the <code><mark>counter</mark></code> in the pattern to remedy
-this. And thus the following patterns will then be used:</p>
+will automatically fallback and use the <code>#counter#</code> in the pattern to remedy
+this. Thus the following patterns will then be used:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>non OSGI: <code><mark>name</mark>-<mark>counter</mark></code></p>
+<p>non OSGI: <code>#name#-#counter#</code></p>
 </li>
 <li>
-<p>OSGi: <code><mark>symbolicName</mark>-<mark>counter</mark></code></p>
+<p>OSGi: <code>#symbolicName#-#counter#</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>If you set an explicit naming pattern, then that pattern is always used,
-and the default patterns above is <strong>not</strong> used.</p>
+and the default patterns above are <strong>not</strong> used.</p>
 </div>
 <div class="paragraph">
 <p>This allows us to have full control, very easily, of the naming for both
-the <code>CamelContext</code> id in the Registry as well the JMX MBeans in the <code>JMXMBeanRegistry</code>.</p>
+the <code>CamelContext</code> id in the Registry and the JMX MBeans in the <code>JMXMBeanRegistry</code>.</p>
 </div>
 <div class="paragraph">
-<p>So if we want to explicit name both the <code>CamelContext</code> and to use fixed
-MBean names, that do not change (eg has no counters), then we can use
+<p>So if we want to explicitly name both the <code>CamelContext</code> and to use fixed
+MBean names that do not change (i.e. without counters), then we can use
 the <code>managementNamePattern</code> attribute:</p>
 </div>
 <div class="listingblock">
@@ -1057,18 +1070,18 @@ the <code>managementNamePattern</code> attribute:</p>
 <h2 id="_configuring_performance_statistics"><a class="anchor" href="#_configuring_performance_statistics"></a>Configuring performance statistics</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can set a level whether performance statistics is
+<p>You can set a level for whether performance statistics are
 enabled or not when Camel starts up. The levels are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Extended</code> - As default but with additional statistics gathered during
-runtime such as fine grained level of usage of endpoints and more.</p>
+<p><code>Default</code> - Camel will enable statistics for both routes and
+processors (fine grained).</p>
 </li>
 <li>
-<p><code>`Default</code> - Camel will enable statistics for both routes and
-processors (fine grained).</p>
+<p><code>Extended</code> - As default but with additional statistics gathered during
+runtime such as fine grained level of usage of endpoints and more.</p>
 </li>
 <li>
 <p><code>RoutesOnly</code> - Camel will only enable statistics for routes (coarse
@@ -1091,9 +1104,8 @@ grained)</p>
 </div>
 <div class="paragraph">
 <p>Statistics enabled means that Camel will do fine grained performance
-statistics for that particular MBean. The statistics you can see are
-many, such as: number of exchanges completed/failed,
-last/total/mina/max/mean processing time, first/last failed time, etc.</p>
+statistics for that particular MBean. There are statistics you can see, such as: number of exchanges completed/failed,
+last/total/min/max/mean processing time, first/last failed time, etc.</p>
 </div>
 </td>
 </tr>
@@ -1122,10 +1134,10 @@ context.getManagementStrategy().setStatisticsLevel(ManagementStatisticsLevel.Rou
 <div class="sect2">
 <h3 id="_performance_load_statistics"><a class="anchor" href="#_performance_load_statistics"></a>Performance load statistics</h3>
 <div class="paragraph">
-<p>It is possible to include load statistics
-per CamelContext and Route MBeans. The statistics is
-average load based on the number of in-flight exchanges, on a per 1, 5,
-and 15 minute rate. This is similar to load statistics on Unix systems.</p>
+<p>It is possible to include load statistics for CamelContext and Route MBeans.
+These statistics are for average load based on the number of in-flight
+exchanges, measured over periods of 1, 5, and 15 minutes. This is similar to
+load statistics on Unix systems.</p>
 </div>
 <div class="paragraph">
 <p>You can enable this by setting <code>loadStatisticsEnabled=true</code>.</p>
@@ -1152,7 +1164,7 @@ passphrase, and use <code>xxxxxx</code> as the replacement value.</p>
 JMX attributes to mask with the <code>@ManagedAttribute</code> and <code>@ManagedOperation</code> annotations.</p>
 </div>
 <div class="paragraph">
-<p>Te attribute <code>mask</code> can be set to <code>true</code> to indicate that the result of this JMX
+<p>The <code>mask</code> attribute can be set to <code>true</code> to indicate that the result of this JMX
 attribute/operation should be masked (if enabled on JMX agent, see
 above).</p>
 </div>

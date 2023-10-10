@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>REST DSL :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="rest-dsl.html">Working with REST and Rest DSL</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/rest-dsl.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/rest-dsl.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -645,7 +656,7 @@ REST style with verbs such as get, post, delete etc.</p>
 <h2 id="_how_it_works"><a class="anchor" href="#_how_it_works"></a>How it works</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Rest DSL is a facade that builds <a href="../components/3.18.x/rest-component.html" class="xref page">Rest</a> endpoints as
+<p>The Rest DSL is a facade that builds <a href="#components::rest-component.adoc" class="xref unresolved">Rest</a> endpoints as
 consumers for Camel routes. The actual REST transport is leveraged by
 using Camel REST components such
 as <a href="#components::netty-http-component.adoc" class="xref unresolved">Netty HTTP</a>, <a href="#components::servlet-component.adoc" class="xref unresolved">Servlet</a>, and
@@ -662,7 +673,7 @@ others that has native REST integration.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../components/3.18.x/rest-component.html" class="xref page">camel-rest</a> <strong>required</strong> contains the base rest component needed by Rest DSL</p>
+<p><a href="#components::rest-component.adoc" class="xref unresolved">camel-rest</a> <strong>required</strong> contains the base rest component needed by Rest DSL</p>
 </li>
 <li>
 <p><a href="#components::netty-http-component.adoc" class="xref unresolved">camel-netty-http</a></p>
@@ -671,7 +682,7 @@ others that has native REST integration.</p>
 <p><a href="#components::jetty-component.adoc" class="xref unresolved">camel-jetty</a></p>
 </li>
 <li>
-<p><a href="../components/3.18.x/platform-http-component.html" class="xref page">camel-platform-http</a></p>
+<p><a href="#components::platform-http-component.adoc" class="xref unresolved">camel-platform-http</a></p>
 </li>
 <li>
 <p><a href="#components::servlet-component.adoc" class="xref unresolved">camel-servlet</a></p>
@@ -768,13 +779,13 @@ routing directly to an endpoint using <code>to()</code>.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext xmlns="http://camel.apache.org/schema/spring"&gt;
   &lt;rest path="/say"&gt;
-    &lt;get uri="/hello"&gt;
+    &lt;get path="/hello"&gt;
       &lt;to uri="direct:hello"/&gt;
     &lt;/get&gt;
-    &lt;get uri="/bye" consumes="application/json"&gt;
+    &lt;get path="/bye" consumes="application/json"&gt;
       &lt;to uri="direct:bye"/&gt;
     &lt;/get&gt;
-    &lt;post uri="/bye"&gt;
+    &lt;post path="/bye"&gt;
       &lt;to uri="mock:update"/&gt;
     &lt;/post&gt;
   &lt;/rest&gt;
@@ -818,13 +829,13 @@ shown below:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;rest path="/customers/"&gt;
-  &lt;get uri="/{id}"&gt;
+  &lt;get path="/{id}"&gt;
     &lt;to uri="direct:customerDetail"/&gt;
   &lt;/get&gt;
-  &lt;get uri="/{id}/orders"&gt;
+  &lt;get path="/{id}/orders"&gt;
     &lt;to uri="direct:customerOrders"/&gt;
   &lt;/get&gt;
-  &lt;post uri="/neworder"&gt;
+  &lt;post path="/neworder"&gt;
     &lt;to uri="direct:customerNewOrder"/&gt;
   &lt;/post&gt;
 &lt;/rest&gt;</code></pre>
@@ -853,13 +864,13 @@ only. The example above can be defined as:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;rest&gt;
-  &lt;get uri="/customers/{id}"&gt;
+  &lt;get path="/customers/{id}"&gt;
     &lt;to uri="direct:customerDetail"/&gt;
   &lt;/get&gt;
-  &lt;get uri="/customers/{id}/orders"&gt;
+  &lt;get path="/customers/{id}/orders"&gt;
     &lt;to uri="direct:customerOrders"/&gt;
   &lt;/get&gt;
-  &lt;post uri="/customers/neworder"&gt;
+  &lt;post path="/customers/neworder"&gt;
     &lt;to uri="direct:customerNewOrder"/&gt;
   &lt;/post&gt;
 &lt;/rest&gt;</code></pre>
@@ -874,36 +885,6 @@ For example:</p>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"> rest("items/")
      .get("{id}/{filename}.{content-type}")
      .to("direct:item")</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_using_dynamic_to_in_rest_dsl"><a class="anchor" href="#_using_dynamic_to_in_rest_dsl"></a>Using Dynamic To in Rest DSL</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The Rest DSL supports <a href="../components/3.18.x/eips/toD-eip.html" class="xref page">Dynamic To</a> EIP (<code>toD</code>)
-to in the rest-dsl. For example to do a <a href="../components/3.18.x/eips/requestReply-eip.html" class="xref page">Request Reply</a>
-over <a href="../components/3.18.x/jms-component.html" class="xref page">JMS</a> where the queue name is dynamic defined</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public void configure() throws Exception {
-   rest("/say")
-     .get("/hello/{language}").toD("jms:queue:hello-${header.language}");
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>And in XML DSL</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;rest uri="/say"&gt;
-  &lt;get uri="/hello//{language}"&gt;
-    &lt;toD uri="jms:queue:hello-${header.language}"/&gt;
-  &lt;/get&gt;
-&lt;/rest&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -938,6 +919,109 @@ performance statistics.</p>
 <div class="paragraph">
 <p>There is also a Rest Registry JMX MBean that contains a registry of all
 REST services which has been defined.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_inline_rest_dsl_as_a_single_route"><a class="anchor" href="#_inline_rest_dsl_as_a_single_route"></a>Inline Rest DSL as a single route</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each of the rest services becomes a Camel route, and this means, that if the rest
+service is calling another Camel route via <code>direct</code>, which is a very common practice.
+This means that each rest service then becomes 2 routes. This can become harder to manage
+if you have many rest services.</p>
+</div>
+<div class="paragraph">
+<p>When you use <code>direct</code> endpoints then you can enable Rest DSL to automatically <em>inline</em> the direct
+route in the rest route, meaning that there is only 1 route per rest service.</p>
+</div>
+<div class="paragraph">
+<p>To do this you <strong>MUST</strong> use <code>direct</code> endpoints, and each endpoint must be unique name per service.
+And the option <code>inlineRoutes</code> must be enabled.</p>
+</div>
+<div class="paragraph">
+<p>For example in the Java DSL below we have enabled inline routes and each rest service
+uses <code>direct</code> endpoints with unique names.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">restConfiguration().inlineRoutes(true);
+
+rest("/customers/")
+    .get("/{id}").to("direct:customerDetail")
+    .get("/{id}/orders").to("direct:customerOrders")
+    .post("/neworder").to("direct:customerNewOrder");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;restConfiguration inlineRoutes="true"/&gt;
+
+&lt;rest&gt;
+  &lt;get path="/customers/{id}"&gt;
+    &lt;to uri="direct:customerDetail"/&gt;
+  &lt;/get&gt;
+  &lt;get path="/customers/{id}/orders"&gt;
+    &lt;to uri="direct:customerOrders"/&gt;
+  &lt;/get&gt;
+  &lt;post path="/customers/neworder"&gt;
+    &lt;to uri="direct:customerNewOrder"/&gt;
+  &lt;/post&gt;
+&lt;/rest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you use Camel Main / Spring Boot / Quarkus / or Camel JBang you can also enable this in <code>application.properties</code> such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.rest.inline-routes = true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_disabling_rest_services"><a class="anchor" href="#_disabling_rest_services"></a>Disabling REST services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While developing REST services using Rest DSL, you may want to temporary disabled some REST endpoints,
+which you can do using <code>disabled</code> as shown in the following.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">rest("/customers/")
+    .get("/{id}").to("direct:customerDetail")
+    .get("/{id}/orders").to("direct:customerOrders").disabled("{{ordersEnabled}}")
+    .post("/neworder").to("direct:customerNewOrder").disabled();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And in XML:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;rest&gt;
+  &lt;get path="/customers/{id}"&gt;
+    &lt;to uri="direct:customerDetail"/&gt;
+  &lt;/get&gt;
+  &lt;get path="/customers/{id}/orders" disabled="{{ordersEnabled}}"&gt;
+    &lt;to uri="direct:customerOrders"/&gt;
+  &lt;/get&gt;
+  &lt;post path="/customers/neworder" disabled="true"&gt;
+    &lt;to uri="direct:customerNewOrder"/&gt;
+  &lt;/post&gt;
+&lt;/rest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example the last two REST endpoints are configured with <code>disabled</code>.
+You can use <a href="using-propertyplaceholder.html" class="xref page">Property Placeholder</a> to
+let a external configuration determine if the REST endpoint is disabled or not.
+In this example the <code>/customers/{id}/orders</code> endpoint is disabled via a placeholder.
+The last REST endpoint is hardcoded to be disabled.</p>
 </div>
 </div>
 </div>
@@ -1146,7 +1230,7 @@ rest("/users/")
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;rest uri="/users/"&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;rest path="/users/"&gt;
   &lt;post type="UserPojo" outType="CountryPojo"&gt;
     &lt;to uri="direct:newUser"/&gt;
   &lt;/post&gt;
@@ -1253,12 +1337,6 @@ bindings.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>apiContextIdPattern</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional CamelContext id pattern to only allow Rest APIs from rest services within CamelContext&#8217;s which name matches the pattern. The pattern <mark>name</mark> refers to the CamelContext name, to match on the current CamelContext only. For any other value, the pattern uses the rules from org.apache.camel.support.EndpointHelper#matchPattern(String,String)</p></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>apiContextPath</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sets a leading API context-path the REST API services will be using. This can be used when using components such as camel-servlet where the deployed web application is deployed using a context-path.</p></td>
 <td class="tableblock halign-center valign-top"></td>
@@ -1290,7 +1368,7 @@ bindings.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>clientRequestValidation</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to enable validation of the client request to check whether the Content-Type and Accept headers from the client is supported by the Rest-DSL configuration of its consumes/produces settings. This can be turned on, to enable this check. In case of validation error, then HTTP Status codes 415 or 406 is returned. The default value is false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to enable validation of the client request to check: 1) Content-Type header matches what the Rest DSL consumes; returns HTTP Status 415 if validation error. 2) Accept header matches what the Rest DSL produces; returns HTTP Status 406 if validation error. 3) Missing required data (query parameters, HTTP headers, body); returns HTTP Status 400 if validation error. 4) Parsing error of the message body (JSon, XML or Auto binding mode must be enabled); returns HTTP Status 400 if validation error.</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 </tr>
@@ -1355,6 +1433,12 @@ bindings.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RestHostNameResolver</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>inlineRoutes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inline routes in rest-dsl which are linked using direct endpoints. By default, each service in Rest DSL is an individual route, meaning that you would have at least two routes per service (rest-dsl, and the route linked from rest-dsl). Enabling this allows Camel to optimize and inline this as a single route, however this requires to use direct endpoints, which must be unique per service. This option is default false.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>jsonDataFormat</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sets a custom json data format to be used Important: This option is only for setting a custom name of the data format, not to refer to an existing data format instance.</p></td>
 <td class="tableblock halign-center valign-top"></td>
@@ -1368,7 +1452,7 @@ bindings.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>producerApiDoc</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the location of the api document (swagger api) the REST producer will use to validate the REST uri and query parameters are valid accordingly to the api document. This requires adding camel-swagger-java to the classpath, and any miss configuration will let Camel fail on startup and report the error(s). The location of the api document is loaded from classpath by default, but you can use file: or http: to refer to resources to load from file or http url.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the location of the api document (swagger api) the REST producer will use to validate the REST uri and query parameters are valid accordingly to the api document. This requires adding camel-openapi-java to the classpath, and any miss configuration will let Camel fail on startup and report the error(s). The location of the api document is loaded from classpath by default, but you can use file: or http: to refer to resources to load from file or http url.</p></td>
 <td class="tableblock halign-center valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 </tr>
@@ -1582,12 +1666,14 @@ below:</p>
 // use the rest DSL to define the rest services
 rest("/users/")
     .post("lives").type(UserPojo.class).outType(CountryPojo.class)
-        .route()
-            .choice()
-                .when().simple("${body.id} &lt; 100")
-                    .bean(new UserErrorService(), "idToLowError")
-                .otherwise()
-                    .bean(new UserService(), "livesWhere");</code></pre>
+    .to("direct:users-lives");
+
+from("direct:users-lives")
+    .choice()
+        .when().simple("${body.id} &lt; 100")
+            .bean(new UserErrorService(), "idToLowError")
+        .otherwise()
+            .bean(new UserService(), "livesWhere");</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1715,7 +1801,7 @@ It can be turned on via <code>clientRequestValidation</code> as shown below:</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Rest DSL supports OpenAPI and Swagger by
-the <code>camel-openapi-java</code> and <code>camel-swagger-java</code> modules.</p>
+the <code>camel-openapi-java</code> modules.</p>
 </div>
 <div class="paragraph">
 <p>You can define each parameter fine-grained
@@ -1726,7 +1812,7 @@ can do as shown below:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;!-- this is a rest GET to view an user by the given id --&gt;
-&lt;get uri="/{id}" outType="org.apache.camel.example.rest.User"&gt;
+&lt;get path="/{id}" outType="org.apache.camel.example.rest.User"&gt;
   &lt;description&gt;Find user by id&lt;/description&gt;
   &lt;param name="id" type="path" description="The id of the user to get" dataType="int"/&gt;
   &lt;to uri="bean:userService?method=getUser(${header.id})"/&gt;

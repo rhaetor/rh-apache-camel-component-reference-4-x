@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Security :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -621,7 +632,7 @@
     <li><a href="security.html">Security</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/security.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/security.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -719,7 +730,7 @@ components.</p>
 <h2 id="_configuration_security"><a class="anchor" href="#_configuration_security"></a>Configuration Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Camel offers the <a href="../components/3.18.x/properties-component.html" class="xref page">Properties</a> component to
+<p>Camel offers the <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> component to
 externalize configuration values to properties files. Those values could
 contain sensitive information such as usernames and passwords.</p>
 </div>
@@ -768,6 +779,44 @@ export $CAMEL_VAULT_AWS_REGION=region</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.aws.accessKey = accessKey
 camel.vault.aws.secretKey = secretKey
+camel.vault.aws.region = region</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want instead to use the <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/credentials.html">AWS default credentials provider</a>, you&#8217;ll need to provide the following env variables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export $CAMEL_VAULT_AWS_USE_DEFAULT_CREDENTIALS_PROVIDER=true
+export $CAMEL_VAULT_AWS_REGION=region</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also configure the credentials in the <code>application.properties</code> file such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.aws.defaultCredentialsProvider = true
+camel.vault.aws.region = region</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is also possible to specify a particular profile name for accessing AWS Secrets Manager</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export $CAMEL_VAULT_AWS_USE_PROFILE_CREDENTIALS_PROVIDER=true
+export $CAMEL_VAULT_AWS_PROFILE_NAME=test-account
+export $CAMEL_VAULT_AWS_REGION=region</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also configure the credentials in the <code>application.properties</code> file such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.aws.profileCredentialsProvider = true
+camel.vault.aws.profileName = test-account
 camel.vault.aws.region = region</code></pre>
 </div>
 </div>
@@ -1107,6 +1156,317 @@ camel.vault.azure.vaultName = vaultName</code></pre>
 </div>
 <div class="paragraph">
 <p>For the moment we are not considering the rotation function, if any will be applied, but it is in the work to be done.</p>
+</div>
+<div class="paragraph">
+<p>The only requirement is adding the camel-azure-key-vault jar to your Camel application.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_hashicorp_vault"><a class="anchor" href="#_using_hashicorp_vault"></a>Using Hashicorp Vault</h4>
+<div class="paragraph">
+<p>To use this function you&#8217;ll need to provide credentials for Hashicorp vault as environment variables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export $CAMEL_VAULT_HASHICORP_TOKEN=token
+export $CAMEL_VAULT_HASHICORP_ENGINE=secretKey
+export $CAMEL_VAULT_HASHICORP_HOST=host
+export $CAMEL_VAULT_HASHICORP_PORT=port
+export $CAMEL_VAULT_HASHICORP_SCHEME=http/https</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also configure the credentials in the <code>application.properties</code> file such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.hashicorp.token = token
+camel.vault.hashicorp.engine = engine
+camel.vault.hashicorp.host = host
+camel.vault.hashicorp.port = port
+camel.vault.hashicorp.scheme = scheme</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point you&#8217;ll be able to reference a property in the following way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext&gt;
+    &lt;route&gt;
+        &lt;from uri="direct:start"/&gt;
+        &lt;to uri="{{hashicorp:route}}"/&gt;
+    &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where route will be the name of the secret stored in the Hashicorp Vault instance.</p>
+</div>
+<div class="paragraph">
+<p>You could specify a default value in case the secret is not present on Hashicorp Vault instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext&gt;
+    &lt;route&gt;
+        &lt;from uri="direct:start"/&gt;
+        &lt;to uri="{{hashicorp:route:default}}"/&gt;
+    &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case if the secret doesn&#8217;t exist, the property will fallback to "default" as value.</p>
+</div>
+<div class="paragraph">
+<p>Also you are able to get particular field of the secret, if you have for example a secret named database of this form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
+  "username": "admin",
+  "password": "password123",
+  "engine": "postgres",
+  "host": "127.0.0.1",
+  "port": "3128",
+  "dbname": "db"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;re able to do get single secret value in your route, like for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext&gt;
+    &lt;route&gt;
+        &lt;from uri="direct:start"/&gt;
+        &lt;log message="Username is {{hashicorp:database/username}}"/&gt;
+    &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or re-use the property as part of an endpoint.</p>
+</div>
+<div class="paragraph">
+<p>You could specify a default value in case the particular field of secret is not present on Hashicorp Vault instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext&gt;
+    &lt;route&gt;
+        &lt;from uri="direct:start"/&gt;
+        &lt;log message="Username is {{hashicorp:database/username:admin}}"/&gt;
+    &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case if the secret doesn&#8217;t exist or the secret exists, but the username field is not part of the secret, the property will fallback to "admin" as value.</p>
+</div>
+<div class="paragraph">
+<p>There is also the syntax to get a particular version of the secret for both the approach, with field/default value specified or only with secret:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext&gt;
+    &lt;route&gt;
+        &lt;from uri="direct:start"/&gt;
+        &lt;to uri="{{hashicorp:route@2}}"/&gt;
+    &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This approach will return the RAW route secret with version '2'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext&gt;
+    &lt;route&gt;
+        &lt;from uri="direct:start"/&gt;
+        &lt;to uri="{{hashicorp:route:default@2}}"/&gt;
+    &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This approach will return the route secret value with version '2' or default value in case the secret doesn&#8217;t exist or the version doesn&#8217;t exist.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;camelContext&gt;
+    &lt;route&gt;
+        &lt;from uri="direct:start"/&gt;
+        &lt;log message="Username is {{hashicorp:database/username:admin@2}}"/&gt;
+    &lt;/route&gt;
+&lt;/camelContext&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This approach will return the username field of the database secret with version '2' or admin in case the secret doesn&#8217;t exist or the version doesn&#8217;t exist.</p>
+</div>
+<div class="paragraph">
+<p>The only requirement is adding the camel-hashicorp-vault jar to your Camel application.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_automatic_camel_context_reloading_on_secret_refresh_while_using_aws_secrets_manager"><a class="anchor" href="#_automatic_camel_context_reloading_on_secret_refresh_while_using_aws_secrets_manager"></a>Automatic Camel context reloading on Secret Refresh while using AWS Secrets Manager</h4>
+<div class="paragraph">
+<p>Being able to reload Camel context on a Secret Refresh, could be done by specifying the usual credentials (the same used for AWS Secret Manager Property Function).</p>
+</div>
+<div class="paragraph">
+<p>With Environment variables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export $CAMEL_VAULT_AWS_USE_DEFAULT_CREDENTIALS_PROVIDER=accessKey
+export $CAMEL_VAULT_AWS_REGION=region</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or as plain Camel main properties:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.aws.useDefaultCredentialProvider = true
+camel.vault.aws.region = region</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or by specifying accessKey/SecretKey and region, instead of using the default credentials provider chain.</p>
+</div>
+<div class="paragraph">
+<p>To enable the automatic refresh you&#8217;ll need additional properties to set:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.aws.refreshEnabled=true
+camel.vault.aws.refreshPeriod=60000
+camel.vault.aws.secrets=Secret
+camel.main.context-reload-enabled = true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>camel.vault.aws.refreshEnabled</code> will enable the automatic context reload, <code>camel.vault.aws.refreshPeriod</code> is the interval of time between two different checks for update events and <code>camel.vault.aws.secrets</code> is a regex representing the secrets we want to track for updates.</p>
+</div>
+<div class="paragraph">
+<p>Note that <code>camel.vault.aws.secrets</code> is not mandatory: if not specified the task responsible for checking updates events will take into accounts or the properties with an <code>aws:</code> prefix.</p>
+</div>
+<div class="paragraph">
+<p>The only requirement is adding the camel-aws-secrets-manager jar to your Camel application.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_automatic_camel_context_reloading_on_secret_refresh_while_using_google_secret_manager"><a class="anchor" href="#_automatic_camel_context_reloading_on_secret_refresh_while_using_google_secret_manager"></a>Automatic Camel context reloading on Secret Refresh while using Google Secret Manager</h4>
+<div class="paragraph">
+<p>Being able to reload Camel context on a Secret Refresh, could be done by specifying the usual credentials (the same used for Google Secret Manager Property Function).</p>
+</div>
+<div class="paragraph">
+<p>With Environment variables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export $CAMEL_VAULT_GCP_USE_DEFAULT_INSTANCE=true
+export $CAMEL_VAULT_GCP_PROJECT_ID=projectId</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or as plain Camel main properties:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.gcp.useDefaultInstance = true
+camel.vault.aws.projectId = projectId</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or by specifying a path to a service account key file, instead of using the default instance.</p>
+</div>
+<div class="paragraph">
+<p>To enable the automatic refresh you&#8217;ll need additional properties to set:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.gcp.projectId= projectId
+camel.vault.gcp.refreshEnabled=true
+camel.vault.gcp.refreshPeriod=60000
+camel.vault.gcp.secrets=hello*
+camel.vault.gcp.subscriptionName=subscriptionName
+camel.main.context-reload-enabled = true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>camel.vault.gcp.refreshEnabled</code> will enable the automatic context reload, <code>camel.vault.gcp.refreshPeriod</code> is the interval of time between two different checks for update events and <code>camel.vault.gcp.secrets</code> is a regex representing the secrets we want to track for updates.</p>
+</div>
+<div class="paragraph">
+<p>Note that <code>camel.vault.gcp.secrets</code> is not mandatory: if not specified the task responsible for checking updates events will take into accounts or the properties with an <code>gcp:</code> prefix.</p>
+</div>
+<div class="paragraph">
+<p>The <code>camel.vault.gcp.subscriptionName</code> is the subscription name created in relation to the Google PubSub topic associated with the tracked secrets.</p>
+</div>
+<div class="paragraph">
+<p>This mechanism while make use of the notification system related to Google Secret Manager: through this feature, every secret could be associated to one up to ten Google Pubsub Topics. These topics will receive
+events related to life cycle of the secret.</p>
+</div>
+<div class="paragraph">
+<p>There are only two requirements:
+- Adding <code>camel-google-secret-manager</code> JAR to your Camel application.
+- Give the service account used permissions to do operation at secret management level (for example accessing the secret payload, or being admin of secret manager service and also have permission over the Pubsub service)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_automatic_camel_context_reloading_on_secret_refresh_while_using_azure_key_vault"><a class="anchor" href="#_automatic_camel_context_reloading_on_secret_refresh_while_using_azure_key_vault"></a>Automatic Camel context reloading on Secret Refresh while using Azure Key Vault</h4>
+<div class="paragraph">
+<p>Being able to reload Camel context on a Secret Refresh, could be done by specifying the usual credentials (the same used for Azure Key Vault Property Function).</p>
+</div>
+<div class="paragraph">
+<p>With Environment variables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export $CAMEL_VAULT_AZURE_TENANT_ID=tenantId
+export $CAMEL_VAULT_AZURE_CLIENT_ID=clientId
+export $CAMEL_VAULT_AZURE_CLIENT_SECRET=clientSecret
+export $CAMEL_VAULT_AZURE_VAULT_NAME=vaultName</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or as plain Camel main properties:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.azure.tenantId = accessKey
+camel.vault.azure.clientId = clientId
+camel.vault.azure.clientSecret = clientSecret
+camel.vault.azure.vaultName = vaultName</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To enable the automatic refresh you&#8217;ll need additional properties to set:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.vault.azure.refreshEnabled=true
+camel.vault.azure.refreshPeriod=60000
+camel.vault.azure.secrets=Secret
+camel.vault.azure.eventhubConnectionString=eventhub_conn_string
+camel.vault.azure.blobAccountName=blob_account_name
+camel.vault.azure.blobContainerName=blob_container_name
+camel.vault.azure.blobAccessKey=blob_access_key
+camel.main.context-reload-enabled = true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>camel.vault.azure.refreshEnabled</code> will enable the automatic context reload, <code>camel.vault.azure.refreshPeriod</code> is the interval of time between two different checks for update events and <code>camel.vault.azure.secrets</code> is a regex representing the secrets we want to track for updates.</p>
+</div>
+<div class="paragraph">
+<p>where <code>camel.vault.azure.eventhubConnectionString</code> is the eventhub connection string to get notification from, <code>camel.vault.azure.blobAccountName</code>, <code>camel.vault.azure.blobContainerName</code> and <code>camel.vault.azure.blobAccessKey</code> are the Azure Storage Blob parameters for the checkpoint store needed by Azure Eventhub.</p>
+</div>
+<div class="paragraph">
+<p>Note that <code>camel.vault.azure.secrets</code> is not mandatory: if not specified the task responsible for checking updates events will take into accounts or the properties with an <code>azure:</code> prefix.</p>
 </div>
 <div class="paragraph">
 <p>The only requirement is adding the camel-azure-key-vault jar to your Camel application.</p>

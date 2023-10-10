@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Health Checks :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="health-check.html">Health Checks</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/health-check.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/health-check.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -683,6 +694,11 @@ and then after first poll run then DOWN again because the consumer cannot poll f
 which causes the health check to be <em>flaky</em>.</p>
 </li>
 <li>
+<p><em>producers</em> A <code>HealthCheckRegistry</code> which are for producer based health-checks. There are a few components
+which comes with producer health checks such as <code>camel-kafka</code> and many of the <code>AWS</code> components.
+However, producer health checks are by default disabled. See further below for how to enable producer health checks.</p>
+</li>
+<li>
 <p><em>registry</em> - A <code>HealthCheckRegistry</code> which discovers all the available custom <code>HealthCheck</code> instances in the <code>Registry</code>.</p>
 </li>
 </ul>
@@ -733,8 +749,11 @@ public boolean isReadiness() {
 such as Camel on Spring Boot, or Camel K.</p>
 </div>
 <div class="paragraph">
-<p>Camel will automatically enable <code>context</code>, <code>routes</code>, <code>consumers</code>, and <code>registry</code> health-checks if <code>camel-health</code> is detected on the classpath.
-They are all enabled by default (context is always enabled and cannot be disabled). However, you can configure them, for example to turn them off:</p>
+<p>Camel will automatically enable <code>context</code>, <code>routes</code>, <code>consumers</code>, <code>producers</code> and <code>registry</code> health-checks if <code>camel-health</code> is detected on the classpath.
+They are all enabled by default (except for <code>producers</code> which is disabled).</p>
+</div>
+<div class="paragraph">
+<p>However, you can configure them, for example to turn them off:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -794,6 +813,64 @@ as part of an aggregated response.</p>
 </div>
 <div class="paragraph">
 <p>which will turn off checks for all consumers on routes that starts with <code>myroute</code> in the route ID.</p>
+</div>
+<div class="paragraph">
+<p>Or you can turn off producer based health checks by their component name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.health.exclude-pattern = producer:kafka*</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or all AWS producer health-checks</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.health.exclude-pattern = producer:aws*</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_turning_on_producer_level_health_checks"><a class="anchor" href="#_turning_on_producer_level_health_checks"></a>Turning on producer level health-checks</h3>
+<div class="paragraph">
+<p>Only consumer based health-checks is enabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Some components (in particular AWS) provides also health checks for producers.
+These health checks can be enabled via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.health.producersEnabled=true</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_turning_off_health_checks_from_components"><a class="anchor" href="#_turning_off_health_checks_from_components"></a>Turning off health checks from components</h3>
+<div class="paragraph">
+<p>Some Camel components comes with health-checks.</p>
+</div>
+<div class="paragraph">
+<p>For example to turn off both consumer and producer health checks from Kafka:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">camel.component.kafka.health-check-consumer-enabled = false
+camel.component.kafka.health-check-producer-enabled = false</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can turn of either consumer, producer or both.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -887,10 +964,10 @@ the <em>name</em>-check syntax.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.apache.camel.spi.annotations.HealthCheck;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.apache.camel.spi.annotations.HealthCheck;
 import org.apache.camel.impl.health.AbstractHealthCheck;
 
-@HealthCheck("my-check")
+</span><span class="fold-block">@HealthCheck("my-check")
 public final class MyHealthCheck extends AbstractHealthCheck {
 
     public MyHealthCheck() {
@@ -911,7 +988,7 @@ public final class MyHealthCheck extends AbstractHealthCheck {
             builder.up();
         }
     }
-}</code></pre>
+}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -983,7 +1060,7 @@ The example <code>main-health</code> has a custom health check which is loadable
 <h3 id="_loading_custom_health_checks_in_camel_quarkus"><a class="anchor" href="#_loading_custom_health_checks_in_camel_quarkus"></a>Loading custom health checks in Camel Quarkus</h3>
 <div class="paragraph">
 <p>If you use Camel Quarkus then you can write custom health checks with
-<a href="../components/3.18.x/others/microprofile-health.html" class="xref page">MicroProfile Health</a>, which
+<a href="#components:others:microprofile-health.adoc" class="xref unresolved">MicroProfile Health</a>, which
 Camel Quarkus can automatically discover during build time compilation and ensure
 are automatically loaded.</p>
 </div>

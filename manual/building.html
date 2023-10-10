@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Building Camel from Source :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -622,7 +633,7 @@
     <li><a href="building.html">Building</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/building.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/building.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -630,142 +641,8 @@
 </aside>
 <article class="doc">
 <h1 class="page">Building Camel from Source</h1>
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
-<p>Camel uses <a href="http://maven.apache.org/">Maven</a> as its build and management
-tool. If you don&#8217;t fancy using Maven you can use your IDE directly or
-Download a distribution or JAR.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_prequisites"><a class="anchor" href="#_prequisites"></a>Prequisites</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Required:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Java</p>
-<div class="ulist">
-<ul>
-<li>
-<p>1.8 or 11</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="https://github.com/takari/maven-wrapper">Maven Wrapper</a> can be used and bundled.</p>
-</li>
-<li>
-<p>Otherwise, <a href="http://maven.apache.org/download.html">download and install Maven</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Maven 3.8.x or newer is required to build Camel 3 onwards</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Get the latest source from <a href="https://github.com/apache/camel/">Github</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_maven_options"><a class="anchor" href="#_maven_options"></a>Maven options</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To build camel maven has to be configured to use more memory</p>
-</div>
-<div class="paragraph">
-<p>Unix/Linux/Mac</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export MAVEN_OPTS="-Xms2048m -Xmx3584m"</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Windows</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">set MAVEN_OPTS="-Xms2048m -Xmx3584m"</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_a_normal_build"><a class="anchor" href="#_a_normal_build"></a>A normal build</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Beware this runs all the unit tests which takes many hours.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn clean install</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_a_quick_build_without_running_tests"><a class="anchor" href="#_a_quick_build_without_running_tests"></a>A quick build without running tests</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following skips building the manual, the distro and does not execute
-the unit tests, which can complete in less than 10 minutes.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn clean install -Pfastinstall</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_a_normal_build_without_running_tests_but_auto_formatting_and_checkstyle_verification_enabled"><a class="anchor" href="#_a_normal_build_without_running_tests_but_auto_formatting_and_checkstyle_verification_enabled"></a>A normal build without running tests but auto formatting and checkstyle verification enabled</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn clean install -Pfastinstall,format,sourcecheck</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_building_with_checkstyle"><a class="anchor" href="#_building_with_checkstyle"></a>Building with checkstyle</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To enable source style checking with checkstyle, build Camel with the
-<code>-Psourcecheck</code> parameter</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn clean install -Psourcecheck</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_building_source_jars"><a class="anchor" href="#_building_source_jars"></a>Building source jars</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you want to build jar files with the source code, that for instance
-Eclipse can important, so you can debug the Camel code as well. Then you
-can run this command from the camel root folder:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn clean source:jar install -Pfastinstall</code></pre>
-</div>
-</div>
-</div>
+<p>This content was moved to the <a href="/camel-core/contributing">Getting Started</a>.</p>
 </div>
 </article>
   </div>

@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Walk through an Example Code :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -621,7 +632,7 @@
     <li><a href="walk-through-an-example.html">Walk through an Example Code</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/walk-through-an-example.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/walk-through-an-example.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -644,7 +655,7 @@ example does</a>.</p>
 </div>
 <div class="paragraph">
 <p>We start with creating a <a href="camelcontext.html" class="xref page">CamelContext</a> - which is
-a container for <a href="../components/3.18.x/index.html" class="xref page">Components</a>,
+a container for <a href="../components/next/index.html" class="xref page">Components</a>,
 <a href="routes.html" class="xref page">Routes</a>
 etc:</p>
 </div>
@@ -657,7 +668,7 @@ etc:</p>
 <p>There is more than one way of adding a Component to the CamelContext. You can
 add components implicitly - when we set up the routing - as we do here
 for the
-<a href="../components/3.18.x/file-component.html" class="xref page">FileComponent</a>:</p>
+<a href="#components::file-component.adoc" class="xref unresolved">FileComponent</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -705,16 +716,11 @@ ComponentsBuilderFactory.jms()
 </div>
 </div>
 <div class="paragraph">
-<p>The above works with any JMS provider. If we know we are using
-<a href="#components::activemq-component.adoc" class="xref unresolved">ActiveMQ</a> we can use an even simpler form using the
-<a href="http://activemq.apache.org/maven/5.5.0/activemq-camel/apidocs/org/apache/activemq/camel/component/ActiveMQComponent.html#activeMQComponent%28java.lang.String%29"><code>activeMQComponent()</code>
-method</a> while specifying the
-<a href="http://activemq.apache.org/configuring-transports.html">brokerURL</a> used
-to connect to ActiveMQ</p>
+<p>The above works with any JMS provider.</p>
 </div>
 <div class="paragraph">
 <p>In normal use, an external system would be firing messages or events
-directly into Camel through one of its <a href="../components/3.18.x/index.html" class="xref page">Components</a>
+directly into Camel through one of its <a href="../components/next/index.html" class="xref page">Components</a>
 but we are going to use tha <a href="producertemplate.html" class="xref page">ProducerTemplate</a>
 which is a really easy way for testing your
 configuration:</p>
@@ -764,16 +770,16 @@ camel:</p>
 <a href="type-converter.html" class="xref page">converted automatically</a> into JMS Messages and
 posted to a JMS Queue named <em>test.queue</em>. When we set up the
 <a href="routes.html" class="xref page">Route</a>, we configured the
-<a href="../components/3.18.x/file-component.html" class="xref page">FileComponent</a> to listen off the <em>test.queue</em>.</p>
+<a href="#components::file-component.adoc" class="xref unresolved">FileComponent</a> to listen off the <em>test.queue</em>.</p>
 </div>
 <div class="paragraph">
-<p>The File <a href="../components/3.18.x/file-component.html" class="xref page">FileComponent</a> will take messages off the
+<p>The File <a href="#components::file-component.adoc" class="xref unresolved">FileComponent</a> will take messages off the
 Queue, and save them to a directory named <em>test</em>. Every message will be
 saved in a file that corresponds to its destination and message id.</p>
 </div>
 <div class="paragraph">
 <p>Finally, we configured our own listener in the <a href="routes.html" class="xref page">Route</a> -
-to take notifications from the <a href="../components/3.18.x/file-component.html" class="xref page">FileComponent</a> and print
+to take notifications from the <a href="#components::file-component.adoc" class="xref unresolved">FileComponent</a> and print
 them out as text.</p>
 </div>
 <div class="paragraph">

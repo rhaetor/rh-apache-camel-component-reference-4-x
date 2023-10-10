@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Walk through another example :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -75,10 +74,13 @@
     <a class="nav-link" href="configuring-route-startup-ordering-and-autostartup.html">Configuring route startup ordering and autostartup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="component-dsl.html">Component-dsl</a>
+    <a class="nav-link" href="component-dsl.html">Component DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Endpoint-dsl.html">Endpoint-dsl</a>
+    <a class="nav-link" href="Endpoint-dsl.html">Endpoint DSL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-dsl.html">DataFormat DSL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
@@ -136,6 +138,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="camel-3x-upgrade-guide.html">Camel 3.x Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4-migration-guide.html">Camel 3.x to 4.0 Migration Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="camel-4x-upgrade-guide.html">Camel 4.x Upgrade Guide</a>
   </li>
 </ul>
   </li>
@@ -228,13 +236,13 @@
     <a class="nav-link" href="expression.html">Expressions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/content-enricher.html">Content Enrichment</a>
+    <a class="nav-link" href="../components/next/eips/content-enricher.html">Content Enrichment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="injector.html">Injector</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../components/3.18.x/eips/intercept.html">Intercept</a>
+    <a class="nav-link" href="../components/next/eips/intercept.html">Intercept</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jmx.html">JMX</a>
@@ -271,6 +279,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-configuration.html">RouteConfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="context-reload.html">ContextReload</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="route-reload.html">RouteReload</a>
@@ -568,16 +579,16 @@
     <span class="nav-text"><strong>Reference</strong></span>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/index.html">Components</a>
+    <a class="nav-link" href="../components/next/index.html">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/dataformats/index.html">Data Formats</a>
+    <a class="nav-link" href="../components/next/dataformats/index.html">Data Formats</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/languages/index.html">Languages</a>
+    <a class="nav-link" href="../components/next/languages/index.html">Languages</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../components/3.18.x/eips/enterprise-integration-patterns.html">EIPs</a>
+    <a class="nav-link" href="../components/next/eips/enterprise-integration-patterns.html">EIPs</a>
   </li>
 </ul>
   </li>
@@ -591,10 +602,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../components/3.18.x/index.html">Camel Components</a>
+      <a class="title" href="../components/next/index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../components/3.18.x/index.html">3.18.x (LTS)</a>
+          <a href="../components/next/index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -621,7 +632,7 @@
     <li><a href="walk-through-another-example.html">Walk through another example</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/gforde/data/ACCR/3.18.x/camel/docs/user-manual/modules/ROOT/pages/walk-through-another-example.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/walk-through-another-example.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -640,7 +651,7 @@ but can enjoy an after-hours walk to the local pub for a large beer.</p>
 </div>
 <div class="paragraph">
 <p>First we take a moment to look at the
-<a href="../components/3.18.x/eips/enterprise-integration-patterns.html" class="xref page">Enterprise Integration
+<a href="../components/next/eips/enterprise-integration-patterns.html" class="xref page">Enterprise Integration
 Patterns</a> - the base pattern catalog for integration scenarios. In
 particular we focus on <a href="http://www.enterpriseintegrationpatterns.com/PipesAndFilters.html">Pipes and Filters</a> -
 a central pattern. This is used to route messages through a sequence of
@@ -655,7 +666,7 @@ Java Servlet Filters.</p>
 <div class="paragraph">
 <p>In this sample we want to process a message in a sequence of steps where
 each steps can perform their specific function. In our example we have a
-<a href="../components/3.18.x/jms-component.html" class="xref page">JMS</a> queue for receiving new orders. When an order is
+<a href="#components::jms-component.adoc" class="xref unresolved">JMS</a> queue for receiving new orders. When an order is
 received we need to process it in several steps:</p>
 </div>
 <div class="ulist">
@@ -773,9 +784,9 @@ bind routing using your existing POJO beans.</p>
 </div>
 <div class="paragraph">
 <p>So what happens in the route above. Well when an order is received from
-the <a href="../components/3.18.x/jms-component.html" class="xref page">JMS</a> queue the message is routed like
+the <a href="#components::jms-component.adoc" class="xref unresolved">JMS</a> queue the message is routed like
 pipes and filters:
-1. payload from the <a href="../components/3.18.x/jms-component.html" class="xref page">JMS</a> is sent as input to the
+1. payload from the <a href="#components::jms-component.adoc" class="xref unresolved">JMS</a> is sent as input to the
 validateOrder bean<br>
 2. the output from validateOrder bean is sent as input to the
 registerOrder bean<br>
@@ -790,7 +801,7 @@ sendConfirmEmail bean</p>
 <div class="paragraph">
 <p>In the route lets imagine that the registration of the order has to be
 done by sending data to a TCP socket that could be a big mainframe. As
-Camel has many <a href="../components/3.18.x/index.html" class="xref page">Components</a> we will use the
+Camel has many <a href="../components/next/index.html" class="xref page">Components</a> we will use the
 camel-mina component that supports <a href="#components::mina-component.adoc" class="xref unresolved">TCP</a> connectivity. So
 we change the route to:</p>
 </div>
@@ -807,7 +818,7 @@ we change the route to:</p>
 <div class="paragraph">
 <p>What we now have in the route is a <code>to</code> type that can be used as a
 direct replacement for the bean type. The steps is now:
-1. payload from the <a href="../components/3.18.x/jms-component.html" class="xref page">JMS</a> is sent as input to the
+1. payload from the <a href="#components::jms-component.adoc" class="xref unresolved">JMS</a> is sent as input to the
 validateOrder bean
 2. the output from validateOrder bean is sent as text to the mainframe
 using TCP
@@ -817,7 +828,7 @@ sendConfirmEmai bean</p>
 <div class="paragraph">
 <p>What to notice here is that the <code>to</code> is not the end of the route (the
 world) in this example it&#8217;s used in the middle of the
-<a href="../components/3.18.x/eips/pipeline-eip.html" class="xref page">Pipes and filters</a>. In fact we can change
+<a href="../components/next/eips/pipeline-eip.html" class="xref page">Pipes and filters</a>. In fact we can change
 the <code>bean</code> types to <code>to</code> as well:</p>
 </div>
 <div class="listingblock">
@@ -832,7 +843,7 @@ the <code>bean</code> types to <code>to</code> as well:</p>
 </div>
 <div class="paragraph">
 <p>As the <code>to</code> is a generic type we must state in the uri scheme which
-component it is. So we must write <strong>bean:</strong> for the <a href="../components/3.18.x/bean-component.html" class="xref page">Bean</a>
+component it is. So we must write <strong>bean:</strong> for the <a href="#components::bean-component.adoc" class="xref unresolved">Bean</a>
 component that we are using.</p>
 </div>
 </div>
