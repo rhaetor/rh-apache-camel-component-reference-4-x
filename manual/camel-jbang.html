@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Camel JBang :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="camel-jbang.html">Camel JBang</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/camel-jbang.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/ROOT/pages/camel-jbang.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -1200,7 +1200,7 @@ of <code>application.properties</code>.</p>
 </div>
 <div class="paragraph">
 <p>In the <code>properties</code> files you can configure all
-the configurations from <a href="#components:others:main.adoc" class="xref unresolved">Camel Main</a>.</p>
+the configurations from <a href="../components/next/others/main.html" class="xref page">Camel Main</a>.</p>
 </div>
 <div class="paragraph">
 <p>For example to turn off <a href="stream-caching.html" class="xref page">Stream Caching</a> and enable log masking you can specify:</p>
@@ -1446,7 +1446,7 @@ Location of the settings.xml file itself can be specified as well:</p>
 <div class="sect2">
 <h3 id="_running_routes_hosted_on_github"><a class="anchor" href="#_running_routes_hosted_on_github"></a>Running routes hosted on GitHub</h3>
 <div class="paragraph">
-<p>You can run a route that is hosted on GitHub using Camels <a href="#components:others:resourceresolver-github.adoc" class="xref unresolved">github</a> resource loader.</p>
+<p>You can run a route that is hosted on GitHub using Camels <a href="../components/next/others/resourceresolver-github.html" class="xref page">github</a> resource loader.</p>
 </div>
 <div class="paragraph">
 <p>For example to run one of the Camel K examples you can do:</p>
@@ -2680,7 +2680,7 @@ The name of the logging file cannot be configured.</p>
 <div class="sect3">
 <h4 id="_using_streamin_with_line_vs_raw_mode"><a class="anchor" href="#_using_streamin_with_line_vs_raw_mode"></a>Using stream:in with line vs raw mode</h4>
 <div class="paragraph">
-<p>When using <code>stream:in</code> to read data from <em>System in</em> then the <a href="#components::stream-component.adoc" class="xref unresolved">Stream component</a>
+<p>When using <code>stream:in</code> to read data from <em>System in</em> then the <a href="../components/next/stream-component.html" class="xref page">Stream component</a>
 works in two modes:</p>
 </div>
 <div class="ulist">
@@ -2910,7 +2910,7 @@ You can use <code>@BeanInject</code> annotation to refer to existing bean annota
 <div class="sect3">
 <h4 id="_using_beans_in_camel_xml_dsl"><a class="anchor" href="#_using_beans_in_camel_xml_dsl"></a>Using beans in Camel XML DSL</h4>
 <div class="paragraph">
-<p>Since Camel <strong>4.0.0</strong>, when using <a href="#components:others:java-xml-io-dsl.adoc" class="xref unresolved">XML DSL</a> we can declare additional beans in similar way as in <a href="#components:others:yaml-dsl.adoc" class="xref unresolved">YAML DSL</a>. Such beans will be added to <a href="registry.html" class="xref page">Registry</a> and can be referred to for example from routes.</p>
+<p>Since Camel <strong>4.0.0</strong>, when using <a href="../components/next/others/java-xml-io-dsl.html" class="xref page">XML DSL</a> we can declare additional beans in similar way as in <a href="../components/next/others/yaml-dsl.html" class="xref page">YAML DSL</a>. Such beans will be added to <a href="registry.html" class="xref page">Registry</a> and can be referred to for example from routes.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2963,7 +2963,7 @@ You can use <code>@BeanInject</code> annotation to refer to existing bean annota
 <div class="sect3">
 <h4 id="_using_spring_beans_in_camel_xml_dsl"><a class="anchor" href="#_using_spring_beans_in_camel_xml_dsl"></a>Using Spring beans in Camel XML DSL</h4>
 <div class="paragraph">
-<p>Since Camel <strong>4.0.0</strong>, when using <a href="#components:others:java-xml-io-dsl.adoc" class="xref unresolved">XML DSL</a>, we can also declare <em>beans</em> using Spring Beans XML namespace. All these beans will be added to <a href="registry.html" class="xref page">Registry</a>.</p>
+<p>Since Camel <strong>4.0.0</strong>, when using <a href="../components/next/others/java-xml-io-dsl.html" class="xref page">XML DSL</a>, we can also declare <em>beans</em> using Spring Beans XML namespace. All these beans will be added to <a href="registry.html" class="xref page">Registry</a>.</p>
 </div>
 <div class="paragraph">
 <p>This will not make the application managed by Spring Framework / Spring Boot. Simply Camel will leverage existing support for generic bean definition including:</p>
@@ -2985,7 +2985,7 @@ You can use <code>@BeanInject</code> annotation to refer to existing bean annota
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#components:others:java-xml-io-dsl.adoc" class="xref unresolved">XML DSL</a> allows to use XML documents that define routes, rests and route templates. Since Camel <strong>4.0.0</strong> these documents may use new root XML element (either <code>&lt;camel&gt;</code> or <code>&lt;beans&gt;</code> to resemble Spring XML DSL), where other Camel elements (like <code>&lt;routes&gt;</code>) are contained.</p>
+<p><a href="../components/next/others/java-xml-io-dsl.html" class="xref page">XML DSL</a> allows to use XML documents that define routes, rests and route templates. Since Camel <strong>4.0.0</strong> these documents may use new root XML element (either <code>&lt;camel&gt;</code> or <code>&lt;beans&gt;</code> to resemble Spring XML DSL), where other Camel elements (like <code>&lt;routes&gt;</code>) are contained.</p>
 </div>
 <div class="paragraph">
 <p>Here&#8217;s an example <code>camel.xml</code> file, which defines both the routes and beans used (referred to) by the route definition:</p>
@@ -3059,7 +3059,7 @@ You can use <code>@BeanInject</code> annotation to refer to existing bean annota
 </div>
 </div>
 <div class="paragraph">
-<p>What&#8217;s more, we can declare some additional beans that can affect internal mechanics of <code>CamelContext</code> being run. <code>org.apache.camel.main.DefaultConfigurationConfigurer</code> is used by <a href="#components:others:main.adoc" class="xref unresolved">Camel Main</a> to configure <code>CamelContext</code> using beans found in <a href="registry.html" class="xref page">Camel Registry</a>.</p>
+<p>What&#8217;s more, we can declare some additional beans that can affect internal mechanics of <code>CamelContext</code> being run. <code>org.apache.camel.main.DefaultConfigurationConfigurer</code> is used by <a href="../components/next/others/main.html" class="xref page">Camel Main</a> to configure <code>CamelContext</code> using beans found in <a href="registry.html" class="xref page">Camel Registry</a>.</p>
 </div>
 <div class="paragraph">
 <p>For example we can customize used <code>org.apache.camel.spi.UuidGenerator</code> with this XML fragment to replace UUID generator used by Camel (which defaults to <code>org.apache.camel.support.DefaultUuidGenerator</code>):</p>

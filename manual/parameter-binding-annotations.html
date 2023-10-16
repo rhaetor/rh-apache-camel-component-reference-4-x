@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Parameter Binding Annotations :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="parameter-binding-annotations.html">Parameter Binding Annotations</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/parameter-binding-annotations.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/ROOT/pages/parameter-binding-annotations.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -694,7 +694,7 @@ property</p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>These annotations can be used with the <a href="#components::bean-component.adoc" class="xref unresolved">Bean</a>
+<p>These annotations can be used with the <a href="../components/next/bean-component.html" class="xref page">Bean</a>
 component or when invoking beans in the <a href="dsl.html" class="xref page">DSL</a></p>
 </div>
 <div class="paragraph">
@@ -835,27 +835,27 @@ any of these annotations:</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Bean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inject a <a href="#components:languages:bean-language.adoc" class="xref unresolved">Bean</a> expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inject a <a href="../components/next/languages/bean-language.html" class="xref page">Bean</a> expression</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Constant</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inject a <a href="#components:languages:constant-language.adoc" class="xref unresolved">Constant</a> expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inject a <a href="../components/next/languages/constant-language.html" class="xref page">Constant</a> expression</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Groovy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inject a  <a href="#components:languages:groovy-language.adoc" class="xref unresolved">Groovy</a> expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inject a  <a href="../components/next/languages/groovy-language.html" class="xref page">Groovy</a> expression</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Header</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inject a <a href="#components:languages:header-language.adoc" class="xref unresolved">Header</a> expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inject a <a href="../components/next/languages/header-language.html" class="xref page">Header</a> expression</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Simple</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inject an <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inject an <a href="../components/next/languages/simple-language.html" class="xref page">Simple</a> expression</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@XPath</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inject an <a href="#components:languages:xpath-language.adoc" class="xref unresolved">XPath</a> expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inject an <a href="../components/next/languages/xpath-language.html" class="xref page">XPath</a> expression</p></td>
 </tr>
 </tbody>
 </table>
@@ -887,7 +887,7 @@ or <code>camel-jsonpath</code> to use the <code>@JSonPath</code> annotation.</p>
 <h4 id="_advanced_example_using_bean"><a class="anchor" href="#_advanced_example_using_bean"></a>Advanced example using @Bean</h4>
 <div class="paragraph">
 <p>And an example of using the the <code>@Bean</code> binding annotation,
-where you can call a <a href="#components::bean-component.adoc" class="xref unresolved">POJO</a> to supply
+where you can call a <a href="../components/next/bean-component.html" class="xref page">POJO</a> to supply
 the parameter value:</p>
 </div>
 <div class="listingblock">
@@ -922,7 +922,7 @@ computes the correlation id parameter:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <a href="#components::bean-component.adoc" class="xref unresolved">POJO</a> MyIdGenerator has one public method that
+<p>The <a href="../components/next/bean-component.html" class="xref page">POJO</a> MyIdGenerator has one public method that
 accepts two parameters. We have also annotated this one with the
 <code>@Header</code> and <code>@Body</code> annotations to help Camel know what to bind here from
 the Exchange being processed.</p>
@@ -960,7 +960,7 @@ simple id generator. But we wanted to demonstrate that you can use the
 <div class="paragraph">
 <p>In this example we have an Exchange that has a User object stored in the
 in header. This User object has methods to get some user information. We
-want to use <a href="#components:languages:groovy-language.adoc" class="xref unresolved">Groovy</a> to inject an expression that
+want to use <a href="../components/next/languages/groovy-language.html" class="xref page">Groovy</a> to inject an expression that
 extracts and concats the fullname of the user into the fullName parameter.</p>
 </div>
 <div class="listingblock">

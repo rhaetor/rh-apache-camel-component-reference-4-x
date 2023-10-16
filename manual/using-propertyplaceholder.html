@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Property placeholders :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="using-propertyplaceholder.html">How to use Camel property placeholders</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/using-propertyplaceholder.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/ROOT/pages/using-propertyplaceholder.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -661,11 +661,11 @@ login tokens, and configuration in general.</p>
 <h2 id="_properties_component"><a class="anchor" href="#_properties_component"></a>Properties component</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Camel provides the <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> out of the box
+<p>Camel provides the <a href="../components/next/properties-component.html" class="xref page">Properties</a> out of the box
 from the core, which is responsible for handling and resolving the property placeholders.</p>
 </div>
 <div class="paragraph">
-<p>See the <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> documentation for how
+<p>See the <a href="../components/next/properties-component.html" class="xref page">Properties</a> documentation for how
 to configure Camel to known from which location(a) to load properties.</p>
 </div>
 </div>
@@ -891,7 +891,7 @@ you can be then explicit turn off nested placeholder by <code>?nested=false</cod
 <p>Notice how the json query ends with <code>}}</code> which interfere with the Camel property placeholder syntax.</p>
 </div>
 <div class="paragraph">
-<p>Nested placeholders can also be turned off globally on the <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> component, such as:</p>
+<p>Nested placeholders can also be turned off globally on the <a href="../components/next/properties-component.html" class="xref page">Properties</a> component, such as:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1177,7 +1177,7 @@ placeholder notation with <code>{{key}}</code>.</p>
 <h2 id="_using_property_placeholder_functions"><a class="anchor" href="#_using_property_placeholder_functions"></a>Using property placeholder functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> component includes the following functions out of the box:</p>
+<p>The <a href="../components/next/properties-component.html" class="xref page">Properties</a> component includes the following functions out of the box:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1567,7 +1567,7 @@ from the actual use of the configmap/secret and into the <code>application.prope
 <div class="sect2">
 <h3 id="_using_custom_property_placeholder_functions"><a class="anchor" href="#_using_custom_property_placeholder_functions"></a>Using custom property placeholder functions</h3>
 <div class="paragraph">
-<p>The <a href="#components::properties-component.adoc" class="xref unresolved">Properties</a> component allow to plugin 3rd party functions which can be used during parsing of the property placeholders.
+<p>The <a href="../components/next/properties-component.html" class="xref page">Properties</a> component allow to plugin 3rd party functions which can be used during parsing of the property placeholders.
 These functions are then able to do custom logic to resolve the placeholders, such as looking up in databases, do custom computations, or whatnot.
 The name of the function becomes the prefix used in the placeholder.</p>
 </div>
@@ -1664,7 +1664,7 @@ The 3rd-party <code>PropertySource</code> can automatically be discovered from c
 This is done by including the file <code>META-INF/services/org/apache/camel/property-source-factory</code> which refers to the fully qualified class name of the <code>PropertySource</code> implementation.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="#components:others:microprofile-config.adoc" class="xref unresolved">MicroProfile Config</a> component as an example.</p>
+<p>See <a href="../components/next/others/microprofile-config.html" class="xref page">MicroProfile Config</a> component as an example.</p>
 </div>
 <div class="paragraph">
 <p>You can also register 3rd-party property sources via Java API:</p>

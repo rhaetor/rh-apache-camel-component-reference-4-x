@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>How do I retry processing a message from a certain point back or an entire route :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="how-do-i-retry-processing-a-message-from-a-certain-point-back-or-an-entire-route.html">How do I retry processing a message from a certain point back or an entire route?</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/faq/pages/how-do-i-retry-processing-a-message-from-a-certain-point-back-or-an-entire-route.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/faq/pages/how-do-i-retry-processing-a-message-from-a-certain-point-back-or-an-entire-route.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -651,7 +651,7 @@ this, you would need to split up your route.</p>
 case of a failure anywhere in the <code>direct:sub</code> route, then the entire
 route is retried. This happens because we have instructed the <code>direct:sub</code>
 route to not use any error handler (eg the no error handler). Then we
-link the routes using the <a href="#components::direct-component.adoc" class="xref unresolved">Direct</a> component by calling
+link the routes using the <a href="../../components/next/direct-component.html" class="xref page">Direct</a> component by calling
 the sub route from the 1st route.</p>
 </div>
 <div class="listingblock">

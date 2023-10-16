@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Bean Binding :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="bean-binding.html">Bean Binding</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/bean-binding.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/ROOT/pages/bean-binding.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -809,7 +809,7 @@ parameters of the method.</p>
 <p>So, if you declare any of these types, they will be provided by Camel.
 <strong>Note that <code>Exception</code> will bind to the caught exception in the
 <a href="exchange.html" class="xref page">Exchange</a></strong> - so it&#8217;s often usable if you employ a
-<a href="#components::bean-component.adoc" class="xref unresolved">Bean</a> to handle, e.g., an <code>onException</code> route.</p>
+<a href="../components/next/bean-component.html" class="xref page">Bean</a> to handle, e.g., an <code>onException</code> route.</p>
 </div>
 <div class="paragraph">
 <p>What is most interesting is that Camel will also try to bind the body of
@@ -857,7 +857,7 @@ well - for instance, a <code>Registry</code> that we can use to lookup beans.</p
 </div>
 </div>
 <div class="paragraph">
-<p>And imagine you use a <a href="#components::bean-component.adoc" class="xref unresolved">Pojo</a> to handle a given custom
+<p>And imagine you use a <a href="../components/next/bean-component.html" class="xref page">Pojo</a> to handle a given custom
 exception <code>InvalidOrderException</code> - we can then bind that as well:</p>
 </div>
 <div class="listingblock">
@@ -967,9 +967,9 @@ the method option</p>
 <p>The value is null which denotes a <code>null</code> value</p>
 </li>
 <li>
-<p>It can be evaluated using the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> language, which
+<p>It can be evaluated using the <a href="../components/next/languages/simple-language.html" class="xref page">Simple</a> language, which
 means you can use, e.g., <code>${body}</code>, <code>${header.foo}</code> and others
-<a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> tokens. Notice the tokens must be enclosed with
+<a href="../components/next/languages/simple-language.html" class="xref page">Simple</a> tokens. Notice the tokens must be enclosed with
 <code>${ }</code>.</p>
 </li>
 <li>
@@ -1020,7 +1020,7 @@ body as shown:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The syntax of the parameters is using the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a>
+<p>The syntax of the parameters is using the <a href="../components/next/languages/simple-language.html" class="xref page">Simple</a>
 language so we have to use <code>${ }</code> placeholders in the body to
 refer to the message body.</p>
 </div>
@@ -1061,7 +1061,7 @@ first has the content 'World' (without quotes), and the 2nd has the
 value of 5. Camel will automatically convert these values to the parameters' types.</p>
 </div>
 <div class="paragraph">
-<p>Having the power of the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> language allows us to
+<p>Having the power of the <a href="../components/next/languages/simple-language.html" class="xref page">Simple</a> language allows us to
 bind to message headers and other values such as:</p>
 </div>
 <div class="listingblock">
@@ -1070,7 +1070,7 @@ bind to message headers and other values such as:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>You can also use the OGNL support of the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a>
+<p>You can also use the OGNL support of the <a href="../components/next/languages/simple-language.html" class="xref page">Simple</a>
 expression language. Now suppose the message body is an object which has
 a method named <code>asXml</code>. To invoke the <code>asXml</code> method we can do as
 follows:</p>

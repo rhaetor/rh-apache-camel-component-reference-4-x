@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>How do the direct, event, seda, and vm endpoints compare? :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="how-do-the-direct-event-seda-and-vm-endpoints-compare.html">How do the direct, event, seda and vm endpoints compare?</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/faq/pages/how-do-the-direct-event-seda-and-vm-endpoints-compare.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/faq/pages/how-do-the-direct-event-seda-and-vm-endpoints-compare.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -644,21 +644,21 @@
 <div class="ulist">
 <ul>
 <li>
-<p>VM and <a href="#components::seda-component.adoc" class="xref unresolved">SEDA</a> endpoints are basically the
+<p>VM and <a href="../../components/next/seda-component.html" class="xref page">SEDA</a> endpoints are basically the
 same; they both offer asychronous in memory SEDA queues; they differ in
 visibility&#8201;&#8212;&#8201;endpoints are visible inside the same JVM or within the same
 CamelContext respectively.</p>
 </li>
 <li>
-<p><a href="#components::direct-component.adoc" class="xref unresolved">Direct</a> uses no threading; it directly invokes the
+<p><a href="../../components/next/direct-component.html" class="xref page">Direct</a> uses no threading; it directly invokes the
 consumer when sending.</p>
 </li>
 <li>
-<p><a href="#components::spring-event-component.adoc" class="xref unresolved">Spring Event</a> adds a listener to Spring&#8217;s
+<p><a href="../../components/next/spring-event-component.html" class="xref page">Spring Event</a> adds a listener to Spring&#8217;s
 application events; so the consumer is invoked the same thread as Spring
 notifies events. Event differs in that the payload should be a Spring
-<code>ApplicationEvent</code> object whereas <a href="#components::direct-component.adoc" class="xref unresolved">Direct</a>,
-<a href="#components::seda-component.adoc" class="xref unresolved">SEDA</a> can use any payload.</p>
+<code>ApplicationEvent</code> object whereas <a href="../../components/next/direct-component.html" class="xref page">Direct</a>,
+<a href="../../components/next/seda-component.html" class="xref page">SEDA</a> can use any payload.</p>
 </li>
 </ul>
 </div>

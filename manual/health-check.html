@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Health Checks :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="health-check.html">Health Checks</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/health-check.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/ROOT/pages/health-check.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -964,10 +964,10 @@ the <em>name</em>-check syntax.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.apache.camel.spi.annotations.HealthCheck;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.apache.camel.spi.annotations.HealthCheck;
 import org.apache.camel.impl.health.AbstractHealthCheck;
 
-</span><span class="fold-block">@HealthCheck("my-check")
+@HealthCheck("my-check")
 public final class MyHealthCheck extends AbstractHealthCheck {
 
     public MyHealthCheck() {
@@ -988,7 +988,7 @@ public final class MyHealthCheck extends AbstractHealthCheck {
             builder.up();
         }
     }
-}</span></code></pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1060,7 +1060,7 @@ The example <code>main-health</code> has a custom health check which is loadable
 <h3 id="_loading_custom_health_checks_in_camel_quarkus"><a class="anchor" href="#_loading_custom_health_checks_in_camel_quarkus"></a>Loading custom health checks in Camel Quarkus</h3>
 <div class="paragraph">
 <p>If you use Camel Quarkus then you can write custom health checks with
-<a href="#components:others:microprofile-health.adoc" class="xref unresolved">MicroProfile Health</a>, which
+<a href="../components/next/others/microprofile-health.html" class="xref page">MicroProfile Health</a>, which
 Camel Quarkus can automatically discover during build time compilation and ensure
 are automatically loaded.</p>
 </div>

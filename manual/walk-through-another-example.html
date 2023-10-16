@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Walk through another example :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -632,7 +632,7 @@
     <li><a href="walk-through-another-example.html">Walk through another example</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/walk-through-another-example.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/ROOT/pages/walk-through-another-example.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -666,7 +666,7 @@ Java Servlet Filters.</p>
 <div class="paragraph">
 <p>In this sample we want to process a message in a sequence of steps where
 each steps can perform their specific function. In our example we have a
-<a href="#components::jms-component.adoc" class="xref unresolved">JMS</a> queue for receiving new orders. When an order is
+<a href="../components/next/jms-component.html" class="xref page">JMS</a> queue for receiving new orders. When an order is
 received we need to process it in several steps:</p>
 </div>
 <div class="ulist">
@@ -784,9 +784,9 @@ bind routing using your existing POJO beans.</p>
 </div>
 <div class="paragraph">
 <p>So what happens in the route above. Well when an order is received from
-the <a href="#components::jms-component.adoc" class="xref unresolved">JMS</a> queue the message is routed like
+the <a href="../components/next/jms-component.html" class="xref page">JMS</a> queue the message is routed like
 pipes and filters:
-1. payload from the <a href="#components::jms-component.adoc" class="xref unresolved">JMS</a> is sent as input to the
+1. payload from the <a href="../components/next/jms-component.html" class="xref page">JMS</a> is sent as input to the
 validateOrder bean<br>
 2. the output from validateOrder bean is sent as input to the
 registerOrder bean<br>
@@ -802,7 +802,7 @@ sendConfirmEmail bean</p>
 <p>In the route lets imagine that the registration of the order has to be
 done by sending data to a TCP socket that could be a big mainframe. As
 Camel has many <a href="../components/next/index.html" class="xref page">Components</a> we will use the
-camel-mina component that supports <a href="#components::mina-component.adoc" class="xref unresolved">TCP</a> connectivity. So
+camel-mina component that supports <a href="../components/next/mina-component.html" class="xref page">TCP</a> connectivity. So
 we change the route to:</p>
 </div>
 <div class="listingblock">
@@ -818,7 +818,7 @@ we change the route to:</p>
 <div class="paragraph">
 <p>What we now have in the route is a <code>to</code> type that can be used as a
 direct replacement for the bean type. The steps is now:
-1. payload from the <a href="#components::jms-component.adoc" class="xref unresolved">JMS</a> is sent as input to the
+1. payload from the <a href="../components/next/jms-component.html" class="xref page">JMS</a> is sent as input to the
 validateOrder bean
 2. the output from validateOrder bean is sent as text to the mainframe
 using TCP
@@ -843,7 +843,7 @@ the <code>bean</code> types to <code>to</code> as well:</p>
 </div>
 <div class="paragraph">
 <p>As the <code>to</code> is a generic type we must state in the uri scheme which
-component it is. So we must write <strong>bean:</strong> for the <a href="#components::bean-component.adoc" class="xref unresolved">Bean</a>
+component it is. So we must write <strong>bean:</strong> for the <a href="../components/next/bean-component.html" class="xref page">Bean</a>
 component that we are using.</p>
 </div>
 </div>

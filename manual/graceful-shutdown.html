@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Graceful Shutdown :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="graceful-shutdown.html">Graceful Shutdown</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/graceful-shutdown.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/ROOT/pages/graceful-shutdown.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -847,7 +847,7 @@ messages (in a batch). This option is for batch consumers.</p>
 current <em>in progress</em> task (message) will be completed and then the
 consumer will shut down. The other option <code>CompleteAllTasks</code> allows the
 consumer to complete all the tasks (messages) before shutting down. For
-example a <a href="#components::file-component.adoc" class="xref unresolved">File</a> consumer will process all the pending
+example a <a href="../components/next/file-component.html" class="xref page">File</a> consumer will process all the pending
 files it has picked up before shutting down.</p>
 </div>
 </div>
@@ -925,7 +925,7 @@ on the <code>CamelContext</code> using the <code>setShutdownStrategy</code> meth
 interface consumers can implement to have fine grained control during
 shutdown. The <code>ShutdownStrategy</code> must be able to deal with consumers
 which implement this interface. This interface was introduced to cater
-for in memory consumers such as <a href="#components::seda-component.adoc" class="xref unresolved">SEDA</a> which potentially
+for in memory consumers such as <a href="../components/next/seda-component.html" class="xref page">SEDA</a> which potentially
 have a number of pending messages on its internal in memory queues. What
 this allows is to let it control the shutdown process to let it complete
 its pending messages.</p>

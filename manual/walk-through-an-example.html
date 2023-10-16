@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Walk through an Example Code :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -632,7 +632,7 @@
     <li><a href="walk-through-an-example.html">Walk through an Example Code</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/walk-through-an-example.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/ROOT/pages/walk-through-an-example.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -668,7 +668,7 @@ etc:</p>
 <p>There is more than one way of adding a Component to the CamelContext. You can
 add components implicitly - when we set up the routing - as we do here
 for the
-<a href="#components::file-component.adoc" class="xref unresolved">FileComponent</a>:</p>
+<a href="../components/next/file-component.html" class="xref page">FileComponent</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -770,16 +770,16 @@ camel:</p>
 <a href="type-converter.html" class="xref page">converted automatically</a> into JMS Messages and
 posted to a JMS Queue named <em>test.queue</em>. When we set up the
 <a href="routes.html" class="xref page">Route</a>, we configured the
-<a href="#components::file-component.adoc" class="xref unresolved">FileComponent</a> to listen off the <em>test.queue</em>.</p>
+<a href="../components/next/file-component.html" class="xref page">FileComponent</a> to listen off the <em>test.queue</em>.</p>
 </div>
 <div class="paragraph">
-<p>The File <a href="#components::file-component.adoc" class="xref unresolved">FileComponent</a> will take messages off the
+<p>The File <a href="../components/next/file-component.html" class="xref page">FileComponent</a> will take messages off the
 Queue, and save them to a directory named <em>test</em>. Every message will be
 saved in a file that corresponds to its destination and message id.</p>
 </div>
 <div class="paragraph">
 <p>Finally, we configured our own listener in the <a href="routes.html" class="xref page">Route</a> -
-to take notifications from the <a href="#components::file-component.adoc" class="xref unresolved">FileComponent</a> and print
+to take notifications from the <a href="../components/next/file-component.html" class="xref page">FileComponent</a> and print
 them out as text.</p>
 </div>
 <div class="paragraph">

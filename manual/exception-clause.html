@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Exception Clause :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="exception-clause.html">Exception Clause</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/ROOT/pages/exception-clause.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/ROOT/pages/exception-clause.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -669,7 +669,7 @@ from("seda:inputB")
 <div class="paragraph">
 <p>Here if the processing of <strong><code>seda:inputA</code></strong> or <strong><code>seda:inputB</code></strong> cause
 a <strong><code>ValidationException</code></strong> to be thrown (such as due to the XSD
-validation of the <a href="#components::validator-component.adoc" class="xref unresolved">Validation</a> component),
+validation of the <a href="../components/next/validator-component.html" class="xref page">Validation</a> component),
 then the message will be sent to the
 <strong><code>activemq:validationFailed</code></strong> queue.</p>
 </div>
@@ -1293,7 +1293,7 @@ onException(MyFunctionalException.class)
 </div>
 </div>
 <div class="paragraph">
-<p>And we can use the <a href="#components:languages:simple-language.adoc" class="xref unresolved">Simple</a> language to set a readable error
+<p>And we can use the <a href="../components/next/languages/simple-language.html" class="xref page">Simple</a> language to set a readable error
 message with the caused exception message:</p>
 </div>
 <div class="listingblock">

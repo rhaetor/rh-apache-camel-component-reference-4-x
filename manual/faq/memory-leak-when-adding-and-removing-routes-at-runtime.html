@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Memory leak when adding and removing routes at runtime :: Red Hat Integration</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -633,7 +633,7 @@
     <li><a href="memory-leak-when-adding-and-removing-routes-at-runtime.html">Memory leak when adding and removing routes at runtime</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/user-manual/modules/faq/pages/memory-leak-when-adding-and-removing-routes-at-runtime.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/user-manual/modules/faq/pages/memory-leak-when-adding-and-removing-routes-at-runtime.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -643,13 +643,13 @@
 <h1 class="page">Memory leak when adding and removing routes at runtime</h1>
 <div class="paragraph">
 <p>If you add and remove many routes at runtime, then take notice that
-<a href="#components::jmx-component.adoc" class="xref unresolved">JMX</a> may take up memory when routes is added.
+<a href="../../components/next/jmx-component.html" class="xref page">JMX</a> may take up memory when routes is added.
 As Camel cannot 100% reclaim all MBeans when removing a route (some
 resources may be shared by other routes, etc.).</p>
 </div>
 <div class="paragraph">
 <p>Therefore it&#8217;s advised to disable JMX for new routes, by setting
-<code>registerNewRoutes=false</code>. See details at <a href="#components::jmx-component.adoc" class="xref unresolved">JMX</a>.</p>
+<code>registerNewRoutes=false</code>. See details at <a href="../../components/next/jmx-component.html" class="xref page">JMX</a>.</p>
 </div>
 </article>
   </div>

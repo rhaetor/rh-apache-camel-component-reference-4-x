@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>CXF :: Red Hat Integration</title>
     <meta name="description" content="Expose SOAP WebServices using Apache CXF or connect to external WebServices using CXF WS client.">
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
-    <script>var uiRootPath = '../../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -23,7 +22,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="components" data-version="3.18.x">
+<div class="nav-container" data-component="components" data-version="next">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -37,29 +36,104 @@
     <a class="nav-link" href="index.html">Components</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="activemq-component.html">ActiveMQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="amqp-component.html">AMQP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="arangodb-component.html">ArangoDb</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="as2-component.html">AS2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="asterisk-component.html">Asterisk</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="atmosphere-websocket-component.html">Atmosphere Websocket</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="atom-component.html">Atom</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="avro-component.html">Avro RPC</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="aws-summary.html">AWS</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-athena-component.html">AWS Athena</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws-cloudtrail-component.html">AWS Cloudtrail</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-cw-component.html">AWS CloudWatch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="aws2-ddb-component.html">AWS DynamoDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-ddbstream-component.html">AWS DynamoDB Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-ec2-component.html">AWS Elastic Compute Cloud (EC2)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-ecs-component.html">AWS Elastic Container Service (ECS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-eks-component.html">AWS Elastic Kubernetes Service (EKS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-eventbridge-component.html">AWS Eventbridge</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-iam-component.html">AWS Identity and Access Management (IAM)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-kms-component.html">AWS Key Management Service (KMS)</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="aws2-kinesis-component.html">AWS Kinesis</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-kinesis-firehose-component.html">AWS Kinesis Firehose</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="aws2-lambda-component.html">AWS Lambda</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-msk-component.html">AWS Managed Streaming for Apache Kafka (MSK)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-mq-component.html">AWS MQ</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="aws2-s3-component.html">AWS S3 Storage Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws-secrets-manager-component.html">AWS Secrets Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-sts-component.html">AWS Security Token Service (STS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-ses-component.html">AWS Simple Email Service (SES)</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="aws2-sns-component.html">AWS Simple Notification System (SNS)</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="aws2-sqs-component.html">AWS Simple Queue Service (SQS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-step-functions-component.html">AWS StepFunctions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="aws2-translate-component.html">AWS Translate</a>
   </li>
 </ul>
   </li>
@@ -68,7 +142,25 @@
     <a class="nav-link" href="azure-summary.html">Azure</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-cosmosdb-component.html">Azure CosmosDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-eventhubs-component.html">Azure Event Hubs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-files-component.html">Azure Files</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-key-vault-component.html">Azure Key Vault</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-servicebus-component.html">Azure ServiceBus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="azure-storage-blob-component.html">Azure Storage Blob Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="azure-storage-datalake-component.html">Azure Storage Datalake Service</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="azure-storage-queue-component.html">Azure Storage Queue Service</a>
@@ -82,25 +174,148 @@
     <a class="nav-link" href="bean-validator-component.html">Bean Validator</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bonita-component.html">Bonita</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="box-component.html">Box</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="braintree-component.html">Braintree</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="browse-component.html">Browse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="caffeine-cache-component.html">Caffeine Cache</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="caffeine-loadcache-component.html">Caffeine LoadCache</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="cql-component.html">Cassandra CQL</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="chatscript-component.html">ChatScript</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="chunk-component.html">Chunk</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="class-component.html">Class</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cm-sms-component.html">CM SMS Gateway</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coap-component.html">CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cometd-component.html">CometD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="consul-component.html">Consul</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="controlbus-component.html">Control Bus</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="couchbase-component.html">Couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="couchdb-component.html">CouchDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="cron-component.html">Cron</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crypto-component.html">Crypto (JCE)</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="cxf-component.html">CXF</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cxfrs-component.html">CXF-RS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformat-component.html">Data Format</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataset-component.html">Dataset</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataset-test-component.html">DataSet Test</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="debezium-summary.html">Debezium</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="debezium-db2-component.html">Debezium DB2 Connector</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="debezium-mongodb-component.html">Debezium MongoDB Connector</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="debezium-mysql-component.html">Debezium MySQL Connector</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="debezium-oracle-component.html">Debezium Oracle Connector</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="debezium-postgres-component.html">Debezium PostgresSQL Connector</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="debezium-sqlserver-component.html">Debezium SQL Server Connector</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="djl-component.html">Deep Java Library</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dhis2-component.html">DHIS2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="digitalocean-component.html">DigitalOcean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="direct-component.html">Direct</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="disruptor-component.html">Disruptor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="disruptor-vm-component.html">Disruptor VM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dns-component.html">DNS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="docker-component.html">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="drill-component.html">Drill</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dropbox-component.html">Dropbox</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dynamic-router-component.html">Dynamic Router</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ehcache-component.html">Ehcache</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="elasticsearch-component.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="etcd3-component.html">Etcd v3</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="exec-component.html">Exec</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="facebook-component.html">Facebook</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="fhir-component.html">FHIR</a>
@@ -109,7 +324,34 @@
     <a class="nav-link" href="file-component.html">File</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="file-watch-component.html">File Watch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="flatpack-component.html">Flatpack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="flink-component.html">Flink</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="fop-component.html">FOP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="freemarker-component.html">Freemarker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="ftp-component.html">FTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ftps-component.html">FTPS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="geocoder-component.html">Geocoder</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="git-component.html">Git</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="github-component.html">GitHub</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -122,18 +364,195 @@
     <a class="nav-link" href="google-bigquery-sql-component.html">Google BigQuery Standard SQL</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-calendar-component.html">Google Calendar</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-calendar-stream-component.html">Google Calendar Stream</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-functions-component.html">Google Cloud Functions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-drive-component.html">Google Drive</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-mail-component.html">Google Mail</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-mail-stream-component.html">Google Mail Stream</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="google-pubsub-component.html">Google Pubsub</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-secret-manager-component.html">Google Secret Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-sheets-component.html">Google Sheets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-sheets-stream-component.html">Google Sheets Stream</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="google-storage-component.html">Google Storage</a>
+  </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="grape-component.html">Grape</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="graphql-component.html">GraphQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="grpc-component.html">gRPC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="guava-eventbus-component.html">Guava EventBus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="hashicorp-vault-component.html">Hashicorp Vault</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="hazelcast-summary.html">Hazelcast</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-atomicvalue-component.html">Hazelcast Atomic Number</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-instance-component.html">Hazelcast Instance</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-list-component.html">Hazelcast List</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-map-component.html">Hazelcast Map</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-multimap-component.html">Hazelcast Multimap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-queue-component.html">Hazelcast Queue</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-replicatedmap-component.html">Hazelcast Replicated Map</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-ringbuffer-component.html">Hazelcast Ringbuffer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-seda-component.html">Hazelcast SEDA</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-set-component.html">Hazelcast Set</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast-topic-component.html">Hazelcast Topic</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="hdfs-component.html">HDFS</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="http-component.html">HTTP</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="hwcloud-summary.html">Huawei Cloud</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hwcloud-frs-component.html">Huawei Cloud Face Recognition Service (FRS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hwcloud-imagerecognition-component.html">Huawei Cloud Image Recognition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hwcloud-dms-component.html">Huawei Distributed Message Service (DMS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hwcloud-functiongraph-component.html">Huawei FunctionGraph</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hwcloud-iam-component.html">Huawei Identity and Access Management (IAM)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hwcloud-obs-component.html">Huawei Object Storage Service (OBS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hwcloud-smn-component.html">Huawei Simple Message Notification (SMN)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="iec60870-client-component.html">IEC 60870 Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="iec60870-server-component.html">IEC 60870 Server</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="ignite-summary.html">Ignite</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ignite-cache-component.html">Ignite Cache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ignite-compute-component.html">Ignite Compute</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ignite-events-component.html">Ignite Events</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ignite-idgen-component.html">Ignite ID Generator</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ignite-messaging-component.html">Ignite Messaging</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ignite-queue-component.html">Ignite Queues</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ignite-set-component.html">Ignite Sets</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="infinispan-component.html">Infinispan</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="infinispan-embedded-component.html">Infinispan Embedded</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="influxdb-component.html">InfluxDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="influxdb2-component.html">InfluxDB2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="irc-component.html">IRC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ironmq-component.html">IronMQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jcache-component.html">JCache</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jcr-component.html">JCR</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jdbc-component.html">JDBC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jetty-component.html">Jetty</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jgroups-component.html">JGroups</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jgroups-raft-component.html">JGroups raft</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jira-component.html">Jira</a>
@@ -142,13 +561,31 @@
     <a class="nav-link" href="jms-component.html">JMS</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jmx-component.html">JMX</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jolt-component.html">JOLT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jooq-component.html">JOOQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jpa-component.html">JPA</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jslt-component.html">JSLT</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="jta.html">JTA</a>
+    <a class="nav-link" href="json-validator-component.html">JSON Schema Validator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jsonata-component.html">JSONata</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="json-patch-component.html">JsonPatch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jt400-component.html">JT400</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="kafka-component.html">Kafka</a>
@@ -157,22 +594,112 @@
     <a class="nav-link" href="kamelet-component.html">Kamelet</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="knative-component.html">Knative</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="kubernetes-summary.html">Kubernetes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-config-maps-component.html">Kubernetes ConfigMap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-custom-resources-component.html">Kubernetes Custom Resources</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-deployments-component.html">Kubernetes Deployments</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-events-component.html">Kubernetes Event</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-hpa-component.html">Kubernetes HPA</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-job-component.html">Kubernetes Job</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-namespaces-component.html">Kubernetes Namespaces</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-nodes-component.html">Kubernetes Nodes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-persistent-volumes-component.html">Kubernetes Persistent Volume</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-persistent-volumes-claims-component.html">Kubernetes Persistent Volume Claim</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-pods-component.html">Kubernetes Pods</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-replication-controllers-component.html">Kubernetes Replication Controller</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-resources-quota-component.html">Kubernetes Resources Quota</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-secrets-component.html">Kubernetes Secrets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-service-accounts-component.html">Kubernetes Service Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="kubernetes-services-component.html">Kubernetes Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="openshift-build-configs-component.html">Openshift Build Config</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="openshift-builds-component.html">Openshift Builds</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="openshift-deploymentconfigs-component.html">Openshift Deployment Configs</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kudu-component.html">Kudu</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="language-component.html">Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ldap-component.html">LDAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ldif-component.html">LDIF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="log-component.html">Log</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lucene-component.html">Lucene</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lumberjack-component.html">Lumberjack</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="mail-component.html">Mail</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mapstruct-component.html">MapStruct</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="master-component.html">Master</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="microprofile-fault-tolerance.html">Microprofile Fault Tolerance</a>
+    <a class="nav-link" href="metrics-component.html">Metrics</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="microprofile-health.html">Microprofile Health</a>
+    <a class="nav-link" href="micrometer-component.html">Micrometer</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="microprofile-metrics-component.html">MicroProfile Metrics</a>
+    <a class="nav-link" href="mina-component.html">Mina</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="minio-component.html">Minio</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="mllp-component.html">MLLP</a>
@@ -184,10 +711,70 @@
     <a class="nav-link" href="mongodb-component.html">MongoDB</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mongodb-gridfs-component.html">MongoDB GridFS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mustache-component.html">Mustache</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mvel-component.html">MVEL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mybatis-component.html">MyBatis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mybatis-bean-component.html">MyBatis Bean</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="nats-component.html">Nats</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="netty-component.html">Netty</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="openapi-java.html">Openapi Java</a>
+    <a class="nav-link" href="netty-http-component.html">Netty HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="nitrite-component.html">Nitrite</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="oaipmh-component.html">OAI-PMH</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="olingo2-component.html">Olingo2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="olingo4-component.html">Olingo4</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="opensearch-component.html">OpenSearch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="openstack-summary.html">OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="openstack-cinder-component.html">OpenStack Cinder</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="openstack-glance-component.html">OpenStack Glance</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="openstack-keystone-component.html">OpenStack Keystone</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="openstack-neutron-component.html">OpenStack Neutron</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="openstack-nova-component.html">OpenStack Nova</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="openstack-swift-component.html">OpenStack Swift</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="optaplanner-component.html">OptaPlanner</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="paho-component.html">Paho</a>
@@ -196,13 +783,40 @@
     <a class="nav-link" href="paho-mqtt5-component.html">Paho MQTT 5</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pdf-component.html">PDF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="platform-http-component.html">Platform HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plc4x-component.html">PLC4X</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pgevent-component.html">PostgresSQL Event</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pg-replication-slot-component.html">PostgresSQL Replication Slot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lpr-component.html">Printer</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="properties-component.html">Properties</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pubnub-component.html">PubNub</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pulsar-component.html">Pulsar</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="quartz-component.html">Quartz</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="quickfix-component.html">QuickFix</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="reactive-streams-component.html">Reactive Streams</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="ref-component.html">Ref</a>
@@ -211,31 +825,154 @@
     <a class="nav-link" href="rest-component.html">REST</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rest-api-component.html">REST API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="rest-openapi-component.html">REST OpenApi</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="robotframework-component.html">Robot Framework</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rocketmq-component.html">RocketMQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rss-component.html">RSS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="saga-component.html">Saga</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="salesforce-component.html">Salesforce</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sap-netweaver-component.html">SAP NetWeaver</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="scheduler-component.html">Scheduler</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="schematron-component.html">Schematron</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scp-component.html">SCP</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="seda-component.html">SEDA</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="service-component.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="servicenow-component.html">ServiceNow</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="servlet-component.html">Servlet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sftp-component.html">SFTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sjms-component.html">Simple JMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sjms2-component.html">Simple JMS2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="slack-component.html">Slack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="smpp-component.html">SMPP</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="snmp-component.html">SNMP</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="splunk-component.html">Splunk</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="splunk-hec-component.html">Splunk HEC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="spring-summary.html">Spring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="spring-batch-component.html">Spring Batch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="spring-event-component.html">Spring Event</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="spring-jdbc-component.html">Spring JDBC</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="spring-ldap-component.html">Spring LDAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="spring-rabbitmq-component.html">Spring RabbitMQ</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="spring-redis-component.html">Spring Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="spring-ws-component.html">Spring WebService</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-component.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sql-stored-component.html">SQL Stored Procedure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ssh-component.html">SSH</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="stax-component.html">StAX</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="stitch-component.html">Stitch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="stomp-component.html">Stomp</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="stream-component.html">Stream</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="string-template-component.html">String Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="stub-component.html">Stub</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="telegram-component.html">Telegram</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="thrift-component.html">Thrift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tika-component.html">Tika</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="timer-component.html">Timer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="twilio-component.html">Twilio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="twitter-directmessage-component.html">Twitter Direct Message</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="twitter-search-component.html">Twitter Search</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="twitter-timeline-component.html">Twitter Timeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="undertow-component.html">Undertow</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="validator-component.html">Validator</a>
@@ -244,13 +981,67 @@
     <a class="nav-link" href="velocity-component.html">Velocity</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vertx-component.html">Vert.x</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="vertx-http-component.html">Vert.x HTTP Client</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vertx-websocket-component.html">Vert.x WebSocket</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="weather-component.html">Weather</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="web3j-component.html">Web3j Ethereum Blockchain</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="webhook-component.html">Webhook</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="whatsapp-component.html">WhatsApp</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="wordpress-component.html">Wordpress</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workday-component.html">Workday</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xchange-component.html">XChange</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xj-component.html">XJ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xmlsecurity-sign-component.html">XML Security Sign</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xmlsecurity-verify-component.html">XML Security Verify</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xmpp-component.html">XMPP</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="xquery-component.html">XQuery</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="xslt-component.html">XSLT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xslt-saxon-component.html">XSLT Saxon</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="zeebe-component.html">Zeebe</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="zendesk-component.html">Zendesk</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="zookeeper-component.html">ZooKeeper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="zookeeper-master-component.html">ZooKeeper Master</a>
   </li>
 </ul>
   </li>
@@ -263,10 +1054,31 @@
     <a class="nav-link" href="dataformats/index.html">Data Formats</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/asn1-dataformat.html">ASN.1 File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataformats/avro-dataformat.html">Avro</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/avroJackson-dataformat.html">Avro Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/barcode-dataformat.html">Barcode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/base64-dataformat.html">Base64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataformats/bindy-dataformat.html">Bindy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/cbor-dataformat.html">CBOR</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/crypto-dataformat.html">Crypto (Java Cryptographic Extension)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/csv-dataformat.html">CSV</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataformats/fhirJson-dataformat.html">FHIR JSon</a>
@@ -275,16 +1087,97 @@
     <a class="nav-link" href="dataformats/fhirXml-dataformat.html">FHIR XML</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/flatpack-dataformat.html">Flatpack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/grok-dataformat.html">Grok</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/gzipDeflater-dataformat.html">GZip Deflater</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/hl7-dataformat.html">HL7</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/ical-dataformat.html">iCal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataformats/jacksonXml-dataformat.html">Jackson XML</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataformats/jaxb-dataformat.html">JAXB</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/fastjson-dataformat.html">JSON Fastjson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/gson-dataformat.html">JSON Gson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/jackson-dataformat.html">JSON Jackson</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/jsonb-dataformat.html">JSON JSON-B</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/jsonApi-dataformat.html">JSonApi</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/lzf-dataformat.html">LZF Deflate Compression</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/mimeMultipart-dataformat.html">MIME Multipart</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/parquetAvro-dataformat.html">Parquet File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/pgp-dataformat.html">PGP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/protobuf-dataformat.html">Protobuf</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataformats/protobufJackson-dataformat.html">Protobuf Jackson</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/rss-dataformat.html">RSS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataformats/soap-dataformat.html">SOAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/swiftMt-dataformat.html">SWIFT MT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/swiftMx-dataformat.html">SWIFT MX</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/syslog-dataformat.html">Syslog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/tarFile-dataformat.html">Tar File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/thrift-dataformat.html">Thrift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/univocityCsv-dataformat.html">uniVocity CSV</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/univocityFixed-dataformat.html">uniVocity Fixed Length</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/univocityTsv-dataformat.html">uniVocity TSV</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/xmlSecurity-dataformat.html">XML Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/snakeYaml-dataformat.html">YAML SnakeYAML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dataformats/zipDeflater-dataformat.html">Zip Deflater</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataformats/zipFile-dataformat.html">Zip File</a>
@@ -306,10 +1199,19 @@
     <a class="nav-link" href="languages/constant-language.html">Constant</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/csimple-language.html">CSimple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/datasonnet-language.html">DataSonnet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="languages/exchangeProperty-language.html">ExchangeProperty</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="languages/file-language.html">File</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/groovy-language.html">Groovy</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="languages/header-language.html">Header</a>
@@ -318,13 +1220,34 @@
     <a class="nav-link" href="languages/hl7terser-language.html">HL7 Terser</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/js-language.html">JavaScript</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/joor-language.html">jOOR</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/jq-language.html">JQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="languages/jsonpath-language.html">JSONPath</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/mvel-language.html">MVEL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/ognl-language.html">OGNL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/python-language.html">Python</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="languages/ref-language.html">Ref</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="languages/simple-language.html">Simple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages/spel-language.html">SpEL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="languages/tokenize-language.html">Tokenize</a>
@@ -352,9 +1275,51 @@
     <a class="nav-link" href="others/attachments.html">Attachments</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/aws-xray.html">AWS XRay</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/cli-connector.html">CLI Connector</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/cloudevents.html">Cloudevents</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/csimple-joor.html">CSimple jOOR</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/cxf-transport.html">CXF Transport</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/debug.html">Debug</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="others/dsl.html">DSL</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/dsl-modeline.html">DSL Modeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/groovy-dsl.html">Groovy Dsl</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/java-joor-dsl.html">Java DSL (runtime compiled)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/js-dsl.html">JavaScript DSL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/jsh-dsl.html">JavaShell DSL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/java-xml-jaxb-dsl.html">Jaxb XML Dsl</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/kamelet-main.html">Kamelet Main</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="others/kotlin-dsl.html">Kotlin DSL</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="others/java-xml-io-dsl.html">XML Io Dsl</a>
   </li>
@@ -364,10 +1329,43 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/elytron.html">Elytron</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/headersmap.html">Headersmap</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/jasypt.html">Jasypt</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/jfr.html">JFR</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="others/jta.html">JTA</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/knative-http.html">Knative Http</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/leveldb.html">LevelDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/lra.html">LRA</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/mail-microsoft-oauth.html">Mail Microsoft Oauth</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="others/main.html">Main</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/observation.html">Micrometer Observability</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/microprofile-config.html">Microprofile Config</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/microprofile-fault-tolerance.html">Microprofile Fault Tolerance</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="others/microprofile-health.html">Microprofile Health</a>
@@ -377,6 +1375,69 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="others/opentelemetry.html">OpenTelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/platform-http-main.html">Platform Http Main</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/platform-http-vertx.html">Platform Http Vertx</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/reactive-executor-tomcat.html">Reactive Executor Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/reactive-executor-vertx.html">Reactive Executor Vert.x</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/reactor.html">Reactor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/resilience4j.html">Resilience4j</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/resourceresolver-github.html">Resourceresolver Github</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/rxjava.html">RxJava</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/shiro.html">Shiro</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/spring-main.html">Spring Main</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/spring-security.html">Spring Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/spring-xml.html">Spring XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/springdoc.html">Springdoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/test-junit5.html">Test JUnit5</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/test-main-junit5.html">Test Main JUnit5</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/test-spring-junit5.html">Test Spring JUnit5</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/threadpoolfactory-vertx.html">ThreadPoolFactory Vert.x</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/tracing.html">Tracing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/undertow-spring-security.html">Undertow Spring Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="others/wal.html">Write Ahead Log Strategy for Resume API</a>
   </li>
 </ul>
   </li>
@@ -459,12 +1520,6 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eips/idempotentConsumer-eip.html">Idempotent Consumer</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="eips/inOnly-eip.html">In Only</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="eips/inOut-eip.html">In Out</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eips/intercept.html">Intercept</a>
@@ -662,14 +1717,14 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Camel Components</span>
-    <span class="version">3.18.x (LTS)</span>
+    <span class="version">Next (Pre-release)</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <a class="title" href="index.html">Camel Components</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">3.18.x (LTS)</a>
+          <a href="index.html">Next (Pre-release)</a>
         </li>
       </ul>
     </li>
@@ -697,7 +1752,7 @@
     <li><a href="cxf-component.html">CXF</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///code/camel-jboss/rh-camel-jboss/docs/components/modules/ROOT/pages/cxf-component.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///code/camel-jboss/jboss-camel/docs/components/modules/ROOT/pages/cxf-component.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -714,13 +1769,30 @@
 <p><strong>Both producer and consumer are supported</strong></p>
 </div>
 <div class="paragraph">
-<p>The CXF component provides integration with <a href="http://cxf.apache.org">Apache CXF</a> for connecting to <a href="http://cxf.apache.org/docs/jax-ws.html">JAX-WS</a> services hosted in CXF.</p>
+<p>The CXF component provides integration with
+<a href="http://cxf.apache.org">Apache CXF</a> for connecting to <a href="http://cxf.apache.org/docs/jax-ws.html">JAX-WS</a> services
+hosted in CXF.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When using CXF in streaming modes (see DataFormat option), then also
+read about Stream caching.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Maven users must add the following dependency to their <code>pom.xml</code> for this component:</p>
+<p>Maven users must add the following dependency to their <code>pom.xml</code>
+for this component:</p>
 </div>
 <div class="listingblock">
-<div class="title"><code>pom.xml</code>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.apache.camel&lt;/groupId&gt;
@@ -738,38 +1810,31 @@
 <div class="paragraph">
 <p>There are two URI formats for this endpoint: <strong>cxfEndpoint</strong> and <strong>someAddress</strong>.</p>
 </div>
-<div class="sect2">
-<h3 id="_cxfendpoint"><a class="anchor" href="#_cxfendpoint"></a><code>cxfEndpoint</code></h3>
 <div class="listingblock">
 <div class="content">
 <pre>cxf:bean:cxfEndpoint[?options]</pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>cxfEndpoint</strong> represents a bean ID that references a bean in the bean registry. With this URI format, most of the endpoint details are specified in the bean definition.</p>
+<p>Where <strong>cxfEndpoint</strong> represents a bean ID that references a bean in the
+Spring bean registry. With this URI format, most of the endpoint details
+are specified in the bean definition.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_someaddress"><a class="anchor" href="#_someaddress"></a><code>someAddress</code></h3>
 <div class="listingblock">
 <div class="content">
 <pre>cxf://someAddress[?options]</pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>someAddress</strong> specifies the CXF endpoint&#8217;s address. With this URI
+<p>Where <strong>someAddress</strong> specifies the CXF endpoint&#8217;s address. With this URI
 format, most of the endpoint details are specified using options.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_uri_options"><a class="anchor" href="#_uri_options"></a>URI Options</h3>
 <div class="paragraph">
-<p>For either URI format, you can append options to the URI as follows:</p>
+<p>For either style above, you can append options to the URI as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre>cxf:bean:cxfEndpoint?wsdlURL=wsdl/hello_world.wsdl&amp;dataFormat=PAYLOAD</pre>
-</div>
 </div>
 </div>
 </div>
@@ -797,8 +1862,7 @@ format, most of the endpoint details are specified using options.</p>
 For example a component may have security settings, credentials for authentication, urls for network connection and so forth.</p>
 </div>
 <div class="paragraph">
-<p>Some components only have a few options, and others may have many. Because
-components typically have pre-configured defaults
+<p>Some components only have a few options, and others may have many. Because components typically have pre configured defaults
 that are commonly used, then you may often only need to configure a few options on a component; or none at all.</p>
 </div>
 <div class="paragraph">
@@ -815,7 +1879,8 @@ or as a producer (to), or used for both.</p>
 </div>
 <div class="paragraph">
 <p>Configuring endpoints is most often done directly in the endpoint URI as path and query parameters. You can also use
-the <a href="../../manual/Endpoint-dsl.html" class="xref page">Endpoint DSL</a> as a <em>type safe</em> way of configuring endpoints.</p>
+the <a href="../../manual/Endpoint-dsl.html" class="xref page">Endpoint DSL</a> and <a href="../../manual/dataformat-dsl.html" class="xref page">DataFormat DSL</a>
+as a <em>type safe</em> way of configuring endpoints and data formats in Java.</p>
 </div>
 <div class="paragraph">
 <p>A good practice when configuring options is to use <a href="../../manual/using-propertyplaceholder.html" class="xref page">Property Placeholders</a>,
@@ -1053,9 +2118,6 @@ In other words placeholders allows to externalize the configuration from your co
 </li>
 <li>
 <p>InOut</p>
-</li>
-<li>
-<p>InOptionalOut</p>
 </li>
 </ul>
 </div></div></td>
@@ -1430,19 +2492,11 @@ In other words placeholders allows to externalize the configuration from your co
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>The <code>serviceName</code> and <code>portName</code> are <a href="http://en.wikipedia.org/wiki/QName">QNames</a>, so if you provide them be sure to prefix them with their <code>{namespace}</code> as shown in the examples above.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>The <code>serviceName</code> and <code>portName</code> are
+<a href="http://en.wikipedia.org/wiki/QName">QNames</a>, so if you provide them be
+sure to prefix them with their {namespace} as shown in the examples
+above.</p>
 </div>
 <div class="sect2">
 <h3 id="_descriptions_of_the_dataformats"><a class="anchor" href="#_descriptions_of_the_dataformats"></a>Descriptions of the dataformats</h3>
@@ -1461,60 +2515,60 @@ In other words placeholders allows to externalize the configuration from your co
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 55.5555%;">
-<col style="width: 33.3334%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">DataFormat</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Support</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>POJO</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plain Old Java Objects are the Java parameters to the method being invoked on the target server.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Both Protocol and Logical JAX-WS handlers are supported.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POJOs (Plain old Java objects) are the Java parameters to the method
+being invoked on the target server. Both Protocol and Logical JAX-WS
+handlers are supported.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>PAYLOAD</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message payload (the contents of the <code>soap:body</code>) after
-message configuration in the CXF endpoint is applied.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only Protocol JAX-WS handler is supported. Logical JAX-WS handler is not supported.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PAYLOAD</code> is the message payload (the contents of the <code>soap:body</code>) after
+message configuration in the CXF endpoint is applied. Only Protocol
+JAX-WS handler is supported. Logical JAX-WS handler is not supported.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>RAW</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides the raw message stream that is received from the transport layer.
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RAW</code> mode provides the raw message stream that is received from the transport layer.
 It is not possible to touch or change the stream, some of the CXF
-interceptors are removed if you are using this kind of DataFormat, so
-you can&#8217;t see any soap headers after the camel-cxf consumer.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JAX-WS handler is not supported. Note that <code>RAW</code> mode is equivalent to deprecated <code>MESSAGE</code> mode.</p></td>
+interceptors will be removed if you are using this kind of DataFormat, so
+you can&#8217;t see any soap headers after the camel-cxf consumer. JAX-WS
+handler is not supported. Note that <code>RAW</code> mode is equivalent to deprecated <code>MESSAGE</code> mode.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>CXF_MESSAGE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allows for invoking the full capabilities of CXF interceptors by converting the message from the transport layer into a raw SOAP message</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CXF_MESSAGE</code> allows for invoking the full
+capabilities of CXF interceptors by converting the message from the
+transport layer into a raw SOAP message</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>You can determine the data format mode of an exchange by retrieving the
 exchange property, <code>CamelCXFDataFormat</code>. The exchange key constant is
-defined in <code>org.apache.camel.component.cxf.common.message.CxfConstants.DATA_FORMAT_PROPERTY</code>.</p>
+defined in
+<code>org.apache.camel.component.cxf.common.message.CxfConstants.DATA_FORMAT_PROPERTY</code>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_creating_a_simple_cxf_service_with_pojo_data_format"><a class="anchor" href="#_creating_a_simple_cxf_service_with_pojo_data_format"></a>Creating a simple CXF service with POJO data format</h2>
+<h2 id="_how_to_create_simple_cxf_service_with_pojo_data_format"><a class="anchor" href="#_how_to_create_simple_cxf_service_with_pojo_data_format"></a>How to create simple CXF service with POJO data format</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you  have a simple java web service interface and an implementation, you can create a  simple CXF service.</p>
+<p>Having simple java web service interface</p>
 </div>
 <div class="listingblock">
-<div class="title">Java web service interface:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.apache.camel.component.cxf.soap.server;
 
@@ -1525,8 +2579,10 @@ public interface EchoService {
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>and implementation</p>
+</div>
 <div class="listingblock">
-<div class="title">Implementation:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.apache.camel.component.cxf.soap.server;
 
@@ -1541,32 +2597,19 @@ public class EchoServiceImpl implements EchoService {
 }</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>POJO mode is the default, so you do not have to specify it.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>We can then create the simplest CXF service (note we didn&#8217;t specify the <code>POJO</code> mode, as it is the default mode):</p>
 </div>
 <div class="listingblock">
-<div class="title">Simple CXF service</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    from("cxf:echoServiceResponseFromImpl?serviceClass=org.apache.camel.component.cxf.soap.server.EchoServiceImpl&amp;address=/echo-impl")// no body set here; the response comes from EchoServiceImpl
                 .log("${body}");</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In a more complicated implementation of the service, you can set the body from the route instead:</p>
+<p>For more complicated implementation of the service (more "Camel way"), we can set the body from the route instead:</p>
 </div>
 <div class="listingblock">
-<div class="title">CXF service with body set from route</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    from("cxf:echoServiceResponseFromRoute?serviceClass=org.apache.camel.component.cxf.soap.server.EchoServiceImpl&amp;address=/echo-route")
                 .setBody(exchange -&gt; exchange.getMessage().getBody(String.class) + " from Camel route");</code></pre>
@@ -1575,21 +2618,26 @@ public class EchoServiceImpl implements EchoService {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_consuming_a_message_from_a_camel_cxf_endpoint_in_pojo_data_format"><a class="anchor" href="#_consuming_a_message_from_a_camel_cxf_endpoint_in_pojo_data_format"></a>Consuming a message from a <code>camel-cxf</code> endpoint in POJO data format</h2>
+<h2 id="_how_to_consume_a_message_from_a_camel_cxf_endpoint_in_pojo_data_format"><a class="anchor" href="#_how_to_consume_a_message_from_a_camel_cxf_endpoint_in_pojo_data_format"></a>How to consume a message from a camel-cxf endpoint in POJO data format</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>camel-cxf</code> endpoint consumer POJO data format is based on the
 <a href="http://cxf.apache.org/docs/invokers.html">CXF invoker</a>, so the
-message header has a property with the name of <code>CxfConstants.OPERATION_NAME</code> and the message body is a list of the SEI method parameters.</p>
+message header has a property with the name of
+<code>CxfConstants.OPERATION_NAME</code> and the message body is a list of the SEI
+method parameters.</p>
+</div>
+<div class="paragraph">
+<p>Consider the <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/wsdl_first/PersonProcessor.java">PersonProcessor</a> example code:</p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/wsdl_first/PersonProcessor.java">PersonProcessor</a>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class PersonProcessor implements Processor {
 
     private static final Logger LOG = LoggerFactory.getLogger(PersonProcessor.class);
 
     @Override
+    @SuppressWarnings("unchecked")
     public void process(Exchange exchange) throws Exception {
         LOG.info("processing exchange in camel");
 
@@ -1629,44 +2677,28 @@ message header has a property with the name of <code>CxfConstants.OPERATION_NAME
 </div>
 </div>
 <div class="sect1">
-<h2 id="_preparing_the_message_for_the_camel_cxf_endpoint_in_pojo_data_format"><a class="anchor" href="#_preparing_the_message_for_the_camel_cxf_endpoint_in_pojo_data_format"></a>Preparing the message for the <code>camel-cxf</code> endpoint in POJO data format</h2>
+<h2 id="_how_to_prepare_the_message_for_the_camel_cxf_endpoint_in_pojo_data_format"><a class="anchor" href="#_how_to_prepare_the_message_for_the_camel_cxf_endpoint_in_pojo_data_format"></a>How to prepare the message for the camel-cxf endpoint in POJO data format</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>camel-cxf</code> endpoint producer is based on the
-<a href="https://github.com/apache/cxf/blob/master/core/src/main/java/org/apache/cxf/endpoint/Client.java">CXF client API</a>.</p>
+<a href="https://github.com/apache/cxf/blob/master/core/src/main/java/org/apache/cxf/endpoint/Client.java">CXF
+client API</a>. First you need to specify the operation name in the message
+header, then add the method parameters to a list, and initialize the
+message with this parameter list. The response message&#8217;s body is a
+messageContentsList, you can get the result from that list.</p>
 </div>
 <div class="paragraph">
-<p>To prepare the message:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Specify the operation name in the message header.</p>
-</li>
-<li>
-<p>Add the method parameters to a list.</p>
-</li>
-<li>
-<p>Initialize the  message with this parameter list.</p>
-</li>
-</ol>
+<p>If you don&#8217;t specify the operation name in the message header,
+<code>CxfProducer</code> will try to use the <code>defaultOperationName</code> from
+<code>CxfEndpoint</code>, if there is no <code>defaultOperationName</code> set on
+<code>CxfEndpoint</code>, it will pick up the first operationName from the Operation
+list.</p>
 </div>
 <div class="paragraph">
-<p>The response message&#8217;s body is a <code>messageContentsList</code>, so you can get the result from that list.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If you do not specify the operation name in the message header, <code>CxfProducer</code> tries to use the <code>defaultOperationName</code> from <code>CxfEndpoint</code>.</p>
-</li>
-<li>
-<p>If there is no <code>defaultOperationName</code> set on <code>CxfEndpoint</code>, it will pick up the first operationName from the Operation  list.</p>
-</li>
-<li>
 <p>If you want to get the object array from the message body, you can get
-the body using <code>message.getBody(Object[].class)</code>, as shown here:</p>
+the body using <code>message.getBody(Object[].class)</code>, as shown in <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfProducerRouterTest.java#L117">CxfProducerRouterTest.testInvokingSimpleServerWithParams</a>:</p>
+</div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfProducerRouterTest.java#L117">CxfProducerRouterTest.testInvokingSimpleServerWithParams</a>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Exchange senderExchange = new DefaultExchange(context, ExchangePattern.InOut);
 final List&lt;String&gt; params = new ArrayList&lt;&gt;();
@@ -1679,8 +2711,8 @@ Exchange exchange = template.send("direct:EndpointA", senderExchange);
 
 org.apache.camel.Message out = exchange.getMessage();
 // The response message's body is an MessageContentsList which first element is the return value of the operation,
-// If there are some holder parameters, the holder parameter is filled in the reset of List.
-// The result is extracted from the MessageContentsList with the String class type
+// If there are some holder parameters, the holder parameter will be filled in the reset of List.
+// The result will be extract from the MessageContentsList with the String class type
 MessageContentsList result = (MessageContentsList) out.getBody();
 LOG.info("Received output text: " + result.get(0));
 Map&lt;String, Object&gt; responseContext = CastUtils.cast((Map&lt;?, ?&gt;) out.getHeader(Client.RESPONSE_CONTEXT));
@@ -1690,24 +2722,27 @@ assertEquals("UTF-8", responseContext.get(org.apache.cxf.message.Message.ENCODIN
 assertEquals("echo " + TEST_MESSAGE, result.get(0), "Reply body on Camel is wrong");</code></pre>
 </div>
 </div>
-</li>
-</ul>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_consuming_a_message_from_a_camel_cxf_endpoint_in_payload_data_format"><a class="anchor" href="#_consuming_a_message_from_a_camel_cxf_endpoint_in_payload_data_format"></a>Consuming a message from a camel-cxf endpoint in PAYLOAD data format</h2>
+<h2 id="_how_to_consume_a_message_from_a_camel_cxf_endpoint_in_payload_data_format"><a class="anchor" href="#_how_to_consume_a_message_from_a_camel_cxf_endpoint_in_payload_data_format"></a>How to consume a message from a camel-cxf endpoint in PAYLOAD data format</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>PAYLOAD means that you process the payload from the SOAP envelope as a native CxfPayload. <code>Message.getBody()</code> will return a <code>org.apache.camel.component.cxf.CxfPayload</code> object, with getters for SOAP message headers and the SOAP body.</p>
+<p><code>PAYLOAD</code> means that you process the payload from the SOAP
+envelope as a native CxfPayload. <code>Message.getBody()</code> will return a
+<code>org.apache.camel.component.cxf.CxfPayload</code> object, with getters
+for SOAP message headers and the SOAP body.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfConsumerPayloadTest.java#L68">CxfConsumerPayloadTest</a>:</p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfConsumerPayloadTest.java#L68">CxfConsumerPayloadTest</a>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">protected RouteBuilder createRouteBuilder() {
     return new RouteBuilder() {
         public void configure() {
             from(simpleEndpointURI + "&amp;dataFormat=PAYLOAD").to("log:info").process(new Processor() {
+                @SuppressWarnings("unchecked")
                 public void process(final Exchange exchange) throws Exception {
                     CxfPayload&lt;SoapHeader&gt; requestPayload = exchange.getIn().getBody(CxfPayload.class);
                     List&lt;Source&gt; inElements = requestPayload.getBodySources();
@@ -1744,44 +2779,32 @@ assertEquals("echo " + TEST_MESSAGE, result.get(0), "Reply body on Camel is wron
 </div>
 </div>
 <div class="sect1">
-<h2 id="_getting_and_setting_soap_headers_in_pojo_mode"><a class="anchor" href="#_getting_and_setting_soap_headers_in_pojo_mode"></a>Getting and setting SOAP headers in POJO mode</h2>
+<h2 id="_how_to_get_and_set_soap_headers_in_pojo_mode"><a class="anchor" href="#_how_to_get_and_set_soap_headers_in_pojo_mode"></a>How to get and set SOAP headers in POJO mode</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>POJO means that the data format is a list of Java objects when the <code>camel-cxf</code> endpoint produces or consumes Camel exchanges. Even though Camel exposes the message body as POJOs in this mode, <code>camel-cxf</code> still provides access to read and write SOAP headers.</p>
+<p><code>POJO</code> means that the data format is a "list of Java objects" when the
+camel-cxf endpoint produces or consumes Camel exchanges. Even though
+Camel exposes the message body as POJOs in this mode, camel-cxf still
+provides access to read and write SOAP headers. However, since CXF
+interceptors remove in-band SOAP headers from the header list after they
+have been processed, only out-of-band SOAP headers are available to
+camel-cxf in POJO mode.</p>
 </div>
 <div class="paragraph">
-<p>However, since CXF interceptors remove in-band SOAP headers from the header list after they have been processed, only out-of-band SOAP headers are available to <code>camel-cxf</code> in POJO mode.</p>
+<p>The following example illustrates how to get/set SOAP headers. Suppose we
+have a route that forwards from one Camel-cxf endpoint to another. That
+is, SOAP Client &#8594; Camel &#8594; CXF service. We can attach two processors to
+obtain/insert SOAP headers at (1) before a request goes out to the CXF
+service and (2) before the response comes back to the SOAP Client. Processor
+(1) and (2) in this example are InsertRequestOutHeaderProcessor and
+InsertResponseOutHeaderProcessor. Our route looks like this:</p>
 </div>
-<div class="paragraph">
-<p>The following example illustrates how to get and set SOAP headers. If you have a route that forwards from one <code>camel-cxf</code> endpoint to another, such as SOAP Client &#8594; Camel &#8594; CXF service, you can attach two processors to obtain/insert SOAP headers:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Before a request goes out to the CXF service.</p>
-</li>
-<li>
-<p>Before the response comes back to the SOAP Client.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Processor (1) and (2) in this example are <code>InsertRequestOutHeaderProcessor</code> and  <code>InsertResponseOutHeaderProcessor</code>:</p>
-</div>
-<div id="_tabs_1" class="openblock tabs is-sync is-loading">
-<div class="title">Route for SOAP headers</div>
+<div class="exampleblock">
 <div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="_tabs_1_java" class="tab">
-<p>Java</p>
-</li>
-<li id="_tabs_1_xml" class="tab">
-<p>XML</p>
-</li>
-</ul>
-</div>
-<div id="_tabs_1_java--panel" class="tabpanel" aria-labelledby="_tabs_1_java">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Java</dt>
+<dd>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from("cxf:bean:routerRelayEndpointWithInsertion")
@@ -1790,42 +2813,40 @@ assertEquals("echo " + TEST_MESSAGE, result.get(0), "Reply body on Camel is wron
     .process(new InsertResponseOutHeaderProcessor());</code></pre>
 </div>
 </div>
-</div>
-<div id="_tabs_1_xml--panel" class="tabpanel" aria-labelledby="_tabs_1_xml">
+</dd>
+<dt class="hdlist1">XML</dt>
+<dd>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
-    &lt;from uri="cxf:bean:routerRelayEndpointWithInsertion"/&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;from uri="cxf:bean:routerRelayEndpointWithInsertion"/&gt;
     &lt;process ref="InsertRequestOutHeaderProcessor" /&gt;
-    &lt;to uri="cxf:bean:serviceRelayEndpointWithInsertion"/&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+    &lt;to uri="cxf:bean:serviceRelayEndpointWithInsertion"/&gt;
     &lt;process ref="InsertResponseOutHeaderProcessor" /&gt;
 &lt;/route&gt;</code></pre>
 </div>
 </div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>SOAP headers are propagated to and from Camel Message headers.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The Camel message header name is <code>org.apache.cxf.headers.Header.list</code> which is a constant defined in CXF (<code>org.apache.cxf.headers.Header.HEADER_LIST</code>).</p>
-</li>
-<li>
-<p>The header value is a List of CXF SoapHeader objects (<code>org.apache.cxf.binding.soap.SoapHeader</code>).</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>You can access SOAP headers in the same way in both <code>InsertResponseOutHeaderProcessor</code> and <code>InsertRequestOutHeaderProcessor</code>. The only difference between the two processors is the direction of the inserted SOAP header.</p>
+<p>SOAP headers are propagated to and from Camel Message headers. The Camel
+message header name is "org.apache.cxf.headers.Header.list" which is a
+constant defined in CXF (org.apache.cxf.headers.Header.HEADER_LIST). The
+header value is a List of CXF SoapHeader objects
+(org.apache.cxf.binding.soap.SoapHeader). The following snippet is the
+InsertResponseOutHeaderProcessor (that insert a new SOAP header in the
+response message). The way to access SOAP headers in both
+InsertResponseOutHeaderProcessor and InsertRequestOutHeaderProcessor are
+actually the same. The only difference between the two processors is
+setting the direction of the inserted SOAP header.</p>
 </div>
 <div class="paragraph">
-<p>The following snippet is the <code>InsertResponseOutHeaderProcessor</code> (that inserts a new SOAP header in the response message) example:</p>
+<p>You can find the <code>InsertResponseOutHeaderProcessor</code> example in <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-spring-soap/src/test/java/org/apache/camel/component/cxf/soap/headers/CxfMessageHeadersRelayTest.java#L731CxfMessageHeadersRelayTest" class="bare">https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-spring-soap/src/test/java/org/apache/camel/component/cxf/soap/headers/CxfMessageHeadersRelayTest.java#L731CxfMessageHeadersRelayTest</a>]:</p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-spring-soap/src/test/java/org/apache/camel/component/cxf/soap/headers/CxfMessageHeadersRelayTest.java#L731">CxfMessageHeadersRelayTest</a>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class InsertResponseOutHeaderProcessor implements Processor {
 
@@ -1839,7 +2860,7 @@ assertEquals("echo " + TEST_MESSAGE, result.get(0), "Reply body on Camel is wron
             + "&lt;name&gt;New_testOobHeader&lt;/name&gt;&lt;value&gt;New_testOobHeaderValue&lt;/value&gt;&lt;/outofbandHeader&gt;";
         SoapHeader newHeader = new SoapHeader(soapHeaders.get(0).getName(),
                        DOMUtils.readXml(new StringReader(xml)).getDocumentElement());
-        // ensure the direction is OUT since it is a response message.
+        // make sure direction is OUT since it is a response message.
         newHeader.setDirection(Direction.DIRECTION_OUT);
         //newHeader.setMustUnderstand(false);
         soapHeaders.add(newHeader);
@@ -1852,19 +2873,24 @@ assertEquals("echo " + TEST_MESSAGE, result.get(0), "Reply body on Camel is wron
 </div>
 </div>
 <div class="sect1">
-<h2 id="_getting_and_setting_soap_headers_in_payload_mode"><a class="anchor" href="#_getting_and_setting_soap_headers_in_payload_mode"></a>Getting and setting SOAP headers in PAYLOAD mode</h2>
+<h2 id="_how_to_get_and_set_soap_headers_in_payload_mode"><a class="anchor" href="#_how_to_get_and_set_soap_headers_in_payload_mode"></a>How to get and set SOAP headers in PAYLOAD mode</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can see how to access the SOAP message as a <code>CxfPayload</code> object in
-PAYLOAD mode in the section <a href="#_consuming_a_message_from_a_camel_cxf_endpoint_in_payload_data_format">Consuming a message from a camel-cxf endpoint in PAYLOAD data format</a>.</p>
+<p>We&#8217;ve already shown how to access the SOAP message as CxfPayload object in
+PAYLOAD mode in the section <a href="#_how_to_consume_a_message_from_a_camel_cxf_endpoint_in_payload_data_format">How to consume a message from a camel-cxf endpoint in PAYLOAD data format</a>.</p>
 </div>
 <div class="paragraph">
-<p>Once you obtain a <code>CxfPayload</code> object, you can invoke the <code>CxfPayload.getHeaders()</code> method that returns a List of <code>DOM</code> Elements (SOAP headers).</p>
+<p>Once you obtain a CxfPayload object, you can invoke the
+CxfPayload.getHeaders() method that returns a List of DOM Elements (SOAP
+headers).</p>
+</div>
+<div class="paragraph">
+<p>For an example see <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfPayLoadSoapHeaderTest.java#L53">CxfPayLoadSoapHeaderTest</a>:</p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfPayLoadSoapHeaderTest.java#L53">CxfPayLoadSoapHeaderTest</a>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from(getRouterEndpointURI()).process(new Processor() {
+    @SuppressWarnings("unchecked")
     public void process(Exchange exchange) throws Exception {
         CxfPayload&lt;SoapHeader&gt; payload = exchange.getIn().getBody(CxfPayload.class);
         List&lt;Source&gt; elements = payload.getBodySources();
@@ -1895,14 +2921,16 @@ PAYLOAD mode in the section <a href="#_consuming_a_message_from_a_camel_cxf_endp
 </div>
 </div>
 <div class="paragraph">
-<p>You can also use the method described in the section <a href="#_getting_and_setting_soap_headers_in_payload_mode">Getting and setting SOAP headers in PAYLOAD mode</a> to set or get
-the SOAP headers.</p>
-</div>
-<div class="paragraph">
-<p>You can use the header <code>org.apache.cxf.headers.Header.list</code> to get and set a list of SOAP headers. This does also mean that if you have a route that forwards  from one <code>camel-cxf</code> endpoint to another (SOAP Client &#8594; Camel &#8594; CXF  service), now also the SOAP headers sent by the SOAP client are forwarded to the CXF service.</p>
-</div>
-<div class="paragraph">
-<p>If you do not want to forward the headers you have to remove them in the Camel header <code>org.apache.cxf.headers.Header.list</code>.</p>
+<p>You can also use the same way as described in
+sub-chapter "How to get and set SOAP headers in POJO mode" to set or get
+the SOAP headers. So, you can use the
+header "org.apache.cxf.headers.Header.list" to get and set a list of
+SOAP headers.This does also mean that if you have a route that forwards
+from one Camel-cxf endpoint to another (SOAP Client &#8594; Camel &#8594; CXF
+service), now also the SOAP headers sent by the SOAP client are
+forwarded to the CXF service. If you do not want that these headers are
+forwarded you have to remove them in the Camel header
+"org.apache.cxf.headers.Header.list".</p>
 </div>
 </div>
 </div>
@@ -1910,21 +2938,22 @@ the SOAP headers.</p>
 <h2 id="_soap_headers_are_not_available_in_raw_mode"><a class="anchor" href="#_soap_headers_are_not_available_in_raw_mode"></a>SOAP headers are not available in RAW mode</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>SOAP headers are not available in RAW mode as SOAP processing is skipped.</p>
+<p>SOAP headers are not available in RAW mode as SOAP processing is
+skipped.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_throwing_a_soap_fault_from_camel"><a class="anchor" href="#_throwing_a_soap_fault_from_camel"></a>Throwing a SOAP Fault from Camel</h2>
+<h2 id="_how_to_throw_a_soap_fault_from_camel"><a class="anchor" href="#_how_to_throw_a_soap_fault_from_camel"></a>How to throw a SOAP Fault from Camel</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you are using a <code>camel-cxf</code> endpoint to consume the SOAP request, you  may need to throw the SOAP Fault from the Camel context.  You can use the <code>throwFault</code> DSL to do that; it works for <code>POJO</code>, <code>PAYLOAD</code> and <code>RAW</code> data format.</p>
-</div>
-<div class="paragraph">
-<p>You can define the soap fault as shown here:</p>
+<p>If you are using a <code>camel-cxf</code> endpoint to consume the SOAP request, you
+may need to throw the SOAP Fault from the camel context.<br>
+ Basically, you can use the <code>throwFault</code> DSL to do that; it works for
+<code>POJO</code>, <code>PAYLOAD</code> and <code>RAW</code> data format.<br>
+ You can define the soap fault as shown in <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfCustomizedExceptionTest.java#L65">CxfCustomizedExceptionTest</a>:</p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfCustomizedExceptionTest.java#L65">CxfCustomizedExceptionTest</a>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">SOAP_FAULT = new SoapFault(EXCEPTION_MESSAGE, SoapFault.FAULT_CODE_CLIENT);
 Element detail = SOAP_FAULT.getOrCreateDetail();
@@ -1934,19 +2963,19 @@ detail.appendChild(tn);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You can define the SOAP fault as shown here:</p>
+<p>Then throw it as you like</p>
 </div>
 <div class="listingblock">
-<div class="title">Throwing the SOAP fault:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from(routerEndpointURI).setFaultBody(constant(SOAP_FAULT));</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If your CXF endpoint is working in the <code>RAW</code> data format, you can set the <code>SOAP Fault</code> message in the message body and set the response code in the message header as demonstrated here:</p>
+<p>If your CXF endpoint is working in the <code>RAW</code> data format, you could
+set the SOAP Fault message in the message body and set the response
+code in the message header as demonstrated by <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfMessageStreamExceptionTest.java#L43">CxfMessageStreamExceptionTest</a></p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfMessageStreamExceptionTest.java#L43">CxfMessageStreamExceptionTest</a>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">from(routerEndpointURI).process(new Processor() {
 
@@ -1962,21 +2991,22 @@ detail.appendChild(tn);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In the <code>POJO</code> data format you can set the <code>SOAPFault</code> on the out body.</p>
+<p>Same for using POJO data format. You can set the SOAPFault on the out
+body.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="propagate-request-response-context"><a class="anchor" href="#propagate-request-response-context"></a>Propagating a <code>camel-cxf</code> endpoint&#8217;s request and response context</h2>
+<h2 id="propagate-request-response-context"><a class="anchor" href="#propagate-request-response-context"></a>How to propagate a camel-cxf endpoint&#8217;s request and response context</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="https://github.com/apache/cxf/blob/master/core/src/main/java/org/apache/cxf/endpoint/Client.java">CXF client API</a> provides a way to invoke the operation with request and
+<p><a href="https://github.com/apache/cxf/blob/master/core/src/main/java/org/apache/cxf/endpoint/Client.java">CXF
+client API</a> provides a way to invoke the operation with request and
 response context. If you are using a <code>camel-cxf</code> endpoint producer to
 invoke the outside web service, you can set the request context and get
 response context with the following code:</p>
 </div>
 <div class="listingblock">
-<div class="title">Setting the request context and getting the response context:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CxfExchange exchange = (CxfExchange)template.send(getJaxwsEndpointUri(), new Processor() {
      public void process(final Exchange exchange) {
@@ -2006,42 +3036,36 @@ assertEquals("Get the wrong wsdl operation name", "{http://apache.org/hello_worl
 <div class="sect1">
 <h2 id="_attachment_support"><a class="anchor" href="#_attachment_support"></a>Attachment Support</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_pojo_mode"><a class="anchor" href="#_pojo_mode"></a>POJO Mode</h3>
 <div class="paragraph">
-<p>In <strong>POJO Mode</strong>, Message Transmission Optimization Mechanism (MTOM) is supported if it is enabled. See <a href="#set-the-cxf-endpoint-property">Setting the CXF endpoint property:</a> in Payload Mode.</p>
+<p><strong>POJO Mode:</strong> Message Transmission Optimization Mechanism (MTOM) is supported if is enabled (see
+example in Payload Mode for enabling MTOM). Since attachments are
+marshalled and unmarshalled into POJOs, the attachments should be
+retrieved from Camel Message Body(As parameter list), and it isn&#8217;t
+possible to retrieve attachments by Camel Message API</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">DataHandler Exchange.getIn(AttachmentMessage.class).getAttachment(String id)</code></pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_payload_mode"><a class="anchor" href="#_payload_mode"></a>Payload Mode</h3>
 <div class="paragraph">
-<p>In <strong>Payload Mode</strong>, Message Transmission Optimization Mechanism (MTOM) is supported.
-Attachments can be retrieved through the Camel Message API.
+<p><strong>Payload Mode:</strong> Message Transmission Optimization Mechanism (MTOM) is supported by this Mode.
+Attachments can be retrieved by Camel Message APIs mentioned above.
 SOAP with Attachment (SwA) is supported and attachments can be retrieved.
-SwA is the default, as the default setting for CXF endpoint property <code>mtom-enabled</code> is <code>false</code>.</p>
+SwA is the default (same as setting the CXF endpoint property <code>mtomEnabled</code> to <code>false</code>).</p>
 </div>
 <div class="paragraph">
-<p>To enable MTOM, set the CXF endpoint property <code>mtom-enabled</code> to <code>true</code>.</p>
+<p>To enable MTOM, set the CXF endpoint property <code>mtomEnabled</code> to <code>true</code>.</p>
 </div>
-<div id="set-the-cxf-endpoint-property" class="openblock tabs is-sync is-loading">
-<div class="title">Setting the CXF endpoint property:</div>
+<div class="exampleblock">
 <div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="set_the_cxf_endpoint_property_java_quarkus" class="tab">
-<p>Java (Quarkus)</p>
-</li>
-</ul>
-</div>
-<div id="set_the_cxf_endpoint_property_java_quarkus--panel" class="tabpanel" aria-labelledby="set_the_cxf_endpoint_property_java_quarkus">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Java (Quarkus)</dt>
+<dd>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.apache.camel.builder.RouteBuilder;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.cxf.common.DataFormat;
 import org.apache.camel.component.cxf.jaxws.CxfEndpoint;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -2049,7 +3073,7 @@ import jakarta.enterprise.context.SessionScoped;
 import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Named;
 
-</span><span class="fold-block">@ApplicationScoped
+@ApplicationScoped
 public class CxfSoapMtomRoutes extends RouteBuilder {
 
     @Override
@@ -2069,16 +3093,36 @@ public class CxfSoapMtomRoutes extends RouteBuilder {
         result.setAddress("/mtom/hello");
         return result;
     }
-}</span></code></pre>
+}</code></pre>
 </div>
 </div>
+</dd>
+<dt class="hdlist1">XML (Spring)</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;cxf:cxfEndpoint id="mtomPayloadModeEndpoint" address="http://localhost:${CXFTestSupport.port1}/CxfMtomRouterPayloadModeTest/mtom"
+        wsdlURL="mtom.wsdl"
+        serviceName="ns:MyMtomService"
+        endpointName="ns:MyMtomPort"
+        xmlns:ns="http://apache.org/camel/cxf/mtom_feature"&gt;
+
+    &lt;cxf:properties&gt;
+        &lt;!--  enable mtom by setting this property to true --&gt;
+        &lt;entry key="mtom-enabled" value="true"/&gt;
+        &lt;!--  set the camel-cxf endpoint data fromat to PAYLOAD mode --&gt;
+        &lt;entry key="dataFormat" value="PAYLOAD"/&gt;
+    &lt;/cxf:properties&gt;
+&lt;/cxf:cxfEndpoint&gt;</code></pre>
 </div>
 </div>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">You can produce a Camel message with attachment to send to a CXF endpoint in <strong>Payload mode</strong></dt>
+</dd>
 </dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You can produce a Camel message with attachment to send to a CXF endpoint in Payload mode.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2132,15 +3176,16 @@ assertEquals(560, image.getWidth());
 assertEquals(300, image.getHeight());</code></pre>
 </div>
 </div>
-<div id="retrieve-attachments-camel-message-api" class="paragraph">
-<p>You can also consume a Camel message received from a CXF endpoint in <strong>Payload mode</strong>:</p>
+<div class="paragraph">
+<p>You can also consume a Camel message received from a CXF endpoint in Payload mode.
+The <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-spring-soap/src/test/java/org/apache/camel/component/cxf/mtom/CxfMtomConsumerPayloadModeTest.java#L97">CxfMtomConsumerPayloadModeTest</a> illustrates how this works:</p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-spring-soap/src/test/java/org/apache/camel/component/cxf/mtom/CxfMtomConsumerPayloadModeTest.java#L97">CxfMtomConsumerPayloadModeTest</a> :</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyProcessor implements Processor {
 
     @Override
+    @SuppressWarnings("unchecked")
     public void process(Exchange exchange) throws Exception {
         CxfPayload&lt;SoapHeader&gt; in = exchange.getIn().getBody(CxfPayload.class);
 
@@ -2188,71 +3233,61 @@ assertEquals(300, image.getHeight());</code></pre>
 }</code></pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_raw_mode"><a class="anchor" href="#_raw_mode"></a>RAW Mode</h3>
 <div class="paragraph">
-<p>In <strong>RAW Mode</strong>, attachments are not supported as it does not process the message at all.</p>
+<p><strong>RAW Mode:</strong> Attachments are not supported as it does not process the
+message at all.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_cxf_message_mode"><a class="anchor" href="#_cxf_message_mode"></a>CXF_MESSAGE Mode</h3>
 <div class="paragraph">
-<p>In <strong>CXF_MESSAGE Mode</strong>, MTOM is supported, and Attachments can be retrieved
-by Camel Message APIs (see <a href="#retrieve-attachments-camel-message-api">[retrieve-attachments-camel-message-api]</a>). Note that when receiving a multipart that is, a MTOM message, the default <strong>SOAPMessage to String</strong> converter will provide the complete multipart payload in the body. If
-you require just the SOAP XML as a String, you can set the message body with <code>message.getSOAPPart()</code>, and <strong>Camel convert</strong> can do the rest of work for you.</p>
-</div>
+<p><strong>CXF_MESSAGE Mode</strong>: MTOM is supported, and Attachments can be retrieved
+by Camel Message APIs mentioned above. Note that when receiving a
+multipart (i.e. MTOM) message the default SOAPMessage to String
+converter will provide the complete multipart payload on the body. If
+you require just the SOAP XML as a String, you can set the message body
+with message.getSOAPPart(), and Camel convert can do the rest of work
+for you.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="streaming-support-in-payload-mode"><a class="anchor" href="#streaming-support-in-payload-mode"></a>Streaming Support in PAYLOAD mode</h2>
+<h2 id="_streaming_support_in_payload_mode"><a class="anchor" href="#_streaming_support_in_payload_mode"></a>Streaming Support in PAYLOAD mode</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>camel-cxf</code> component supports streaming of incoming messages when using PAYLOAD mode.</p>
+<p>The camel-cxf component now supports streaming of incoming
+messages when using PAYLOAD mode. Previously, the incoming messages
+would have been completely DOM parsed. For large messages, this is time
+consuming and uses a significant amount of memory. The incoming messages can remain as a javax.xml.transform.Source while
+being routed and, if nothing modifies the payload, can then be directly
+streamed out to the target destination. For common "simple proxy" use
+cases (example: from("cxf:&#8230;&#8203;").to("cxf:&#8230;&#8203;")), this can provide very
+significant performance increases as well as significantly lowered
+memory requirements.</p>
 </div>
 <div class="paragraph">
-<p>The incoming messages can remain as a <code>javax.xml.transform.Source</code> while  being routed and, if nothing modifies the payload, can then be directly  streamed out to the target destination.</p>
-</div>
-<div class="paragraph">
-<p>For a simple proxy (such as <code>from("cxf:&#8230;&#8203;").to("cxf:&#8230;&#8203;")</code>), this provides significant improvements in performance and memory requirements.</p>
-</div>
-<div class="paragraph">
-<p>However, there are cases where streaming may not be appropriate or desired. Due to the streaming nature, invalid incoming XML may not be caught until later in the processing chain. Also, certain actions may require the message to be <code>DOM</code> parsed anyway (for example <code>WS-Security</code> or message tracing) in which case the advantages of the streaming is limited.</p>
-</div>
-<div class="sect2">
-<h3 id="_controlling_streaming_in_payload_mode"><a class="anchor" href="#_controlling_streaming_in_payload_mode"></a>Controlling streaming in PAYLOAD mode</h3>
-<div class="paragraph">
-<p>You can control the streaming in several ways:</p>
+<p>However, there are cases where streaming may not be appropriate or
+desired. Due to the streaming nature, invalid incoming XML may not be
+caught until later in the processing chain. Also, certain actions may
+require the message to be DOM parsed anyway (like WS-Security or message
+tracing and such) in which case the advantages of the streaming is
+limited. At this point, there are two ways to control the streaming:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Endpoint property</strong>: you can add <code>allowStreaming=false</code> as an endpoint property to turn the streaming on or off.</p>
+<p>Endpoint property: you can add "allowStreaming=false" as an endpoint
+property to turn the streaming on/off.</p>
 </li>
 <li>
-<p><strong>Component property</strong>: the <code>CxfComponent</code> object has an <code>allowStreaming</code>
-property that can set the default for endpoints created from that component.</p>
-</li>
-<li>
-<p><strong>Global system property</strong>: you can add a system property to <code>org.apache.camel.component.cxf.streaming</code> to <code>false</code> to turn it off. That sets the global default, but the endpoint property will override this value (for that endpoint only).</p>
+<p>Component property: the CxfComponent object also has an allowStreaming
+property that can set the default for endpoints created from that
+component.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>Parsing incoming messages with <code>DOM</code> can require a lot of memory and time for large messages.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
+<p>Global system property: you can add a system property of
+"org.apache.camel.component.cxf.streaming" to "false" to turn it off.
+That sets the global default, but setting the endpoint property above
+will override this value for that endpoint.</p>
 </div>
 </div>
 </div>
@@ -2260,10 +3295,43 @@ property that can set the default for endpoints created from that component.</p>
 <h2 id="_using_the_generic_cxf_dispatch_mode"><a class="anchor" href="#_using_the_generic_cxf_dispatch_mode"></a>Using the generic CXF Dispatch mode</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>camel-cxf</code> component supports the generic <a href="https://cxf.apache.org/docs/jax-ws-dispatch-api.html">CXF dispatch mode</a> that can transport messages of arbitrary structures (that is not bound to a specific XML schema). To use this mode, you simply omit specifying the <code>wsdlURL</code> and <code>serviceClass</code> attributes of the CXF endpoint.</p>
+<p>The camel-cxf component supports the generic
+<a href="https://cxf.apache.org/docs/jax-ws-dispatch-api.html">CXF dispatch
+mode</a> that can transport messages of arbitrary structures (i.e., not
+bound to a specific XML schema). To use this mode, you simply omit
+specifying the wsdlURL and serviceClass attributes of the CXF endpoint.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Java (Quarkus)</dt>
+<dd>
 <div class="listingblock">
-<div class="title">Endpoint in PAYLOAD mode:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.apache.camel.component.cxf.common.DataFormat;
+import org.apache.camel.component.cxf.jaxws.CxfEndpoint;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.enterprise.inject.Produces;
+import jakarta.inject.Named;
+
+...
+
+@Produces
+@SessionScoped
+@Named
+CxfEndpoint dispatchEndpoint() {
+    final CxfEndpoint result = new CxfEndpoint();
+    result.setDataFormat(DataFormat.PAYLOAD);
+    result.setAddress("/SoapAnyPort");
+    return result;
+}</code></pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">XML (Spring)</dt>
+<dd>
+<div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;cxf:cxfEndpoint id="dispatchEndpoint" address="http://localhost:9000/SoapContext/SoapAnyPort"&gt;
     &lt;cxf:properties&gt;
@@ -2272,42 +3340,36 @@ property that can set the default for endpoints created from that component.</p>
 &lt;/cxf:cxfEndpoint&gt;</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The default CXF dispatch client does not send a specific <code>SOAPAction</code> header. Therefore, when the target service requires a specific <code>SOAPAction</code> value, you supply it in the Camel header using the key <code>SOAPAction</code> (case-insensitive).</p>
+</dd>
+</dl>
 </div>
-</td>
-</tr>
-</table>
+</div>
+</div>
+<div class="paragraph">
+<p>It is noted that the default CXF dispatch client does not send a
+specific SOAPAction header. Therefore, when the target service requires
+a specific SOAPAction value, it is supplied in the Camel header using
+the key SOAPAction (case-insensitive).</p>
 </div>
 <div class="sect2">
-<h3 id="cxf-loggingout-interceptor-in-message-mode"><a class="anchor" href="#cxf-loggingout-interceptor-in-message-mode"></a>Enabling CXF&#8217;s LoggingOutInterceptor in RAW mode</h3>
+<h3 id="cxf-loggingout-interceptor-in-message-mode"><a class="anchor" href="#cxf-loggingout-interceptor-in-message-mode"></a>How to enable CXF&#8217;s LoggingOutInterceptor in RAW mode</h3>
 <div class="paragraph">
-<p>CXF&#8217;s <code>LoggingOutInterceptor</code> outputs an outbound message that goes on the wire to logging system (Java Util Logging).</p>
+<p>CXF&#8217;s <code>LoggingOutInterceptor</code> outputs outbound message that goes on the
+wire to logging system (Java Util Logging). Since the
+<code>LoggingOutInterceptor</code> is in <code>PRE_STREAM</code> phase (but <code>PRE_STREAM</code> phase
+is removed in <code>RAW</code> mode), you have to configure
+<code>LoggingOutInterceptor</code> to be run during the <code>WRITE</code> phase. The
+following is an example.</p>
 </div>
-<div class="paragraph">
-<p>Since the <code>LoggingOutInterceptor</code> is in <code>PRE_STREAM</code> phase, and the <code>PRE_STREAM</code> phase is removed in <code>RAW</code> mode, you have to configure <code>LoggingOutInterceptor</code> to be run during the <code>WRITE</code> phase:</p>
-</div>
-<div id="_tabs_3" class="openblock tabs is-sync is-loading">
-<div class="title"><code>LoggingOutInterceptor</code> in <code>RAW</code> mode:</div>
+<div class="exampleblock">
 <div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="_tabs_3_java_quarkus" class="tab">
-<p>Java (Quarkus)</p>
-</li>
-</ul>
-</div>
-<div id="_tabs_3_java_quarkus--panel" class="tabpanel" aria-labelledby="_tabs_3_java_quarkus">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Java (Quarkus)</dt>
+<dd>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import java.util.List;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.util.List;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.cxf.common.DataFormat;
 import org.apache.camel.component.cxf.jaxws.CxfEndpoint;
@@ -2317,7 +3379,7 @@ import jakarta.enterprise.context.SessionScoped;
 import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Named;
 
-</span><span class="fold-block">...
+...
 
 @Produces
 @SessionScoped
@@ -2329,18 +3391,55 @@ CxfEndpoint soapMtomEnabledServerPayloadModeEndpoint() {
     result.setOutFaultInterceptors(List.of(new LoggingOutInterceptor(Phase.WRITE)));;
     result.setAddress("/helloworld");
     return result;
-}</span></code></pre>
+}</code></pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">XML (Spring)</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor"&gt;
+    &lt;!--  it really should have been user-prestream but CXF does have such phase! --&gt;
+    &lt;constructor-arg value="write"/&gt;
+&lt;/bean&gt;
+
+&lt;cxf:cxfEndpoint id="serviceEndpoint" address="http://localhost:${CXFTestSupport.port2}/LoggingInterceptorInMessageModeTest/helloworld"
+    serviceClass="org.apache.camel.component.cxf.HelloService"&gt;
+    &lt;cxf:outInterceptors&gt;
+        &lt;ref bean="loggingOutInterceptor"/&gt;
+    &lt;/cxf:outInterceptors&gt;
+    &lt;cxf:properties&gt;
+        &lt;entry key="dataFormat" value="RAW"/&gt;
+    &lt;/cxf:properties&gt;
+&lt;/cxf:cxfEndpoint&gt;</code></pre>
+</div>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_the_cxfheaderfilterstrategy_options"><a class="anchor" href="#_the_cxfheaderfilterstrategy_options"></a>The <code>CxfHeaderFilterStrategy</code> options</h3>
+<div class="sect1">
+<h2 id="_description_of_cxfheaderfilterstrategy_options"><a class="anchor" href="#_description_of_cxfheaderfilterstrategy_options"></a>Description of CxfHeaderFilterStrategy options</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>There are <em>in-band</em> and <em>out-of-band</em> on-the-wire headers from the
 perspective of a JAXWS WSDL-first developer.</p>
+</div>
+<div class="paragraph">
+<p>The <em>in-band</em> headers are headers that are explicitly defined as part of
+the WSDL binding contract for an endpoint such as SOAP headers.</p>
+</div>
+<div class="paragraph">
+<p>The <em>out-of-band</em> headers are headers that are serialized over the wire,
+but are not explicitly part of the WSDL binding contract.</p>
+</div>
+<div class="paragraph">
+<p>Headers relaying/filtering is bi-directional.</p>
 </div>
 <div class="paragraph">
 <p>When a route has a CXF endpoint and the developer needs to have
@@ -2353,25 +3452,14 @@ holds a list of <code>MessageHeaderFilter</code> interface, which decides if a s
 header will be relayed or not.</p>
 </div>
 <div class="paragraph">
-<p>The <em>in-band</em> headers are headers that you define explicitly as part of the WSDL binding contract for an endpoint such as SOAP headers.</p>
+<p>Take a look at the tests that show how you&#8217;d be able to relay/drop
+headers here:</p>
 </div>
 <div class="paragraph">
-<p>The <em>out-of-band</em> headers are headers that you serialize over the wire, but they are not explicitly part of the WSDL binding contract.</p>
-</div>
-<div class="paragraph">
-<p>Headers relaying/filtering is bi-directional.</p>
-</div>
-<div class="paragraph">
-<p>When a route has a CXF endpoint, and you need on-the-wire headers (such as SOAP headers) relayed along the route to be consumed by for example another JAXWS endpoint, you must set <code>relayHeaders</code> to <code>true</code>, the default value.</p>
-</div>
-<div class="paragraph">
-<p>You can find tests that show how you can relay/drop headers here:</p>
+<p><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-spring-soap/src/test/java/org/apache/camel/component/cxf/soap/headers/CxfMessageHeadersRelayTest.java">CxfMessageHeadersRelayTest</a></p>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-spring-soap/src/test/java/org/apache/camel/component/cxf/soap/headers/CxfMessageHeadersRelayTest.java">CxfMessageHeadersRelayTest</a></p>
-</li>
 <li>
 <p>The <code>relayHeaders=true</code> expresses an intent to relay the headers. The
 actual decision on whether a given header is relayed is delegated to a
@@ -2380,29 +3468,22 @@ A concrete implementation of <code>MessageHeaderFilter</code> will be consulted 
 decide if a header needs to be relayed or not. There is already an
 implementation of <code>SoapMessageHeaderFilter</code> which binds itself to
 well-known SOAP name spaces.  If there is a header on the wire whose name space
-is unknown to the runtime, the header will simply be relayed.</p>
+is unknown to the runtime, the header will be simply relayed.</p>
+</li>
+<li>
+<p><code>POJO</code> and <code>PAYLOAD</code> modes are supported. In <code>POJO</code> mode, only
+out-of-band message headers are available for filtering as the in-band
+headers have been processed and removed from header list by CXF. The
+in-band headers are incorporated into the <code>MessageContentList</code> in POJO
+mode. The <code>camel-cxf</code> component does make any attempt to remove the
+in-band headers from the <code>MessageContentList</code>. If filtering of in-band
+headers is required, please use <code>PAYLOAD</code> mode or plug in a (pretty
+straightforward) CXF interceptor/JAXWS Handler to the CXF endpoint.
+ Here is an example of configuring CxfHeaderFilterStrategy.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><code>POJO</code> and <code>PAYLOAD</code> modes are supported.</p>
-</div>
-<div class="paragraph">
-<p>In <code>POJO</code> mode, only out-of-band message headers are available for filtering as the in-band headers have been processed and removed from header list by CXF. The in-band headers are incorporated into the <code>MessageContentList</code> in POJO mode.</p>
-</div>
-<div class="paragraph">
-<p>The <code>camel-cxf</code> component does not make any attempt to remove the in-band headers from the <code>MessageContentList</code>. If you require filtering of in-band headers, use <code>PAYLOAD</code> mode or plug in a CXF interceptor/JAXWS Handler to the CXF endpoint.</p>
-</div>
-<div class="sect3">
-<h4 id="_the_message_header_relay_mechanism_in_pojo_mode"><a class="anchor" href="#_the_message_header_relay_mechanism_in_pojo_mode"></a>The Message Header Relay mechanism in POJO mode</h4>
-<div class="paragraph">
-<p>The Message Header Relay mechanism is part of the <code>CxfHeaderFilterStrategy</code> and is a property of <code>CxfHeaderFilterStrategy</code>.</p>
-</div>
-<div class="paragraph">
-<p>Here is an example of how you can configure it:</p>
-</div>
 <div class="listingblock">
-<div class="title">CxfHeaderFilterStrategy configuration:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;bean id="dropAllMessageHeadersStrategy" class="org.apache.camel.component.cxf.transport.header.CxfHeaderFilterStrategy"&gt;
 
@@ -2413,10 +3494,9 @@ is unknown to the runtime, the header will simply be relayed.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>When you have configured the strategy, you can reference the <code>CxfHeaderFilterStrategy</code> in your endpoint.</p>
+<p>Then, your endpoint can reference the <code>CxfHeaderFilterStrategy</code>.</p>
 </div>
 <div class="listingblock">
-<div class="title">Referencing the <code>CxfHeaderFilterStrategy</code>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;route&gt;
     &lt;from uri="cxf:bean:routerNoRelayEndpoint?headerFilterStrategy=#dropAllMessageHeadersStrategy"/&gt;
@@ -2427,23 +3507,23 @@ is unknown to the runtime, the header will simply be relayed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>You can plug in your own <code>MessageHeaderFilter</code> implementations overriding or
-adding additional ones to the list of relays. In order to override a
+<p>You can plugin your own <code>MessageHeaderFilter</code> implementations overriding
+or adding additional ones to the list of relays. In order to override a
 preloaded relay instance just make sure that your <code>MessageHeaderFilter</code>
-implementation services the same name spaces as the one you want to override.</p>
+implementation services the same name spaces as the one you are looking to
+override.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Here is an example of configuring user-defined Message Header Filters:</p>
+<p>Here is an example of configuring user defined Message Header Filters:</p>
 </div>
 <div class="listingblock">
-<div class="title">Message Header Filters configuration:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;bean id="customMessageFilterStrategy" class="org.apache.camel.component.cxf.transport.header.CxfHeaderFilterStrategy"&gt;
     &lt;property name="messageHeaderFilters"&gt;
         &lt;list&gt;
-            &lt;!--  SoapMessageHeaderFilter is the built-in filter.  It can be removed by omitting it. --&gt;
+            &lt;!--  SoapMessageHeaderFilter is the built in filter.  It can be removed by omitting it. --&gt;
             &lt;bean class="org.apache.camel.component.cxf.common.header.SoapMessageHeaderFilter"/&gt;
 
             &lt;!--  Add custom filter here --&gt;
@@ -2453,94 +3533,87 @@ implementation services the same name spaces as the one you want to override.</p
 &lt;/bean&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>In addition to <code>relayHeaders</code>, you can configure the following properties in <code>CxfHeaderFilterStrategy</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In addition to <code>relayHeaders</code>, the following properties can be
+configured in <code>CxfHeaderFilterStrategy</code>.</p>
+</li>
+</ul>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 50%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Name</th>
 <th class="tableblock halign-left valign-top">Required</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>relayHeaders</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All message headers are processed by Message Header Filters.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All message headers will be processed by Message Header Filters
+ <em>Type</em>: <code>boolean</code>
+ <em>Default</em>: <code>true</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>relayAllMessageHeaders</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All message headers are propagated (without processing by Message
-Header Filters).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All message headers will be propagated (without processing by Message
+Header Filters)
+ <em>Type</em>: <code>boolean</code>
+ <em>Default</em>: <code>false</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>allowFilterNamespaceClash</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If two filters overlap in activation namespace, the property control how
 it should be handled. If the value is <code>true</code>, last one wins. If the
-value is <code>false</code>, it will throw an exception.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+value is <code>false</code>, it will throw an exception
+ <em>Type</em>: <code>boolean</code>
+ <em>Default</em>: <code>false</code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_making_the_camel_cxf_component_use_log4j_instead_of_java_util_logging"><a class="anchor" href="#_making_the_camel_cxf_component_use_log4j_instead_of_java_util_logging"></a>Making the camel-cxf component use log4j instead of java.util.logging</h2>
+<h2 id="_how_to_make_the_camel_cxf_component_use_log4j_instead_of_java_util_logging"><a class="anchor" href="#_how_to_make_the_camel_cxf_component_use_log4j_instead_of_java_util_logging"></a>How to make the camel-cxf component use log4j instead of java.util.logging</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CXF&#8217;s default logger is <code>java.util.logging</code>.</p>
-</div>
-<div class="paragraph">
-<p>To change the default logger to <code>log4j</code>, proceed as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Create a file in the classpath, named <code>META-INF/cxf/org.apache.cxf.logger</code></p>
-</li>
-<li>
-<p>Add a single line, with no comments, with the fully-qualified name of the class  (<code>org.apache.cxf.common.logging.Log4jLogger</code>).</p>
-</li>
-</ol>
+<p>CXF&#8217;s default logger is <code>java.util.logging</code>. If you want to change it to
+log4j, proceed as follows. Create a file, in the classpath, named
+<code>META-INF/cxf/org.apache.cxf.logger</code>. This file should contain the
+fully-qualified name of the class,
+<code>org.apache.cxf.common.logging.Log4jLogger</code>, with no comments, on a
+single line.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_letting_camel_cxf_response_start_with_xml_processing_instruction"><a class="anchor" href="#_letting_camel_cxf_response_start_with_xml_processing_instruction"></a>Letting camel-cxf response start with xml processing instruction</h2>
+<h2 id="_how_to_let_camel_cxf_response_start_with_xml_processing_instruction"><a class="anchor" href="#_how_to_let_camel_cxf_response_start_with_xml_processing_instruction"></a>How to let camel-cxf response start with xml processing instruction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CXF does not add the XML processing instruction <code>&lt;?xml version="1.0" encoding="utf-8"?&gt;</code>. This can cause this type of error for some SOAP clients (for example PHP):</p>
+<p>If you are using some SOAP client such as PHP, you will get this kind of
+error, because CXF doesn&#8217;t add the XML processing instruction
+<code>&lt;?xml version="1.0" encoding="utf-8"?&gt;</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Error:sendSms: SoapFault exception: [Client] looks like we got no XML document in [...]</code></pre>
+<pre>Error:sendSms: SoapFault exception: [Client] looks like we got no XML document in [...]</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>To resolve this issue, you must tell <code>StaxOutInterceptor</code> to write the XML start document for you, as in this example:</p>
+<p>To resolve this issue, you just need to tell StaxOutInterceptor to
+write the XML start document for you, as in the <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/WriteXmlDeclarationInterceptor.java">WriteXmlDeclarationInterceptor</a> below:</p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/WriteXmlDeclarationInterceptor.java">WriteXmlDeclarationInterceptor</a>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class WriteXmlDeclarationInterceptor extends AbstractPhaseInterceptor&lt;SoapMessage&gt; {
     public WriteXmlDeclarationInterceptor() {
@@ -2556,10 +3629,9 @@ value is <code>false</code>, it will throw an exception.</p></td>
 </div>
 </div>
 <div class="paragraph">
-<p>As an alternative you can add a message header for it as demonstrated here:</p>
+<p>As an alternative you can add a message header for it as demonstrated in <a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfConsumerTest.java#L62">CxfConsumerTest</a>:</p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/apache/camel/blob/main/components/camel-cxf/camel-cxf-soap/src/test/java/org/apache/camel/component/cxf/jaxws/CxfConsumerTest.java#L62">CxfConsumerTest</a>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"> // set up the response context which force start document
  Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;();
@@ -2567,48 +3639,208 @@ value is <code>false</code>, it will throw an exception.</p></td>
  exchange.getMessage().setHeader(Client.RESPONSE_CONTEXT, map);</code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_configuring_the_data_format"><a class="anchor" href="#_configuring_the_data_format"></a>Configuring the data format</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_the_cxf_endpoints_with_spring"><a class="anchor" href="#_configure_the_cxf_endpoints_with_spring"></a>Configure the CXF endpoints with Spring</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>You can use <code>cxf:properties</code> in the configuration file to set the <code>dataFormat</code> for the camel-cxf endpoint and the <code>setDefaultBus</code> properties.</p>
+<p>You can configure the CXF endpoint with the Spring configuration file
+shown below, and you can also embed the endpoint into the <code>camelContext</code>
+tags. When you are invoking the service endpoint, you can set the
+<code>operationName</code> and <code>operationNamespace</code> headers to explicitly state
+which operation you are calling.</p>
 </div>
-<div id="_tabs_4" class="openblock tabs is-sync is-loading">
-<div class="title">Configuration options:</div>
-<div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="_tabs_4_java_quarkus" class="tab">
-<p>Java (Quarkus)</p>
-</li>
-</ul>
-</div>
-<div id="_tabs_4_java_quarkus--panel" class="tabpanel" aria-labelledby="_tabs_4_java_quarkus">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.apache.camel.component.cxf.common.DataFormat;
-import org.apache.camel.component.cxf.jaxws.CxfEndpoint;
-import jakarta.enterprise.context.SessionScoped;
-import jakarta.enterprise.inject.Produces;
-import jakarta.inject.Named;
-
-</span><span class="fold-block">...
-
-@Produces
-@SessionScoped
-@Named
-CxfEndpoint testEndpoint() {
-    final CxfEndpoint result = new CxfEndpoint();
-    result.setServiceClass(HelloService.class);
-    result.setDataFormat(DataFormat.RAW);
-    result.setDefaultBus(true);
-    result.setAddress("/hello");
-    return result;
-}</span></code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:cxf="http://camel.apache.org/schema/cxf"
+        xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd"&gt;
+     &lt;cxf:cxfEndpoint id="routerEndpoint" address="http://localhost:9003/CamelContext/RouterPort"
+            serviceClass="org.apache.hello_world_soap_http.GreeterImpl"/&gt;
+     &lt;cxf:cxfEndpoint id="serviceEndpoint" address="http://localhost:9000/SoapContext/SoapPort"
+            wsdlURL="testutils/hello_world.wsdl"
+            serviceClass="org.apache.hello_world_soap_http.Greeter"
+            endpointName="s:SoapPort"
+            serviceName="s:SOAPService"
+        xmlns:s="http://apache.org/hello_world_soap_http" /&gt;
+     &lt;camelContext id="camel" xmlns="http://camel.apache.org/schema/spring"&gt;
+       &lt;route&gt;
+         &lt;from uri="cxf:bean:routerEndpoint" /&gt;
+         &lt;to uri="cxf:bean:serviceEndpoint" /&gt;
+       &lt;/route&gt;
+    &lt;/camelContext&gt;
+  &lt;/beans&gt;</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Be sure to include the JAX-WS <code>schemaLocation</code> attribute specified on
+the root beans element. This allows CXF to validate the file and is
+required. Also note the namespace declarations at the end of the
+<code>&lt;cxf:cxfEndpoint/&gt;</code> tag. These declarations are required because the combined <code>{namespace}localName</code> syntax is presently not supported for this tag&#8217;s
+attribute values.</p>
+</div>
+<div class="paragraph">
+<p>The <code>cxf:cxfEndpoint</code> element supports many additional attributes:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PortName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The endpoint name this service is implementing, it maps to the
+<code>wsdl:port@name</code>. In the format of <code>ns:PORT_NAME</code> where <code>ns</code> is a
+namespace prefix valid at this scope.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service name this service is implementing, it maps to the
+<code>wsdl:service@name</code>. In the format of <code>ns:SERVICE_NAME</code> where <code>ns</code> is a
+namespace prefix valid at this scope.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>wsdlURL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The location of the WSDL. Can be on the classpath, file system, or be
+hosted remotely.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bindingId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>bindingId</code> for the service model to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>address</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service publish address.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bus</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The bus name that will be used in the JAX-WS endpoint.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceClass</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The class name of the SEI (Service Endpoint Interface) class which could
+have JSR181 annotation or not.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>It also supports many child elements:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:inInterceptors</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The incoming interceptors for this endpoint. A list of <code>&lt;bean&gt;</code> or
+<code>&lt;ref&gt;</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:inFaultInterceptors</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The incoming fault interceptors for this endpoint. A list of <code>&lt;bean&gt;</code> or
+<code>&lt;ref&gt;</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:outInterceptors</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The outgoing interceptors for this endpoint. A list of <code>&lt;bean&gt;</code> or
+<code>&lt;ref&gt;</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:outFaultInterceptors</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The outgoing fault interceptors for this endpoint. A list of <code>&lt;bean&gt;</code> or
+<code>&lt;ref&gt;</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A properties map which should be supplied to the JAX-WS endpoint. See
+below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:handlers</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A JAX-WS handler list which should be supplied to the JAX-WS endpoint.
+See below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:dataBinding</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can specify the which <code>DataBinding</code> will be use in the endpoint.
+This can be supplied using the Spring <code>&lt;bean class="MyDataBinding"/&gt;</code>
+syntax.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:binding</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can specify the <code>BindingFactory</code> for this endpoint to use. This can
+be supplied using the Spring <code>&lt;bean class="MyBindingFactory"/&gt;</code> syntax.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:features</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The features that hold the interceptors for this endpoint. A list of
+beans or refs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:schemaLocations</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The schema locations for endpoint to use. A list of schemaLocations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cxf:serviceFactory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service factory for this endpoint to use. This can be supplied using
+the Spring <code>&lt;bean class="MyServiceFactory"/&gt;</code> syntax</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can find more advanced examples that show how to provide
+interceptors, properties and handlers on the CXF
+<a href="http://cxf.apache.org/docs/jax-ws-configuration.html">JAX-WS
+Configuration page</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can use cxf:properties to set the camel-cxf endpoint&#8217;s dataFormat
+and setDefaultBus properties from spring configuration file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;cxf:cxfEndpoint id="testEndpoint" address="http://localhost:9000/router"
+     serviceClass="org.apache.camel.component.cxf.HelloService"
+     endpointName="s:HelloPort"
+     serviceName="s:HelloService"
+     xmlns:s="http://www.example.com/test"&gt;
+     &lt;cxf:properties&gt;
+       &lt;entry key="dataFormat" value="RAW"/&gt;
+       &lt;entry key="setDefaultBus" value="true"/&gt;
+     &lt;/cxf:properties&gt;
+   &lt;/cxf:cxfEndpoint&gt;</code></pre>
 </div>
 </div>
-</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
